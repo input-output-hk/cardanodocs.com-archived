@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE Rank2Types      #-}</span><span>
+</span><a name="line-2"></a><span class="hs-pragma">{-# LANGUAGE TemplateHaskell #-}</span><span>
+</span><a name="line-3"></a><span>
+</span><a name="line-4"></a><span class="hs-comment">-- @jens: this document is inspired by https://github.com/input-output-hk/rscoin-haskell/blob/master/src/RSCoin/Explorer/Storage.hs</span><span>
+</span><a name="line-5"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Wallet</span><span class="hs-operator">.</span><span class="hs-identifier">Web</span><span class="hs-operator">.</span><span class="hs-identifier">State</span><span class="hs-operator">.</span><span class="hs-identifier">Storage</span><span>
+</span><a name="line-6"></a><span>       </span><span class="hs-special">(</span><span>
+</span><a name="line-7"></a><span>         </span><a href="Pos.Wallet.Web.State.Storage.html#WalletStorage"><span class="hs-identifier hs-type">WalletStorage</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-8"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#Query"><span class="hs-identifier hs-type">Query</span></a><span>
+</span><a name="line-9"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#Update"><span class="hs-identifier hs-type">Update</span></a><span>
+</span><a name="line-10"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getProfile"><span class="hs-identifier hs-var">getProfile</span></a><span>
+</span><a name="line-11"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#setProfile"><span class="hs-identifier hs-var">setProfile</span></a><span>
+</span><a name="line-12"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getWalletMetas"><span class="hs-identifier hs-var">getWalletMetas</span></a><span>
+</span><a name="line-13"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getWalletMeta"><span class="hs-identifier hs-var">getWalletMeta</span></a><span>
+</span><a name="line-14"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getTxMeta"><span class="hs-identifier hs-var">getTxMeta</span></a><span>
+</span><a name="line-15"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getUpdates"><span class="hs-identifier hs-var">getUpdates</span></a><span>
+</span><a name="line-16"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getNextUpdate"><span class="hs-identifier hs-var">getNextUpdate</span></a><span>
+</span><a name="line-17"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getHistoryCache"><span class="hs-identifier hs-var">getHistoryCache</span></a><span>
+</span><a name="line-18"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#createWallet"><span class="hs-identifier hs-var">createWallet</span></a><span>
+</span><a name="line-19"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#setWalletMeta"><span class="hs-identifier hs-var">setWalletMeta</span></a><span>
+</span><a name="line-20"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#setWalletHistory"><span class="hs-identifier hs-var">setWalletHistory</span></a><span>
+</span><a name="line-21"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#getWalletHistory"><span class="hs-identifier hs-var">getWalletHistory</span></a><span>
+</span><a name="line-22"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#addOnlyNewTxMeta"><span class="hs-identifier hs-var">addOnlyNewTxMeta</span></a><span>
+</span><a name="line-23"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#setWalletTransactionMeta"><span class="hs-identifier hs-var">setWalletTransactionMeta</span></a><span>
+</span><a name="line-24"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#removeWallet"><span class="hs-identifier hs-var">removeWallet</span></a><span>
+</span><a name="line-25"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#addUpdate"><span class="hs-identifier hs-var">addUpdate</span></a><span>
+</span><a name="line-26"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#removeNextUpdate"><span class="hs-identifier hs-var">removeNextUpdate</span></a><span>
+</span><a name="line-27"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#testReset"><span class="hs-identifier hs-var">testReset</span></a><span>
+</span><a name="line-28"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#updateHistoryCache"><span class="hs-identifier hs-var">updateHistoryCache</span></a><span>
+</span><a name="line-29"></a><span>       </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-30"></a><span>
+</span><a name="line-31"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Universum</span><span>
+</span><a name="line-32"></a><span>
+</span><a name="line-33"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Control</span><span class="hs-operator">.</span><span class="hs-identifier">Lens</span><span>               </span><span class="hs-special">(</span><span class="hs-identifier hs-var">at</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">ix</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">makeClassy</span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-operator hs-var">%=</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-operator hs-var">.=</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">_Just</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">_head</span><span class="hs-special">)</span><span>
+</span><a name="line-34"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Control</span><span class="hs-operator">.</span><span class="hs-identifier">Monad</span><span class="hs-operator">.</span><span class="hs-identifier">State</span><span class="hs-operator">.</span><span class="hs-identifier">Class</span><span>  </span><span class="hs-special">(</span><span class="hs-identifier hs-var">put</span><span class="hs-special">)</span><span>
+</span><a name="line-35"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Default</span><span>               </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Default</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">def</span><span class="hs-special">)</span><span>
+</span><a name="line-36"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">SafeCopy</span><span>              </span><span class="hs-special">(</span><span class="hs-identifier hs-var">base</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">deriveSafeCopySimple</span><span class="hs-special">)</span><span>
+</span><a name="line-37"></a><span>
+</span><a name="line-38"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Client.Txp.History.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Client</span><span class="hs-operator">.</span><span class="hs-identifier">Txp</span><span class="hs-operator">.</span><span class="hs-identifier">History</span></a><span>     </span><span class="hs-special">(</span><a href="Pos.Client.Txp.History.html#TxHistoryEntry"><span class="hs-identifier hs-type">TxHistoryEntry</span></a><span class="hs-special">)</span><span>
+</span><a name="line-39"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Txp.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Txp</span></a><span>                    </span><span class="hs-special">(</span><a href="Pos.Txp.Toil.Types.html#Utxo"><span class="hs-identifier hs-type">Utxo</span></a><span class="hs-special">)</span><span>
+</span><a name="line-40"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Types.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span></a><span>                  </span><span class="hs-special">(</span><span class="hs-identifier hs-type">HeaderHash</span><span class="hs-special">)</span><span>
+</span><a name="line-41"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Wallet.Web.ClientTypes.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Wallet</span><span class="hs-operator">.</span><span class="hs-identifier">Web</span><span class="hs-operator">.</span><span class="hs-identifier">ClientTypes</span></a><span> </span><span class="hs-special">(</span><a href="Pos.Wallet.Web.ClientTypes.html#CAddress"><span class="hs-identifier hs-type">CAddress</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CCoin"><span class="hs-identifier hs-type">CCoin</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CCurrency"><span class="hs-identifier hs-type">CCurrency</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CHash"><span class="hs-identifier hs-type">CHash</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CProfile"><span class="hs-identifier hs-type">CProfile</span></a><span class="hs-special">,</span><span>
+</span><a name="line-42"></a><span>                                             </span><a href="Pos.Wallet.Web.ClientTypes.html#CTxId"><span class="hs-identifier hs-type">CTxId</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CTxMeta"><span class="hs-identifier hs-type">CTxMeta</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CUpdateInfo"><span class="hs-identifier hs-type">CUpdateInfo</span></a><span class="hs-special">,</span><span>
+</span><a name="line-43"></a><span>                                             </span><a href="Pos.Wallet.Web.ClientTypes.html#CWalletAssurance"><span class="hs-identifier hs-type">CWalletAssurance</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CWalletMeta"><span class="hs-identifier hs-type">CWalletMeta</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CWalletType"><span class="hs-identifier hs-type">CWalletType</span></a><span class="hs-special">)</span><span>
+</span><a name="line-44"></a><span>
+</span><a name="line-45"></a><span class="hs-keyword">type</span><span> </span><a name="TransactionHistory"><a href="Pos.Wallet.Web.State.Storage.html#TransactionHistory"><span class="hs-identifier">TransactionHistory</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-type">HashMap</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CTxId"><span class="hs-identifier hs-type">CTxId</span></a><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CTxMeta"><span class="hs-identifier hs-type">CTxMeta</span></a><span>
+</span><a name="line-46"></a><span>
+</span><a name="line-47"></a><span class="hs-keyword">data</span><span> </span><a name="WalletStorage"><a href="Pos.Wallet.Web.State.Storage.html#WalletStorage"><span class="hs-identifier">WalletStorage</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a name="WalletStorage"><a href="Pos.Wallet.Web.State.Storage.html#WalletStorage"><span class="hs-identifier">WalletStorage</span></a></a><span>
+</span><a name="line-48"></a><span>    </span><span class="hs-special">{</span><span>
+</span><a name="line-49"></a><span>      </span><a name="_wsWalletMetas"><a href="Pos.Wallet.Web.State.Storage.html#_wsWalletMetas"><span class="hs-identifier">_wsWalletMetas</span></a></a><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="hs-identifier hs-type">HashMap</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CAddress"><span class="hs-identifier hs-type">CAddress</span></a><span> </span><span class="hs-special">(</span><a href="Pos.Wallet.Web.ClientTypes.html#CWalletMeta"><span class="hs-identifier hs-type">CWalletMeta</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.Web.State.Storage.html#TransactionHistory"><span class="hs-identifier hs-type">TransactionHistory</span></a><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-50"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_wsProfile"><a href="Pos.Wallet.Web.State.Storage.html#_wsProfile"><span class="hs-identifier">_wsProfile</span></a></a><span>      </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><a href="Pos.Wallet.Web.ClientTypes.html#CProfile"><span class="hs-identifier hs-type">CProfile</span></a><span>
+</span><a name="line-51"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_wsReadyUpdates"><a href="Pos.Wallet.Web.State.Storage.html#_wsReadyUpdates"><span class="hs-identifier">_wsReadyUpdates</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><a href="Pos.Wallet.Web.ClientTypes.html#CUpdateInfo"><span class="hs-identifier hs-type">CUpdateInfo</span></a><span class="hs-special">]</span><span>
+</span><a name="line-52"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_wsHistoryCache"><a href="Pos.Wallet.Web.State.Storage.html#_wsHistoryCache"><span class="hs-identifier">_wsHistoryCache</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="hs-identifier hs-type">HashMap</span><span> </span><a href="Pos.Wallet.Web.ClientTypes.html#CAddress"><span class="hs-identifier hs-type">CAddress</span></a><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">HeaderHash</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Toil.Types.html#Utxo"><span class="hs-identifier hs-type">Utxo</span></a><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><a href="Pos.Client.Txp.History.html#TxHistoryEntry"><span class="hs-identifier hs-type">TxHistoryEntry</span></a><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-53"></a><span>    </span><span class="hs-special">}</span><span>
+</span><a name="line-54"></a><span>
+</span><a name="line-55"></a><span class="hs-identifier hs-var">makeClassy</span><span> </span><span class="hs-char">''WalletStorage
+
+instance Default WalletStorage where
+    def =
+        WalletStorage
+        {
+          _wsWalletMetas  = mempty
+        , _wsProfile      = def
+        , _wsReadyUpdates = mempty
+        , _wsHistoryCache = mempty
+        }
+
+type Query a = forall m. (MonadReader WalletStorage m) =&gt; m a
+type Update a = forall m. ({-MonadThrow m, -}MonadState WalletStorage m) =&gt; m a
+
+getProfile :: Query CProfile
+getProfile = view wsProfile
+
+setProfile :: CProfile -&gt; Update ()
+setProfile profile = wsProfile .= profile
+
+getWalletMetas :: Query [CWalletMeta]
+getWalletMetas = toList . map fst &lt;$&gt; view wsWalletMetas
+
+getWalletMeta :: CAddress -&gt; Query (Maybe CWalletMeta)
+getWalletMeta cAddr = preview (wsWalletMetas . ix cAddr . _1)
+
+getTxMeta :: CAddress -&gt; CTxId -&gt; Query (Maybe CTxMeta)
+getTxMeta cAddr ctxId = preview $ wsWalletMetas . at cAddr . _Just . _2 . at ctxId . _Just
+
+getWalletHistory :: CAddress -&gt; Query (Maybe [CTxMeta])
+getWalletHistory cAddr = fmap toList &lt;$&gt; preview (wsWalletMetas . ix cAddr . _2)
+
+getUpdates :: Query [CUpdateInfo]
+getUpdates = view wsReadyUpdates
+
+getNextUpdate :: Query (Maybe CUpdateInfo)
+getNextUpdate = preview (wsReadyUpdates . _head)
+
+getHistoryCache :: CAddress -&gt; Query (Maybe (HeaderHash, Utxo, [TxHistoryEntry]))
+getHistoryCache cAddr = view $ wsHistoryCache . at cAddr
+
+createWallet :: CAddress -&gt; CWalletMeta -&gt; Update ()
+createWallet cAddr wMeta = wsWalletMetas . at cAddr .= Just (wMeta, mempty)
+
+setWalletMeta :: CAddress -&gt; CWalletMeta -&gt; Update ()
+setWalletMeta cAddr wMeta = wsWalletMetas . at cAddr . _Just . _1 .= wMeta
+
+addWalletHistoryTx :: CAddress -&gt; CTxId -&gt; CTxMeta -&gt; Update ()
+addWalletHistoryTx cAddr ctxId ctxMeta = wsWalletMetas . at cAddr . _Just . _2 . at ctxId .= Just ctxMeta
+
+setWalletHistory :: CAddress -&gt; [(CTxId, CTxMeta)] -&gt; Update ()
+setWalletHistory cAddr ctxs = () &lt;$ mapM (uncurry $ addWalletHistoryTx cAddr) ctxs
+
+-- FIXME: this will be removed later (temporary solution)
+addOnlyNewTxMeta :: CAddress -&gt; CTxId -&gt; CTxMeta -&gt; Update ()
+addOnlyNewTxMeta cAddr ctxId ctxMeta = wsWalletMetas . at cAddr . _Just . _2 . at ctxId %= Just . fromMaybe ctxMeta
+
+-- NOTE: sets transaction meta only for transactions ids that are already seen
+setWalletTransactionMeta :: CAddress -&gt; CTxId -&gt; CTxMeta -&gt; Update ()
+setWalletTransactionMeta cAddr ctxId ctxMeta = wsWalletMetas . at cAddr . _Just . _2 . at ctxId %= fmap (const ctxMeta)
+
+removeWallet :: CAddress -&gt; Update ()
+removeWallet cAddr = wsWalletMetas . at cAddr .= Nothing
+
+addUpdate :: CUpdateInfo -&gt; Update ()
+addUpdate ui = wsReadyUpdates %= (++ [ui])
+
+removeNextUpdate :: Update ()
+removeNextUpdate = wsReadyUpdates %= drop 1
+
+testReset :: Update ()
+testReset = put def
+
+updateHistoryCache :: CAddress -&gt; HeaderHash -&gt; Utxo -&gt; [TxHistoryEntry] -&gt; Update ()
+updateHistoryCache cAddr cHash utxo cTxs = wsHistoryCache . at cAddr .= Just (cHash, utxo, cTxs)
+
+deriveSafeCopySimple 0 'base ''CCoin
+deriveSafeCopySimple 0 'base ''CProfile
+deriveSafeCopySimple 0 'base ''CHash
+deriveSafeCopySimple 0 'base ''CAddress
+deriveSafeCopySimple 0 'base ''CCurrency
+deriveSafeCopySimple 0 'base ''CWalletType
+deriveSafeCopySimple 0 'base ''CWalletAssurance
+deriveSafeCopySimple 0 'base ''CWalletMeta
+deriveSafeCopySimple 0 'base ''CTxId
+deriveSafeCopySimple 0 'base ''TxHistoryEntry
+deriveSafeCopySimple 0 'base ''CTxMeta
+deriveSafeCopySimple 0 'base ''CUpdateInfo
+deriveSafeCopySimple 0 'base ''WalletStorage
+</span></pre></body></html>

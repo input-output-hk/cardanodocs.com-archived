@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE Rank2Types      #-}</span><span>
+</span><a name="line-2"></a><span class="hs-pragma">{-# LANGUAGE TemplateHaskell #-}</span><span>
+</span><a name="line-3"></a><span>
+</span><a name="line-4"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Wallet</span><span class="hs-operator">.</span><span class="hs-identifier">State</span><span class="hs-operator">.</span><span class="hs-identifier">Storage</span><span>
+</span><a name="line-5"></a><span>       </span><span class="hs-special">(</span><span> </span><a href="Pos.Wallet.State.Storage.html#Storage"><span class="hs-identifier hs-type">Storage</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-6"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#Block%27"><span class="hs-identifier hs-type">Block'</span></a><span>
+</span><a name="line-7"></a><span>
+</span><a name="line-8"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.html#mkStorage"><span class="hs-identifier hs-var">mkStorage</span></a><span>
+</span><a name="line-9"></a><span>
+</span><a name="line-10"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.html#Query"><span class="hs-identifier hs-type">Query</span></a><span>
+</span><a name="line-11"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#getBlock"><span class="hs-identifier hs-var">getBlock</span></a><span>
+</span><a name="line-12"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#getBestChain"><span class="hs-identifier hs-var">getBestChain</span></a><span>
+</span><a name="line-13"></a><span>
+</span><a name="line-14"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#getUtxo"><span class="hs-identifier hs-var">getUtxo</span></a><span>
+</span><a name="line-15"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#getOldestUtxo"><span class="hs-identifier hs-var">getOldestUtxo</span></a><span>
+</span><a name="line-16"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#getTxHistory"><span class="hs-identifier hs-var">getTxHistory</span></a><span>
+</span><a name="line-17"></a><span>
+</span><a name="line-18"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.html#getSlotDuration"><span class="hs-identifier hs-var">getSlotDuration</span></a><span>
+</span><a name="line-19"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.html#getMaxBlockSize"><span class="hs-identifier hs-var">getMaxBlockSize</span></a><span>
+</span><a name="line-20"></a><span>
+</span><a name="line-21"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.html#Update"><span class="hs-identifier hs-type">Update</span></a><span>
+</span><a name="line-22"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#blkSetHead"><span class="hs-identifier hs-var">blkSetHead</span></a><span>
+</span><a name="line-23"></a><span>       </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-24"></a><span>
+</span><a name="line-25"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Control</span><span class="hs-operator">.</span><span class="hs-identifier">Lens</span><span>                   </span><span class="hs-special">(</span><span class="hs-identifier hs-var">makeClassy</span><span class="hs-special">)</span><span>
+</span><a name="line-26"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Default</span><span>                   </span><span class="hs-special">(</span><span class="hs-identifier hs-var">def</span><span class="hs-special">)</span><span>
+</span><a name="line-27"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">SafeCopy</span><span>                  </span><span class="hs-special">(</span><span class="hs-identifier hs-var">base</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">deriveSafeCopySimple</span><span class="hs-special">)</span><span>
+</span><a name="line-28"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Time</span><span class="hs-operator">.</span><span class="hs-identifier">Units</span><span>                </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Millisecond</span><span class="hs-special">)</span><span>
+</span><a name="line-29"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Serokell</span><span class="hs-operator">.</span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Memory</span><span class="hs-operator">.</span><span class="hs-identifier">Units</span><span>     </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Byte</span><span class="hs-special">)</span><span>
+</span><a name="line-30"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Universum</span><span>
+</span><a name="line-31"></a><span>
+</span><a name="line-32"></a><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><a href="Pos.Constants.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Constants</span></a><span>                  </span><span class="hs-keyword">as</span><span> </span><span class="hs-identifier">Const</span><span>
+</span><a name="line-33"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Crypto</span><span>                     </span><span class="hs-special">(</span><span class="hs-identifier hs-type">ProxyCert</span><span class="hs-special">)</span><span>
+</span><a name="line-34"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Txp.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Txp</span></a><span>                        </span><span class="hs-special">(</span><a href="Pos.Txp.Toil.Types.html#Utxo"><span class="hs-identifier hs-type">Utxo</span></a><span class="hs-special">)</span><span>
+</span><a name="line-35"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Types.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span></a><span>                      </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Address</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">EpochIndex</span><span class="hs-special">)</span><span>
+</span><a name="line-36"></a><span>
+</span><a name="line-37"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Wallet.State.Storage.Block.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Wallet</span><span class="hs-operator">.</span><span class="hs-identifier">State</span><span class="hs-operator">.</span><span class="hs-identifier">Storage</span><span class="hs-operator">.</span><span class="hs-identifier">Block</span></a><span> </span><span class="hs-special">(</span><a href="Pos.Wallet.State.Storage.Block.html#Block%27"><span class="hs-identifier hs-type">Block'</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#BlockStorage"><span class="hs-identifier hs-type">BlockStorage</span></a><span class="hs-special">,</span><span>
+</span><a name="line-38"></a><span>                                                 </span><a href="Pos.Wallet.State.Storage.Block.html#HasBlockStorage"><span class="hs-identifier hs-type">HasBlockStorage</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#blkSetHead"><span class="hs-identifier hs-var">blkSetHead</span></a><span class="hs-special">,</span><span>
+</span><a name="line-39"></a><span>                                                 </span><a href="Pos.Wallet.State.Storage.Block.html#getBestChain"><span class="hs-identifier hs-var">getBestChain</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#getBlock"><span class="hs-identifier hs-var">getBlock</span></a><span class="hs-special">)</span><span>
+</span><a name="line-40"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Wallet.State.Storage.Tx.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Wallet</span><span class="hs-operator">.</span><span class="hs-identifier">State</span><span class="hs-operator">.</span><span class="hs-identifier">Storage</span><span class="hs-operator">.</span><span class="hs-identifier">Tx</span></a><span>    </span><span class="hs-special">(</span><a href="Pos.Wallet.State.Storage.Tx.html#HasTxStorage"><span class="hs-identifier hs-type">HasTxStorage</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#TxStorage"><span class="hs-identifier hs-type">TxStorage</span></a><span class="hs-special">,</span><span>
+</span><a name="line-41"></a><span>                                                 </span><a href="Pos.Wallet.State.Storage.Tx.html#getOldestUtxo"><span class="hs-identifier hs-var">getOldestUtxo</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#getTxHistory"><span class="hs-identifier hs-var">getTxHistory</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#getUtxo"><span class="hs-identifier hs-var">getUtxo</span></a><span class="hs-special">,</span><span>
+</span><a name="line-42"></a><span>                                                 </span><a href="Pos.Wallet.State.Storage.Tx.html#mkTxStorage"><span class="hs-identifier hs-var">mkTxStorage</span></a><span class="hs-special">)</span><span>
+</span><a name="line-43"></a><span>
+</span><a name="line-44"></a><span class="hs-keyword">data</span><span> </span><a name="Storage"><a href="Pos.Wallet.State.Storage.html#Storage"><span class="hs-identifier">Storage</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a name="Storage"><a href="Pos.Wallet.State.Storage.html#Storage"><span class="hs-identifier">Storage</span></a></a><span>
+</span><a name="line-45"></a><span>    </span><span class="hs-special">{</span><span> </span><span class="hs-comment">-- Block-related part of wallet storage</span><span>
+</span><a name="line-46"></a><span>      </span><span class="hs-comment">-- (partial keychain and alternative chains)</span><span>
+</span><a name="line-47"></a><span>      </span><a name="__blockStorage"><a href="Pos.Wallet.State.Storage.html#__blockStorage"><span class="hs-identifier">__blockStorage</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><a href="Pos.Wallet.State.Storage.Block.html#BlockStorage"><span class="hs-identifier hs-type">BlockStorage</span></a><span>
+</span><a name="line-48"></a><span>      </span><span class="hs-comment">-- Transaction-related part of wallet</span><span>
+</span><a name="line-49"></a><span>      </span><span class="hs-comment">-- (Own Utxo with history + transactions history)</span><span>
+</span><a name="line-50"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="__txStorage"><a href="Pos.Wallet.State.Storage.html#__txStorage"><span class="hs-identifier">__txStorage</span></a></a><span>    </span><span class="hs-glyph">::</span><span> </span><a href="Pos.Wallet.State.Storage.Tx.html#TxStorage"><span class="hs-identifier hs-type">TxStorage</span></a><span>
+</span><a name="line-51"></a><span>      </span><span class="hs-comment">-- Valid delegation certificates</span><span>
+</span><a name="line-52"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_delegations"><a href="Pos.Wallet.State.Storage.html#_delegations"><span class="hs-identifier">_delegations</span></a></a><span>   </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">HashMap</span><span> </span><span class="hs-identifier hs-type">Address</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">ProxyCert</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">EpochIndex</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">EpochIndex</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-53"></a><span>      </span><span class="hs-comment">-- &#8220;Constants&#8221;</span><span>
+</span><a name="line-54"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_slotDuration"><a href="Pos.Wallet.State.Storage.html#_slotDuration"><span class="hs-identifier">_slotDuration</span></a></a><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Millisecond</span><span>
+</span><a name="line-55"></a><span>    </span><span class="hs-special">,</span><span> </span><a name="_maxBlockSize"><a href="Pos.Wallet.State.Storage.html#_maxBlockSize"><span class="hs-identifier">_maxBlockSize</span></a></a><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Byte</span><span>
+</span><a name="line-56"></a><span>    </span><span class="hs-special">}</span><span>
+</span><a name="line-57"></a><span>
+</span><a name="line-58"></a><span class="hs-identifier hs-var">makeClassy</span><span> </span><span class="hs-char">''Storage
+deriveSafeCopySimple 0 'base ''Storage
+
+mkStorage :: Utxo -&gt; Storage
+mkStorage u =
+    Storage
+        def
+        (mkTxStorage u)
+        mempty
+        Const.genesisSlotDuration
+        Const.genesisMaxBlockSize
+
+instance HasBlockStorage Storage where
+    blockStorage = _blockStorage
+
+instance HasTxStorage Storage where
+    txStorage = _txStorage
+
+type Query a = forall m. (MonadReader Storage m) =&gt; m a
+type Update a = forall m. (MonadThrow m, MonadState Storage m) =&gt; m a
+
+getSlotDuration :: Query Millisecond
+getSlotDuration = view slotDuration
+
+getMaxBlockSize :: Query Byte
+getMaxBlockSize = view maxBlockSize
+</span></pre></body></html>

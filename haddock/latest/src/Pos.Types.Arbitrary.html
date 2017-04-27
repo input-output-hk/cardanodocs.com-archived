@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE TemplateHaskell #-}</span><span>
+</span><a name="line-2"></a><span>
+</span><a name="line-3"></a><span class="hs-comment">-- | `Arbitrary` instances for core types for using in tests and benchmarks</span><span>
+</span><a name="line-4"></a><span>
+</span><a name="line-5"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span><span class="hs-operator">.</span><span class="hs-identifier">Arbitrary</span><span>
+</span><a name="line-6"></a><span>       </span><span class="hs-special">(</span><span> </span><a href="Pos.Types.Arbitrary.html#BadSigsTx"><span class="hs-identifier hs-type">BadSigsTx</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-7"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#CoinPairOverflowSum"><span class="hs-identifier hs-type">CoinPairOverflowSum</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-8"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#CoinPairOverflowSub"><span class="hs-identifier hs-type">CoinPairOverflowSub</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-9"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#CoinPairOverflowMul"><span class="hs-identifier hs-type">CoinPairOverflowMul</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-10"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#DoubleInZeroToOneRange"><span class="hs-identifier hs-type">DoubleInZeroToOneRange</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-11"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#IntegerToCoinNoOverflow"><span class="hs-identifier hs-type">IntegerToCoinNoOverflow</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-12"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#IntegerToCoinOverflow"><span class="hs-identifier hs-type">IntegerToCoinOverflow</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-13"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#GoodTx"><span class="hs-identifier hs-type">GoodTx</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-14"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#LessThanZeroOrMoreThanOne"><span class="hs-identifier hs-type">LessThanZeroOrMoreThanOne</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-15"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SafeCoinPairMul"><span class="hs-identifier hs-type">SafeCoinPairMul</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-16"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SafeCoinPairSum"><span class="hs-identifier hs-type">SafeCoinPairSum</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-17"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SafeCoinPairSub"><span class="hs-identifier hs-type">SafeCoinPairSub</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-18"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SafeWord"><span class="hs-identifier hs-type">SafeWord</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-19"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SmallBadSigsTx"><span class="hs-identifier hs-type">SmallBadSigsTx</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-20"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SmallHashMap"><span class="hs-identifier hs-type">SmallHashMap</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-21"></a><span>       </span><span class="hs-special">,</span><span> </span><a href="Pos.Types.Arbitrary.html#SmallGoodTx"><span class="hs-identifier hs-type">SmallGoodTx</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><a name="line-22"></a><span>       </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-23"></a><span>
+</span><a name="line-24"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Universum</span><span>
+</span><a name="line-25"></a><span>
+</span><a name="line-26"></a><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">ByteString</span><span>            </span><span class="hs-keyword">as</span><span> </span><span class="hs-identifier">BS</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">pack</span><span class="hs-special">)</span><span>
+</span><a name="line-27"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">DeriveTH</span><span>              </span><span class="hs-special">(</span><span class="hs-identifier hs-var">derive</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">makeArbitrary</span><span class="hs-special">)</span><span>
+</span><a name="line-28"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">List</span><span class="hs-operator">.</span><span class="hs-identifier">NonEmpty</span><span>         </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="hs-operator hs-var">&lt;|</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-29"></a><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">List</span><span class="hs-operator">.</span><span class="hs-identifier">NonEmpty</span><span>         </span><span class="hs-keyword">as</span><span> </span><span class="hs-identifier">NE</span><span>
+</span><a name="line-30"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Time</span><span class="hs-operator">.</span><span class="hs-identifier">Units</span><span>            </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Microsecond</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Millisecond</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">fromMicroseconds</span><span class="hs-special">)</span><span>
+</span><a name="line-31"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">System</span><span class="hs-operator">.</span><span class="hs-identifier">Random</span><span>              </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Random</span><span class="hs-special">)</span><span>
+</span><a name="line-32"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Test</span><span class="hs-operator">.</span><span class="hs-identifier">QuickCheck</span><span>            </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Arbitrary</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Gen</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">choose</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">choose</span><span class="hs-special">,</span><span>
+</span><a name="line-33"></a><span>                                             </span><span class="hs-identifier hs-var">elements</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">oneof</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">scale</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">suchThat</span><span class="hs-special">)</span><span>
+</span><a name="line-34"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Test</span><span class="hs-operator">.</span><span class="hs-identifier">QuickCheck</span><span class="hs-operator">.</span><span class="hs-identifier">Instances</span><span>  </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-35"></a><span>
+</span><a name="line-36"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Binary</span><span class="hs-operator">.</span><span class="hs-identifier">Class</span><span>           </span><span class="hs-special">(</span><span class="hs-identifier hs-type">AsBinary</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">FixedSizeInt</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Raw</span><span class="hs-special">,</span><span>
+</span><a name="line-37"></a><span>                                             </span><span class="hs-identifier hs-type">SignedVarInt</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">UnsignedVarInt</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a name="line-38"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Binary</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span>            </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-39"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Binary</span><span class="hs-operator">.</span><span class="hs-identifier">Crypto</span><span>          </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-40"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Binary.Txp.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Binary</span><span class="hs-operator">.</span><span class="hs-identifier">Txp</span></a><span>             </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-41"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Constants.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Constants</span></a><span>              </span><span class="hs-special">(</span><span class="hs-identifier hs-var">epochSlots</span><span class="hs-special">,</span><span> </span><a href="Pos.Constants.html#sharedSeedLength"><span class="hs-identifier hs-var">sharedSeedLength</span></a><span class="hs-special">)</span><span>
+</span><a name="line-42"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span class="hs-operator">.</span><span class="hs-identifier">Address</span><span>           </span><span class="hs-special">(</span><span class="hs-identifier hs-var">makePubKeyAddress</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">makeRedeemAddress</span><span class="hs-special">,</span><span>
+</span><a name="line-43"></a><span>                                             </span><span class="hs-identifier hs-var">makeScriptAddress</span><span class="hs-special">)</span><span>
+</span><a name="line-44"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span class="hs-operator">.</span><span class="hs-identifier">Coin</span><span>              </span><span class="hs-special">(</span><span class="hs-identifier hs-var">coinToInteger</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">divCoin</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">unsafeSubCoin</span><span class="hs-special">)</span><span>
+</span><a name="line-45"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span><span>             </span><span class="hs-special">(</span><span class="hs-identifier hs-type">BlockVersion</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Coin</span><span class="hs-special">,</span><span>
+</span><a name="line-46"></a><span>                                             </span><span class="hs-identifier hs-type">SoftwareVersion</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><a name="line-47"></a><span>                                             </span><span class="hs-identifier hs-var">applicationNameMaxLength</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">mkApplicationName</span><span class="hs-special">)</span><span>
+</span><a name="line-48"></a><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span><span>             </span><span class="hs-keyword">as</span><span> </span><span class="hs-identifier">Types</span><span>
+</span><a name="line-49"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Crypto</span><span>                 </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Hash</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">PublicKey</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">SecretKey</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Share</span><span class="hs-special">,</span><span>
+</span><a name="line-50"></a><span>                                             </span><span class="hs-identifier hs-type">SignTag</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">SignTxIn</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">hash</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">sign</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">toPublic</span><span class="hs-special">)</span><span>
+</span><a name="line-51"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Crypto.Arbitrary.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Crypto</span><span class="hs-operator">.</span><span class="hs-identifier">Arbitrary</span></a><span>       </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-52"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Data</span><span class="hs-operator">.</span><span class="hs-identifier">Attributes</span><span>        </span><span class="hs-special">(</span><span class="hs-identifier hs-var">mkAttributes</span><span class="hs-special">)</span><span>
+</span><a name="line-53"></a><span class="hs-keyword">import</span><span>           </span><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Merkle</span><span>                 </span><span class="hs-special">(</span><span class="hs-identifier hs-type">MerkleRoot</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">MerkleTree</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">mkMerkleTree</span><span class="hs-special">)</span><span>
+</span><a name="line-54"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Script.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Script</span></a><span>                 </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Script</span><span class="hs-special">)</span><span>
+</span><a name="line-55"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Script.Examples.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Script</span><span class="hs-operator">.</span><span class="hs-identifier">Examples</span></a><span>        </span><span class="hs-special">(</span><a href="Pos.Script.Examples.html#badIntRedeemer"><span class="hs-identifier hs-var">badIntRedeemer</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Script.Examples.html#goodIntRedeemer"><span class="hs-identifier hs-var">goodIntRedeemer</span></a><span class="hs-special">,</span><span>
+</span><a name="line-56"></a><span>                                             </span><a href="Pos.Script.Examples.html#intValidator"><span class="hs-identifier hs-var">intValidator</span></a><span class="hs-special">)</span><span>
+</span><a name="line-57"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Txp.Core.Types.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Txp</span><span class="hs-operator">.</span><span class="hs-identifier">Core</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span></a><span>         </span><span class="hs-special">(</span><a href="Pos.Txp.Core.Types.html#Tx"><span class="hs-identifier hs-type">Tx</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#TxDistribution"><span class="hs-identifier hs-type">TxDistribution</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#TxIn"><span class="hs-identifier hs-type">TxIn</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><a name="line-58"></a><span>                                             </span><a href="Pos.Txp.Core.Types.html#TxInWitness"><span class="hs-identifier hs-type">TxInWitness</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#TxOut"><span class="hs-identifier hs-type">TxOut</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#TxOutAux"><span class="hs-identifier hs-type">TxOutAux</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><a name="line-59"></a><span>                                             </span><a href="Pos.Txp.Core.Types.html#TxProof"><span class="hs-identifier hs-type">TxProof</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#TxSigData"><span class="hs-identifier hs-type">TxSigData</span></a><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><a href="Pos.Txp.Core.Types.html#mkTx"><span class="hs-identifier hs-var">mkTx</span></a><span class="hs-special">)</span><span>
+</span><a name="line-60"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Types.Arbitrary.Unsafe.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Types</span><span class="hs-operator">.</span><span class="hs-identifier">Arbitrary</span><span class="hs-operator">.</span><span class="hs-identifier">Unsafe</span></a><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a name="line-61"></a><span class="hs-keyword">import</span><span>           </span><a href="Pos.Util.html"><span class="hs-identifier">Pos</span><span class="hs-operator">.</span><span class="hs-identifier">Util</span></a><span>                   </span><span class="hs-special">(</span><a href="Pos.Util.Arbitrary.html#makeSmall"><span class="hs-identifier hs-var">makeSmall</span></a><span class="hs-special">)</span><span>
+</span><a name="line-62"></a><span>
+</span><a name="line-63"></a><span class="hs-comment">----------------------------------------------------------------------------</span><span>
+</span><a name="line-64"></a><span class="hs-comment">-- Arbitrary core types</span><span>
+</span><a name="line-65"></a><span class="hs-comment">----------------------------------------------------------------------------</span><span>
+</span><a name="line-66"></a><span>
+</span><a name="line-67"></a><span class="hs-keyword">instance</span><span> </span><span class="hs-identifier hs-type">Arbitrary</span><span> </span><span class="hs-identifier hs-type">Script</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-68"></a><span>    </span><a name="local-8214565720323789188"><span class="hs-identifier">arbitrary</span></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">elements</span><span>
+</span><a name="line-69"></a><span>        </span><span class="hs-special">[</span><a href="Pos.Script.Examples.html#intValidator"><span class="hs-identifier hs-var">intValidator</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Script.Examples.html#goodIntRedeemer"><span class="hs-identifier hs-var">goodIntRedeemer</span></a><span class="hs-special">,</span><span> </span><a href="Pos.Script.Examples.html#badIntRedeemer"><span class="hs-identifier hs-var">badIntRedeemer</span></a><span class="hs-special">]</span><span>
+</span><a name="line-70"></a><span>
+</span><a name="line-71"></a><span class="hs-keyword">instance</span><span> </span><span class="hs-identifier hs-type">Arbitrary</span><span> </span><span class="hs-identifier hs-type">Types</span><span class="hs-operator hs-type">.</span><span class="hs-identifier hs-type">Address</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-72"></a><span>    </span><a name="local-8214565720323789188"><span class="hs-identifier">arbitrary</span></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">oneof</span><span> </span><span class="hs-special">[</span><span>
+</span><a name="line-73"></a><span>        </span><span class="hs-identifier hs-var">makePubKeyAddress</span><span> </span><span class="hs-operator hs-var">&lt;$&gt;</span><span> </span><span class="hs-identifier hs-var">arbitrary</span><span class="hs-special">,</span><span>
+</span><a name="line-74"></a><span>        </span><span class="hs-identifier hs-var">makeScriptAddress</span><span> </span><span class="hs-operator hs-var">&lt;$&gt;</span><span> </span><span class="hs-identifier hs-var">arbitrary</span><span class="hs-special">,</span><span>
+</span><a name="line-75"></a><span>        </span><span class="hs-identifier hs-var">makeRedeemAddress</span><span> </span><span class="hs-operator hs-var">&lt;$&gt;</span><span> </span><span class="hs-identifier hs-var">arbitrary</span><span class="hs-special">,</span><span>
+</span><a name="line-76"></a><span>        </span><span class="hs-identifier hs-var">Types</span><span class="hs-operator hs-var">.</span><span class="hs-identifier hs-var">UnknownAddressType</span><span> </span><span class="hs-operator hs-var">&lt;$&gt;</span><span> </span><span class="hs-identifier hs-var">choose</span><span> </span><span class="hs-special">(</span><span class="hs-number">3</span><span class="hs-special">,</span><span> </span><span class="hs-number">255</span><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">&lt;*&gt;</span><span> </span><span class="hs-identifier hs-var">scale</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">min</span><span> </span><span class="hs-number">150</span><span class="hs-special">)</span><span> </span><span class="hs-identifier hs-var">arbitrary</span><span>
+</span><a name="line-77"></a><span>        </span><span class="hs-special">]</span><span>
+</span><a name="line-78"></a><span>
+</span><a name="line-79"></a><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="hs-identifier hs-type">Arbitrary</span><span> </span><span class="hs-identifier hs-type">Types</span><span class="hs-operator hs-type">.</span><span class="hs-identifier hs-type">ChainDifficulty</span><span>
+</span><a name="line-80"></a><span>
+</span><a name="line-81"></a><span class="hs-identifier hs-var">derive</span><span> </span><span class="hs-identifier hs-var">makeArbitrary</span><span> </span><span class="hs-char">''TxOut
+derive makeArbitrary ''TxOutAux
+derive makeArbitrary ''TxSigData
+
+instance Arbitrary Coin where
+    arbitrary = Types.mkCoin &lt;$&gt; choose (1, Types.unsafeGetCoin maxBound)
+
+-- | This datatype has two coins that will always overflow when added.
+-- It is used in tests to make sure addition raises the appropriate exception when this
+-- happens.
+newtype CoinPairOverflowSum = TwoCoinsSum
+    { get2CSum :: (Coin, Coin)
+    } deriving (Show, Eq)
+
+instance Arbitrary CoinPairOverflowSum where
+    arbitrary = do
+        c1 &lt;- arbitrary
+        let lowerBound = succ $ coinToInteger $ (maxBound @Coin) `unsafeSubCoin` c1
+            upperBound = coinToInteger (maxBound @Coin)
+        c2 &lt;- Types.mkCoin . fromIntegral &lt;$&gt; choose (lowerBound, upperBound)
+        return $ TwoCoinsSum (c1, c2)
+
+-- | This datatype has two coins that will never overflow when added.
+-- It is therefore safe to add them. Useful in tests to ensure adding two coins whose sum
+-- is a valid 'Coin' always works.
+newtype SafeCoinPairSum = CoinPairSum
+    { getPairSum :: (Coin, Coin)
+    } deriving (Show, Eq)
+
+instance Arbitrary SafeCoinPairSum where
+    arbitrary = do
+        c1 &lt;- arbitrary
+        let upperBound = Types.unsafeGetCoin c1
+            highestBound = Types.unsafeGetCoin maxBound
+        c2 &lt;- Types.mkCoin &lt;$&gt; choose (0, highestBound - upperBound)
+        return $ CoinPairSum (c1, c2)
+
+-- | This datatype has two coins that will always underflow when subtracted.
+-- It is used in tests to make sure subtraction raises the appropriate exception when this
+-- happens.
+newtype CoinPairOverflowSub = TwoCoinsSub
+    { get2CSub :: (Coin, Coin)
+    } deriving (Show, Eq)
+
+instance Arbitrary CoinPairOverflowSub where
+    arbitrary = do
+        firstCoin &lt;- arbitrary
+        let firstWord = Types.unsafeGetCoin firstCoin
+            c1 = if firstCoin == maxBound
+                then Types.mkCoin $ firstWord - 1
+                else firstCoin
+        c2 &lt;- arbitrary `suchThat` (&gt; c1)
+        return $ TwoCoinsSub (c1, c2)
+
+-- | This datatype has two coins that will never underflow when subtracted.
+-- It is therefore safe to subtract them. Useful in tests to show that two coins whose
+-- subtraction does not underflow always works.
+newtype SafeCoinPairSub = CoinPairSub
+    { getPairSub :: (Coin, Coin)
+    } deriving (Show, Eq)
+
+instance Arbitrary SafeCoinPairSub where
+    arbitrary = do
+        c1 &lt;- arbitrary
+        let upperBound = Types.unsafeGetCoin c1
+        c2 &lt;- Types.mkCoin &lt;$&gt; choose (0, upperBound)
+        return $ CoinPairSub (c1, c2)
+
+-- | This datatype has a 'Coin' and an 'Integer' that will always overflow when
+-- multiplied.
+-- It is used in tests to make sure multiplication raises the appropriate exception when
+-- this happens.
+newtype CoinPairOverflowMul = TwoCoinsM
+    { get2CMul :: (Coin, Integer)
+    } deriving (Show, Eq)
+
+instance Arbitrary CoinPairOverflowMul where
+    arbitrary = do
+        c1 &lt;- arbitrary
+        let integralC1 = coinToInteger c1
+            lowerBound =
+                1 + (coinToInteger $ (maxBound @Coin) `divCoin` integralC1)
+            upperBound = coinToInteger (maxBound @Coin)
+        c2 &lt;- fromIntegral @Integer &lt;$&gt; choose (lowerBound, upperBound)
+        return $ TwoCoinsM (c1, c2)
+
+-- | This datatype has a 'Coin' and an 'Integer'  that will always overflow when
+-- multiplied.
+-- It is used to make sure coin multiplication by an integer raises the appropriate
+-- exception when this happens.
+newtype SafeCoinPairMul = CoinPairMul
+    { getPairMul :: (Coin, Integer)
+    } deriving (Show, Eq)
+
+instance Arbitrary SafeCoinPairMul where
+    arbitrary = do
+        c1 &lt;- arbitrary
+        let upperBound = coinToInteger c1
+            highestBound = coinToInteger maxBound
+        c2 &lt;- choose (0, div highestBound upperBound)
+        return $ CoinPairMul (c1, c2)
+
+-- | 'IntegerToCoinOverflow' is a wrapped over 'Integer'. Its 'Arbitrary' instance makes
+-- it so that these integers will always overflow when converted into a 'Coin'.
+-- Used in tests to make sure an exception is raised when there is an attempt to turn an
+-- excessively large 'Integer' into a 'Coin'.
+newtype IntegerToCoinOverflow = LargeInteger
+    { getLargeInteger :: Integer
+    } deriving (Show, Eq)
+
+instance Arbitrary IntegerToCoinOverflow where
+    arbitrary = LargeInteger &lt;$&gt; do
+        n &lt;- succ . fromIntegral &lt;$&gt; (arbitrary :: Gen Word)
+        let lowerBound = succ . coinToInteger $ maxBound @Coin
+        num &lt;- choose (lowerBound, n * lowerBound)
+        return $ toInteger num
+
+-- | This datatype has an Integer that will never overflow when turned into a 'Coin'.
+-- Useful for testing that conversion between valid 'Integer's and 'Coin's works properly.
+newtype IntegerToCoinNoOverflow = Integer
+    { getInteger :: Integer
+    } deriving (Show, Eq)
+
+instance Arbitrary IntegerToCoinNoOverflow where
+    arbitrary =
+        Integer . fromIntegral &lt;$&gt; choose (0, Types.unsafeGetCoin $ maxBound @Coin)
+
+instance Arbitrary Types.CoinPortion where
+    arbitrary = Types.unsafeCoinPortionFromDouble . (1/) &lt;$&gt; choose (1, 20)
+
+-- | A wrapper over 'Double'. Its 'Arbitrary' instance ensures the 'Double' within can
+-- never be converted into a 'CoinPortion' without an exception being raised. Used in
+-- tests to safeguard that converting an invalid 'Double' to a 'CoinPortion' always
+-- raised an exception.
+newtype LessThanZeroOrMoreThanOne = BadCoinPortion
+    { getDouble :: Double
+    } deriving (Show, Eq)
+
+instance Arbitrary LessThanZeroOrMoreThanOne where
+    arbitrary = BadCoinPortion &lt;$&gt; do
+        d &lt;- arbitrary
+        return $ if (d &gt;= 0 &amp;&amp; d &lt;= 1)
+            then 10 / d
+            else d
+
+-- | Another wrapper over 'Double'. Its 'Arbitrary' instance guarantees the 'Double'
+-- inside can always be safely turned into a 'CoinPortion'. Used in tests to ensure
+-- converting a valid 'Double' to/from 'CoinPortion' works properly.
+newtype DoubleInZeroToOneRange = DoubleInRange
+    { getDoubleInRange :: Double
+    } deriving (Show, Eq)
+
+instance Arbitrary DoubleInZeroToOneRange where
+    arbitrary = DoubleInRange &lt;$&gt; choose (0, 1)
+
+-- | A wrapper over 'Word64'. Its 'Arbitrary' instance guarantees the 'Word64'
+-- inside can always be safely converted into 'CoinPortion'. Used in tests to ensure
+-- converting a valid 'Word64' to/from 'CoinPortion' works properly.
+newtype SafeWord = SafeWord
+    { getSafeWord :: Word64
+    } deriving (Show, Eq)
+
+instance Arbitrary SafeWord where
+    arbitrary = SafeWord . Types.getCoinPortion &lt;$&gt; arbitrary
+
+maxReasonableEpoch :: Integral a =&gt; a
+maxReasonableEpoch = 5 * 1000 * 1000 * 1000 * 1000  -- 5 * 10^12, because why not
+
+deriving instance Random Types.EpochIndex
+
+instance Arbitrary Types.EpochIndex where
+    arbitrary = choose (0, maxReasonableEpoch)
+
+deriving instance Random Types.LocalSlotIndex
+
+instance Arbitrary Types.LocalSlotIndex where
+    arbitrary = choose (0, epochSlots - 1)
+
+instance Arbitrary Types.SlotId where
+    arbitrary = Types.SlotId
+        &lt;$&gt; arbitrary
+        &lt;*&gt; arbitrary
+
+instance Arbitrary Types.EpochOrSlot where
+    arbitrary = oneof [
+          Types.EpochOrSlot . Left &lt;$&gt; arbitrary
+        , Types.EpochOrSlot . Right &lt;$&gt; arbitrary
+        ]
+
+instance Arbitrary TxInWitness where
+    arbitrary = oneof [
+        PkWitness &lt;$&gt; arbitrary &lt;*&gt; arbitrary,
+        -- this can generate a redeemer script where a validator script is
+        -- needed and vice-versa, but it doesn't matter
+        ScriptWitness &lt;$&gt; arbitrary &lt;*&gt; arbitrary,
+        RedeemWitness &lt;$&gt; arbitrary &lt;*&gt; arbitrary,
+        UnknownWitnessType &lt;$&gt; choose (3, 255) &lt;*&gt; scale (min 150) arbitrary ]
+
+derive makeArbitrary ''TxDistribution
+derive makeArbitrary ''TxIn
+
+-- | Arbitrary transactions generated from this instance will only be valid
+-- with regards to 'mxTx'
+instance Arbitrary Tx where
+    arbitrary =
+        mkTx &lt;$&gt; arbitrary &lt;*&gt; arbitrary &lt;*&gt;
+        pure (mkAttributes ()) &lt;&amp;&gt; \case
+            Left err -&gt; error $ &quot;Arbitrary Tx: &quot; &lt;&gt; err
+            Right res -&gt; res
+
+-- | Type used to generate valid ('verifyTx')
+-- transactions and accompanying input information.
+-- It's not entirely general because it only generates transactions whose
+-- outputs are in the same number as its inputs in a one-to-one correspondence.
+--
+-- The GoodTx type is a list of triples where the third elements are the
+-- transaction's outputs, the second elements are its inputs, and the first are
+-- the transactions from where the tuple's TxIn came from.
+--
+-- The OverflowTx type is the same as GoodTx, except its values, both for
+-- inputs as well as outputs, are very close to maxBound :: Coin so as to cause
+-- overflow in the Coin type if they are summed.
+--
+-- The BadSigTx type is also the same as GoodTx, with the difference that all
+-- signatures in the transaction's inputs have been replaced with a bogus one.
+
+buildProperTx
+    :: NonEmpty (Tx, SecretKey, SecretKey, Coin)
+    -&gt; (Coin -&gt; Coin, Coin -&gt; Coin)
+    -&gt; NonEmpty ((Tx, TxDistribution), TxIn, TxOutAux, TxInWitness)
+buildProperTx triplesList (inCoin, outCoin) = fmap newTx txList
+  where
+    fun (UnsafeTx txIn txOut _, fromSk, toSk, c) =
+        let inC = inCoin c
+            outC = outCoin c
+            txToBeSpent =
+                UnsafeTx
+                    txIn
+                    ((makeTxOutput fromSk inC) &lt;| txOut)
+                    (mkAttributes ())
+        in (txToBeSpent, fromSk, makeTxOutput toSk outC)
+    -- why is it called txList? I've no idea what's going on here (@neongreen)
+    txList = fmap fun triplesList
+    txOutsHash = hash $ fmap (view _3) txList
+    distrHash = hash (TxDistribution (NE.fromList $ replicate (length txList) []))
+    makeNullDistribution tx =
+        TxDistribution (NE.fromList $ replicate (length (_txOutputs tx)) [])
+    newTx (tx, fromSk, txOutput) =
+        let txHash = hash tx
+            txIn = TxIn txHash 0
+            witness =
+                PkWitness
+                { twKey = toPublic fromSk
+                , twSig = sign SignTxIn fromSk TxSigData{
+                             txSigInput = txIn,
+                             txSigOutsHash = txOutsHash,
+                             txSigDistrHash = distrHash }
+                }
+        in ((tx, makeNullDistribution tx), txIn, (TxOutAux txOutput []), witness)
+    makeTxOutput s c = TxOut (makePubKeyAddress $ toPublic s) c
+
+-- | Well-formed transaction 'Tx'.
+newtype GoodTx = GoodTx
+    { getGoodTx :: NonEmpty ((Tx, TxDistribution), TxIn, TxOutAux, TxInWitness)
+    } deriving (Show)
+
+newtype SmallGoodTx =
+    SmallGoodTx GoodTx
+    deriving Show
+
+instance Arbitrary GoodTx where
+    arbitrary =
+        GoodTx &lt;$&gt; (buildProperTx &lt;$&gt; arbitrary &lt;*&gt; pure (identity, identity))
+
+instance Arbitrary SmallGoodTx where
+    arbitrary = SmallGoodTx &lt;$&gt; makeSmall arbitrary
+
+-- | Ill-formed 'Tx' with bad signatures.
+newtype BadSigsTx = BadSigsTx
+    { getBadSigsTx :: NonEmpty ((Tx, TxDistribution), TxIn, TxOutAux, TxInWitness)
+    } deriving (Show)
+
+newtype SmallBadSigsTx =
+    SmallBadSigsTx BadSigsTx
+    deriving Show
+
+instance Arbitrary BadSigsTx where
+    arbitrary = BadSigsTx &lt;$&gt; do
+        goodTxList &lt;- getGoodTx &lt;$&gt; arbitrary
+        badSig &lt;- arbitrary
+        return $ map (set _4 badSig) goodTxList
+
+instance Arbitrary SmallBadSigsTx where
+    arbitrary = SmallBadSigsTx &lt;$&gt; makeSmall arbitrary
+
+instance Arbitrary (MerkleRoot Tx) where
+    arbitrary = MerkleRoot &lt;$&gt; (arbitrary @(Hash Raw))
+
+instance Arbitrary (MerkleTree Tx) where
+    arbitrary = mkMerkleTree &lt;$&gt; arbitrary
+
+instance Arbitrary TxProof where
+    arbitrary = TxProof &lt;$&gt; arbitrary &lt;*&gt; arbitrary &lt;*&gt; arbitrary &lt;*&gt; arbitrary
+
+instance Arbitrary Types.SharedSeed where
+    arbitrary = do
+        bs &lt;- replicateM sharedSeedLength (choose (0, 255))
+        return $ Types.SharedSeed $ BS.pack bs
+
+----------------------------------------------------------------------------
+-- Arbitrary types from MainExtra[header/body]data
+----------------------------------------------------------------------------
+
+instance Arbitrary Types.ApplicationName where
+    arbitrary =
+        either (error . mappend &quot;arbitrary @ApplicationName failed: &quot;) identity .
+        mkApplicationName .
+        toText . map (chr . flip mod 128) . take applicationNameMaxLength &lt;$&gt;
+        arbitrary
+
+derive makeArbitrary ''Types.BlockVersion
+derive makeArbitrary ''Types.SoftwareVersion
+
+----------------------------------------------------------------------------
+-- Arbitrary miscellaneous types
+----------------------------------------------------------------------------
+
+instance Arbitrary Millisecond where
+    arbitrary = fromMicroseconds &lt;$&gt; choose (0, 600 * 1000 * 1000)
+
+instance Arbitrary Microsecond where
+    arbitrary = fromMicroseconds &lt;$&gt; choose (0, 600 * 1000 * 1000)
+
+deriving instance Arbitrary Types.Timestamp
+
+newtype SmallHashMap =
+    SmallHashMap (HashMap PublicKey (HashMap PublicKey (AsBinary Share)))
+    deriving Show
+
+instance Arbitrary SmallHashMap where
+    arbitrary = SmallHashMap &lt;$&gt; makeSmall arbitrary
+
+derive makeArbitrary ''UnsignedVarInt
+derive makeArbitrary ''SignedVarInt
+derive makeArbitrary ''FixedSizeInt
+</span></pre></body></html>
