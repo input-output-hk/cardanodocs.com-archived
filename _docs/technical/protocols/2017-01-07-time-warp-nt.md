@@ -96,11 +96,11 @@ where `Nonce` is randomly generated.
 Then the peer sends **acknowledgement**, with the following structure:
 
 ~~~
-+------------------+-----------------+
-|     `BI_ACK`     |      Nonce      |
-+------------------+-----------------+
++------------------+-----------------+--------------+
+|     `BI_ACK`     |      Nonce      |   PeerData   |
++------------------+-----------------+--------------+
 
-|   'A' :: Word8   |   Word64 (BE)   |
+|   'A' :: Word8   |   Word64 (BE)   |   Generic    |
 ~~~
 
 where `Nonce` is the same nonce which came from request.
@@ -113,6 +113,11 @@ The opposite case could take place if the node have never sent any request on th
 `BI_SYN`, but its handler for that conversation had already finished. That's
 normal, and the node should ignore this acknowledgement.
 
+`PeerData` is some additional information that is sent from peer and parsed by
+initiator. `time-warp` gives you ability to provide some binary data during handshake
+which then can be used by your application in different ways. Structure of this data is generic.
+[_Application Level_ section](/technical/protocols/csl-application-level/#message-names)
+describes how `cardano` uses `PeerData`.
 
 ### Messaging
 

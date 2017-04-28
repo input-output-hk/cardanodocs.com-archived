@@ -157,6 +157,15 @@ To distinguish from integers addition, concatenation is denoted here as `(++)`.
 | GtTag | `3` |
 | GtMsgContents | `3` |
 
+Hence `cardano` is shipped with Update system protocol and message formats also
+can be changed. So nodes should be aware which protocol other peer is running.
+When knowhing such information nodes can choose which message name to send to peer.
+This message name table is sent as
+[PeerData](/technical/protocols/time-warp-nt/#bidirectional-Сonnections)
+during handshake before every conversation action between handshake. Exact binary
+format of `PeerData` is described in
+[binary protocols section](/technical/protocols/binary-protocols/#peer-data).
+
 ## Communication Messages
 
 This table describes data structures that are included in communication
