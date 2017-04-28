@@ -33,10 +33,11 @@ time securely and with enough precision.
 
 In *cardano-sl* current time is obtained by querying a predefined set
 of NTP servers. Specifically, each node periodically queries NTP
-servers and calculates mean value of results. A node stores last margin
-(i.e. difference between local time and global time) and last obtained
-global time. A node also stores last slot to ensure that slots are
-monotonic.
+servers and calculates mean of results. Node stores last margin
+(difference between local time and global time) and last obtained
+global time. Node also stores last slot to ensure that slots are
+monotonic. Please read about [Time in Cardano SL](/technical/time)
+for implementation details.
 
 ## Coin Tossing and Verifiable Secret Sharing
 
@@ -55,7 +56,8 @@ network. `VssCertificate`s are stored in blocks.
 PVSS scheme by Schoenmakers uses share verification information which
 also includes a commitment to the secret. It is also used as a
 commitment in Ouroboros protocol. PVSS scheme has been implemented
-over the elliptic curve secp256r1.
+over the elliptic curve secp256r1. Please read about [PVSS implementation in Cardano SL](/technical/pvss/)
+for more details. 
 
 ## Block Generation Time
 
@@ -89,6 +91,9 @@ everybody, but certificates are not stored within the blockchain and
 aren't considered when checking eligibility threshold. As paper
 suggests, *delegation-by-proxy* scheme is used.
 
+Please read about [Stake Delegation in Cardano SL](/technical/delegation/)
+for implementation details.
+
 # Modifications
 
 ## Leader Selection Process
@@ -105,6 +110,9 @@ on this range proportional to their stakes. This way each random
 number maps into stakeholder.  Also, as the paper suggests, short
 (32-bits) seed is used for initializing PRG instead of using `n ⌈log
 λ⌉` random bits.
+
+Please read about [Leader Selection in Cardano SL](/technical/leader-selection/)
+for implementation details.
 
 ## Commitments, openings, shares sending
 
