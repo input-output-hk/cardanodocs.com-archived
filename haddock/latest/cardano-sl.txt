@@ -1176,9 +1176,9 @@ newtype SmallHashMap
 SmallHashMap :: (HashMap PublicKey (HashMap PublicKey (AsBinary Share))) -> SmallHashMap
 newtype SmallGoodTx
 SmallGoodTx :: GoodTx -> SmallGoodTx
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177045 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.FixedSizeInt a_6989586621679177045)
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177037 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.SignedVarInt a_6989586621679177037)
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177029 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.UnsignedVarInt a_6989586621679177029)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177049 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.FixedSizeInt a_6989586621679177049)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177041 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.SignedVarInt a_6989586621679177041)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177033 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.UnsignedVarInt a_6989586621679177033)
 instance GHC.Show.Show Pos.Types.Arbitrary.SmallHashMap
 instance Test.QuickCheck.Arbitrary.Arbitrary Pos.Core.Timestamp.Timestamp
 instance Test.QuickCheck.Arbitrary.Arbitrary Pos.Core.Types.SoftwareVersion
@@ -1929,7 +1929,7 @@ sscResetLocal :: forall ssc m. (MonadDB m, MonadSscMem ssc m, SscLocalDataClass 
 --   result of application of these blocks can be optionally passed as
 --   argument (it can be calculated in advance using
 --   <a>sscVerifyBlocks</a>).
-sscApplyBlocks :: forall ssc m. SscGlobalApplyMode ssc m => OldestFirst NE (Block ssc) -> Maybe (SscGlobalState ssc) -> m ()
+sscApplyBlocks :: forall ssc m. SscGlobalApplyMode ssc m => OldestFirst NE (Block ssc) -> Maybe (SscGlobalState ssc) -> m [SomeBatchOp]
 
 -- | Rollback application of given sequence of blocks. Bad things can
 --   happen if these blocks haven't been applied before.
@@ -2072,7 +2072,10 @@ sscNewLocalData :: (SscLocalDataClass ssc, MonadSlots m, MonadDB m) => m (SscLoc
 class Ssc ssc => SscGStateClass ssc
 
 -- | Load global state from DB by recreating it from recent blocks.
-sscLoadGlobalState :: (SscGStateClass ssc, HasContext LrcContext m, MonadDB m, WithLogger m) => m (SscGlobalState ssc)
+sscLoadGlobalState :: (SscGStateClass ssc, MonadDB m, WithLogger m) => m (SscGlobalState ssc)
+
+-- | Dump global state to DB.
+sscGlobalStateToBatch :: SscGStateClass ssc => SscGlobalState ssc -> Tagged ssc [SomeBatchOp]
 
 -- | Rollback application of blocks.
 sscRollbackU :: SscGStateClass ssc => NewestFirst NE (Block ssc) -> SscGlobalUpdate ssc ()
@@ -2375,7 +2378,7 @@ hasCommitment :: StakeholderId -> GtGlobalState -> Bool
 hasOpening :: StakeholderId -> GtGlobalState -> Bool
 hasShares :: StakeholderId -> GtGlobalState -> Bool
 hasVssCertificate :: StakeholderId -> GtGlobalState -> Bool
-verifyGtPayload :: MonadError TossVerFailure m => Either EpochIndex (MainBlockHeader ssc) -> GtPayload -> m ()
+sanityChecksGtPayload :: MonadError TossVerFailure m => Either EpochIndex (MainBlockHeader ssc) -> GtPayload -> m ()
 
 -- | Figure out the threshold (i.e. how many secret shares would be
 --   required to recover each node's secret) using number of participants.
@@ -3060,11 +3063,11 @@ ToilModifier :: !UtxoModifier -> !BalancesView -> !MemPool -> !UndoMap -> !exten
 [_tmUndos] :: GenericToilModifier extension -> !UndoMap
 [_tmExtra] :: GenericToilModifier extension -> !extension
 type ToilModifier = GenericToilModifier ()
-tmUtxo :: forall extension_a1UKV. Lens' (GenericToilModifier extension_a1UKV) UtxoModifier
-tmBalances :: forall extension_a1UKV. Lens' (GenericToilModifier extension_a1UKV) BalancesView
-tmMemPool :: forall extension_a1UKV. Lens' (GenericToilModifier extension_a1UKV) MemPool
-tmUndos :: forall extension_a1UKV. Lens' (GenericToilModifier extension_a1UKV) UndoMap
-tmExtra :: forall extension_a1UKV extension_a1UNa. Lens (GenericToilModifier extension_a1UKV) (GenericToilModifier extension_a1UNa) extension_a1UKV extension_a1UNa
+tmUtxo :: forall extension_a1UL2. Lens' (GenericToilModifier extension_a1UL2) UtxoModifier
+tmBalances :: forall extension_a1UL2. Lens' (GenericToilModifier extension_a1UL2) BalancesView
+tmMemPool :: forall extension_a1UL2. Lens' (GenericToilModifier extension_a1UL2) MemPool
+tmUndos :: forall extension_a1UL2. Lens' (GenericToilModifier extension_a1UL2) UndoMap
+tmExtra :: forall extension_a1UL2 extension_a1UNh. Lens (GenericToilModifier extension_a1UL2) (GenericToilModifier extension_a1UNh) extension_a1UL2 extension_a1UNh
 
 -- | Environment used by Toil.
 data ToilEnv
