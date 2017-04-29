@@ -4,7 +4,7 @@ title: CSL Application-Level Messaging
 permalink: /technical/protocols/csl-application-level/
 group: technical-protocols
 ---
-[//]: # (Reviewed at ef835a2334888eda7384da707c4077a8b576b192)
+[//]: # (Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70)
 
 # CSL Application-Level Messaging
 
@@ -157,12 +157,12 @@ To distinguish from integers addition, concatenation is denoted here as `(++)`.
 | GtTag | `3` |
 | GtMsgContents | `3` |
 
-Hence `cardano` is shipped with Update system protocol and message formats also
-can be changed. So nodes should be aware which protocol other peer is running.
-When knowhing such information nodes can choose which message name to send to peer.
+Hence `cardano` is shipped with Update system protocol, and message formats also
+can be changed. So nodes should be aware of the protocol the other peer is running.
+Knowing this information, nodes can choose a message name to send to a peer.
 This message name table is sent as
 [PeerData](/technical/protocols/time-warp-nt/#bidirectional-Сonnections)
-during handshake before every conversation action between handshake. Exact binary
+during handshake before every conversation action between handshake. The exact binary
 format of `PeerData` is described in
 [binary protocols section](/technical/protocols/binary-protocols/#peer-data).
 

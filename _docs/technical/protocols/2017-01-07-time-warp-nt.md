@@ -4,7 +4,7 @@ title: Time-warp-NT Layer
 permalink: /technical/protocols/time-warp-nt/
 group: technical-protocols
 ---
-[//]: # (Reviewed at ef835a2334888eda7384da707c4077a8b576b192)
+[//]: # (Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70)
 
 # Time-Warp-NT Layer
 
@@ -109,13 +109,13 @@ If the initiator receives the acknowledgement with correct nonce, a conversation
 is started.
 
 The opposite case could take place if the node have never sent any request on that nonce
-(peer made a protocol error), but it could also be that the node did send the
+(peer made a protocol error). It could also be that the node did send the
 `BI_SYN`, but its handler for that conversation had already finished. That's
 normal, and the node should ignore this acknowledgement.
 
-`PeerData` is some additional information that is sent from peer and parsed by
-initiator. `time-warp` gives you ability to provide some binary data during handshake
-which then can be used by your application in different ways. Structure of this data is generic.
+`PeerData` is some additional information that is sent from the peer and parsed by
+the initiator. `time-warp` gives you ability to provide some binary data during handshake
+which then can be used by your application in different ways. The structure of this data is generic.
 [_Application Level_ section](/technical/protocols/csl-application-level/#message-names)
 describes how `cardano` uses `PeerData`.
 
