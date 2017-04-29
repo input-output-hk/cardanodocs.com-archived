@@ -3063,11 +3063,11 @@ ToilModifier :: !UtxoModifier -> !BalancesView -> !MemPool -> !UndoMap -> !exten
 [_tmUndos] :: GenericToilModifier extension -> !UndoMap
 [_tmExtra] :: GenericToilModifier extension -> !extension
 type ToilModifier = GenericToilModifier ()
-tmUtxo :: forall extension_a1UPP. Lens' (GenericToilModifier extension_a1UPP) UtxoModifier
-tmBalances :: forall extension_a1UPP. Lens' (GenericToilModifier extension_a1UPP) BalancesView
-tmMemPool :: forall extension_a1UPP. Lens' (GenericToilModifier extension_a1UPP) MemPool
-tmUndos :: forall extension_a1UPP. Lens' (GenericToilModifier extension_a1UPP) UndoMap
-tmExtra :: forall extension_a1UPP extension_a1US4. Lens (GenericToilModifier extension_a1UPP) (GenericToilModifier extension_a1US4) extension_a1UPP extension_a1US4
+tmUtxo :: forall extension_a1UPR. Lens' (GenericToilModifier extension_a1UPR) UtxoModifier
+tmBalances :: forall extension_a1UPR. Lens' (GenericToilModifier extension_a1UPR) BalancesView
+tmMemPool :: forall extension_a1UPR. Lens' (GenericToilModifier extension_a1UPR) MemPool
+tmUndos :: forall extension_a1UPR. Lens' (GenericToilModifier extension_a1UPR) UndoMap
+tmExtra :: forall extension_a1UPR extension_a1US6. Lens (GenericToilModifier extension_a1UPR) (GenericToilModifier extension_a1US6) extension_a1UPR extension_a1US6
 
 -- | Environment used by Toil.
 data ToilEnv
