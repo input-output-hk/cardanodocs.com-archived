@@ -1176,9 +1176,9 @@ newtype SmallHashMap
 SmallHashMap :: (HashMap PublicKey (HashMap PublicKey (AsBinary Share))) -> SmallHashMap
 newtype SmallGoodTx
 SmallGoodTx :: GoodTx -> SmallGoodTx
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177069 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.FixedSizeInt a_6989586621679177069)
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177061 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.SignedVarInt a_6989586621679177061)
-instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177053 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.UnsignedVarInt a_6989586621679177053)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177056 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.FixedSizeInt a_6989586621679177056)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177048 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.SignedVarInt a_6989586621679177048)
+instance Test.QuickCheck.Arbitrary.Arbitrary a_6989586621679177040 => Test.QuickCheck.Arbitrary.Arbitrary (Pos.Binary.Class.UnsignedVarInt a_6989586621679177040)
 instance GHC.Show.Show Pos.Types.Arbitrary.SmallHashMap
 instance Test.QuickCheck.Arbitrary.Arbitrary Pos.Core.Timestamp.Timestamp
 instance Test.QuickCheck.Arbitrary.Arbitrary Pos.Core.Types.SoftwareVersion
@@ -2014,18 +2014,15 @@ module Pos.WorkMode
 
 -- | Bunch of constraints to perform work for real world distributed
 --   system.
-type WorkMode ssc m = (MinWorkMode m, MonadMask m, MonadSlots m, MonadDB m, MonadDBLimits m, MonadTxpMem TxpExtra_TMP m, MonadRelayMem m, MonadDelegation m, MonadSscMem ssc m, MonadReportingMem m, SscGStateClass ssc, SscLocalDataClass ssc, SscHelpersClass ssc, WithNodeContext ssc m, HasContext LrcContext m, HasContext UpdateContext m, HasContext NodeParams m, HasContext UpdateParams m, MonadStats m, MonadJL m, WithPeerState m, MonadShutdownMem m, MonadDiscovery m)
+type WorkMode ssc m = (MinWorkMode m, MonadMask m, MonadSlots m, MonadDB m, MonadDBLimits m, MonadTxpMem TxpExtra_TMP m, MonadRelayMem m, MonadDelegation m, MonadSscMem ssc m, MonadReportingMem m, SscGStateClass ssc, SscLocalDataClass ssc, SscHelpersClass ssc, WithNodeContext ssc m, HasContext LrcContext m, HasContext UpdateContext m, HasContext NodeParams m, HasContext UpdateParams m, MonadStats m, MonadJL m, WithPeerState m, MonadShutdownMem m)
 
 -- | More relaxed version of <a>WorkMode</a>.
 type MinWorkMode m = (WithLogger m, MonadMockable m, MonadIO m, WithPeerState m)
 type TxpExtra_TMP = ()
 
--- | RawRealMode + kademlia. Used in wallet too.
-type RawRealModeK ssc = DiscoveryKademliaT (RawRealMode ssc)
-
 -- | ProductionMode is an instance of WorkMode which is used
 --   (unsurprisingly) in production.
-type ProductionMode ssc = NoStatsT $ RawRealModeK ssc
+type ProductionMode ssc = NoStatsT (RawRealMode ssc)
 
 -- | RawRealMode is a basis for <a>WorkMode</a>s used to really run system.
 type RawRealMode ssc = PeerStateHolder (DelegationT (TxpHolder TxpExtra_TMP (SscHolder ssc (NtpSlotting (SlottingHolder (DBHolder (ContextHolder ssc (LoggerNameBox Production))))))))
@@ -2034,14 +2031,11 @@ type RawRealMode ssc = PeerStateHolder (DelegationT (TxpHolder TxpExtra_TMP (Ssc
 type ServiceMode = PeerStateHolder (LoggerNameBox Production)
 
 -- | StatsMode is used for remote benchmarking.
-type StatsMode ssc = StatsT $ RawRealModeK ssc
-
--- | Fixed peer discovery without stats.
-type StaticMode ssc = NoStatsT $ DiscoveryConstT (RawRealMode ssc)
+type StatsMode ssc = StatsT (RawRealMode ssc)
 
 module Pos.Security.Class
 class Ssc ssc => SecurityWorkersClass ssc
-securityWorkers :: (SecurityWorkersClass ssc, WorkMode ssc m) => Tagged ssc ([WorkerSpec m], OutSpecs)
+securityWorkers :: (SecurityWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> Tagged ssc ([WorkerSpec m], OutSpecs)
 
 module Pos.Security
 
@@ -2120,7 +2114,7 @@ sscCreateNodeContext :: (Ssc ssc, MonadIO m) => Tagged ssc (SscParams ssc -> m (
 class Ssc ssc => SscWorkersClass ssc
 
 -- | All workers specific to SSC.
-sscWorkers :: (SscWorkersClass ssc, WorkMode ssc m) => Tagged ssc ([WorkerSpec m], OutSpecs)
+sscWorkers :: (SscWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> Tagged ssc ([WorkerSpec m], OutSpecs)
 sscLrcConsumers :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => Tagged ssc [LrcConsumer m]
 type SscConstraint ssc = (Ssc ssc, SscListenersClass ssc, SscLocalDataClass ssc, SscHelpersClass ssc, SscGStateClass ssc, SscWorkersClass ssc, SecurityWorkersClass ssc)
 type WorkModeSsc ssc = (SscLocalDataClass ssc, SscHelpersClass ssc)
@@ -3069,11 +3063,11 @@ ToilModifier :: !UtxoModifier -> !BalancesView -> !MemPool -> !UndoMap -> !exten
 [_tmUndos] :: GenericToilModifier extension -> !UndoMap
 [_tmExtra] :: GenericToilModifier extension -> !extension
 type ToilModifier = GenericToilModifier ()
-tmUtxo :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) UtxoModifier
-tmBalances :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) BalancesView
-tmMemPool :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) MemPool
-tmUndos :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) UndoMap
-tmExtra :: forall extension_a1UPZ extension_a1USe. Lens (GenericToilModifier extension_a1UPZ) (GenericToilModifier extension_a1USe) extension_a1UPZ extension_a1USe
+tmUtxo :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) UtxoModifier
+tmBalances :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) BalancesView
+tmMemPool :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) MemPool
+tmUndos :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) UndoMap
+tmExtra :: forall extension_a1UPN extension_a1US2. Lens (GenericToilModifier extension_a1UPN) (GenericToilModifier extension_a1US2) extension_a1UPN extension_a1US2
 
 -- | Environment used by Toil.
 data ToilEnv
@@ -3408,7 +3402,7 @@ data VoteMsgTag
 VoteMsgTag :: VoteMsgTag
 
 -- | Update System related workers.
-usWorkers :: WorkMode ssc m => ([WorkerSpec m], OutSpecs)
+usWorkers :: WorkMode ssc m => m (Set NodeId) -> ([WorkerSpec m], OutSpecs)
 
 
 -- | Module for exposing JSON instances for Cardano types
@@ -3477,12 +3471,12 @@ runDelegationT :: MonadIO m => DelegationWrap -> DelegationT m a -> m a
 runDelegationTFromTVar :: TVar DelegationWrap -> DelegationT m a -> m a
 
 -- | Listeners for requests related to delegation processing.
-delegationListeners :: WorkMode ssc m => ([ListenerSpec m], OutSpecs)
+delegationListeners :: WorkMode ssc m => m (Set NodeId) -> ([ListenerSpec m], OutSpecs)
 delegationStubListeners :: WithLogger m => ([ListenerSpec m], OutSpecs)
 
 -- | Handler <a>SendProxySK</a> event.
-handleSendProxySK :: forall ssc m. (WorkMode ssc m) => (ListenerSpec m, OutSpecs)
-handleConfirmProxySK :: forall ssc m. (WorkMode ssc m) => (ListenerSpec m, OutSpecs)
+handleSendProxySK :: forall ssc m. (WorkMode ssc m) => m (Set NodeId) -> (ListenerSpec m, OutSpecs)
+handleConfirmProxySK :: forall ssc m. (WorkMode ssc m) => m (Set NodeId) -> (ListenerSpec m, OutSpecs)
 
 -- | Convenient monad to work in <a>DelegationWrap</a> context while being
 --   in STM.
@@ -3594,14 +3588,14 @@ isProxySKConfirmed :: ProxySKLight -> DelegationStateAction Bool
 delegationLrcConsumer :: MonadDBCore m => LrcConsumer m
 
 -- | Sends epoch psk to neighbours
-sendProxySKLight :: (MinWorkMode m, MonadDiscovery m) => ProxySKLight -> Action' m ()
+sendProxySKLight :: (MinWorkMode m) => m (Set NodeId) -> ProxySKLight -> Action' m ()
 
 -- | Sends simple psk to neighbours
-sendProxySKHeavy :: (MinWorkMode m, MonadDiscovery m) => ProxySKHeavy -> Action' m ()
+sendProxySKHeavy :: (MinWorkMode m) => m (Set NodeId) -> ProxySKHeavy -> Action' m ()
 
 -- | Generates a proof of being a delegate for psk and sends it to
 --   neighbors.
-sendProxyConfirmSK :: (WorkMode ssc m) => ProxySKLight -> Action' m ()
+sendProxyConfirmSK :: (WorkMode ssc m) => m (Set NodeId) -> ProxySKLight -> Action' m ()
 sendProxySKLightOuts :: OutSpecs
 sendProxySKHeavyOuts :: OutSpecs
 sendProxyConfirmSKOuts :: OutSpecs
@@ -3622,7 +3616,7 @@ data ConfirmProxySK
 ConfirmProxySK :: !ProxySKLight -> !(ProxySigLight ProxySKLight) -> ConfirmProxySK
 
 -- | All workers specific to proxy sertificates processing.
-dlgWorkers :: (WorkMode ssc m) => ([WorkerSpec m], OutSpecs)
+dlgWorkers :: (WorkMode ssc m) => m (Set NodeId) -> ([WorkerSpec m], OutSpecs)
 
 
 -- | Logic of blocks processing.
@@ -3714,13 +3708,13 @@ getHeadersFromToIncl :: forall ssc m. (MonadDB m, SscHelpersClass ssc) => Header
 --   to apply as much blocks as it's possible and return header hash of new
 --   tip. It's up to caller to log warning that partial application
 --   happened.
-verifyAndApplyBlocks :: (MonadDBCore m, WorkMode ssc m, SscWorkersClass ssc) => Bool -> OldestFirst NE (Block ssc) -> m (Either Text HeaderHash)
+verifyAndApplyBlocks :: (MonadDBCore m, WorkMode ssc m, SscWorkersClass ssc) => m (Set NodeId) -> Bool -> OldestFirst NE (Block ssc) -> m (Either Text HeaderHash)
 
 -- | Rollbacks blocks. Head must be the current tip.
-rollbackBlocks :: (WorkMode ssc m) => NewestFirst NE (Blund ssc) -> m (Maybe Text)
+rollbackBlocks :: (WorkMode ssc m) => m (Set NodeId) -> NewestFirst NE (Blund ssc) -> m (Maybe Text)
 
 -- | Rollbacks some blocks and then applies some blocks.
-applyWithRollback :: (MonadDBCore m, WorkMode ssc m, SscWorkersClass ssc) => NewestFirst NE (Blund ssc) -> OldestFirst NE (Block ssc) -> m (Either Text HeaderHash)
+applyWithRollback :: (MonadDBCore m, WorkMode ssc m, SscWorkersClass ssc) => m (Set NodeId) -> NewestFirst NE (Blund ssc) -> OldestFirst NE (Block ssc) -> m (Either Text HeaderHash)
 
 -- | Create genesis block if necessary.
 --   
@@ -3731,13 +3725,13 @@ applyWithRollback :: (MonadDBCore m, WorkMode ssc m, SscWorkersClass ssc) => New
 --   genesis block on top of blocks from previous epoch which are not from
 --   last slotSecurityParam slots, because it's practically impossible for
 --   them to be valid. [CSL-481] We can do consider doing it though.
-createGenesisBlock :: forall ssc m. WorkMode ssc m => EpochIndex -> m (Maybe (GenesisBlock ssc))
+createGenesisBlock :: forall ssc m. WorkMode ssc m => m (Set NodeId) -> EpochIndex -> m (Maybe (GenesisBlock ssc))
 
 -- | Create a new main block on top of best chain if possible. Block can be
 --   created if: • we know genesis block for epoch from given SlotId • last
 --   known block is not more than <a>slotSecurityParam</a> blocks away from
 --   given SlotId
-createMainBlock :: forall ssc m. (WorkMode ssc m) => SlotId -> Maybe ProxySKEither -> m (Either Text (MainBlock ssc))
+createMainBlock :: forall ssc m. (WorkMode ssc m) => m (Set NodeId) -> SlotId -> Maybe ProxySKEither -> m (Either Text (MainBlock ssc))
 instance Pos.Ssc.Class.Types.Ssc ssc => GHC.Show.Show (Pos.Block.Logic.ClassifyHeadersRes ssc)
 instance GHC.Show.Show Pos.Block.Logic.ClassifyHeaderRes
 
@@ -3805,7 +3799,7 @@ nodeIdOption :: String -> String -> Parser NodeId
 instance GHC.Show.Show Pos.CLI.CommonArgs
 
 module Pos.Block.Network
-announceBlock :: WorkMode ssc m => SendActions m -> MainBlockHeader ssc -> m ()
+announceBlock :: WorkMode ssc m => m (Set NodeId) -> SendActions m -> MainBlockHeader ssc -> m ()
 announceBlockOuts :: OutSpecs
 handleHeadersCommunication :: forall ssc m s. (WorkMode ssc m, Reifies s (Limit MsgGetHeaders)) => ConversationActions (MsgHeaders ssc) (LimitedLength s MsgGetHeaders) m -> Proxy s -> m ()
 blockListeners :: (SscWorkersClass ssc, WorkMode ssc m) => m ([ListenerSpec m], OutSpecs)
@@ -3813,7 +3807,7 @@ blockStubListeners :: (SscHelpersClass ssc, WithLogger m) => Tagged ssc ([Listen
 needRecovery :: forall ssc m. (SscWorkersClass ssc, WorkMode ssc m) => Proxy ssc -> m Bool
 
 -- | Triggers recovery based on established communication.
-triggerRecovery :: forall ssc m. (SscWorkersClass ssc, WorkMode ssc m) => SendActions m -> m ()
+triggerRecovery :: forall ssc m. (SscWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> SendActions m -> m ()
 requestTipOuts :: OutSpecs
 
 -- | Is used if we're recovering after offline and want to know what's
@@ -3832,8 +3826,8 @@ requestHeaders :: forall ssc s m. (SscWorkersClass ssc, WorkMode ssc m) => MsgGe
 --   LcaChild is the first block after LCA we don't know. WantedBlock is
 --   the newest one we want to get.
 mkBlocksRequest :: HeaderHash -> HeaderHash -> MsgGetBlocks
-handleBlocks :: forall ssc m. (MonadDBCore m, SscWorkersClass ssc, WorkMode ssc m) => NodeId -> OldestFirst NE (Block ssc) -> SendActions m -> m ()
-retrievalWorker :: forall ssc m. (MonadDBCore m, SscWorkersClass ssc, WorkMode ssc m) => (WorkerSpec m, OutSpecs)
+handleBlocks :: forall ssc m. (MonadDBCore m, SscWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> NodeId -> OldestFirst NE (Block ssc) -> SendActions m -> m ()
+retrievalWorker :: forall ssc m. (MonadDBCore m, SscWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> (WorkerSpec m, OutSpecs)
 
 -- | <tt>GetHeaders</tt> message. Behaviour of the response depends on
 --   particular combination of <a>mghFrom</a> and <a>mghTo</a>.
@@ -3979,18 +3973,18 @@ findDelegatedRichmen :: (MonadDB m, MonadIterator (StakeholderId, Coin) m) => Co
 data RichmenType
 RTUsual :: RichmenType
 RTDelegation :: (HashMap StakeholderId [StakeholderId]) -> RichmenType
-lrcOnNewSlotWorker :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => (WorkerSpec m, OutSpecs)
+lrcOnNewSlotWorker :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => m (Set NodeId) -> (WorkerSpec m, OutSpecs)
 
 -- | Run leaders and richmen computation for given epoch. If stable block
 --   for this epoch is not known, LrcError will be thrown.
-lrcSingleShot :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => EpochIndex -> m ()
+lrcSingleShot :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => m (Set NodeId) -> EpochIndex -> m ()
 
 -- | Same, but doesn't take lock on the semaphore.
-lrcSingleShotNoLock :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => EpochIndex -> m ()
+lrcSingleShotNoLock :: (SscWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => m (Set NodeId) -> EpochIndex -> m ()
 
 module Pos.Security.Workers
 class Ssc ssc => SecurityWorkersClass ssc
-securityWorkers :: (SecurityWorkersClass ssc, WorkMode ssc m) => Tagged ssc ([WorkerSpec m], OutSpecs)
+securityWorkers :: (SecurityWorkersClass ssc, WorkMode ssc m) => m (Set NodeId) -> Tagged ssc ([WorkerSpec m], OutSpecs)
 instance Pos.Security.Class.SecurityWorkersClass Pos.Ssc.GodTossing.Type.SscGodTossing
 instance Pos.Security.Class.SecurityWorkersClass Pos.Ssc.NistBeacon.SscNistBeacon
 
@@ -3999,16 +3993,16 @@ instance Pos.Security.Class.SecurityWorkersClass Pos.Ssc.NistBeacon.SscNistBeaco
 module Pos.Worker
 
 -- | All, but in reality not all, workers used by full node.
-allWorkers :: (SscWorkersClass ssc, SecurityWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => ([WorkerSpec m], OutSpecs)
+allWorkers :: (SscWorkersClass ssc, SecurityWorkersClass ssc, WorkMode ssc m, MonadDBCore m) => m (Set NodeId) -> ([WorkerSpec m], OutSpecs)
 allWorkersCount :: forall ssc m. (MonadDBCore m, SscWorkersClass ssc, SecurityWorkersClass ssc, WorkMode ssc m) => Int
 
 module Pos.Launcher
 
 -- | Run full node in real mode.
-runNodeProduction :: forall ssc. SscConstraint ssc => PeerId -> Transport (ProductionMode ssc) -> KademliaDHTInstance -> ([WorkerSpec (ProductionMode ssc)], OutSpecs) -> NodeParams -> SscParams ssc -> Production ()
+runNodeProduction :: forall ssc. SscConstraint ssc => PeerId -> RealModeResources (ProductionMode ssc) -> ([WorkerSpec (ProductionMode ssc)], OutSpecs) -> NodeParams -> SscParams ssc -> Production ()
 
 -- | Run full node in benchmarking node
-runNodeStats :: forall ssc. SscConstraint ssc => PeerId -> Transport (StatsMode ssc) -> KademliaDHTInstance -> ([WorkerSpec (StatsMode ssc)], OutSpecs) -> NodeParams -> SscParams ssc -> Production ()
+runNodeStats :: forall ssc. SscConstraint ssc => PeerId -> RealModeResources (StatsMode ssc) -> ([WorkerSpec (StatsMode ssc)], OutSpecs) -> NodeParams -> SscParams ssc -> Production ()
 stakesDistr :: DistrOption -> DistrOption -> Maybe (Int, Int, Integer, Double) -> Bool -> StakeDistribution
 
 -- | Contains all parameters required for hierarchical logger
@@ -4073,21 +4067,26 @@ NodeParams :: !FilePath -> !Bool -> !Timestamp -> !SecretKey -> !UserSecret -> !
 
 -- | Params for update system
 [npUpdateParams] :: NodeParams -> !UpdateParams
+data RealModeResources m
+RealModeResources :: Transport m -> m (Set NodeId) -> m (Set NodeId) -> RealModeResources m
+[rmTransport] :: RealModeResources m -> Transport m
+[rmGetPeers] :: RealModeResources m -> m (Set NodeId)
+[rmFindPeers] :: RealModeResources m -> m (Set NodeId)
+hoistResources :: (Functor n) => (forall t. m t -> n t) -> RealModeResources m -> RealModeResources n
 
 -- | RawRealMode runner.
-runRawRealMode :: forall ssc a. SscConstraint ssc => PeerId -> Transport (RawRealMode ssc) -> NodeParams -> SscParams ssc -> RawRealMode ssc (ListenersWithOut (RawRealMode ssc)) -> OutSpecs -> ActionSpec (RawRealMode ssc) a -> Production a
+runRawRealMode :: forall ssc a. SscConstraint ssc => PeerId -> RealModeResources (RawRealMode ssc) -> NodeParams -> SscParams ssc -> RawRealMode ssc (ListenersWithOut (RawRealMode ssc)) -> OutSpecs -> ActionSpec (RawRealMode ssc) a -> Production a
 
 -- | ProductionMode runner.
-runProductionMode :: forall ssc a. (SscConstraint ssc) => PeerId -> Transport (ProductionMode ssc) -> KademliaDHTInstance -> NodeParams -> SscParams ssc -> (ActionSpec (ProductionMode ssc) a, OutSpecs) -> Production a
+runProductionMode :: forall ssc a. (SscConstraint ssc) => PeerId -> RealModeResources (ProductionMode ssc) -> NodeParams -> SscParams ssc -> (ActionSpec (ProductionMode ssc) a, OutSpecs) -> Production a
 
 -- | StatsMode runner. [CSL-169]: spawn here additional listener, which
 --   would accept stat queries can be done as part of refactoring (or
 --   someone who will refactor will create new issue).
-runStatsMode :: forall ssc a. (SscConstraint ssc) => PeerId -> Transport (StatsMode ssc) -> KademliaDHTInstance -> NodeParams -> SscParams ssc -> (ActionSpec (StatsMode ssc) a, OutSpecs) -> Production a
+runStatsMode :: forall ssc a. (SscConstraint ssc) => PeerId -> RealModeResources (StatsMode ssc) -> NodeParams -> SscParams ssc -> (ActionSpec (StatsMode ssc) a, OutSpecs) -> Production a
 
 -- | ServiceMode runner.
-runServiceMode :: PeerId -> Transport ServiceMode -> BaseParams -> ListenersWithOut ServiceMode -> OutSpecs -> ActionSpec ServiceMode a -> Production a
-runStaticMode :: forall ssc a. (SscConstraint ssc) => PeerId -> Transport (StaticMode ssc) -> Set NodeId -> NodeParams -> SscParams ssc -> (ActionSpec (StaticMode ssc) a, OutSpecs) -> Production a
+runServiceMode :: PeerId -> RealModeResources ServiceMode -> BaseParams -> ListenersWithOut ServiceMode -> OutSpecs -> ActionSpec ServiceMode a -> Production a
 setupLoggers :: MonadIO m => LoggingParams -> m ()
 bracketDHTInstance :: BaseParams -> KademliaParams -> (KademliaDHTInstance -> Production a) -> Production a
 runServer :: (MonadIO m, MonadMockable m, MonadFix m, WithLogger m) => PeerId -> Transport m -> m (ListenersWithOut m) -> OutSpecs -> (Node m -> m t) -> (t -> m ()) -> ActionSpec m b -> m b
@@ -4098,21 +4097,25 @@ loggerBracket :: LoggingParams -> IO a -> IO a
 createTransportTCP :: (MonadIO m, WithLogger m, Mockable Throw m) => TCPAddr -> m (Transport m)
 bracketTransport :: TCPAddr -> (Transport Production -> Production a) -> Production a
 
--- | Bracket a transport for use with a static set of peers (for
---   discovery).
-bracketResources :: BaseParams -> TCPAddr -> (Transport Production -> Production a) -> IO a
+-- | Bracket a transport and use a static set of peers for discovery.
+bracketResources :: BaseParams -> TCPAddr -> Set NodeId -> (RealModeResources Production -> Production a) -> IO a
 
 -- | Bracket a transport and a Kademlia node, using the latter for
 --   discovery.
-bracketResourcesKademlia :: BaseParams -> TCPAddr -> KademliaParams -> (KademliaDHTInstance -> Transport Production -> Production a) -> IO a
+bracketResourcesKademlia :: BaseParams -> TCPAddr -> KademliaParams -> (KademliaDHTInstance -> RealModeResources Production -> Production a) -> IO a
+data RealModeResources m
+RealModeResources :: Transport m -> m (Set NodeId) -> m (Set NodeId) -> RealModeResources m
+[rmTransport] :: RealModeResources m -> Transport m
+[rmGetPeers] :: RealModeResources m -> m (Set NodeId)
+[rmFindPeers] :: RealModeResources m -> m (Set NodeId)
 
 -- | Run full node in any WorkMode.
-runNode :: (SscConstraint ssc, WorkMode ssc m, MonadDBCore m) => ([WorkerSpec m], OutSpecs) -> (WorkerSpec m, OutSpecs)
+runNode :: (SscConstraint ssc, WorkMode ssc m, MonadDBCore m) => RealModeResources m -> ([WorkerSpec m], OutSpecs) -> (WorkerSpec m, OutSpecs)
 initSemaphore :: (WorkMode ssc m) => m ()
 initLrc :: WorkMode ssc m => m ()
 
 -- | Run full node in any WorkMode.
-runNode' :: forall ssc m. (SscConstraint ssc, WorkMode ssc m, MonadDBCore m) => [WorkerSpec m] -> WorkerSpec m
+runNode' :: forall ssc m. (SscConstraint ssc, WorkMode ssc m, MonadDBCore m) => RealModeResources m -> [WorkerSpec m] -> WorkerSpec m
 
 module Pos.Wallet
 class Monad m => MonadKeys m where getPrimaryKey = lift getPrimaryKey getSecretKeys = lift getSecretKeys addSecretKey = lift . addSecretKey deleteSecretKey = lift . deleteSecretKey
@@ -4146,12 +4149,12 @@ WalletParams :: !(Maybe FilePath) -> !Bool -> !FilePath -> Timestamp -> !Bool ->
 
 -- | Genesis utxo
 [wpGenesisUtxo] :: WalletParams -> !Utxo
-runRawStaticPeersWallet :: PeerId -> Transport WalletStaticPeersMode -> Set NodeId -> WalletParams -> ListenersWithOut WalletStaticPeersMode -> (ActionSpec WalletStaticPeersMode a, OutSpecs) -> Production a
+runRawRealWallet :: PeerId -> RealModeResources WalletRealMode -> WalletParams -> ListenersWithOut WalletRealMode -> (ActionSpec WalletRealMode a, OutSpecs) -> Production a
 
 -- | WalletMode runner
-runWalletStaticPeersMode :: PeerId -> Transport WalletStaticPeersMode -> Set NodeId -> WalletParams -> (ActionSpec WalletStaticPeersMode a, OutSpecs) -> Production a
-runWalletStaticPeers :: PeerId -> Transport WalletStaticPeersMode -> Set NodeId -> WalletParams -> ([WorkerSpec WalletStaticPeersMode], OutSpecs) -> Production ()
-runWallet :: WalletMode ssc m => ([WorkerSpec m], OutSpecs) -> (WorkerSpec m, OutSpecs)
+runWalletRealMode :: PeerId -> RealModeResources WalletRealMode -> WalletParams -> (ActionSpec WalletRealMode a, OutSpecs) -> Production a
+runWalletReal :: PeerId -> RealModeResources WalletRealMode -> WalletParams -> ([WorkerSpec WalletRealMode], OutSpecs) -> Production ()
+runWallet :: WalletMode ssc m => RealModeResources m -> ([WorkerSpec m], OutSpecs) -> (WorkerSpec m, OutSpecs)
 
 -- | Send UpdateVote to given addresses
 submitVote :: (MinWorkMode m, MonadDBLimits m) => SendActions m -> [NodeId] -> UpdateVote -> m ()
@@ -4190,9 +4193,8 @@ waitForUpdate :: MonadUpdates m => m ConfirmedProposalState
 applyLastUpdate :: MonadUpdates m => m ()
 waitForUpdate :: (MonadUpdates m, MonadTrans t, MonadUpdates m', t m' ~ m) => m ConfirmedProposalState
 applyLastUpdate :: (MonadUpdates m, MonadTrans t, MonadUpdates m', t m' ~ m) => m ()
-type WalletMode ssc m = (TxMode ssc m, MonadKeys m, MonadBlockchainInfo m, MonadUpdates m, WithPeerState m, MonadDiscovery m)
-type WalletRealMode = DiscoveryKademliaT RawWalletMode
-type WalletStaticPeersMode = DiscoveryConstT RawWalletMode
+type WalletMode ssc m = (TxMode ssc m, MonadKeys m, MonadBlockchainInfo m, MonadUpdates m, WithPeerState m)
+type WalletRealMode = PeerStateHolder (KeyStorage (WalletDB (ReportingContextT (LoggerNameBox Production))))
 
 module Pos.Wallet.Web
 
@@ -4414,13 +4416,13 @@ data WalletError
 
 -- | Some internal error.
 Internal :: !Text -> WalletError
-walletServeWebFull :: forall ssc. (SscConstraint ssc) => SendActions (RawRealModeK ssc) -> Bool -> FilePath -> Bool -> Word16 -> RawRealModeK ssc ()
+walletServeWebFull :: forall ssc. (SscConstraint ssc) => RawRealMode ssc (Set NodeId) -> SendActions (RawRealMode ssc) -> Bool -> FilePath -> Bool -> Word16 -> RawRealMode ssc ()
 walletServerOuts :: OutSpecs
-walletServeWebLite :: forall ssc. SscHelpersClass ssc => Proxy ssc -> SendActions WalletStaticPeersMode -> FilePath -> Bool -> Word16 -> WalletStaticPeersMode ()
+walletServeWebLite :: forall ssc. SscHelpersClass ssc => Proxy ssc -> WalletRealMode (Set NodeId) -> SendActions WalletRealMode -> FilePath -> Bool -> Word16 -> WalletRealMode ()
 walletServerOuts :: OutSpecs
 type WalletWebHandler m = WalletWebSockets (WalletWebDB m)
 walletApplication :: WalletWebMode m => m (Server WalletApi) -> m Application
-walletServer :: (Monad m, MonadIO m, WalletWebMode (WalletWebHandler m)) => SendActions m -> WalletWebHandler m (WalletWebHandler m :~> Handler) -> WalletWebHandler m (Server WalletApi)
+walletServer :: (Monad m, MonadIO m, WalletWebMode (WalletWebHandler m)) => m (Set NodeId) -> SendActions m -> WalletWebHandler m (WalletWebHandler m :~> Handler) -> WalletWebHandler m (Server WalletApi)
 walletServeImpl :: (MonadIO m, MonadMask m, WalletWebMode (WalletWebHandler m)) => WalletWebHandler m Application -> FilePath -> Bool -> Word16 -> m ()
 walletServerOuts :: OutSpecs
 
