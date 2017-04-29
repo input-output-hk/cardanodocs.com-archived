@@ -1933,7 +1933,7 @@ sscApplyBlocks :: forall ssc m. SscGlobalApplyMode ssc m => OldestFirst NE (Bloc
 
 -- | Rollback application of given sequence of blocks. Bad things can
 --   happen if these blocks haven't been applied before.
-sscRollbackBlocks :: forall ssc m. SscGlobalApplyMode ssc m => NewestFirst NE (Block ssc) -> m ()
+sscRollbackBlocks :: forall ssc m. SscGlobalApplyMode ssc m => NewestFirst NE (Block ssc) -> m [SomeBatchOp]
 
 -- | Verify sequence of blocks and return global state which corresponds to
 --   application of given blocks. If blocks are invalid, this function will
@@ -2815,6 +2815,7 @@ member :: StakeholderId -> VssCertData -> Bool
 -- | Convert expiry epoch of certificate to <tt>FlatSlotId</tt>.
 expiryEpoch :: VssCertificate -> EpochIndex
 expiryEoS :: VssCertificate -> EpochOrSlot
+fromList :: [VssCertificate] -> VssCertData
 
 -- | Delete certificate corresponding to the specified
 --   <a>StakeholderId</a>. This function is dangerous, because after using
@@ -3063,11 +3064,11 @@ ToilModifier :: !UtxoModifier -> !BalancesView -> !MemPool -> !UndoMap -> !exten
 [_tmUndos] :: GenericToilModifier extension -> !UndoMap
 [_tmExtra] :: GenericToilModifier extension -> !extension
 type ToilModifier = GenericToilModifier ()
-tmUtxo :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) UtxoModifier
-tmBalances :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) BalancesView
-tmMemPool :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) MemPool
-tmUndos :: forall extension_a1UPN. Lens' (GenericToilModifier extension_a1UPN) UndoMap
-tmExtra :: forall extension_a1UPN extension_a1US2. Lens (GenericToilModifier extension_a1UPN) (GenericToilModifier extension_a1US2) extension_a1UPN extension_a1US2
+tmUtxo :: forall extension_a1UPL. Lens' (GenericToilModifier extension_a1UPL) UtxoModifier
+tmBalances :: forall extension_a1UPL. Lens' (GenericToilModifier extension_a1UPL) BalancesView
+tmMemPool :: forall extension_a1UPL. Lens' (GenericToilModifier extension_a1UPL) MemPool
+tmUndos :: forall extension_a1UPL. Lens' (GenericToilModifier extension_a1UPL) UndoMap
+tmExtra :: forall extension_a1UPL extension_a1US0. Lens (GenericToilModifier extension_a1UPL) (GenericToilModifier extension_a1US0) extension_a1UPL extension_a1US0
 
 -- | Environment used by Toil.
 data ToilEnv
