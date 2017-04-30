@@ -6,7 +6,7 @@
 --   
 --   Please see README.md
 @package cardano-sl
-@version 0.4.3
+@version 0.4.4
 
 
 -- | Secret key file storage and management functions based on file
@@ -3070,11 +3070,11 @@ ToilModifier :: !UtxoModifier -> !BalancesView -> !MemPool -> !UndoMap -> !exten
 [_tmUndos] :: GenericToilModifier extension -> !UndoMap
 [_tmExtra] :: GenericToilModifier extension -> !extension
 type ToilModifier = GenericToilModifier ()
-tmUtxo :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) UtxoModifier
-tmBalances :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) BalancesView
-tmMemPool :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) MemPool
-tmUndos :: forall extension_a1UPZ. Lens' (GenericToilModifier extension_a1UPZ) UndoMap
-tmExtra :: forall extension_a1UPZ extension_a1USe. Lens (GenericToilModifier extension_a1UPZ) (GenericToilModifier extension_a1USe) extension_a1UPZ extension_a1USe
+tmUtxo :: forall extension_a1UQ1. Lens' (GenericToilModifier extension_a1UQ1) UtxoModifier
+tmBalances :: forall extension_a1UQ1. Lens' (GenericToilModifier extension_a1UQ1) BalancesView
+tmMemPool :: forall extension_a1UQ1. Lens' (GenericToilModifier extension_a1UQ1) MemPool
+tmUndos :: forall extension_a1UQ1. Lens' (GenericToilModifier extension_a1UQ1) UndoMap
+tmExtra :: forall extension_a1UQ1 extension_a1USg. Lens (GenericToilModifier extension_a1UQ1) (GenericToilModifier extension_a1USg) extension_a1UQ1 extension_a1USg
 
 -- | Environment used by Toil.
 data ToilEnv
