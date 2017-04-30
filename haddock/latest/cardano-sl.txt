@@ -6,7 +6,7 @@
 --   
 --   Please see README.md
 @package cardano-sl
-@version 0.4.4
+@version 0.4.3
 
 
 -- | Secret key file storage and management functions based on file
