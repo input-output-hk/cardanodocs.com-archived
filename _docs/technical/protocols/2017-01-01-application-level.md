@@ -4,7 +4,7 @@ title: CSL Application-Level Messaging
 permalink: /technical/protocols/csl-application-level/
 group: technical-protocols
 ---
-[//]: # (Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70)
+[//]: # (Reviewed at 721474b760466b888cf26545b52b35989b2162de)
 
 # CSL Application-Level Messaging
 
@@ -158,7 +158,7 @@ To distinguish from integers addition, concatenation is denoted here as `(++)`.
 | GtMsgContents | `3` |
 
 Hence `cardano` is shipped with Update system protocol, and message formats also
-can be changed. So nodes should be aware of the protocol the other peer is running.
+can be changed. So nodes should be aware of the protocol other peers are running.
 Knowing this information, nodes can choose a message name to send to a peer.
 This message name table is sent as
 [PeerData](/technical/protocols/time-warp-nt/#bidirectional-Сonnections)
