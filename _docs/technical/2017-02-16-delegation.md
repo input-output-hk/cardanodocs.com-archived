@@ -37,7 +37,7 @@ This is format of a [proxy signature](https://github.com/input-output-hk/cardano
 3. Proxy certificate (mentioned above),
 4. Signature.
 
-Omega (or ω) is a special value from the [paper](/glossary/#paper).
+Omega (or ω) is a special value from the [paper](/glossary/#paper). In our implementation is's a [pair of epochs' identificators](https://github.com/input-output-hk/cardano-sl/blob/21ce7b35d3dcc1b79db31c7ed7f8f2fe7506831f/core/Pos/Core/Types.hs#L233). These identificators define delegation validity period: produced block is valid if its epoch index is inside of this range.
 
 Signature is a [special bytestring](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L358) [made owith](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L363) an issuer's public key.
 
