@@ -5,20 +5,20 @@ permalink: /technical/delegation/
 group: technical
 visible: true
 ---
-[//]: # (Reviewed at e1d0f9fb37a3f1378341716916f0321fb55698df)
+[//]: # (Reviewed at 997538cf04d16c7be58b70a94729ff7757e77261)
 
 # Stake Delegation in Cardano SL
 
 This guide describes implementation details of the stake delegation process.
 
-As described earlier, stakeholders must be online in order to generate new blocks when they are selected as slot-leaders.
-However, such a situation can be unattractive, because of requiring that a majority of elected stakeholders participate in the
-Coin Tossing protocol for refreshing randomness (crucial attribute of the slot-leader election process). But if we have a
-lot of elected stakeholders, such a requiring can introduce a strain on the stakeholders and the network, since it might
+As described earlier, stakeholders selected as slot-leaders must be online in order to generate new blocks.
+However, such a situation can be unattractive, because a majority of elected stakeholders must participate in the
+Coin Tossing protocol for refreshing randomness (crucial attribute of the slot-leader election process). If there are a
+lot of elected stakeholders, this can put a strain on the stakeholders and the network, since it might
 require broadcasting and storing a large number of commitments and shares.
 
 Delegation feature allows stakeholders `S1...Sn` to transfer their "committee participation" to some delegates `D1...Dm`.
-These delegates will represent stakeholders `S1...Sn` in the Coin Tossing protocol. In this case the actual number of 
+These delegates will represent stakeholders `S1...Sn` in the Coin Tossing protocol. In this case the actual number of
 nodes participating in the Coin Tossing protocol can be much lower, see [paper](/glossary/#paper), page 38.
 
 ## Schema
