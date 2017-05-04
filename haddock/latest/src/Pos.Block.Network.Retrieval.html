@@ -66,7 +66,7 @@
 </span><a name="line-66"></a><span class="hs-comment">--   blocks according to that queue.</span><span>
 </span><a name="line-67"></a><span class="hs-comment">--</span><span>
 </span><a name="line-68"></a><span class="hs-comment">-- * If recovery is in progress, this worker keeps recovery going by asking</span><span>
-</span><a name="line-69"></a><span class="hs-comment">--   headers and backing up to (1 ~ block retrieval) on next loop iteration.</span><span>
+</span><a name="line-69"></a><span class="hs-comment">--   headers (and then switching to block retrieval on next loop iteration).</span><span>
 </span><a name="line-70"></a><span class="hs-comment">--</span><span>
 </span><a name="line-71"></a><span class="hs-comment">-- If both happen at the same time, 'ncBlockRetrievalQueue' takes precedence.</span><span>
 </span><a name="line-72"></a><span class="hs-comment">--</span><span>
