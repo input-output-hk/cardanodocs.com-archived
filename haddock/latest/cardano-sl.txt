@@ -2881,6 +2881,7 @@ getLocalTxsMap :: (MonadIO m, MonadTxpMem e m) => m (HashMap TxId TxAux)
 getTxpExtra :: (MonadIO m, MonadTxpMem e m) => m e
 modifyTxpLocalData :: (MonadIO m, MonadTxpMem ext m) => (GenericTxpLocalDataPure ext -> (a, GenericTxpLocalDataPure ext)) -> m a
 setTxpLocalData :: (MonadIO m, MonadTxpMem ext m) => GenericTxpLocalDataPure ext -> m ()
+clearTxpMemPool :: (MonadIO m, MonadTxpMem ext m, Default ext) => m ()
 type TxpHolder ext = ReaderT TxpHolderTag (GenericTxpLocalData ext)
 mkTxpLocalData :: (Default e, MonadIO m) => UtxoModifier -> HeaderHash -> m (GenericTxpLocalData e)
 runTxpHolder :: GenericTxpLocalData ext -> TxpHolder ext m a -> m a
@@ -3394,6 +3395,7 @@ processNewSlot :: (USLocalLogicMode m) => SlotId -> m ()
 --   created. It can happen if we are trying to create block for slot which
 --   has already passed, for example.
 usPreparePayload :: (USLocalLogicMode m) => SlotId -> m (Maybe UpdatePayload)
+clearUSMemPool :: (HasContext UpdateContext m, MonadIO m) => m ()
 
 -- | Consumer will be called on every Richmen computation.
 usLrcConsumer :: MonadDBCore m => LrcConsumer m
@@ -3502,13 +3504,14 @@ invalidateProxyCaches :: UTCTime -> DelegationStateAction ()
 -- | Initializes delegation in-memory storage.
 --   
 --   <ul>
---   <li>Sets <tt>_dwEpochId</tt> to epoch of tip.</li>
---   <li>Loads <tt>_dwThisEpochPosted</tt> from database</li>
+--   <li>Sets <a>_dwEpochId</a> to epoch of tip.</li>
+--   <li>Loads <a>_dwThisEpochPosted</a> from database</li>
 --   </ul>
 initDelegation :: forall ssc m. (SscHelpersClass ssc, MonadDB m, MonadDelegation m) => m ()
 
 -- | Retrieves current mempool of heavyweight psks plus undo part.
 getProxyMempool :: (MonadDB m, MonadDelegation m) => m ([ProxySKHeavy], [ProxySKHeavy])
+clearProxyMemPool :: (MonadDB m, MonadDelegation m) => m ()
 
 -- | Datatypes representing a verdict of heavy PSK processing.
 data PskHeavyVerdict
