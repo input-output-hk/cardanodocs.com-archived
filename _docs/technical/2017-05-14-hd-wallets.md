@@ -10,8 +10,10 @@ visible: true
 # HD wallets
 
 HD wallets is feature which allows user to derive keys in deterministic way from common seed.
-Basically, you generate initial secret key `SK`<sub>`0`</sub> out of random seed. Then you can derive children SK0_0, SK_0_1
-out of SK_0. Then SK_0_0_0, SK_0_1_0, SK_0_1_1 and so on (derivations for a tree of arbitrary depth).
+Basically, you generate initial secret key `SK₀` out of random seed. Then you can derive children `SK₀-₀`, `SK₀-₁`
+out of `SK₀`. Then `SK₀-₀-₀`, `SK₀-₀-₁`, `SK₀-₁-₀` and so on (derivations for a tree of arbitrary depth).
+
+<!-- Advertisement: for subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
 
 We distinguish two types of keys:
 
@@ -22,9 +24,7 @@ Only distinction here is that **hardened** keys allow only secret key out of sec
 while **non-hardened** allow one to derive child public key out of parent public key (not having secret key available).
 (For hardened keys to compute child key, you have to own private key).
 
-Each child is assigned a 4-byte index i
-
-<!-- For subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
+Each child is assigned a 4-byte index `i`
 
 * `i > 2³¹ - 1` for **non-hardened**
 * `i <= 2³¹ - 1` for **hardened**
@@ -91,9 +91,13 @@ One should provide auditor hash of root public key to let auditor find all keys 
 For server to be able to derive subsequent addresses to receive payment to them, one needs to upload there either:
 
 * Root public key
+
 * Payload of:
+
   * Public key `PK` of level `i`
+
   * Hash of root public key
+
   * Tree path for `PK`
 
 #### Wallet
@@ -140,4 +144,82 @@ From application perspective HD wallets (as for BIP-32) introduce following cryp
 
   Сomputes a child extended public key from the parent extended public key.
 
-<!-- TODO: CSLREQ-24 -->
+<!-- @TODO: Move all that to protocols section? -->
+
+
+# Daedalus HD wallets
+
+This section describes the way HD wallets feature is actually used, it's splitted up
+to two parts:
+
+1. Extension of wallet backend API to support HD wallet structure locally (as it is done in Bitcoin)
+
+2. Extension to blockchain handling to utilize new address attribute to keep HD structure on several client instances in sync.
+
+
+## Local storage
+
+### Old storage
+
+Old wallet storage stored list of addresses. Each address was associated a name and was derived from separate secret key (backed up by mnemonics and encrypted with spending password).
+
+### New storage
+
+Wallet storage is extended to store list of **wallet sets**.
+Each wallet set corresponds to single root secret key (backed up by mnemonics and encrypted with spending password).
+
+Each wallet set contains a number of **wallets**.
+
+Each wallet contains a number of **addresses** (i.e. address is key of 2nd level in HD tree).
+
+This maps to HD tree:
+
+* Wallet set corresponds to key of 0-th level (*root*)
+
+* Wallet corresponds to key of 1-th level (children of root)
+
+* Address corresponds to key of 2-th level (grandchildren of root)
+
+Money are kept only on addresses.
+
+When money are being spent from one or several addresses, new one is to generated for money remainder, if any.
+
+### Usability
+
+User is able to:
+
+* import/export arbitrary amount of **wallet sets**
+
+* generate arbitrary amount of **wallets**
+
+* assign name to **wallet sets** and **wallets**
+
+* generate arbitrary amount of addresses
+
+* change **wallet set** spending password. Since key derivation depends on spending password, this action changes all account addresses (transfering money from old accounts to newly created ones in process).
+
+## Read HD wallet data from blockchain
+
+There are two ways of importing/exporting wallet set:
+
+* Via **mnemonics**
+
+  **Mnemonics** is generated on frontend side and allows to deterministically generate secret key. Names won't be restored.
+
+* Via export file
+
+  This file allows to restore whole **wallet set** structure.
+
+#### Import
+
+In both cases we have secret root key. Following procedure should be applied for import:
+
+* Root key is checked to be absent in local storage
+
+* **Utxo** is traversed to find all addresses with positive balance corresponding to this root key and add them to storage along with their parents (wallets)
+
+* In case of file import, structure resulted from step 2 is labeled with names. Also wallets/addresses which existed in file and were not spent are created.
+
+#### New transaction handling
+
+When new transaction gets available (appears either in block or in mempool), inputs are analyzed. If input corresponds to public key address with HD wallet attribute (attribute 0), it is checked whether this address corresponds to one of our *wallet set* s and if yes, address is imported to structure (to show balance in user interface).
