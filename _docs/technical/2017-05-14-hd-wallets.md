@@ -24,6 +24,8 @@ while **non-hardened** allow one to derive child public key out of parent public
 
 Each child is assigned a 4-byte index i
 
+<!-- For subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
+
 * `i > 2³¹ - 1` for **non-hardened**
 * `i <= 2³¹ - 1` for **hardened**
 
@@ -106,25 +108,36 @@ For wallet to operate over some subtree one needs to provide either:
 
 ## Derivation crypto interface
 
-<!-- TODO: this section -->
+#### Notation:
 
-Notation:
+* `kp` denotes private key with index `p`.
 
-    kp  denotes private key with index p
-        Just a Ed25519 private key
-    Kp  denotes public key with index p
-        Just a Ed25519 public key
-    cp  denotes chain code with index p
-        Entropy,. In BTC they use 512-bit hash, but k p is only 256 bit, for this reason we need to comply key to 512 bit for not to reduce hashing space
-    Extended private key is a pair denoted as (ki, ci)
-    Extended public key is a pair denoted as (Ki, ci)
+  Just a **Ed25519** private key
 
+* `Kp`  denotes public key with index `p`.
+
+  Just a Ed25519 public key
+
+* `cp`  denotes chain code with index `p`.
+
+###### Entropy
+
+In BTC they use 512-bit hash, but `kp` is only 256 bit. For this reason we need to comply key to 512 bit for not to reduce hashing space.
+
+* Extended private key is a pair denoted as `(ki, ci)`
+
+* Extended public key is a pair denoted as `(Ki, ci)`.
+
+<!-- @martoon TODO: looks like we actually don't use extended keys :/ -->
 
 From application perspective HD wallets (as for BIP-32) introduce following crypto primitives:
 
-    CKDpriv :: ((kpar, cpar), i) → (ki, ci)
-        Computes a child extended private key from the parent extended private key.
-    CKDpub :: ((Kpar, cpar), i) → (Ki, ci)
-        Сomputes a child extended public key from the parent extended public key.
+* `CKDpriv :: ((kpar, cpar), i) → (ki, ci)`
+
+  Computes a child extended private key from the parent extended private key.
+
+* `CKDpub :: ((Kpar, cpar), i) → (Ki, ci)`
+
+  Сomputes a child extended public key from the parent extended public key.
 
 <!-- TODO: CSLREQ-24 -->
