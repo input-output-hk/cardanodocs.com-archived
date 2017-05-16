@@ -357,6 +357,8 @@ Promise { <pending> }
     at REPLServer.runBound [as eval] (domain.js:293:12)
 ~~~
 
+Accound should be renamed into address. Please see an issue [CSM-249](see https://issues.serokell.io/issue/CSM-249) for details.
+
 ### Wallet events
 
 Aside from these HTTP endpoints there is one unidirectional websocket channel
