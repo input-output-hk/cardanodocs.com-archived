@@ -71,6 +71,7 @@ Please note that [npm](https://www.npmjs.com/) is required to build `daedalus-cl
 
 ~~~bash
 cd daedalus
+rm -rf .psci_modules/ .pulp-cache/ node_modules/ bower_components/ output/
 npm install
 npm run build:prod
 ~~~
