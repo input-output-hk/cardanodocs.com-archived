@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Cardano SL Wallet
-permalink: /technical/wallet/
+title: Cardano SL Wallet Backend
+permalink: /technical/wallet-backend/
 group: technical
 visible: true
 ---
 [//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
 
-# Wallets in Cardano SL
+# Cardano SL Wallet Backend
 
 While addresses discussed in [Addresses](/cardano/addresses/) section are
 fundamental to send and receive funds, wallets are a way to simplify these

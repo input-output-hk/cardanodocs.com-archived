@@ -1,13 +1,13 @@
 
 ---
 layout: default
-title: Daedalus Client API
-permalink: /technical/wallets/
+title: Cardano SL Wallet Frontend
+permalink: /technical/wallet-frontend/
 group: technical
 ---
 [//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
 
-# What is Daedalus
+# Cardano SL Wallet Frontend
 
 In developing Cardano SL, the need arose for a UI from which users could access
 their funds, send and receive transactions, and perform other tasks related to

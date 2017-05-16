@@ -326,4 +326,4 @@ Now you should see an answer, for example:
 
 As you can see, the value of `getCoin` now is `1900`, because you've sent `100` ADA.
 
-You can test other functionalities of the node. Please see description of [Wallet Backend API](/technical/wallet/#wallet-backend-api) for detailed info.
+You can test other functionalities of the node. Please see description of [Wallet Backend API](/technical/wallet-backend/#wallet-backend-api) for detailed info.

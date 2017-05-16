@@ -8,7 +8,7 @@ group: technical
 
 # PureScript type bridge
 
-In the [Wallets](/technical/wallet/) section, it was discussed how the wallet
+In the [Wallet Backend](/technical/wallet-backend/) section, it was discussed how the wallet
 types are organized and how the API is structured. This section is a
 review of the way these types are used in the frontend written in
 PureScript.
