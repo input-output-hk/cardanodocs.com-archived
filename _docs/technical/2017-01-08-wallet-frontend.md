@@ -645,7 +645,7 @@ We should be seeing the same changes manually from here:
 curl http://localhost:8090/api/settings/sync/progress
 ~~~
 
-Accound should be renamed into address. Please see an issue [CSM-249](see https://issues.serokell.io/issue/CSM-249) for details.
+Accound should be renamed into address. Please see an issue [CSM-249](https://issues.serokell.io/issue/CSM-249) for details.
 
 ### Wallet events
 
