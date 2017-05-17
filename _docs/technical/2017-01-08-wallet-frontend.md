@@ -275,7 +275,7 @@ Promise { <pending> }
 > [ { cwMeta:
      { cwUnit: 0,
        cwType: 'CWTPersonal',
-       cwName: 'drugs',
+       cwName: 'trips',
        cwCurrency: 'ADA',
        cwAssurance: 'CWANormal' },
     cwAddress:
@@ -292,7 +292,7 @@ Promise { <pending> }
 > { cwMeta:
    { cwUnit: 0,
      cwType: 'CWTPersonal',
-     cwName: 'drugs',
+     cwName: 'trips',
      cwCurrency: 'ADA',
      cwAssurance: 'CWANormal' },
   cwAddress:
@@ -306,12 +306,12 @@ Promise { <pending> }
 ### Create a new wallet
 
 ~~~bash
-> api.newWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'CWTPersonal', 'ADA', 'drugs', 'pass').then(console.log).catch(console.log)
+> api.newWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'CWTPersonal', 'ADA', 'trips', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwMeta:
    { cwUnit: 0,
      cwType: 'CWTPersonal',
-     cwName: 'drugs',
+     cwName: 'trips',
      cwCurrency: 'ADA',
      cwAssurance: 'CWANormal' },
   cwAddress:
