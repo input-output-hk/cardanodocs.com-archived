@@ -317,7 +317,7 @@ Promise { <pending> }
 > api.deleteWallet({"cwaWSAddress": "1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW","cwaIndex": 293230236}).then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
-~~~bash
+~~~
 
 ### Update a wallet
 
