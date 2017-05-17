@@ -129,7 +129,6 @@ Note: `daedalus-client-api` is not optimized/compressed. This is will be a job f
 ## Wallet Frontend API usage scenario
 
 This is an example session that shows how the user/client can work with the Daedalus-bridge library.
-First we need to run node and load the api as already described.
 
 ~~~bash
 var api = require('../output/Daedalus.ClientApi')
@@ -277,7 +276,7 @@ Promise { <pending> }
 ### Get wallet
 
 ~~~bash
-> api.getWallet({"cwaWSAddress": "1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW","cwaIndex": 1759060325}).then(console.log).catch(console.log)
+> api.getWallet({"cwaWSAddress": "1gDuxVMKNm3YgtzzH2XLuZh7WN1aMqoneARSYwJticwF7WR","cwaIndex": 2147483648}).then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwMeta:
    { cwUnit: 0,
@@ -318,7 +317,7 @@ Promise { <pending> }
 > api.deleteWallet({"cwaWSAddress": "1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW","cwaIndex": 293230236}).then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
-~~~
+~~~bash
 
 ### Update a wallet
 
@@ -342,19 +341,297 @@ Promise { <pending> }
 ### Create a new account
 
 ~~~bash
-> api.newAccount({"cwaWSAddress": "1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW","cwaIndex": 1759060325}, 'pass').then(console.log).catch(console.log)
+> api.newAccount({"cwaWSAddress": "1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f","cwaIndex": 2147483648}, '').then(console.log).catch(console.log)
 Promise { <pending> }
-> Error: Expected an object
+> { caAmount: { getCoin: '0' },
+  caAddress: '19HwyKfi1kMr85Vw1BBhxW1kaSSQEBzq22K6v43NTrqeGW1EixTVCFsMaB5SY79BQQCfRcZCuifDmX4fqgyTboZUc2hmdY' }
+~~~
+
+### Is the address valid
+
+~~~bash
+> api.isValidAddress('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8').then(console.log).catch(console.log)
+Promise { <pending> }
+> true
+
+> api.isValidAddress('19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9gs').then(console.log).catch(console.log)
+Promise { <pending> }
+> true
+
+> api.isValidAddress('19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9g').then(console.log).catch(console.log)
+Promise { <pending> }
+> false
+
+> api.isValidAddress('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs9').then(console.log).catch(console.log)
+Promise { <pending> }
+> false
+~~~
+
+### New payment
+
+~~~bash
+> api.newPayment({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9gs', 1, '').then(console.log).catch(console.log)
+Promise { <pending> }
+> { ctOutputAddrs:
+   [ '19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9gs',
+     '19FHEbfuy6YkncN6nn6rd2AdMSXacfNiJDv6aDMZSojZpDwmFQzEzjYNAqWoj7ENTxBfQSKbfZSUokNddip5bzvpkyxyWh' ],
+  ctMeta:
+   { ctmTitle: '',
+     ctmDescription: '',
+     ctmDate: 1494934471.9788823,
+     ctmCurrency: 'ADA' },
+  ctInputAddrs: [ '19FLnEFfkaLsZqBqYHjPmCypZNHNZ7SBfMsntKgspqA96F18s6eeDy5GYjHmwXSECG6jRqWh9qqEAicpEXrNhpb8PuRNVL' ],
+  ctId: 'c2cf810bff21698dace837d23356336098f207b1d70d16ac83e058fcd0ace732',
+  ctConfirmations: 0,
+  ctAmount: { getCoin: '50000' } }
+~~~
+
+### New payment, extra data
+
+~~~bash
+> api.newPaymentExtended({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9gs', 10, 'ADA', 'Programming task', 'Programming the new brilliant cryptocurrency', '').then(console.log).catch(console.log)
+Promise { <pending> }
+> { ctOutputAddrs:
+   [ '19MxMbcEskurDMdVX1h32Fi94Nojxp1gvwMYbDziZoPjGmJdssagaugyCqUUJVySKBdA1DUHbpYmQd6yTeFQqfrWWKx9gs',
+     '19KBCF3J8yWLyigbEaCw3KuzhioRRQXmvskSm4AyF1zeyj7884Cn11ar8ASiBuBBx73vBK4f2rz94AxVrQngNGpEtDKoDD' ],
+  ctMeta:
+   { ctmTitle: 'Programming task',
+     ctmDescription: 'Programming the new brilliant cryptocurrency',
+     ctmDate: 1494935150.0468125,
+     ctmCurrency: 'ADA' },
+  ctInputAddrs: [ '19FHEbfuy6YkncN6nn6rd2AdMSXacfNiJDv6aDMZSojZpDwmFQzEzjYNAqWoj7ENTxBfQSKbfZSUokNddip5bzvpkyxyWh' ],
+  ctId: '580b35fb3bd94075926ce2c7c93b9cdbfc8dab3b3a9cd76410254507f33d8ac8',
+  ctConfirmations: 0,
+  ctAmount: { getCoin: '49999' } }
+~~~
+
+### Update transaction meta-data
+
+~~~bash
+> api.updateTransaction({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, 'cc7576fef33a4a60865f9149792fa7359f44eca6745aeb1ba751185bab9bd7ac', 'ADA', 'Manager task', 'Managing people and other stuff', 1494935150.0468155).then(console.log).catch(console.log)
+Promise { <pending> }
+> {}
+~~~
+
+### Get history
+
+~~~bash
+> api.getHistory({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, 0, 10).then(console.log).catch(console.log)
+Promise { <pending> }
+> [ [ { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: 'c2cf810bff21698dace837d23356336098f207b1d70d16ac83e058fcd0ace732',
+      ctConfirmations: 0,
+      ctAmount: [Object] },
+    { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: '580b35fb3bd94075926ce2c7c93b9cdbfc8dab3b3a9cd76410254507f33d8ac8',
+      ctConfirmations: 0,
+      ctAmount: [Object] },
+    { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: 'cc7576fef33a4a60865f9149792fa7359f44eca6745aeb1ba751185bab9bd7ac',
+      ctConfirmations: 0,
+      ctAmount: [Object] } ],
+  3 ]
+~~~
+
+### Search history
+
+~~~bash
+> api.searchHistory({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, 'task', 0, 10).then(console.log).catch(console.log)
+Promise { <pending> }
+> [ [ { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: '580b35fb3bd94075926ce2c7c93b9cdbfc8dab3b3a9cd76410254507f33d8ac8',
+      ctConfirmations: 0,
+      ctAmount: [Object] },
+    { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: 'cc7576fef33a4a60865f9149792fa7359f44eca6745aeb1ba751185bab9bd7ac',
+      ctConfirmations: 0,
+      ctAmount: [Object] } ],
+  3 ]
+~~~
+
+### Search account history
+
+~~~bash
+> api.searchAccountHistory({"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '19GfdoC3ytim4rsTXRMp5At6Bmt512XkcbUwGV69jqWvuRhU5HS5gNAbQ6JpUDavDiKRNMb9iyp6vKUCdJiaKLJdhmcQN9', '', 0, 10).then(console.log).catch(console.log)
+Promise { <pending> }
+> [ [ { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: 'c2cf810bff21698dace837d23356336098f207b1d70d16ac83e058fcd0ace732',
+      ctConfirmations: 0,
+      ctAmount: [Object] },
+    { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: '580b35fb3bd94075926ce2c7c93b9cdbfc8dab3b3a9cd76410254507f33d8ac8',
+      ctConfirmations: 0,
+      ctAmount: [Object] },
+    { ctOutputAddrs: [Object],
+      ctMeta: [Object],
+      ctInputAddrs: [Object],
+      ctId: 'cc7576fef33a4a60865f9149792fa7359f44eca6745aeb1ba751185bab9bd7ac',
+      ctConfirmations: 0,
+      ctAmount: [Object] } ],
+  3 ]
+~~~
+
+### Get next update
+
+~~~bash
+> api.nextUpdate().then(console.log).catch(console.log)
+Promise { <pending> }
+> Error: ServerError: Pos.Wallet.Web.Error.Internal "No updates available"
     at Object.exports.error (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Eff.Exception/foreign.js:8:10)
-    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.ClientApi/index.js:191:118
-    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:227:24
-    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.ClientApi/index.js:192:91
-    at Object.newAccount (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Function.Eff/foreign.js:9:17)
+    at mkServerError (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:94:44)
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:256:33
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:230:24
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:102:127
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:128:207
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:182:21
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:147:5
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:176:17
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:182:25
+~~~
+
+### Apply the update
+
+~~~bash
+> api.applyUpdate().then(console.log).catch(console.log)
+Promise { <pending> }
+> {}
+~~~
+
+### Redeem ADA
+
+~~~bash
+> api.redeemAda('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', {"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '').then(console.log).catch(console.log)
+Promise { <pending> }
+> Error: ServerError: Pos.Wallet.Web.Error.Internal "Cannot send redemption transaction: Failed to prepare inputs!"
+    at Object.exports.error (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Eff.Exception/foreign.js:8:10)
+    at mkServerError (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:94:44)
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:256:33
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:230:24
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:102:127
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.BackendApi/index.js:128:207
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:182:21
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:147:5
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:176:17
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Aff/foreign.js:182:25
+~~~
+
+### Redeem ADA papervend
+
+~~~bash
+> api.redeemAdaPaperVend('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', {"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '').then(console.log).catch(console.log)
+Promise { <pending> }
+> Error: Invalid mnemonic: mnemonic should have at least 12 words
+    at Object.exports.error (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Eff.Exception/foreign.js:8:10)
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.Types/index.js:149:72
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.Types/index.js:162:91
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.Types/index.js:179:98
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Either/index.js:358:16
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Function/index.js:16:24
+    at /home/ksaric/projects/haskell/cardano-sl/daedalus/output/Daedalus.ClientApi/index.js:119:457
+    at Object.redeemAdaPaperVend (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Data.Function.Eff/foreign.js:21:23)
     at repl:1:5
     at ContextifyScript.Script.runInThisContext (vm.js:23:33)
-    at REPLServer.defaultEval (repl.js:336:29)
-    at bound (domain.js:280:14)
-    at REPLServer.runBound [as eval] (domain.js:293:12)
+~~~
+
+### Redeem valid key
+
+~~~bash
+> api.isValidRedemptionKey('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=')
+true
+~~~
+
+### Redeem valid paper vend
+
+~~~bash
+> api.isValidPaperVendRedemptionKey('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=')
+false
+~~~
+
+### Reporting
+
+~~~bash
+> api.reportInit(1, 1).then(console.log).catch(console.log)
+Promise { <pending> }
+> {}
+~~~
+
+### Settings blockchain slot duration
+
+~~~bash
+> api.blockchainSlotDuration().then(console.log).catch(console.log)
+Promise { <pending> }
+> 7000
+~~~
+
+### Settings system version
+
+~~~bash
+> api.systemVersion().then(console.log).catch(console.log)
+Promise { <pending> }
+> { svNumber: 0, svAppName: { getApplicationName: 'cardano-sl' } }
+~~~
+
+### Settings sync progress
+
+~~~bash
+> api.syncProgress().then(console.log).catch(console.log)
+Promise { <pending> }
+> { _spPeers: 0,
+  _spNetworkCD: null,
+  _spLocalCD: { getChainDifficulty: 4 } }
+~~~
+
+### Generate mnemonic
+
+~~~bash
+> api.generateMnemonic()
+'obtain divide top receive purchase shuffle opinion circle future spare athlete quantum'
+~~~
+
+### Is valid mnemonic
+
+~~~bash
+> api.isValidMnemonic(12, 'obtain divide top receive purchase shuffle opinion circle future spare athlete quantum')
+true
+~~~
+
+### Notify websockets
+
+We can test the websockets with a small utility application(`npm install -g wscat`):
+~~~bash
+> wscat -c ws://127.0.0.1:8090
+
+connected (press CTRL+C to quit)
+
+< {"tag":"ConnectionOpened"}
+
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":1}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":1}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":2}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":2}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":3}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":3}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":4}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":4}}
+~~~
+
+We should be seeing the same changes manually from here:
+~~~bash
+curl http://localhost:8090/api/settings/sync/progress
 ~~~
 
 Accound should be renamed into address. Please see an issue [CSM-249](see https://issues.serokell.io/issue/CSM-249) for details.
