@@ -1,6 +1,6 @@
 # Cardano SL documentation
 
-[Official website](https://cardanodocs.com/). Build on [Jekyll](https://jekyllrb.com/) for [Github Pages](https://pages.github.com/).
+[Official website](https://cardanodocs.com/). Build on [Jekyll](https://jekyllrb.com/) with [Github Pages](https://pages.github.com/).
 
 ## Where is it?
 
