@@ -284,6 +284,35 @@ Promise { <pending> }
     cwAccounts: [ [Object] ] } ]
 ~~~
 
+### Get user locale
+
+~~~bash
+> api.getLocale().then(console.log).catch(console.log)
+Promise { <pending> }
+>
+~~~
+
+### Get wallets from set
+
+~~~bash
+> api.getSetWallets('1fbPUqmdG1PdYpKxhw8qYc5hC342W3STosbcZNMqsadodxL').then(console.log).catch(console.log)
+Promise { <pending> }
+> [ { cwMeta:
+     { cwUnit: 0,
+       cwType: 'CWTPersonal',
+       cwName: 'Initial wallet',
+       cwCurrency: 'ADA',
+       cwAssurance: 'CWANormal' },
+    cwAddress:
+     { cwaWSAddress: '1fbPUqmdG1PdYpKxhw8qYc5hC342W3STosbcZNMqsadodxL',
+       cwaIndex: 0 },
+    cwAccounts: [ [Object] ] } ]
+
+> api.getSetWallets('1fH6MvP2Rfp2dNCQ1fDogLGFrVt8X3oxrNieaS7cdRrY12j').then(console.log).catch(console.log)
+Promise { <pending> }
+> []
+~~~
+
 ### Get wallet
 
 ~~~bash
@@ -623,13 +652,13 @@ true
 ### Notify websockets
 
 We can test the websockets with a small utility application(`npm install -g wscat`):
+
 ~~~bash
 > wscat -c ws://127.0.0.1:8090
 
 connected (press CTRL+C to quit)
 
 < {"tag":"ConnectionOpened"}
-
 < {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":1}}
 < {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":1}}
 < {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":2}}
@@ -641,6 +670,7 @@ connected (press CTRL+C to quit)
 ~~~
 
 We should be seeing the same changes manually from here:
+
 ~~~bash
 curl http://localhost:8090/api/settings/sync/progress
 ~~~
@@ -650,15 +680,17 @@ Accound should be renamed into address. Please see an issue [CSM-249](https://is
 ### Wallet events
 
 Aside from these HTTP endpoints there is one unidirectional websocket channel
-opened from server to client. This channel serves as notification system so
+opened from server to client. `notify` endpoint is using for it.
+
+This channel serves as notification system so
 that Daedalus UI can be informed about events. Currently supported events are:
 
-* `LocalDifficultyChanged` - local blockchain height
-* `NetworkDifficultyChanged` - global blockchain height
-* `UpdateAvailable` - new system update available
-* `ConnectedPeersChanged` - number of peers connected to the node changed
-* `ConnectionOpened` - websocket connection opened
-* `ConnectionClosed` - websocket connection closed
+* `LocalDifficultyChanged` - local blockchain height,
+* `NetworkDifficultyChanged` - global blockchain height,
+* `UpdateAvailable` - new system update available,
+* `ConnectedPeersChanged` - number of peers connected to the node changed,
+* `ConnectionOpened` - websocket connection opened,
+* `ConnectionClosed` - websocket connection closed.
 
 As this channel is unidirectional, any message sent to the channel from the
 client will be ignored.
