@@ -133,7 +133,7 @@ box-shadow:0 0 0 transparent;
 
 
 @media (max-width:767px){
-#cardano-nav{position: fixed;z-index: 9991;overflow-x: auto;background: url('//static.iohk.io/cardano/images/car-bg.jpg') no-repeat center top;background-size:cover;margin:0 -15px !important;;width:100%;top:0px;height:100%;padding:70px 0 0 0}
+#cardano-nav{position: fixed;z-index: 9991;overflow-x: auto;background: url('//static.iohk.io/cardano/images/car-bg-v1.jpg') no-repeat center center;background-size:cover;margin:0 -15px !important;;width:100%;top:0px;height:100%;padding:70px 0 0 0}
 .navbar-side li+li,
 .navbar-side ul li{border-top:1px solid rgba(255,255,255,0.1)}
   .navbar-side ul,
@@ -159,7 +159,7 @@ box-shadow:0 0 0 transparent;
 
 
 
-.top {background: url('//static.iohk.io/cardano/images/car-bg.jpg') no-repeat center top;color:#fff;background-size:cover;}
+.top {background: url('//static.iohk.io/cardano/images/car-bg-v1.jpg') no-repeat center center;color:#fff;background-size:cover;}
 .top .banner{padding:38px 0 50px 0;text-align:center}
 .top h1{letter-spacing:0em;color:rgba(255,255,255,0.9);font-family: 'montserratlight', sans-serif;margin:0;font-weight: normal;line-height: 1.4;font-size:220%}
 
