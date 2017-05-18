@@ -554,7 +554,7 @@ Promise { <pending> }
 ### Redeem ADA
 
 ~~~bash
-> api.redeemAda('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', {"cwaWSAddress": "1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8", "cwaIndex": 2147483648}, '').then(console.log).catch(console.log)
+> api.redeemAda('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', {"cwaWSAddress": "1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW", "cwaIndex": 3542107948}, 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > Error: ServerError: Pos.Wallet.Web.Error.Internal "Cannot send redemption transaction: Failed to prepare inputs!"
     at Object.exports.error (/home/ksaric/projects/haskell/cardano-sl/daedalus/output/Control.Monad.Eff.Exception/foreign.js:8:10)
@@ -680,7 +680,7 @@ Accound should be renamed into address. Please see an issue [CSM-249](https://is
 ### Wallet events
 
 Aside from these HTTP endpoints there is one unidirectional websocket channel
-opened from server to client. `notify` endpoint is using for it.
+opened from server to client, the `notify` endpoint.
 
 This channel serves as notification system so
 that Daedalus UI can be informed about events. Currently supported events are:
