@@ -310,7 +310,16 @@ Promise { <pending> }
 ### Get wallets from a specific wallet set
 
 ~~~bash
-
+> api.getSetWallets('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f').then(console.log).catch(console.log)
+Promise { <pending> }
+> [ { cwMeta: 
+     { cwUnit: 0,
+       cwType: 'CWTPersonal',
+       cwName: 'Initial wallet',
+       cwCurrency: 'ADA',
+       cwAssurance: 'CWANormal' },
+    cwAddress: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
+    cwAccounts: [ [Object], [Object] ] } ]
 ~~~
 
 ### Create a new wallet
@@ -336,7 +345,7 @@ Promise { <pending> }
 > api.deleteWallet('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
-~~~bash
+~~~
 
 ### Update a wallet
 
