@@ -55,6 +55,7 @@ undefined
   blockchainSlotDuration: [Function],
   changeWalletSetPass: [Function],
   deleteWallet: [Function],
+  deleteWalletSet: [Function],
   generateMnemonic: [Function: generateMnemonic],
   getHistory: [Function],
   getLocale: [Function],
@@ -221,9 +222,12 @@ Promise { <pending> }
 Promise { <pending> }
 > Error: ServerError: Pos.Wallet.Web.Error.RequestError "Wallet set with that mnemonics already exists"
 
-# TODO: show example how to delete wallet set - missing endpoint
 
-# TODO: when wallet set is deleted show example how to do restore
+>  api.deleteWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
+Promise { <pending> }
+> {}
+
+
 >  api.restoreWalletSet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwsWalletsNumber: 0,
@@ -233,6 +237,15 @@ Promise { <pending> }
   cwsHasPassphrase: true,
   cwsAmount: { getCCoin: '0' } }
 ~~~
+
+### Delete a wallet set (shown above)
+
+~~~bash
+>  api.deleteWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
+Promise { <pending> }
+> {}
+~~~
+
 
 ### Import wallet set
 If you are in development mode, make sure to create keys with ``.
