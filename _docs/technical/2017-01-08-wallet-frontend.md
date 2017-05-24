@@ -491,7 +491,7 @@ Promise { <pending> }
 
 
 ### Redeem ADA
-TODO: this endpoint wasn't verified yet!
+TODO: this endpoint wasn't verified yet! Need to be tested with genesis block prepared for redeeming!
 
 ~~~bash
 > api.redeemAda('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
@@ -500,12 +500,12 @@ Promise { <pending> }
 ~~~
 
 ### Redeem ADA papervend
-TODO: this endpoint wasn't verified yet!
+TODO: this endpoint wasn't verified yet! Need to be tested with genesis block prepared for redeeming!
 
 ~~~bash
-> api.redeemAdaPaperVend('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=', 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
+> api.redeemAdaPaperVend('CUUCxbH5pPc6RC1dvJKetJPVTG7X4WKPmBsoeZMbiQok', 'nurse indicate parent few rib awake glue enact opera', '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
 Promise { <pending> }
-> Error: Invalid mnemonic: mnemonic should have at least 12 words
+> Error: ServerError: Pos.Wallet.Web.Error.RequestError "Cannot send redemption transaction: Failed to prepare inputs!"
 ~~~
 
 ### Redeem valid key
@@ -520,6 +520,8 @@ true
 ~~~bash
 > api.isValidPaperVendRedemptionKey('lwIF94R9AYRwBy0BkVVpLhwtsG3CmqDvMahlQr3xKEY=')
 false
+> api.isValidPaperVendRedemptionKey('CUUCxbH5pPc6RC1dvJKetJPVTG7X4WKPmBsoeZMbiQok')
+true
 ~~~
 
 ### Reporting
