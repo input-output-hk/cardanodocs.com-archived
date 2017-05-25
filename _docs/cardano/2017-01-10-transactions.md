@@ -123,3 +123,33 @@ called "segregated witness" (you may have heard of it being recently
 [implemented in Bitcoin](https://bitcoincore.org/en/2016/01/26/segwit-benefits/)).
 Under this scheme, transactions and proofs are stored in two separate places in a block,
 and can be processed independently.
+
+## Transaction Distribution 
+
+As a part of address design, we introduced transaction distribution feature.
+
+Suppose we have an address `A`. Which stakeholders should benefit from money stored on this address?
+For [`PublicKey`](/cardano/addresses/)-address it's obvious and straightforward, though it's not for
+[`ScriptAddress`](/cardano/addresses/) (e.g. for `2-of-3` multisig address implemented via script we
+might want to have distribution `[(A, 1/3), (B, 1/3), (C, 1/3)]`).
+For any new address' type introduced via softfork in the future it might be useful as well
+because we don't know in advance about semantics of the new address' type and which stakeholder
+it should be attributed to.
+
+Transaction distribution is a value associated with each transaction's output, holding information
+on which stakeholder should receive which particular amount of money on his stake. Technically
+it's a [non-empty list](https://github.com/input-output-hk/cardano-sl/blob/732a2c765a417ba0a5010df81061c4473f80a0dc/src/Pos/Txp/Core/Types.hs#L135) of pairs composed from [stakeholder's identificator and corresponding amount of money](https://github.com/input-output-hk/cardano-sl/blob/732a2c765a417ba0a5010df81061c4473f80a0dc/src/Pos/Txp/Core/Types.hs#L129).
+E.g. for output `(A, 100)` distribution might be `[(B, 10), (C, 90)]`.
+
+Transaction distributions are considered by both [slot-leader election process](/technical/leader-selection/)
+and Richmen Computations.
+
+This feature is very similar to [delegation](/technical/delegation/), but there are differences:
+
+1. There is no certificate(s): to revoke delegation `A` has to move funds, providing different distribution.
+2. Stake is delegated partially (with regular delegation types, it's done for whole address' stake).
+3. Only part of `A`'s balance associated with this transaction output is delegated.
+
+By consensus, transaction distribution for `PublicKey`-address should be set to empty.
+
+Binary representation of transaction distribution is described [here](/technical/protocols/binary-protocols/#transaction-distribution).
