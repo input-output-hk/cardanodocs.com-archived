@@ -4,6 +4,7 @@ layout: default
 title: Cardano SL Wallet Frontend
 permalink: /technical/wallet-frontend/
 group: technical
+visible: true
 ---
 [//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
 
