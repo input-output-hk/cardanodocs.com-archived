@@ -19,18 +19,18 @@ In Cardano, wallets are defined in the following manner:
 
 ~~~ haskell
 data CWallet = CWallet
-    { cwAddress :: !CAddress
-    , cwAmount  :: !Coin
-    , cwMeta    :: !CWalletMeta
+    { cwId       :: !CWalletAddress
+    , cwMeta     :: !CWalletMeta
+    , cwAccounts :: ![CAccount]
+    , cwAmount   :: !CCoin
     }
 ~~~
 
 where `CWalletMeta` is a type that presently indicates whether the wallet is
 shared or personal, the currency that this wallet uses, and the wallet's name.
 With this, the wallet type is easily extensible, as any additional features can
-be added to the `CWalletMeta` type, leaving the `Address` and `Coin` fields
-untouched. (Every wallet, regardless of name, type and currency, must
-have the said fields.)
+be added to the `CWalletMeta` type, leaving other fields untouched.
+Every wallet, regardless of name, type and currency, must have the said fields.
 
 ## Transactions and Wallets
 
@@ -41,22 +41,20 @@ are represented differently in clients. They are represented as
 ~~~ haskell
 data CTx = CTx
     { ctId            :: CTxId
-    , ctAmount        :: Coin
+    , ctAmount        :: CCoin
     , ctConfirmations :: Word
-    , ctType          :: CTType -- it includes all "meta data"
+    , ctMeta          :: CTxMeta
+    , ctInputAddrs    :: [CAddress Acc]
+    , ctOutputAddrs   :: [CAddress Acc]
     }
 ~~~
 
 Essentially, a client transaction is composed by the actual transaction `Id`,
 by the amount the wallet in question received, the number of confirmations this
 transaction has received (i.e., the number of blocks that are currently on top of the
-block containing the transaction in question), and a label indicating whether
-the transaction is incoming or outcoming. Inside the `CTType` datatype, there
-is, similarly to `CWallet`, a datatype with meta-information concerning the
-transaction. Aside from a label indicating whether it is ingoing or outgoing,
-this meta-information - the datatype `CTxMeta` - indicates the transaction's
-currency, its title or name, its description and the POSIX-formatted date of
-sending it.
+block containing the transaction in question), input and output addresses. 
+Meta-information - the datatype `CTxMeta` - indicates the transaction's currency,
+its title or name, its description and the POSIX-formatted date of sending it.
 
 ## Wallet Backend API
 
@@ -68,6 +66,6 @@ complete APIs.
 If the event requests fail, there is a `WalletError` type, which
 is simply a wrapper over `Text` to show what happened.
 
-Documentation for wallet web API is available [here](https://cardano-docs.iohk.io/technical/wallet/api/).
+Documentation for wallet web API is available [here](https://cardanodocs.com/technical/wallet/api/).
 
 Please notice that wallet web API is available only if you run a node with `--wallet` option. Default port for this API is `8090`.
