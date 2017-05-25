@@ -39,10 +39,9 @@ This is format of a [proxy signature](https://github.com/input-output-hk/cardano
 
 Omega (or ω) is a special value from the [paper](/glossary/#paper). In our implementation is's a [pair of epochs' identificators](https://github.com/input-output-hk/cardano-sl/blob/21ce7b35d3dcc1b79db31c7ed7f8f2fe7506831f/core/Pos/Core/Types.hs#L233). These identificators define delegation validity period: produced block is valid if its epoch index is inside of this range.
 
-Signature is a [special bytestring](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L358) [made owith](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L363) an issuer's public key.
+Signature is a [special bytestring](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L358) [made with](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L363) an issuer's public key.
 
 [Proxy certificate](https://github.com/input-output-hk/cardano-sl/blob/4bd49d6b852e778c52c60a384a47681acec02d22/core/Pos/Crypto/Signing.hs#L211) is actually a [signature](https://github.com/input-output-hk/cardano-crypto/blob/838b064d8a59286142aa2fe14434fe7601896ddb/src/Cardano/Crypto/Wallet.hs#L73) that [made of](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L256) secret key of issuer, delegate's public key and ω.
-Issuer can post [only one certificate](https://github.com/input-output-hk/cardano-sl/blob/9bbb9055d6937604565a9a270f068f3da17a4059/src/Pos/Delegation/Logic.hs#L303) per one epoch.
 
 ## Heavyweight Delegation
 
@@ -52,15 +51,16 @@ here is [production-related value](https://github.com/input-output-hk/cardano-sl
 
 Moreover, stakeholder-issuer must have particular stake too, otherwise [it cannot be](https://github.com/input-output-hk/cardano-sl/blob/9bbb9055d6937604565a9a270f068f3da17a4059/src/Pos/Delegation/Logic.hs#L298) a valid issuer.
 
-Proxy signing certificates from heavyweight delegation are stored within the blockchain.
+Proxy signing certificates from heavyweight delegation are stored within the blockchain. Issuer can post [only one certificate](https://github.com/input-output-hk/cardano-sl/blob/9bbb9055d6937604565a9a270f068f3da17a4059/src/Pos/Delegation/Logic.hs#L303) per one epoch.
 
 ## Lightweight Delegation
 
 In contrast to heavyweight delegation, lightweight delegation doesn't require that delegate posses `T`-or-more stake. So lightweight
 delegation is available for any node. But proxy signing certificates for lightweight delegation aren't stored in the blockchain.
+Lightweight delegation certificate must be broadcasted to reach delegate.
 
 Later lightweight PSK can be [verified](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/src/Pos/Delegation/Logic.hs#L477)
-given issuer's public key, signature, message space predicate and message itself.
+given issuer's public key, signature and message itself.
 
 ### Confirmation of proxy signature delivery
 
