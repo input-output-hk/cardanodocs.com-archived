@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Cardano SL Wallet Frontend
