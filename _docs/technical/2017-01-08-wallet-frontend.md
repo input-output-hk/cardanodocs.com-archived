@@ -5,22 +5,22 @@ permalink: /technical/wallet-frontend/
 group: technical
 visible: true
 ---
-[//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
+[//]: # (Reviewed at cd26fb28eb48f893a4ca2d045a10da19c211b807)
 
 # Cardano SL Wallet Frontend
 
-In developing Cardano SL, the need arose for a UI from which users could access
+When developing Cardano SL, the need arose for a UI from which users could access
 their funds, send and receive transactions, and perform other tasks related to
 managing a personal cryptocurrency wallet. The Daedalus wallet is the Cardano's
 solution to these necessities.
 
-Currently, it allows a user to use their ADA in the aforementioned actions, and
-support for other currencies is planned for the near future, as is the exchange
+Currently, it allows a user to use their ADA in the aforementioned actions, and providing
+support for other currencies is planned for the near future — as is the exchange
 between different currencies, both digital and not.
 
 ## Building `daedalus-client-api`
 
-To run `daedalus-client-api` locally you have to start the `wallet-api` of [`cardano-sl`](https://github.com/input-output-hk/cardano-sl/) as follows. Make sure that you are in the root folder of `cardano-sl`.
+To run `daedalus-client-api` locally, you have to start the `wallet-api` of [`cardano-sl`](https://github.com/input-output-hk/cardano-sl/) as follows. Make sure that you are in the root folder of `cardano-sl`.
 
 ~~~bash
 util-scripts/build-daedalus-bridge.sh
@@ -37,10 +37,10 @@ tmux
 util-scripts/start-dev.sh
 ~~~
 
-By default, this should launch Cardano network consisting of 3 nodes talking to each other. `WALLET_TEST=1` tells the launcher script to run `wallet-api` with one node. This one node running `wallet-api` will behave the same as Daedalus wallet that is run in production. 
+By default, this should launch Cardano network consisting of 3 nodes talking to each other. `WALLET_TEST=1` tells the launcher script to run `wallet-api` with one node. This one node running `wallet-api` will behave the same as Daedalus wallet that is run in production.
 
 
-With a running `wallet-api` you can run `daedalus-client-api` locally as follows.
+With `wallet-api` running, you can run `daedalus-client-api` locally as follows.
 Please note that [npm](https://www.npmjs.com/) is required to build `daedalus-client-api`.
 
 
@@ -91,7 +91,7 @@ undefined
   updateWallet: [Function] }
 ~~~
 
-This will load and show all functions that can be run from from this library to interact with the wallet. For example, to fetch all available wallets we can do:
+This will load and show all functions that can be run from from this library to interact with the wallet. For example, to fetch all available wallets, we can do:
 
 ~~~bash
 > api.getWallets().then(console.log).catch(console.log)
@@ -279,7 +279,7 @@ Promise { <pending> }
     cwAccounts: [ [Object] ] } ]
 ~~~
 
-### Get wallet 
+### Get wallet
 
 ~~~bash
 > api.getWallet('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
@@ -601,10 +601,10 @@ Accound should be renamed into address. Please see an issue [CSM-249](https://is
 
 ### Wallet events
 
-Aside from these HTTP endpoints there is one unidirectional websocket channel
+Aside from these HTTP endpoints, there is one unidirectional websocket channel
 opened from server to client, the `notify` endpoint.
 
-This channel serves as notification system so
+This channel serves as a notification system so
 that Daedalus UI can be informed about events. Currently supported events are:
 
 * `LocalDifficultyChanged` - local blockchain height,
