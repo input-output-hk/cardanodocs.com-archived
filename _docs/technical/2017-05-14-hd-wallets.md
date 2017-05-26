@@ -163,12 +163,12 @@ Old wallet storage stored list of addresses. Each address was associated a name 
 
 ### New storage
 
-Wallet storage is extended to store list of **wallet sets**.
-Each wallet set corresponds to single root secret key (backed up by mnemonics and encrypted with spending password).
+Wallet storage is extended to store list of **wallet**.
+Each wallet corresponds to single root secret key (backed up by mnemonics and encrypted with spending password).
 
-Each wallet set contains a number of **wallets**.
+Each wallet contains a number of **accounts**.
 
-Each wallet contains a number of **addresses** (i.e. an address is a key of the 2nd level in HD tree).
+Each account contains a number of **addresses** (i.e. an address is a key of the 2nd level in HD tree).
 
 This maps to HD tree:
 
@@ -186,19 +186,19 @@ When money are spent from one or several addresses, a new one is to be generated
 
 User is able to:
 
-* import/export arbitrary amount of **wallet sets**
+* import/export arbitrary amount of **wallets**
 
-* generate arbitrary amount of **wallets**
+* generate arbitrary amount of **accounts**
 
-* assign name to **wallet sets** and **wallets**
+* assign name to **wallets** and **accounts**
 
 * generate arbitrary amount of addresses
 
-* change **wallet set** spending password. Since key derivation depends on spending password, this action changes all account addresses, while transferring money from old accounts to newly created ones.
+* change **wallet** spending password. Since key derivation depends on spending password, this action changes all wallet addresses, while transferring money from old addresses to newly created ones.
 
 ## Read HD wallet data from blockchain
 
-There are two ways of importing/exporting wallet set:
+There are two ways of importing/exporting wallet:
 
 * Via **mnemonics**
 
@@ -206,7 +206,7 @@ There are two ways of importing/exporting wallet set:
 
 * Via export file
 
-This file allows to restore whole **wallet set** structure.
+This file allows to restore whole **wallet** structure.
 
 #### Import
 
@@ -220,4 +220,4 @@ In both cases we have a secret root key. The following procedure should be appli
 
 #### New transaction handling
 
-When a new transaction gets available (appears either in block or in mempool), inputs are analyzed. If the input corresponds to public key address with **HD wallet attribute**, it is checked if this address corresponds to one of our *wallet set*s. If it does, the address is imported to structure (to show balance in user interface).
+When a new transaction gets available (appears either in block or in mempool), inputs are analyzed. If the input corresponds to public key address with **HD wallet attribute**, it is checked if this address corresponds to one of our *wallet*s. If it does, the address is imported to structure (to show balance in user interface).

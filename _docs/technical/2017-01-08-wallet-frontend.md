@@ -53,34 +53,34 @@ undefined
 > api
 { applyUpdate: [Function],
   blockchainSlotDuration: [Function],
-  changeWalletSetPass: [Function],
+  changeWalletPass: [Function],
+  deleteAccount: [Function],
   deleteWallet: [Function],
-  deleteWalletSet: [Function],
   generateMnemonic: [Function: generateMnemonic],
   getHistory: [Function],
   getLocale: [Function],
-  getSetWallets: [Function],
+  getWalletAccounts: [Function],
+  getAccount: [Function],
   getWallet: [Function],
-  getWalletSet: [Function],
-  getWalletSets: [Function],
   getWallets: [Function],
-  importWalletSet: [Function],
+  getAccounts: [Function],
+  importWallet: [Function],
   isValidAddress: [Function],
   isValidMnemonic: [Function],
   isValidPaperVendRedemptionKey: [Function: isValidPaperVendRedemptionKey],
   isValidRedemptionKey: [Function: isValidRedemptionKey],
-  newAccount: [Function],
+  newWAddress: [Function],
   newPayment: [Function],
   newPaymentExtended: [Function],
+  newAccount: [Function],
   newWallet: [Function],
-  newWalletSet: [Function],
   nextUpdate: [Function],
   notify: [Function],
   redeemAda: [Function],
   redeemAdaPaperVend: [Function],
   renameWalletSet: [Function],
   reportInit: [Function],
-  restoreWalletSet: [Function],
+  restoreWallet: [Function],
   searchAccountHistory: [Function],
   searchHistory: [Function],
   syncProgress: [Function],
@@ -88,13 +88,13 @@ undefined
   testReset: [Function],
   updateLocale: [Function],
   updateTransaction: [Function],
-  updateWallet: [Function] }
+  updateAccount: [Function] }
 ~~~
 
 This will load and show all functions that can be run from from this library to interact with the wallet. For example, to fetch all available wallets, we can do:
 
 ~~~bash
-> api.getWallets().then(console.log).catch(console.log)
+> api.getAccounts().then(console.log).catch(console.log)
 Promise { <pending> }
 > [ { cwMeta: { cwName: 'Initial wallet' },
     cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
@@ -123,7 +123,7 @@ Promise { <pending> }
 ### Get all wallet sets
 
 ~~~bash
->  api.getWalletSets().then(console.log).catch(console.log)
+>  api.getWallets().then(console.log).catch(console.log)
 Promise { <pending> }
 > []
 ~~~
@@ -131,7 +131,7 @@ Promise { <pending> }
 ### New wallet set
 
 ~~~bash
->  api.newWalletSet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
+>  api.newWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwsWalletsNumber: 0,
   cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
@@ -144,7 +144,7 @@ Promise { <pending> }
 ### Get (existing) wallet set
 
 ~~~bash
-> api.getWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
+> api.getWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwsWalletsNumber: 0,
   cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
@@ -158,7 +158,7 @@ Promise { <pending> }
 
 ~~~bash
 
-> api.getWalletSets().then(console.log).catch(console.log)
+> api.getWallets().then(console.log).catch(console.log)
 Promise { <pending> }
 > [ { cwsWalletsNumber: 0,
     cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
@@ -180,15 +180,15 @@ Promise { <pending> }
 ### Change passphrase
 
 ~~~bash
-> api.changeWalletSetPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass', 'pass2').then(console.log).catch(console.log)
+> api.changeWalletPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass', 'pass2').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
 
-> api.changeWalletSetPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass', 'pass2').then(console.log).catch(console.log)
+> api.changeWalletPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass', 'pass2').then(console.log).catch(console.log)
 Promise { <pending> }
 > Error: ServerError: Pos.Wallet.Web.Error.Internal "Invalid old passphrase given"
 
-> api.changeWalletSetPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass2', 'pass').then(console.log).catch(console.log)
+> api.changeWalletPass('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'pass2', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
 ~~~
@@ -218,17 +218,17 @@ Promise { <pending> }
 ### Restore wallet set
 
 ~~~bash
->  api.restoreWalletSet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
+>  api.restoreWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > Error: ServerError: Pos.Wallet.Web.Error.RequestError "Wallet set with that mnemonics already exists"
 
 
->  api.deleteWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
+>  api.deleteWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
 
 
->  api.restoreWalletSet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
+>  api.restoreWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwsWalletsNumber: 0,
   cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
@@ -241,7 +241,7 @@ Promise { <pending> }
 ### Delete a wallet set (shown above)
 
 ~~~bash
->  api.deleteWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
+>  api.deleteWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
 ~~~
@@ -251,7 +251,7 @@ Promise { <pending> }
 If you are in development mode, make sure to create keys with ``.
 
 ~~~bash
-> api.importWalletSet('/home/akegalj/projects/serokell/cardano-sl/keys/2.key.hd', '').then(console.log).catch(console.log)
+> api.importWallet('/home/akegalj/projects/serokell/cardano-sl/keys/2.key.hd', '').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwsWalletsNumber: 0,
   cwsWSetMeta:
@@ -267,7 +267,7 @@ Promise { <pending> }
 ### Get wallets
 
 ~~~bash
-> api.getWallets().then(console.log).catch(console.log)
+> api.getAccounts().then(console.log).catch(console.log)
 Promise { <pending> }
 > [ { cwMeta: { cwName: 'Genesis wallet' },
     cwId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
@@ -282,7 +282,7 @@ Promise { <pending> }
 ### Get wallet
 
 ~~~bash
-> api.getWallet('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
+> api.getAccount('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwMeta: { cwName: 'Genesis wallet' },
   cwId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
@@ -295,7 +295,7 @@ Promise { <pending> }
 ### Get wallets from a specific wallet set
 
 ~~~bash
-> api.getSetWallets('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f').then(console.log).catch(console.log)
+> api.getWalletAccounts('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f').then(console.log).catch(console.log)
 Promise { <pending> }
 > [ { cwMeta: { cwName: 'Initial wallet' },
     cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
@@ -306,7 +306,7 @@ Promise { <pending> }
 ### Create a new wallet
 
 ~~~bash
-> api.newWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'trips', 'pass').then(console.log).catch(console.log)
+> api.newAccount('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'trips', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cwMeta: { cwName: 'trips' },
   cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW@3190108780',
@@ -319,7 +319,7 @@ Promise { <pending> }
 ### Delete a wallet
 
 ~~~bash
->  api.deleteWallet('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
+>  api.deleteAccount('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
 Promise { <pending> }
 > {}
 ~~~
@@ -327,7 +327,7 @@ Promise { <pending> }
 ### Update a wallet
 
 ~~~bash
-> api.updateWallet('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648','CWTPersonal','ADA','Initial wallet','CWANormal',0).then(console.log)
+> api.updateAccount('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648','CWTPersonal','ADA','Initial wallet','CWANormal',0).then(console.log)
 Promise { <pending> }
 > { cwMeta: { cwName: 'CWTPersonal' },
   cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
@@ -340,7 +340,7 @@ Promise { <pending> }
 ### Create a new account
 
 ~~~bash
-> api.newAccount('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
+> api.newWAddress('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
 Promise { <pending> }
 > { caId: '19N52o4RrzEo6AxRzawAkbuMtnqPjrgat1USDMaRQG3uK46b7bNrpxMSLgd1sxvPUPFbGnmj9Kmj2Fb8H5W5Ez7g6voZMy',
   caAmount: { getCCoin: '0' } }
