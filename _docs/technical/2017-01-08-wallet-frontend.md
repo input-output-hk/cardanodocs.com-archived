@@ -91,15 +91,15 @@ undefined
   updateAccount: [Function] }
 ~~~
 
-This will load and show all functions that can be run from from this library to interact with the wallet. For example, to fetch all available wallets, we can do:
+This will load and show all functions that can be run from from this library to interact with the wallet. For example, to fetch all available accounts, we can do:
 
 ~~~bash
 > api.getAccounts().then(console.log).catch(console.log)
 Promise { <pending> }
-> [ { cwMeta: { cwName: 'Initial wallet' },
-    cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
-    cwAmount: { getCCoin: '50000' },
-    cwAccounts: [ [Object] ] } ]
+> [ { caMeta: { caName: 'Initial wallet' },
+    caId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
+    caAmount: { getCCoin: '50000' },
+    caAccount: [ [Object] ] } ]
 ~~~
 
 Note: `daedalus-client-api` is not optimized/compressed. This is will be a job for Daedalus.
@@ -133,12 +133,12 @@ Promise { <pending> }
 ~~~bash
 >  api.newWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495542169.630769,
-  cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-  cwsHasPassphrase: true,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta: { csUnit: 0, cwName: 'test', cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495542169.630769,
+  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+  cwHasPassphrase: true,
+  cwAmount: { getCCoin: '0' } }
 ~~~
 
 ### Get (existing) wallet
@@ -146,12 +146,12 @@ Promise { <pending> }
 ~~~bash
 > api.getWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495542169.630769,
-  cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-  cwsHasPassphrase: true,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta: { csUnit: 0, cwName: 'test', cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495542169.630769,
+  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+  cwHasPassphrase: true,
+  cwAmount: { getCCoin: '0' } }
 ~~~
 
 ### Get all wallets
@@ -160,21 +160,21 @@ Promise { <pending> }
 
 > api.getWallets().then(console.log).catch(console.log)
 Promise { <pending> }
-> [ { cwsWalletsNumber: 0,
-    cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
-    cwsPassphraseLU: 1495542169.630769,
-    cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-    cwsHasPassphrase: true,
-    cwsAmount: { getCCoin: '0' } },
-  { cwsWalletsNumber: 1,
-    cwsWSetMeta:
-     { cwsUnit: 0,
-       cwsName: 'Precreated wallet full of money',
-       cwsAssurance: 'CWANormal' },
-    cwsPassphraseLU: 1495541138.013531,
-    cwsId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f',
-    cwsHasPassphrase: false,
-    cwsAmount: { getCCoin: '50000' } } ]
+> [ { cwAccountsNumber: 0,
+    cwSetMeta: { csUnit: 0, cwName: 'test', cwAssurance: 'CWANormal' },
+    cwPassphraseLU: 1495542169.630769,
+    cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+    cwHasPassphrase: true,
+    cwAmount: { getCCoin: '0' } },
+  { cwAccountsNumber: 1,
+    cwSetMeta:
+     { csUnit: 0,
+       cwName: 'Precreated wallet full of money',
+       cwAssurance: 'CWANormal' },
+    cwPassphraseLU: 1495541138.013531,
+    cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f',
+    cwHasPassphrase: false,
+    cwAmount: { getCCoin: '50000' } } ]
 ~~~
 
 ### Change passphrase
@@ -196,23 +196,23 @@ Promise { <pending> }
 ### Change wallet name
 
 ~~~bash
->  api.renameWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'testing').then(console.log).catch(console.log)
+>  api.renameWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'testing').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta: { cwsUnit: 0, cwsName: 'testing', cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495542169.630769,
-  cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-  cwsHasPassphrase: true,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta: { csUnit: 0, cwName: 'testing', cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495542169.630769,
+  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+  cwHasPassphrase: true,
+  cwAmount: { getCCoin: '0' } }
 
->  api.renameWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'test').then(console.log).catch(console.log)
+>  api.renameWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'test').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495542169.630769,
-  cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-  cwsHasPassphrase: true,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta: { csUnit: 0, cwName: 'test', cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495542169.630769,
+  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+  cwHasPassphrase: true,
+  cwAmount: { getCCoin: '0' } }
 ~~~
 
 ### Restore wallet
@@ -230,12 +230,12 @@ Promise { <pending> }
 
 >  api.restoreWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta: { cwsUnit: 0, cwsName: 'test', cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495542169.630769,
-  cwsId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
-  cwsHasPassphrase: true,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta: { csUnit: 0, cwName: 'test', cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495542169.630769,
+  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW',
+  cwHasPassphrase: true,
+  cwAmount: { getCCoin: '0' } }
 ~~~
 
 ### Delete a wallet (shown above)
@@ -253,43 +253,43 @@ If you are in development mode, make sure to create keys with ``.
 ~~~bash
 > api.importWallet('/home/akegalj/projects/serokell/cardano-sl/keys/2.key.hd', '').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwsWalletsNumber: 0,
-  cwsWSetMeta:
-   { cwsUnit: 0,
-     cwsName: 'Genesis wallet',
-     cwsAssurance: 'CWANormal' },
-  cwsPassphraseLU: 1495545014.377285,
-  cwsId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8',
-  cwsHasPassphrase: false,
-  cwsAmount: { getCCoin: '0' } }
+> { cwAccountsNumber: 0,
+  cwSetMeta:
+   { csUnit: 0,
+     cwName: 'Genesis wallet',
+     cwAssurance: 'CWANormal' },
+  cwPassphraseLU: 1495545014.377285,
+  cwId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8',
+  cwHasPassphrase: false,
+  cwAmount: { getCCoin: '0' } }
 ~~~
 
-### Get wallets
+### Get accounts
 
 ~~~bash
 > api.getAccounts().then(console.log).catch(console.log)
 Promise { <pending> }
-> [ { cwMeta: { cwName: 'Genesis wallet' },
-    cwId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
-    cwAmount: { getCCoin: '50000' },
-    cwAccounts: [ [Object] ] },
-  { cwMeta: { cwName: 'Initial wallet' },
-    cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
-    cwAmount: { getCCoin: '50000' },
-    cwAccounts: [ [Object] ] } ]
+> [ { caMeta: { caName: 'Genesis account' },
+    caId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
+    caAmount: { getCCoin: '50000' },
+    caAddresses: [ [Object] ] },
+  { caMeta: { caName: 'Initial account' },
+    caId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
+    caAmount: { getCCoin: '50000' },
+    caAddresses: [ [Object] ] } ]
 ~~~
 
-### Get wallet
+### Get account
 
 ~~~bash
 > api.getAccount('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwMeta: { cwName: 'Genesis wallet' },
-  cwId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
-  cwAmount: { getCCoin: '50000' },
-  cwAccounts:
-   [ { caId: '19FLnEFfkaLsZqBqYHjPmCypZNHNZ7SBfMsntKgspqA96F18s6eeDy5GYjHmwXSECG6jRqWh9qqEAicpEXrNhpb8PuRNVL',
-       caAmount: [Object] } ] }
+> { caMeta: { caName: 'Genesis account' },
+  caId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648',
+  caAmount: { getCCoin: '50000' },
+  caAddresses:
+   [ { cadId: '19FLnEFfkaLsZqBqYHjPmCypZNHNZ7SBfMsntKgspqA96F18s6eeDy5GYjHmwXSECG6jRqWh9qqEAicpEXrNhpb8PuRNVL',
+       cadAmount: [Object] } ] }
 ~~~
 
 ### Get accounts from a specific wallet
@@ -297,10 +297,10 @@ Promise { <pending> }
 ~~~bash
 > api.getWalletAccounts('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f').then(console.log).catch(console.log)
 Promise { <pending> }
-> [ { cwMeta: { cwName: 'Initial account' },
-    cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
-    cwAmount: { getCCoin: '50000' },
-    cwAccounts: [ [Object] ] } ]
+> [ { caMeta: { caName: 'Initial account' },
+    caId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
+    caAmount: { getCCoin: '50000' },
+    caAddresses: [ [Object] ] } ]
 ~~~
 
 ### Create a new account
@@ -308,12 +308,12 @@ Promise { <pending> }
 ~~~bash
 > api.newAccount('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'trips', 'pass').then(console.log).catch(console.log)
 Promise { <pending> }
-> { cwMeta: { cwName: 'trips' },
-  cwId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW@3190108780',
-  cwAmount: { getCCoin: '0' },
-  cwAccounts:
-   [ { caId: '19M3DbeepAzN6xzSSErL8pk1JQA8oFkgE9L6LZfKXMiNpoPDjfDpJjWa3Jis1oCZVGMo1pM8tio2wifuhDPWzwCWS6sZfX',
-       caAmount: [Object] } ] }
+> { caMeta: { caName: 'trips' },
+  caId: '1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW@3190108780',
+  caAmount: { getCCoin: '0' },
+  caAddresses:
+   [ { cadId: '19M3DbeepAzN6xzSSErL8pk1JQA8oFkgE9L6LZfKXMiNpoPDjfDpJjWa3Jis1oCZVGMo1pM8tio2wifuhDPWzwCWS6sZfX',
+       cadAmount: [Object] } ] }
 ~~~
 
 ### Delete an account
@@ -329,21 +329,21 @@ Promise { <pending> }
 ~~~bash
 > api.updateAccount('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648','CWTPersonal','ADA','Initial account','CWANormal',0).then(console.log)
 Promise { <pending> }
-> { cwMeta: { cwName: 'CWTPersonal' },
-  cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
-  cwAmount: { getCCoin: '50000' },
-  cwAccounts:
-   [ { caId: '19Fv6JWbdLXRXqew721u2GEarEwc8rcfpAqsriRFPameyCkQLHsNDKQRpwsM7W1M587CiswPuY27cj7RUvNXcZWgTbPByq',
-       caAmount: [Object] } ] }
+> { caMeta: { caName: 'CWTPersonal' },
+  caId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
+  caAmount: { getCCoin: '50000' },
+  caAddresses:
+   [ { cadId: '19Fv6JWbdLXRXqew721u2GEarEwc8rcfpAqsriRFPameyCkQLHsNDKQRpwsM7W1M587CiswPuY27cj7RUvNXcZWgTbPByq',
+       cadAmount: [Object] } ] }
 ~~~
 
-### Create a new account
+### Create a new address
 
 ~~~bash
 > api.newWAddress('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
 Promise { <pending> }
-> { caId: '19N52o4RrzEo6AxRzawAkbuMtnqPjrgat1USDMaRQG3uK46b7bNrpxMSLgd1sxvPUPFbGnmj9Kmj2Fb8H5W5Ez7g6voZMy',
-  caAmount: { getCCoin: '0' } }
+> { cadId: '19N52o4RrzEo6AxRzawAkbuMtnqPjrgat1USDMaRQG3uK46b7bNrpxMSLgd1sxvPUPFbGnmj9Kmj2Fb8H5W5Ez7g6voZMy',
+  cadAmount: { getCCoin: '0' } }
 ~~~
 
 ### Is the address valid
