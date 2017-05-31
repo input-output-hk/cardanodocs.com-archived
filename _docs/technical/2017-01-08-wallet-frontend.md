@@ -120,7 +120,7 @@ Promise { <pending> }
 > {}
 ~~~
 
-### Get all wallet sets
+### Get all wallets
 
 ~~~bash
 >  api.getWallets().then(console.log).catch(console.log)
@@ -128,7 +128,7 @@ Promise { <pending> }
 > []
 ~~~
 
-### New wallet set
+### New wallet
 
 ~~~bash
 >  api.newWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
@@ -141,7 +141,7 @@ Promise { <pending> }
   cwsAmount: { getCCoin: '0' } }
 ~~~
 
-### Get (existing) wallet set
+### Get (existing) wallet
 
 ~~~bash
 > api.getWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
@@ -154,7 +154,7 @@ Promise { <pending> }
   cwsAmount: { getCCoin: '0' } }
 ~~~
 
-### Get all wallet sets
+### Get all wallets
 
 ~~~bash
 
@@ -169,7 +169,7 @@ Promise { <pending> }
   { cwsWalletsNumber: 1,
     cwsWSetMeta:
      { cwsUnit: 0,
-       cwsName: 'Precreated wallet set full of money',
+       cwsName: 'Precreated wallet full of money',
        cwsAssurance: 'CWANormal' },
     cwsPassphraseLU: 1495541138.013531,
     cwsId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f',
@@ -193,7 +193,7 @@ Promise { <pending> }
 > {}
 ~~~
 
-### Change wallet set name
+### Change wallet name
 
 ~~~bash
 >  api.renameWalletSet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'testing').then(console.log).catch(console.log)
@@ -215,7 +215,7 @@ Promise { <pending> }
   cwsAmount: { getCCoin: '0' } }
 ~~~
 
-### Restore wallet set
+### Restore wallet
 
 ~~~bash
 >  api.restoreWallet('test', 'CWANormal', 0, 'transfer uniform grunt excess six veteran vintage warm confirm vote nephew allow', 'pass').then(console.log).catch(console.log)
@@ -238,7 +238,7 @@ Promise { <pending> }
   cwsAmount: { getCCoin: '0' } }
 ~~~
 
-### Delete a wallet set (shown above)
+### Delete a wallet (shown above)
 
 ~~~bash
 >  api.deleteWallet('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW').then(console.log).catch(console.log)
@@ -247,7 +247,7 @@ Promise { <pending> }
 ~~~
 
 
-### Import wallet set
+### Import wallet
 If you are in development mode, make sure to create keys with ``.
 
 ~~~bash
@@ -256,7 +256,7 @@ Promise { <pending> }
 > { cwsWalletsNumber: 0,
   cwsWSetMeta:
    { cwsUnit: 0,
-     cwsName: 'Genesis wallet set',
+     cwsName: 'Genesis wallet',
      cwsAssurance: 'CWANormal' },
   cwsPassphraseLU: 1495545014.377285,
   cwsId: '1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8',
@@ -292,18 +292,18 @@ Promise { <pending> }
        caAmount: [Object] } ] }
 ~~~
 
-### Get wallets from a specific wallet set
+### Get accounts from a specific wallet
 
 ~~~bash
 > api.getWalletAccounts('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f').then(console.log).catch(console.log)
 Promise { <pending> }
-> [ { cwMeta: { cwName: 'Initial wallet' },
+> [ { cwMeta: { cwName: 'Initial account' },
     cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
     cwAmount: { getCCoin: '50000' },
     cwAccounts: [ [Object] ] } ]
 ~~~
 
-### Create a new wallet
+### Create a new account
 
 ~~~bash
 > api.newAccount('1fjgSiJKbzJGMsHouX9HDtKai9cmvPzoTfrmYGiFjHpeDhW', 'trips', 'pass').then(console.log).catch(console.log)
@@ -316,7 +316,7 @@ Promise { <pending> }
        caAmount: [Object] } ] }
 ~~~
 
-### Delete a wallet
+### Delete an account
 
 ~~~bash
 >  api.deleteAccount('1feqWtoyaxFyvKQFWo46vHSc7urynGaRELQE62T74Y3RBs8@2147483648').then(console.log).catch(console.log)
@@ -324,10 +324,10 @@ Promise { <pending> }
 > {}
 ~~~
 
-### Update a wallet
+### Update an account
 
 ~~~bash
-> api.updateAccount('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648','CWTPersonal','ADA','Initial wallet','CWANormal',0).then(console.log)
+> api.updateAccount('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648','CWTPersonal','ADA','Initial account','CWANormal',0).then(console.log)
 Promise { <pending> }
 > { cwMeta: { cwName: 'CWTPersonal' },
   cwId: '1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648',
