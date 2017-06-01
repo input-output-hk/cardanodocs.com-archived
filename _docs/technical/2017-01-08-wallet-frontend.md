@@ -23,7 +23,7 @@ between different currencies, both digital and not.
 To run `daedalus-client-api` locally, you have to start the `wallet-api` of [`cardano-sl`](https://github.com/input-output-hk/cardano-sl/) as follows. Make sure that you are in the root folder of `cardano-sl`.
 
 ~~~bash
-util-scripts/build-daedalus-bridge.sh
+util-scripts/build-client-api.sh
 ~~~
 
 ## Running and testing `daedalus-client-api`
