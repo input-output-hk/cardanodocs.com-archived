@@ -248,7 +248,7 @@ Promise { <pending> }
 
 
 ### Import wallet
-If you are in development mode, make sure to create keys with ``.
+If you are in development mode, make sure to create keys with `stack exec cardano-keygen -- --dump-dev-genesis-keys keys/{}.key`.
 
 ~~~bash
 > api.importWallet('/home/akegalj/projects/serokell/cardano-sl/keys/2.key.hd', '').then(console.log).catch(console.log)
