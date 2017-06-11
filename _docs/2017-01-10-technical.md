@@ -85,11 +85,14 @@ listeners will not be covered, focusing on the main ones instead.
 
 Listeners mostly use the [Relay
 framework](/technical/protocols/csl-application-level/#invreqdata-and-messagepart),
-which includes three type of messages: - `Inventory` message: node publishes
-message to network when gets a new data. - `Request` message: node requests a
-new data which was published in `Inventory` message. (from other node), if this
-data is not known yet by this node - `Data` message: node replies with this
-message on `Request` message. `Data` message contains concrete data.
+which includes three type of messages:
+
+-   `Inventory` message: node publishes message to network when gets a new data.
+-   `Request` message: node requests a new data which was published in
+    `Inventory` message. (from other node), if this data is not known yet by
+    this node
+-   `Data` message: node replies with this message on `Request` message. `Data`
+    message contains concrete data.
 
 For instance, when a user creates a new transaction, the wallet sends
 `Inventory` message with transaction ID to the network. If the node that has

@@ -588,25 +588,30 @@ true
 ### Notify websockets
 
 We can test the websockets with a small utility
-application(`npm install -g wscat`): <sub>~</sub>bash &gt; wscat -c
-ws://127.0.0.1:8090
+application(`npm install -g wscat`):
+
+``` bash
+> wscat -c ws://127.0.0.1:8090
 
 connected (press CTRL+C to quit)
 
-&lt; {"tag":"ConnectionOpened"}
+< {"tag":"ConnectionOpened"}
 
-&lt; {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":1}} &lt;
-{"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":1}} &lt;
-{"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":2}} &lt;
-{"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":2}} &lt;
-{"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":3}} &lt;
-{"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":3}} &lt;
-{"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":4}} &lt;
-{"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":4}}
-<sub>~</sub>
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":1}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":1}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":2}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":2}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":3}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":3}}
+< {"tag":"NetworkDifficultyChanged","contents":{"getChainDifficulty":4}}
+< {"tag":"LocalDifficultyChanged","contents":{"getChainDifficulty":4}}
+```
 
 We should be seeing the same changes manually from here:
-<sub>~~bash\ curl\ http://localhost:8090/api/settings/sync/progress~~</sub>
+
+``` bash
+curl http://localhost:8090/api/settings/sync/progress
+```
 
 Accound should be renamed into address. Please see an issue
 [CSM-249](https://issues.serokell.io/issue/CSM-249) for details.

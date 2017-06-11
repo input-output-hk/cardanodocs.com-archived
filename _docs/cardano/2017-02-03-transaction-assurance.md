@@ -71,11 +71,14 @@ canceled by some fork.
 
 For example, at normal security level, if the attacker’s stake is **10%** (or $6
 millions for Cardano market capitalization of $60 millions), the levels of
-assurance for a user’s transaction are: 1. Lowest assurance (color-coded with
-red) — when the user’s block with coin transfer transaction has depth less than
-**3** blocks. 2. Medium assurance (color-coded with yellow) — when the user’s
-block has depth from **3** to **7** blocks. 3. High assurance (color-coded with
-green) — when the user’s block has depth **9** or more blocks.
+assurance for a user’s transaction are:
+
+1.  Lowest assurance (color-coded with red) — when the user’s block with coin
+    transfer transaction has depth less than **3** blocks.
+2.  Medium assurance (color-coded with yellow) — when the user’s block has depth
+    from **3** to **7** blocks.
+3.  High assurance (color-coded with green) — when the user’s block has depth
+    **9** or more blocks.
 
 ## Normal Security Level
 

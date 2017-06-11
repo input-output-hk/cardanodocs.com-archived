@@ -13,13 +13,16 @@ The goal of this document is to enumerate all ways in which *cardano-sl*
 implementation differs from the specifications presented in the paper and
 clarify everything that may be obscure after reading the paper.
 
-This document is divided into four parts: 1. *Clarifications* part clarifies
-some details which are not specified in paper, but are important for practical
-implementation. 2. *Modifications* part outlines things which are specified in
-paper, but are implemented differently in Cardano SL. 3. *Added features* part
-briefly mentions new features which are not described in paper, but have been
-implemented in Cardano SL. 4. *Ommisions* part lists topics described in paper
-but not implemented into Cardano SL.
+This document is divided into four parts:
+
+1.  *Clarifications* part clarifies some details which are not specified in
+    paper, but are important for practical implementation.
+2.  *Modifications* part outlines things which are specified in paper, but are
+    implemented differently in Cardano SL.
+3.  *Added features* part briefly mentions new features which are not described
+    in paper, but have been implemented in Cardano SL.
+4.  *Omissions* part lists topics described in paper but not implemented into
+    Cardano SL.
 
 # Clarifications
 

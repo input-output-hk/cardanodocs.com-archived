@@ -199,9 +199,9 @@ The building process for Daedalus Bridge is a bit complex. Currently Nix
 expressions don't install Node.js and NPM, so those have to be installed
 manually. To do that, consult the repositories of the package manager of the
 according OS, or download binaries from [the
-net](https://nodejs.org/en/download/). Please make sure you have Node.js version
-6. You can use [nvm](https://github.com/creationix/nvm#installation) to install
-proper version.
+net](https://nodejs.org/en/download/). Please make sure you have Node.js
+version 6. You can use [nvm](https://github.com/creationix/nvm#installation) to
+install proper version.
 
 To build Daedalus Bridge with npm installed, run the following commands:
 

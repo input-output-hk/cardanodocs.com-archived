@@ -106,11 +106,11 @@ them, one needs to upload there either:
 
 -   Payload of:
 
--   Public key `PK` of level `i`
+    -   Public key `PK` of level `i`
 
--   Hash of root public key
+    -   Hash of root public key
 
--   Tree path for `PK`
+    -   Tree path for `PK`
 
 #### Wallet
 
@@ -120,11 +120,11 @@ For wallet to operate over some subtree, one needs to provide either:
 
 -   Payload of:
 
--   Secret key `SK` of level `i`
+    -   Secret key `SK` of level `i`
 
--   Hash of root public key
+    -   Hash of root public key
 
--   Tree path for `SK`
+    -   Tree path for `SK`
 
 ## Derivation crypto interface
 
@@ -132,11 +132,11 @@ For wallet to operate over some subtree, one needs to provide either:
 
 -   `kp` denotes a private key with index `p`.
 
-Just a **Ed25519** private key
+    Just a **Ed25519** private key
 
 -   `Kp` denotes public key with index `p`.
 
-Just a **Ed25519** public key
+    Just a **Ed25519** public key
 
 -   `cp` denotes chain code with index `p`.
 
@@ -156,11 +156,11 @@ crypto primitives:
 
 -   `CKDpriv :: ((kpar, cpar), i) → (ki, ci)`
 
-Computes a child extended private key from the parent extended private key.
+    Computes a child extended private key from the parent extended private key.
 
 -   `CKDpub :: ((Kpar, cpar), i) → (Ki, ci)`
 
-Сomputes a child extended public key from the parent extended public key.
+    Сomputes a child extended public key from the parent extended public key.
 
 # Daedalus HD wallets
 
