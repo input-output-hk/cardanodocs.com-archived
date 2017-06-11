@@ -12,9 +12,9 @@ children: dsa
 
 ## Get Cardano SL
 
- + [Windows](https://daedaluswallet.io/)
- + [Mac OS](https://daedaluswallet.io/)
+-   [Windows](https://daedaluswallet.io/)
+-   [Mac OS](https://daedaluswallet.io/)
 
-Linux installer is going to be released soon. For now, to
-get Cardano SL on Linux, please refer to the [Building From
+Linux installer is going to be released soon. For now, to get Cardano SL on
+Linux, please refer to the [Building From
 Source](/for-contributors/building-from-source) chapter.
