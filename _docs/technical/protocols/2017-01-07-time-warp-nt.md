@@ -4,7 +4,7 @@ title: Time-warp-NT Layer
 permalink: /technical/protocols/time-warp-nt/
 group: technical-protocols
 ---
-[//]: # (Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70)
+<!-- Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70 -->
 
 # Time-Warp-NT Layer
 

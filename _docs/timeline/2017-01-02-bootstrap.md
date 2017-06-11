@@ -5,7 +5,7 @@ permalink: /timeline/bootstrap/
 group: timeline
 ---
 
-[//]: # (Reviewed at 357ac1f7b4a9f1d98ee7f7bee46e874d7356958f)
+<!-- Reviewed at 357ac1f7b4a9f1d98ee7f7bee46e874d7356958f -->
 
 # Bootstrap Era
 

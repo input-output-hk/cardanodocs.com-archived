@@ -5,7 +5,7 @@ permalink: /technical/delegation/
 group: technical
 visible: true
 ---
-[//]: # (Reviewed at 997538cf04d16c7be58b70a94729ff7757e77261)
+<!-- Reviewed at 997538cf04d16c7be58b70a94729ff7757e77261 -->
 
 # Stake Delegation in Cardano SL
 

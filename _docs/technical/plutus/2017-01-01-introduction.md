@@ -4,7 +4,7 @@ title: Introduction
 permalink: /technical/plutus/introduction/
 group: technical-plutus
 ---
-[//]: # (Reviewed at f766612fb6c75b941cbe3c2d9c2db17dd2dc9bd3)
+<!-- Reviewed at f766612fb6c75b941cbe3c2d9c2db17dd2dc9bd3 -->
 
 # Introduction
 

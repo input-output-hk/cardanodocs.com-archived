@@ -5,7 +5,7 @@ permalink: /cardano/differences/
 group: cardano
 visible: true
 ---
-[//]: # (Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8)
+<!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
 
 # Differences Between Paper and Implementation
 

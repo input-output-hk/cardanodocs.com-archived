@@ -5,7 +5,7 @@ permalink: /cardano/proof-of-stake/
 group: cardano
 visible: true
 ---
-[//]: # (Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8)
+<!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
 
 # Ouroboros Proof of Stake Algorithm
 
@@ -83,4 +83,4 @@ select nodes provide the so-called “commitments” and then those get
 “revealed”, producing a random value generated independently by
 participants of the network.
 
-[//]: # (TODO PVSS)
+<!-- TODO PVSS -->

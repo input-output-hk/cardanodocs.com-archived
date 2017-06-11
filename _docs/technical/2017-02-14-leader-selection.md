@@ -5,7 +5,7 @@ permalink: /technical/leader-selection/
 group: technical
 visible: true
 ---
-[//]: # (Reviewed at e1d0f9fb37a3f1378341716916f0321fb55698df)
+<!-- Reviewed at e1d0f9fb37a3f1378341716916f0321fb55698df -->
 
 # Leader Selection in Cardano SL
 

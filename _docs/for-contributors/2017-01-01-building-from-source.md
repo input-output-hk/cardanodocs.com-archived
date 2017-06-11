@@ -5,7 +5,7 @@ permalink: /for-contributors/building-from-source/
 group: for-contributors
 ---
 
-[//]: # (Reviewed at c507f6675c16810ba9ca72b71dac57288fd1735c)
+<!-- Reviewed at c507f6675c16810ba9ca72b71dac57288fd1735c -->
 
 # Building Cardano SL and Daedalus from Source
 
@@ -74,10 +74,10 @@ The `cardano-node` binary is the most important binary of the system. It launche
 DHT peer is as follows: `--peer HOST:PORT/HOST_ID`, for example
 `discover.memorici.de:21989/dYGuDj0BrJxCsTC9ntJE7ePT7wUoVdQMH3sKLzQD8bo=`.
 
-[//]: # (TODO: Actually put a small dev-only net with a discoverable)
-[//]: # (peers which will send a recruitment propsal message to people)
-[//]: # (who bothered to build the system from scratch in the early days)
-[//]: # (of testnet release)
+<!-- TODO: Actually put a small dev-only net with a discoverable
+peers which will send a recruitment propsal message to people
+who bothered to build the system from scratch in the early days
+of testnet release -->
 
 Before providing an example of running the node, the trickiest command line arguments are noted.
 

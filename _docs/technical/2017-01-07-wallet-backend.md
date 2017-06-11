@@ -5,7 +5,7 @@ permalink: /technical/wallet-backend/
 group: technical
 visible: true
 ---
-[//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
+<!-- Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd -->
 
 # Cardano SL Wallet Backend
 

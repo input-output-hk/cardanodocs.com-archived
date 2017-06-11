@@ -4,7 +4,7 @@ title: PureScript Type Bridge in Cardano SL
 permalink: /technical/pstypebridge/
 group: technical
 ---
-[//]: # (Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd)
+<!-- Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd -->
 
 # PureScript type bridge
 

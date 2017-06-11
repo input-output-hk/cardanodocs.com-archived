@@ -4,7 +4,7 @@ title: Network Transport Layer
 permalink: /technical/protocols/network-transport/
 group: technical-protocols
 ---
-[//]: # (Reviewed at ef835a2334888eda7384da707c4077a8b576b192)
+<!-- Reviewed at ef835a2334888eda7384da707c4077a8b576b192 -->
 
 # Network Transport Layer
 

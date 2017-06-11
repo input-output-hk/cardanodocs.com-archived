@@ -4,7 +4,7 @@ title: CSL Application-Level Messaging
 permalink: /technical/protocols/csl-application-level/
 group: technical-protocols
 ---
-[//]: # (Reviewed at 721474b760466b888cf26545b52b35989b2162de)
+<!-- Reviewed at 721474b760466b888cf26545b52b35989b2162de -->
 
 # CSL Application-Level Messaging
 
@@ -109,7 +109,7 @@ module for the examples of messages that are using `Inv/Req/Data`.
 
 ## Block Exchange Messages
 
-[//]: # (Updated at 3b657302dede832b908f7ba792a164c83b362712)
+<!-- Updated at 3b657302dede832b908f7ba792a164c83b362712 -->
 
 This table explains [Pos.Block.Network.Types](https://github.com/input-output-hk/cardano-sl/blob/3b657302dede832b908f7ba792a164c83b362712/src/Pos/Block/Network/Types.hs) module.
 
@@ -225,7 +225,7 @@ both issuer and delegate.
 
 ### Messages table
 
-[//]: # (Updated at 15b8b777fde5a8ab4a85af71affeffdf31ad219c)
+<!-- Updated at 15b8b777fde5a8ab4a85af71affeffdf31ad219c -->
 
 This table describes delegation-related messages, found in
 [Pos.Delegation.Types](https://github.com/input-output-hk/cardano-sl/blob/15b8b777fde5a8ab4a85af71affeffdf31ad219c/src/Pos/Delegation/Types.hs)
@@ -237,9 +237,9 @@ section.
 | SendProxySK              | Message with proxy delegation certificate                                              |
 | ConfirmProxySK           | Used to confirm proxy signature delivery                                               |
 
-[//]: # (Unused messages)
-[//]: # | CheckProxySKConfirmed    | Checks if node is aware of PSK delivery. To be responded with CheckProxySKConfirmedRes |
-[//]: # | CheckProxySKConfirmedRes | Returns _True_ if node aware of asked proxy certificate                                |
+<!-- Unused messages
+| CheckProxySKConfirmed    | Checks if node is aware of PSK delivery. To be responded with CheckProxySKConfirmedRes |
+| CheckProxySKConfirmedRes | Returns _True_ if node aware of asked proxy certificate                                | -->
 
 ## Update System Messages
 
