@@ -17,15 +17,14 @@ processes for end-users.
 
 In Cardano, wallets are defined in the following manner:
 
-``` haskell
+~~~ haskell
 data CWallet = CWallet
     { cwId       :: !CWalletAddress
     , cwMeta     :: !CWalletMeta
     , cwAccounts :: ![CAccount]
     , cwAmount   :: !CCoin
-    , test
     }
-```
+~~~
 
 where `CWalletMeta` is a type that presently indicates whether the wallet is
 shared or personal, the currency that this wallet uses, and the wallet's name.
