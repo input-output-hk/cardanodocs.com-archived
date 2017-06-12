@@ -23,6 +23,7 @@ data CWallet = CWallet
     , cwMeta     :: !CWalletMeta
     , cwAccounts :: ![CAccount]
     , cwAmount   :: !CCoin
+    , test
     }
 ```
 
