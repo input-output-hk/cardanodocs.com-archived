@@ -45,7 +45,7 @@ And if it's the first project in Haskell on this machine, run `stack setup`:
 
 After that, in order to build Cardano SL with wallet capabilities, run the following script:
 
-    [nix-shell:~/cardano-sl]$ ./util-scripts/build.sh
+    [nix-shell:~/cardano-sl]$ ./scripts/build/cardano-sl.sh
 
 It is suggested having at least 8GB of RAM and some swap space for the build process. As the project is fairly large and GHC parallelizes builds very effectively, memory and CPU consumption during the build process is high. Please make sure you have enough free disk space as well.
 
@@ -63,7 +63,7 @@ to install proper version.
 
 Now run the following script:
 
-    [nix-shell:~/cardano-sl]$ ./util-scripts/build-daedalus-bridge.sh
+    [nix-shell:~/cardano-sl]$ ./scripts/build/daedalus-bridge.sh
 
 After that `daedalus-client-api` will be registered in the local NPM package repository. This way, at any time, `daedalus-client-api` dependency can be satisfied in any project that depends on it by manually running following command:
 
@@ -79,4 +79,4 @@ Clone Daedalus repository and go to the root directory:
 
 Then run the following script: 
 
-    [nix-shell:~/cardano-sl]$ ./util-scripts/build-daedalus.sh
+    [nix-shell:~/cardano-sl]$ ./scripts/build.sh
