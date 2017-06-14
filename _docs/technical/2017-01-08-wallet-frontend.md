@@ -74,7 +74,7 @@ undefined
   isValidMnemonic: [Function],
   isValidPaperVendRedemptionKey: [Function: isValidPaperVendRedemptionKey],
   isValidRedemptionKey: [Function: isValidRedemptionKey],
-  newWAddress: [Function],
+  newAddress: [Function],
   newPayment: [Function],
   newPaymentExtended: [Function],
   newAccount: [Function],
@@ -350,7 +350,7 @@ Promise { <pending> }
 ### Create a new address
 
 ``` bash
-> api.newWAddress('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
+> api.newAddress('1gCC3J43QAZo3fZiUTuyfYyT8sydFJHdhPnFFmckXL7mV3f@2147483648', '').then(console.log).catch(console.log)
 Promise { <pending> }
 > { cadId: '19N52o4RrzEo6AxRzawAkbuMtnqPjrgat1USDMaRQG3uK46b7bNrpxMSLgd1sxvPUPFbGnmj9Kmj2Fb8H5W5Ez7g6voZMy',
   cadAmount: { getCCoin: '0' } }
