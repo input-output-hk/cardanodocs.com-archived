@@ -79,4 +79,5 @@ Clone Daedalus repository and go to the root directory:
 
 Then run the following script: 
 
-    [nix-shell:~/cardano-sl]$ ./scripts/build.sh
+    [nix-shell:~/cardano-sl]$ ./scripts/link-bridge.sh
+    [nix-shell:~/cardano-sl]$ npm install
