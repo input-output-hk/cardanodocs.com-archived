@@ -27,15 +27,15 @@ languages are preferred.
 Since all of Cardano's wallet was written in Haskell, to interact with the
 frontend and send/receive information to/from it is necessary to translate these
 Haskell types in PureScript types, and so on. Because the two languages are
-similar, this can be done via the `purescript-bridge` package, which exports,
-among other important functions and types we'll use, the `mkSumType` function.
-This function works for any Haskell type that has an equivalent in PureScript,
-like Haskell's `Int` and PureScript's `Number`, Haskell's strings and
-PureScript's `String`, Haskell's tuple, `(,)`, and PureScript's `Tuple`,
+similar, this can be done via the [`purescript-bridge`](https://hackage.haskell.org/package/purescript-bridge)
+package, which exports, among other important functions and types we'll use,
+the `mkSumType` function. This function works for any Haskell type that has an
+equivalent in PureScript, like Haskell's `Int` and PureScript's `Number`, Haskell's
+strings and PureScript's `String`, Haskell's tuple, `(,)`, and PureScript's `Tuple`,
 Haskell's records, and PureScript's records, which only have a slight difference
 in syntax, etc.
 
-In these cases, all that one needs to write is, for example,
+In these cases, all that one needs to write is, for example:
 
 ``` haskell
 import         Language.PureScript.Bridge (mkSumType, buildBridge,
@@ -44,8 +44,8 @@ import         Language.PureScript.Bridge (mkSumType, buildBridge,
 main :: IO ()
 main =
     writePSTypes
-    (buildBridge defaultBridge)
       "PureScript/Type/Directory"
+      (buildBridge defaultBridge)
       [ mkSumType (Proxy @MyType)
       ]
 ```
@@ -63,7 +63,7 @@ another mechanism is required.
 As mentioned previously, `mkSumType` works for most types, but for Haskell's
 `Word`, in this project's case, it did not. This is because PureScript does not
 have the variety of numerical types that Haskell does, so for
-`Word, Word8, Word 32, Word64` and other very specific integral types,
+`Word`, `Word8`, `Word32`, `Word64` and other very specific integral types,
 PureScript's compiler is unable to automatically perform the conversion. In
 these cases, we require a custom bridge. This mechanism is simple. Building on
 the previous example,
