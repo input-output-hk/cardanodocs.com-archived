@@ -26,14 +26,10 @@ Time in Cardano SL is divided into *epochs*. Every epoch is divided into
 "the fifth slot of the third epoch" (the 0th slot and the 0th epoch are also
 possible).
 
-Cardano SL uses a set of constants, special values defined in `.yaml`
-configuration files. We have two main configuration files: for development and
-for production,
-[`constants-dev.yaml`](https://github.com/input-output-hk/cardano-sl/blob/c30a68214f05367bb26388b58f76984034a564cd/constants-dev.yaml)
-and
-[`constants-prod.yaml`](https://github.com/input-output-hk/cardano-sl/blob/c30a68214f05367bb26388b58f76984034a564cd/constants-prod.yaml)
-correspondingly. Please note that particular values are not equal in these two
-configuration files. In this guide we'll refer to productions constants.
+Cardano SL uses sets of constants, special values defined in
+[the `constants.yaml` configuration file](https://github.com/input-output-hk/cardano-sl/blob/bf5dd592b7bf77a68bf71314718dc7a8d5cc8877/core/constants.yaml).
+There are two main sets: for production and development. In this guide we'll
+refer to productions constants.
 
 Suppose the values for Cardano SL are:
 
@@ -273,10 +269,6 @@ discussed with the original authors of the protocol as well as independent
 security auditors, so reusing these constants is strongly recommended for
 alternative clients.
 
-Values of these constants are defined in two configuration files:
-
-1.  [constants-dev.yaml](https://github.com/input-output-hk/cardano-sl/blob/f4fac95c104c62a4dad72e3b0b57c8e9e7da0866/constants-dev.yaml),
-    for development environment.
-2.  [constants-prod.yaml](https://github.com/input-output-hk/cardano-sl/blob/f4fac95c104c62a4dad72e3b0b57c8e9e7da0866/constants-prod.yaml),
-    for production environment.
-
+Values of these constants are defined in
+[the `constants.yaml` configuration file](https://github.com/input-output-hk/cardano-sl/blob/bf5dd592b7bf77a68bf71314718dc7a8d5cc8877/core/constants.yaml),
+for production and development environments separately.
