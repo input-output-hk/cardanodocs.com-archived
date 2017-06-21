@@ -5,20 +5,20 @@ permalink: /cardano/proof-of-stake/
 group: cardano
 visible: true
 ---
-<!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
+<!-- Reviewed at c4c45ce9a7a8f4aa6d88a32829755196a017f6a1 -->
 
 # Ouroboros Proof of Stake Algorithm
 
-Ouroboros Proof of Stake Algorithm is the most important part of protocol, the
-way that nodes reach consensus about the state of ledger.
+Ouroboros Proof of Stake Algorithm is the most important part of the protocol. It defines the
+way nodes reach consensus about the state of ledger.
 
-Ouroboros is unique as it is the first blockchain protocol based on proof of
-stake that is scientifically proved to be secure.
+Ouroboros is unique as it is the first blockchain protocol based on Proof of
+Stake that is scientifically proved to be secure.
 
 ## Why Proof of Stake?
 
 The most important thing about picking Proof of Stake algorithm over Proof of
-Work one which is adopted by Bitcoin is the energy consumption considerations.
+Work — the one adopted by Bitcoin — is the energy consumption considerations.
 Running the Bitcoin protocol is a tremendously expensive endeavor. It is
 estimated that 3.8 American households can be powered for a day by the energy
 spent to generate one Bitcoin transaction. These energy requirements for running
@@ -33,12 +33,12 @@ verification.
 
 ## What is Proof of Stake?
 
-In this section we explain what “Proof” and “Stake” mean, and then we put it all
+In this section we explain what “Proof” and “Stake” mean, and then put it all
 together, explaining what “Proof of Stake” means.
 
 ### Proof
 
-“Proof” part of Proof of Stake is about having evidence that blocks of
+The “Proof” part of "Proof of Stake" is about having evidence that blocks of
 transactions are legitimate.
 
 ### Stake
@@ -73,9 +73,8 @@ node will take care of everything.
 ## Multi Party Computation
 
 The matter of fueling Follow the Satoshi with randomness is another problem in
-itself. We're using Multi Party Computation approach when select nodes provide
-the so-called “commitments” and then those get “revealed”, producing a random
+itself. We are using Multi Party Computation approach: select nodes provide
+the so-called “commitments”, and then those get “revealed”, producing a random
 value generated independently by participants of the network.
 
 <!-- TODO PVSS -->
-
