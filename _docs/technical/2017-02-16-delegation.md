@@ -9,9 +9,9 @@ visible: true
 
 # Stake Delegation in Cardano SL
 
-This guide describes implementation details of the stake delegation process.
+This chapter describes implementation details of the stake delegation process.
 
-As described earlier, stakeholders selected as slot-leaders must be online in
+As described earlier, stakeholders selected as slot leaders must be online in
 order to generate new blocks. However, such a situation can be unattractive,
 because a majority of elected stakeholders must participate in the Coin Tossing
 protocol for refreshing randomness (crucial attribute of the slot-leader
@@ -21,19 +21,17 @@ and storing a large number of commitments and shares.
 
 Delegation feature allows stakeholders `S1...Sn` to transfer their "committee
 participation" to some delegates `D1...Dm`. These delegates will represent
-stakeholders `S1...Sn` in the Coin Tossing protocol. In this case the actual
+stakeholders `S1...Sn` in the [Coin Tossing protocol](https://github.com/input-output-hk/cardano-sl/blob/4bd49d6b852e778c52c60a384a47681acec02d22/src/Pos/Ssc/GodTossing.hs). In this case the actual
 number of nodes participating in the Coin Tossing protocol can be much lower,
 see [paper](/glossary/#paper), page 38.
 
 ## Schema
 
-Slot-leader can transfer its right to generate new block to the delegate. To do
-it, slot-leader use *delegation-by-proxy* scheme: slot-leader generates [*proxy
-signing
-key*](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/SignTag.hs#L34),
-or PSK, and delegate will use it [to
-sign](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/src/Pos/Delegation/Methods.hs#L54)
-messages to authenticate a block. There're two kinds of PSKs, heavyweight and
+Slot leader can transfer its right to generate new block to the delegate. To do
+it, slot-leader use *delegation-by-proxy* scheme: slot leader generates [proxy
+signing key](https://github.com/input-output-hk/cardano-sl/blob/4378a616654ff47faf828ef51ab2f455fa53d3a3/core/Pos/Crypto/SignTag.hs#L33), or PSK, and delegate will use it [to
+sign](https://github.com/input-output-hk/cardano-sl/blob/ed6db6c8a44489e2919cd0e01582f638f4ad9b72/src/Pos/Delegation/Listeners.hs#L65)
+messages to authenticate a block. There are two kinds of PSKs, heavyweight and
 lightweight (see below).
 
 Specifically, stakeholder forms a special certificate specifying the delegates
@@ -42,50 +40,42 @@ valid message space by providing signatures for these messages under its own
 public key along with the signed certificate.
 
 This is format of a [proxy
-signature](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L309).
+signature](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/Pos/Crypto/Signing.hs#L256).
 It includes:
 
-1.  Omega value,
-2.  Delegate's public key,
-3.  Proxy certificate (mentioned above),
-4.  Signature.
+1.  proxy secret key,
+2.  signature.
+
+Proxy secret key includes:
+
+1.  omega value,
+2.  issuer's public key,
+3.  delegate's public key,
+4.  proxy certificate.
 
 Omega (or ω) is a special value from the [paper](/glossary/#paper). In our
 implementation is's a [pair of epochs'
-identificators](https://github.com/input-output-hk/cardano-sl/blob/21ce7b35d3dcc1b79db31c7ed7f8f2fe7506831f/core/Pos/Core/Types.hs#L233).
-These identificators define delegation validity period: produced block is valid
-if its epoch index is inside of this range.
+identificators](https://github.com/input-output-hk/cardano-sl/blob/f374a970dadef0fe62cf69e8b9a6b8cc606b5c7d/core/Pos/Core/Types.hs#L235). These identificators define delegation validity period: produced block is
+valid if its epoch index is inside of this range.
 
-Signature is a [special
-bytestring](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L358)
-[made
-with](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L363)
-an issuer's public key.
-
-[Proxy
-certificate](https://github.com/input-output-hk/cardano-sl/blob/4bd49d6b852e778c52c60a384a47681acec02d22/core/Pos/Crypto/Signing.hs#L211)
-is actually a
-[signature](https://github.com/input-output-hk/cardano-crypto/blob/838b064d8a59286142aa2fe14434fe7601896ddb/src/Cardano/Crypto/Wallet.hs#L73)
-that [made
-of](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/core/Pos/Crypto/Signing.hs#L256)
-secret key of issuer, delegate's public key and ω.
+[Proxy certificate](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/Pos/Crypto/Signing.hs#L209)
+is a [signature](https://github.com/input-output-hk/cardano-crypto/blob/84f8c358463bbf6bb09168aac5ad990faa9d310a/src/Cardano/Crypto/Wallet.hs#L74),
+made of omega and delegate's public key.
 
 ## Heavyweight Delegation
 
 Heavyweight delegation is using stake threshold `T`. It means that stakeholder
 has to posses not less than `T` in order to participate in heavyweight
-delegation. The value of this threshold is defined in the configuration file
-(for example, here is [production-related
-value](https://github.com/input-output-hk/cardano-sl/blob/3afe8b5eb5445fd0333365b5d896d08fba2552f8/constants-prod.yaml#L13)).
+delegation. The value of this threshold is defined in the [configuration file](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/constants.yaml#L22).
 
 Moreover, stakeholder-issuer must have particular stake too, otherwise [it
 cannot
-be](https://github.com/input-output-hk/cardano-sl/blob/9bbb9055d6937604565a9a270f068f3da17a4059/src/Pos/Delegation/Logic.hs#L298)
+be](https://github.com/input-output-hk/cardano-sl/blob/763822c4fd906f36fa97b6b1f973d31d52342f3f/src/Pos/Delegation/Logic/VAR.hs#L394)
 a valid issuer.
 
 Proxy signing certificates from heavyweight delegation are stored within the
 blockchain. Issuer can post [only one
-certificate](https://github.com/input-output-hk/cardano-sl/blob/9bbb9055d6937604565a9a270f068f3da17a4059/src/Pos/Delegation/Logic.hs#L303)
+certificate](https://github.com/input-output-hk/cardano-sl/blob/763822c4fd906f36fa97b6b1f973d31d52342f3f/src/Pos/Delegation/Logic/VAR.hs#L401)
 per one epoch.
 
 ## Lightweight Delegation
@@ -97,7 +87,7 @@ stored in the blockchain. Lightweight delegation certificate must be broadcasted
 to reach delegate.
 
 Later lightweight PSK can be
-[verified](https://github.com/input-output-hk/cardano-sl/blob/66efe143138e3b7cfb11373c05022e3b7da67d87/src/Pos/Delegation/Logic.hs#L477)
+[verified](https://github.com/input-output-hk/cardano-sl/blob/9d7be20eeafac27e682551d05f4aba2faba537bc/src/Pos/Delegation/Logic/Mempool.hs#L285)
 given issuer's public key, signature and message itself.
 
 ### Confirmation of proxy signature delivery
