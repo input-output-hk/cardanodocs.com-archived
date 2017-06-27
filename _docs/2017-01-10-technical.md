@@ -8,7 +8,7 @@ children: technical
 
 <!-- Reviewed at 42f226733a3d0e92af736f076a9fb1a7388d8da1 -->
 
-# Implementation
+# Cardano SL Technical Details
 
 This section is a starting point for developers who wish to contribute to the
 original client, as well as those who wish to undertake making their own client
@@ -23,39 +23,36 @@ blockchain-related procedures.
 
 Time in Cardano SL is divided into *epochs*. Every epoch is divided into
 *slots*. Epochs and slots are numbered. Therefore, the slot `(3,5)` is read as
-"the fifth slot of the third epoch" (the 0th slot and the 0th epoch are also
+"the fifth slot of the third epoch" (the 0-th slot and the 0-th epoch are also
 possible).
 
 Cardano SL uses sets of constants, special values defined in
 [the `constants.yaml` configuration file](https://github.com/input-output-hk/cardano-sl/blob/bf5dd592b7bf77a68bf71314718dc7a8d5cc8877/core/constants.yaml).
-There are two main sets: for production and development. In this guide we'll
-refer to productions constants.
+There are two main sets: for production mode and development mode. In this guide
+we'll refer to productions constants.
 
 Suppose the values for Cardano SL are:
 
--   Slot duration: 120 seconds
--   Security parameter *k*: 60
+-   slot duration: 120 seconds,
+-   security parameter *k*: 60.
 
-Please refer to the [last section](#constants) of this article to see all the
-constants and their actual values.
+In other words, **a slot lasts 120 seconds**, and an epoch has [`10×k`](https://github.com/input-output-hk/cardano-sl/blob/9ee12d3cc9ca0c8ad95f3031518a4a7acdcffc56/core/Pos/Core/Constants/Raw.hs#L161)
+slots in it, so it lasts **1200 minutes** or **20 hours**.
 
-In other words, **a slot lasts 120 seconds**, and an epoch has `10×k=600` slots
-in it, so it lasts **1200 minutes** or **20 hours**.
-
-There's one node called the slot-leader on each slot. Only this node has right
+There is one node called the slot leader on each slot. Only this node has right
 to generate a new block during this slot; this block will be added to the
 blockchain. However, there's no guarantee that new block will be actually
-generated (e.g. slot-leader can be offline during a corresponding slot).
+generated (e.g. slot leader can be offline during a corresponding slot).
 
-Furthermore, slot-leader may delegate its right to another node `N`; in this
-case node `N` will have a right to generate a new block instead of slot-leader.
-Please note that node `N` with delegated right isn't called a slot-leader
-though.
+Furthermore, slot leader may delegate its right to another node `N`; in this
+case node `N` will have a right to generate a new block instead of slot leader.
+Please note that node `N` with delegated right is not called a slot leader
+though, it is just a delegate.
 
-It's theoretically possible to delegate the slot-leader's right to multiple
-nodes, but it's **not** recommended by reasons explained later. Moreover, we can
+It's theoretically possible to delegate the slot leader's right to multiple
+nodes, but it is **not** recommended by reasons explained later. Moreover, we can
 run multiple nodes with the same key (i.e. on one computer), let's say nodes
-`A`, `B` and `C`, and if node `A` is elected as the slot-leader, not only `A`
+`A`, `B` and `C`, and if node `A` is elected as the slot leader, not only `A`
 itself, but nodes `B` and `C` will be able to generate a new block as well. In
 this case, every one of these nodes will issue a most probably different block,
 and the network will fork — each other node will accept **only one** of these
@@ -66,11 +63,15 @@ to who would be allowed to generate blocks in the next epoch. Payloads from
 `Data` messages (along with transactions) are included into blocks.
 
 The more currency (or "stake") an address holds, the more likely it is to be
-chosen to generate a block. Please refer to [the pertinent
-section](/cardano/proof-of-stake/) for more details.
+chosen to generate a block. Please read about [Ouroboros Proof of Stake Algorithm](/cardano/proof-of-stake/)
+for more details.
 
-In short: Send messages, receive messages/transactions/etc, form a block (if
-you're the selected stakeholder), repeat.
+In short:
+
+1.  send messages,
+2.  receive messages/transactions/etc,
+3.  form a block (if you are the slot leader),
+4.  repeat.
 
 ## Business logic
 
@@ -85,57 +86,38 @@ which includes three type of messages:
 
 -   `Inventory` message: node publishes message to network when gets a new data.
 -   `Request` message: node requests a new data which was published in
-    `Inventory` message. (from other node), if this data is not known yet by
-    this node
+    `Inventory` message, from other node, if this data is not known yet by
+    this node.
 -   `Data` message: node replies with this message on `Request` message. `Data`
     message contains concrete data.
 
 For instance, when a user creates a new transaction, the wallet sends
-`Inventory` message with transaction ID to the network. If the node that has
-received `Inventory` doesn't know any transaction with such ID, then it replies
+`Inventory` message with transaction id to the network. If the node that has
+received `Inventory` doesn't know any transaction with such id, then it replies
 with `Request` message, after that the wallet sends this transaction in `Data`
 message. After the node has received the `Data` message, it can send the
 `Inventory` message to its neighbors in DHT network and repeat previous
 iterations again.
 
-Another example
-
--   Block listeners:
-
-    -   `handleBlockHeader`: Handles an incoming block header. Decides whether
-        the block is needed; if it is needed, requests the block.
-
-    -   `handleBlockRequest`: Handles an incoming block request. If the block is
-        in possession, sends it to the other node.
-
-    -   `handleBlock`: Handles an incoming block. Takes transactions from it,
-        sends the block header to other nodes, etc.
+Another example - block listeners [`handleGetHeaders`](https://github.com/input-output-hk/cardano-sl/blob/69e896143cb02612514352e286403852264f0ba3/src/Pos/Block/Network/Listeners.hs#L30),
+[`handleGetBlocks`](https://github.com/input-output-hk/cardano-sl/blob/69e896143cb02612514352e286403852264f0ba3/src/Pos/Block/Network/Listeners.hs#L50),
+[`handleBlockHeaders`](https://github.com/input-output-hk/cardano-sl/blob/69e896143cb02612514352e286403852264f0ba3/src/Pos/Block/Network/Listeners.hs#L77).
 
 ### Workers
 
-A Worker is an action repeated with some interval. The workers of importance
-are:
+A Worker is an action repeated with some interval. For example:
 
--   `onNewSlotWorker`: Runs at the beginning of each slot. Does some cleanup and
-    then runs `sscOnNewSlot` and `blkOnNewSlot`. This worker also creates a
+-   [`onNewSlotWorker`](https://github.com/input-output-hk/cardano-sl/blob/69e896143cb02612514352e286403852264f0ba3/infra/Pos/Communication/Protocol.hs#L218): Runs at the beginning of each slot. Does some cleanup and
+    then runs additional functions. This worker also creates a
     *genesis block* at the beginning of the epoch. There are two kinds of
     blocks: "genesis blocks" and "main blocks". Main blocks are stored in the
     blockchain; genesis blocks are generated by each node internally between
     epochs. Genesis blocks aren't announced to other nodes. However, a node may
     request a genesis block from someone else for convenience, if this node was
     offline for some time and needs to catch up with the blockchain.
-
--   `blkOnNewSlot`: Creates a new block (when it is the node's turn to create a
+-   [`blkOnNewSlot`](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/src/Pos/Block/Worker.hs#L69)
+    : Creates a new block (when it is the node's turn to create a
     new block) and announces it to other nodes.
--   `sscOnNewSlot`: Sends a message to other nodes. The actual consensus
-    algorithm and the nature of sent messages will be discussed later.
-
--   `blocksTransmitter`: Runs two times per slot. Announces the header of the
-    latest block.
--   `txsTransmitter`: Runs once per slot. Announces the local set of
-    transactions.
--   `sscTransmitter`: Retransmits SSC messages. To find out how often this
-    worker runs, see the `mpcRelayInterval` constant in the original client.
 
 ## Proof of Stake
 
@@ -146,7 +128,7 @@ name.
 ## Forks
 
 Generally, one chain (the *main chain*) is maintained by a node, but eventually
-alternative chains may arise. Recall that only blocks k and more slots deep are
+alternative chains may arise. Recall that only blocks `k` and more slots deep are
 considered stable. This way, if a block which is neither a part nor a
 continuation of our blockchain is received, we first check if its complexity is
 bigger than ours (the complexity is the length of the chain), and then we start
@@ -168,7 +150,7 @@ time (small deviations are acceptable), which is then used to figure out when
 any particular slot begins and ends, and perform particular actions in this
 slot.
 
-System start time is a timestamp of the (0,0) slot (i.e. the 0th slot of the 0th
+System start time is a timestamp of the `(0,0)` slot (i.e. the 0-th slot of the 0-th
 epoch).
 
 ## P2P Network
@@ -182,30 +164,28 @@ hash tables, based on [a whitepaper by Petar Maymounkov and David Mazières,
 However, we only take advantage of its peer discovery mechanism, and use none of
 its hash table capabilities.
 
-In short, each node in the Kademlia network is provided a `160`-bit ID generated
+In short, each node in the Kademlia network is provided a `160`-bit id generated
 randomly. The distance between the nodes is defined by `XOR` metric. The network
 is organized in such a way that node knows no more than `K` (`K=7` in the
 original client implementation) nodes for each relative distance range:
 `2^i < d <= 2^(i+1)`.
 
 Initial peer discovery is done by
-[sending](https://github.com/serokell/kademlia/blob/d4a33089523d63bc53fbc2bec38d1dd24b9ad07a/src/Network/Kademlia/Implementation.hs#L182)
-a Kademlia `FIND_NODE` message with our own node ID as a parameter to [a
+[sending](https://github.com/serokell/kademlia/blob/bbdca50c263c6dae251e67eb36a7d4e1ba7c1cb6/src/Network/Kademlia/Implementation.hs#L194)
+a Kademlia `FIND_NODE` message with our own node id as a parameter to [a
 pre-configured set of
-nodes](https://github.com/input-output-hk/cardano-sl/blob/f37c6cf6a43f42cd7c0a0477e33ae95155d50450/src/Pos/Constants.hs#L264)
-and [the nodes passed by the user on the command
-line](https://github.com/input-output-hk/cardano-sl/blob/f37c6cf6a43f42cd7c0a0477e33ae95155d50450/src/node/Main.hs#L88).
-Our implementation
-[sends](https://github.com/input-output-hk/cardano-sl/blob/2e935011548cd59a52004799e94e81ad827ce7f7/src/Pos/DHT/Real/Real.hs#L194)
+nodes](https://github.com/input-output-hk/cardano-sl/blob/43a2d079a026b90ba860e79b5be52d1337e26c6f/src/Pos/Constants.hs#L89)
+and the nodes passed by the user on the command line. Our implementation
+[sends](https://github.com/input-output-hk/cardano-sl/blob/43a2d079a026b90ba860e79b5be52d1337e26c6f/infra/Pos/DHT/Real/Real.hs#L228)
 this request to all known peers at once and then waits for the first reply.
 
 While the client runs, it collects peers per Kademlia protocol. The list of
 known peers is preserved and
-[restored](https://github.com/serokell/kademlia/blob/d4a33089523d63bc53fbc2bec38d1dd24b9ad07a/src/Network/Kademlia.hs#L191)
-between subsequent launches. For each peer, we keep their [host & port
-number](https://github.com/serokell/kademlia/blob/d4a33089523d63bc53fbc2bec38d1dd24b9ad07a/src/Network/Kademlia/Types.hs#L37),
+[restored](https://github.com/serokell/kademlia/blob/bbdca50c263c6dae251e67eb36a7d4e1ba7c1cb6/src/Network/Kademlia.hs#L197)
+between subsequent launches. For each peer, we keep their [host and port
+number](https://github.com/serokell/kademlia/blob/bbdca50c263c6dae251e67eb36a7d4e1ba7c1cb6/src/Network/Kademlia/Types.hs#L42),
 as well as their [node
-ID](https://github.com/serokell/kademlia/blob/d4a33089523d63bc53fbc2bec38d1dd24b9ad07a/src/Network/Kademlia/Types.hs#L52).
+id](https://github.com/serokell/kademlia/blob/bbdca50c263c6dae251e67eb36a7d4e1ba7c1cb6/src/Network/Kademlia/Types.hs#L70).
 
 ### Messaging
 
@@ -215,16 +195,16 @@ to neighbors, they will resend it to their neighbors, and so on. But sometimes
 we may need to not propagate messages across all network, but send it to
 neighbors only. Hence we have three types of sending messages:
 
--   Send to a node;
--   Send to neighbors;
--   Send to network.
+-   send to a node,
+-   send to neighbors,
+-   send to network.
 
 #### Message types
 
 To handle this, three kind of message headers are used, and there are two
 message types:
 
--   Simple: sending to a single peer
+-   Simple: sending to a single peer.
 -   Broadcast: attempting to send to the entire network, iteratively sending
     messages to neighbors.
 
