@@ -115,9 +115,9 @@ A Worker is an action repeated with some interval. For example:
     epochs. Genesis blocks aren't announced to other nodes. However, a node may
     request a genesis block from someone else for convenience, if this node was
     offline for some time and needs to catch up with the blockchain.
--   [`blkOnNewSlot`](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/src/Pos/Block/Worker.hs#L69)
-    : Creates a new block (when it is the node's turn to create a
-    new block) and announces it to other nodes.
+-   [`blkOnNewSlot`](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/src/Pos/Block/Worker.hs#L69): Creates
+    a new block (when it is the node's turn to create a new block) and announces it
+    to other nodes.
 
 ## Proof of Stake
 
