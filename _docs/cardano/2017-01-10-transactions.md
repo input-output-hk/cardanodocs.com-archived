@@ -18,14 +18,9 @@ wallet `N1`, and the node under *Bob*'s wallet `N2`.
 
 Thus, the node `N1` does the following steps:
 
-1.  [Creating](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Wallet/Tx.hs#L41)
-    transaction `Tx1` and
-    [signs](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Wallet/Tx/Pure.hs#L83)
-    it with its private key
-2.  [Sending](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Wallet/Tx.hs#L53)
-    it to all known nodes (i.e. neighbors),
-3.  [Saving](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Wallet/Tx.hs#L44)
-    it in its local data.
+1.  Creating transaction `Tx1` and signs it with its private key.
+2.  Sending it to all known nodes (i.e. neighbors).
+3.  Saving it in its local data.
 
 Each of `N1`'s neighbors sends `Tx1` transaction to its neighbors and so on, and
 some slot leader will store this transaction in some block in the ledger. Please
@@ -73,8 +68,7 @@ Each output contains:
     like `1fsAhhf4E1LQDB8agSds8teuD4E7U8JsRESngEX52kinBhi`. Please read about
     [Addresses in Cardano SL](/cardano/addresses/) for more info.
 2.  Amount of money we want to send. This value is 64-bit unsigned integer with
-    [hardcoded](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Types/Core.hs#L88)
-    maximum value.
+    maximum value `45000000000000000`.
 
 For example:
 
@@ -117,16 +111,14 @@ unspent outputs can be used as inputs for other transactions, to prevent
 [double-spending](https://en.bitcoin.it/wiki/Double-spending).
 
 So every node in the network not only accepts transactions, but also
-[verifies](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Types/Tx.hs#L91)
-them. To do it, every node have to keep track of unspent outputs, it allows to
-validate that inputs in a published transaction are indeed the unspent outputs.
-Actually, all unspent outputs called *utxo*, and this is a part of the special
-key-value database called *Global State*.
+verifies them. To do it, every node have to keep track of unspent outputs, it
+allows to validate that inputs in a published transaction are indeed the unspent
+outputs. Actually, all unspent outputs called *utxo*, and this is a part of the
+special key-value database called *Global State*.
 
 ## Proofs of Transaction Legitimacy
 
-Each transaction in Cardano SL is accompanied by a proof (also called a
-[witness](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Types/Types.hs#L93))
+Each transaction in Cardano SL is accompanied by a proof (also called a **witness**)
 that this transaction is legitimate. Even if the output is an unspent one, we
 have to prove that we have *a right* to spend it. Since a `TxN` transaction can
 have many inputs, the witness for it consists of the witnesses of all `TxN`'s
@@ -139,11 +131,8 @@ corresponding versions of the witness: based on *public key* and based on
 *script*.
 
 For example, the first option works with a public key `PK` and a transaction
-signature: legitimate input must be [signed
-with](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Wallet/Tx/Pure.hs#L81)
-a private key corresponding to `PK`. So it's possible to [check this
-signature](https://github.com/input-output-hk/cardano-sl/blob/63adb31e813e21ec9da21cfa69984840308bbfa2/src/Pos/Types/Tx.hs#L231)
-and either accept that input or reject it.
+signature: legitimate input must be signed with a private key corresponding to `PK`.
+So it's possible to check this signature and either accept that input or reject it.
 
 Witnesses are stored in the blockchain and anybody can see, inspect and
 independently verify them. But after some time a node may delete old proofs in
@@ -170,11 +159,9 @@ be attributed to.
 
 Transaction distribution is a value associated with each transaction's output,
 holding information on which stakeholder should receive which particular amount
-of money on his stake. Technically it's a [non-empty
-list](https://github.com/input-output-hk/cardano-sl/blob/732a2c765a417ba0a5010df81061c4473f80a0dc/src/Pos/Txp/Core/Types.hs#L135)
-of pairs composed from [stakeholder's identificator and corresponding amount of
-money](https://github.com/input-output-hk/cardano-sl/blob/732a2c765a417ba0a5010df81061c4473f80a0dc/src/Pos/Txp/Core/Types.hs#L129).
-E.g. for output `(A, 100)` distribution might be `[(B, 10), (C, 90)]`.
+of money on his stake. Technically it's a list of pairs composed from stakeholder's
+identificator and corresponding amount of money. E.g. for output `(A, 100)`
+distribution might be `[(B, 10), (C, 90)]`.
 
 Transaction distributions are considered by both [slot-leader election
 process](/technical/leader-selection/) and Richmen Computations.
