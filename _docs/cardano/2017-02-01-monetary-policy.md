@@ -4,7 +4,7 @@ title: Monetary Policy
 permalink: /cardano/monetary-policy/
 group: cardano
 ---
-<!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
+<!-- Reviewed at 1bd2a2f5979233f4f50a7e66ab4e1819ac486400 -->
 
 # Cardano Monetary Policy
 
@@ -21,8 +21,7 @@ Although the actual number of **Ada Vouchers** sold will be determined after the
 the Ada Sale ends, an amount equal to **20%** of the Ada Vouchers sold during
 the Sale period, or **5,003,359,387** Ada Vouchers, will be generated and
 distributed to three entities of the Cardano ecosystem that are part of the
-**Technical and Business Development Pool**: [IOHK](https://iohk.io), [CGG
-Limited](http://cardano.io/) and the [Cardano
+**Technical and Business Development Pool**: [IOHK](https://iohk.io), [Emurgo](http://cardano.io/) and the [Cardano
 Foundation](https://cardanofoundation.org/). The total amount of Ada available
 at Launch will therefore be equal to **30,020,156,322** ADA.
 
@@ -56,4 +55,3 @@ Of the ADA that will be issued per block:
     which the Cardano Treasury will operate will not be available at the launch
     of Cardano but the mechanism and its implementation are currently under
     research and development.)
-
