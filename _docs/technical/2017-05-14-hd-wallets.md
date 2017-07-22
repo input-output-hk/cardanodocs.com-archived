@@ -9,15 +9,13 @@ visible: true
 
 # HD wallets
 
-<!-- @martoon TODO: perhaps this part better fits to protocols section -->
-
 HD wallets is a feature which allows users to derive keys in deterministic way
 from a common seed. Basically, you generate an initial secret key `SK₀` out of a
 random seed. Then you can derive children `SK₀-₀`, `SK₀-₁` out of `SK₀`. From
 these children, you can derive `SK₀-₀-₀`, `SK₀-₀-₁`, `SK₀-₁-₀` and so on
 (derivations for a tree of arbitrary depth).
 
-<!-- Advertisement: for subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
+<!-- For subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
 
 We distinguish two types of keys:
 
@@ -32,8 +30,8 @@ available).
 
 Each child is assigned a 4-byte index `i`
 
--   `i > 2³¹ - 1` for **non-hardened** keys
--   `i <= 2³¹ - 1` for **hardened** keys
+-   `i <= 2³¹ - 1` for **non-hardened** keys
+-   `i > 2³¹ - 1` for **hardened** keys
 
 ## Requirements
 
@@ -54,13 +52,13 @@ For **Hardened** keys:
     A(K) -x pub(K)
     A(K) -x A(child(K, i))
     pub(K) -x pub(child(K, i))
-    priv(K) -> utxo -> tree(K)
+    (priv(K), utxo) -> tree(K)
     priv(K) -> priv(child(K, i))
 
 For **Non-hardened** keys
 
     A(K) -x pub(K)
-    pub(K) -> utxo -> tree(K)
+    (pub(K), utxo) -> tree(K)
     pub(K) -> pub(child(K, i))
     priv(K) -> priv(child(K, i))
 
@@ -77,7 +75,7 @@ data.
 
 Tree is stored as list of **derivation paths**. Each **derivaion path** is
 specified as list of **derivation indices**. Each **derivation index** is 4-byte
-unsigned int. <!-- TODO: refer to binary spec section? -->
+unsigned int.
 
 The resulting object is serialized and encrypted with symmetric scheme
 (*ChaChaPoly1305* algorithm) with the passphrase computed as SHA-512 hash of the
@@ -149,8 +147,6 @@ to comply key to 512 bit, so we don't reduce hashing space.
 
 -   Extended public key is a pair denoted as `(Ki, ci)`.
 
-<!-- @martoon TODO: looks like we actually don't use extended keys :/ -->
-
 From application perspective, HD wallets (as for BIP-32) introduce following
 crypto primitives:
 
@@ -183,7 +179,7 @@ with spending password).
 
 ### New storage
 
-Wallet storage is extended to store list of **wallet**. Each wallet corresponds
+Wallet storage is extended to store list of **wallets**. Each wallet corresponds
 to single root secret key (backed up by mnemonics and encrypted with spending
 password).
 
@@ -215,11 +211,9 @@ User is able to:
 
 -   assign name to **wallets** and **accounts**
 
--   generate arbitrary amount of addresses
+-   generate arbitrary amount of **addresses**
 
--   change **wallet** spending password. Since key derivation depends on
-    spending password, this action changes all wallet addresses, while
-    transferring money from old addresses to newly created ones.
+-   change **wallet** spending password.
 
 ## Read HD wallet data from blockchain
 
@@ -232,7 +226,7 @@ generate secret key. Names won't be restored.
 
 -   Via export file
 
-This file allows to restore whole **wallet** structure.
+This file allows to restore whole wallet structure.
 
 #### Import
 
