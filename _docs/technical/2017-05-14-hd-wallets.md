@@ -15,7 +15,7 @@ random seed. Then you can derive children `SK₀-₀`, `SK₀-₁` out of `SK₀
 these children, you can derive `SK₀-₀-₀`, `SK₀-₀-₁`, `SK₀-₁-₀` and so on
 (derivations for a tree of arbitrary depth).
 
-<!-- For subscripts symbols: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts -->
+<!-- For subscripts and other symbols: https://help.ubuntu.com/community/ComposeKey -->
 
 We distinguish two types of keys:
 
@@ -30,7 +30,7 @@ available).
 
 Each child is assigned a 4-byte index `i`
 
--   `i <= 2³¹ - 1` for **non-hardened** keys
+-   `i ≤ 2³¹ - 1` for **non-hardened** keys
 -   `i > 2³¹ - 1` for **hardened** keys
 
 ## Requirements
@@ -179,8 +179,8 @@ with spending password).
 
 ### New storage
 
-Wallet storage is extended to store list of **wallets**. Each wallet corresponds
-to single root secret key (backed up by mnemonics and encrypted with spending
+Wallet storage is extended to store a list of **wallets**. Each wallet corresponds
+to a single root secret key (backed up by mnemonics and encrypted with spending
 password).
 
 Each wallet contains a number of **accounts**.
@@ -205,13 +205,13 @@ for money remainder, if any.
 
 User is able to:
 
--   import/export arbitrary amount of **wallets**
+-   import/export an arbitrary number of **wallets**
 
--   generate arbitrary amount of **accounts**
+-   generate an arbitrary number of **accounts**
 
 -   assign name to **wallets** and **accounts**
 
--   generate arbitrary amount of **addresses**
+-   generate an arbitrary number of **addresses**
 
 -   change **wallet** spending password.
 
