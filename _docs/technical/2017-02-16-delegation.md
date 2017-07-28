@@ -19,8 +19,8 @@ election process). If there are a lot of elected stakeholders, this can put a
 strain on the stakeholders and the network, since it might require broadcasting
 and storing a large number of commitments and shares.
 
-Delegation feature allows stakeholders `S1...Sn` to transfer their "committee
-participation" to some delegates `D1...Dm`. These delegates will represent
+Delegation feature allows stakeholders called _issuers_ `I1...In` to transfer their
+"committee participation" to some _delegates_ `D1...Dm`. These delegates will represent
 stakeholders `S1...Sn` in the [Coin Tossing protocol](https://github.com/input-output-hk/cardano-sl/blob/4bd49d6b852e778c52c60a384a47681acec02d22/src/Pos/Ssc/GodTossing.hs). In this case the actual
 number of nodes participating in the Coin Tossing protocol can be much lower,
 see [paper](/glossary/#paper), page 38.
@@ -60,7 +60,7 @@ valid if its epoch index is inside of this range.
 
 [Proxy certificate](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/Pos/Crypto/Signing.hs#L209)
 is a [signature](https://github.com/input-output-hk/cardano-crypto/blob/84f8c358463bbf6bb09168aac5ad990faa9d310a/src/Cardano/Crypto/Wallet.hs#L74),
-made of omega and delegate's public key.
+of omega and delegate's public key.
 
 ## Heavyweight Delegation
 
@@ -78,6 +78,13 @@ blockchain. Issuer can post [only one
 certificate](https://github.com/input-output-hk/cardano-sl/blob/763822c4fd906f36fa97b6b1f973d31d52342f3f/src/Pos/Delegation/Logic/VAR.hs#L401)
 per one epoch.
 
+### Expiration
+
+Heavyweight delegation certificates expire in the beginning of every epoch if
+stakeholder doesn't pass threshold `T` anymore. This is made to prevent delegation
+pool bloat attack where user commits certificate and moves all his money (above threshold)
+to another account and then repeats the operation.
+
 ## Lightweight Delegation
 
 In contrast to heavyweight delegation, lightweight delegation doesn't require
@@ -92,6 +99,41 @@ given issuer's public key, signature and message itself.
 
 ### Confirmation of proxy signature delivery
 
-Delegate should take the proxy signing key he has and sign this key with itself.
-If the signature is correct, then it was done by delegate (guaranteed by PSK
-scheme).
+Delegate should take the proxy signing key he has and make a signature of PSK using
+PSK and delegate's key. If the signature is correct, then it was done by delegate
+(guaranteed by PSK scheme).
+
+## Revocation Certificate
+
+Revoke certificate is a special certificate that issuer creates to revoke delegation.
+Both heavyweight and lightweight delegation can be revoked, but not in the same way.
+
+Actually revoke certificate is just a normal one where [issuer and delegate are the same](https://github.com/input-output-hk/cardano-sl/blob/db306d7db0d05610005c5bee98c7be3918fb7947/src/Pos/Delegation/Helpers.hs#L35)
+(in other words, issuer delegates to himself).
+
+To revoke lightweight delegation issuer sends revoke certificate to the network and
+_asks_ to revoke delegation, but it cannot _enforce_ this revocation, since lightweight PSKs
+are not the part of the blockchain.
+
+Revocation of heavyweight delegation is handled other way. Since proxy signing certificates
+from heavyweight delegation are stored within the blockchain, revoke certificate will be
+committed in the blockchain as well. In this case node removes heavyweight delegation
+certificate which was issued before revocation certificate. But there are two important notes
+about it.
+
+1.  If commited heavyweight delegation certificate is in the node's memory pool yet, and revoke
+    certificate was committed as well, delegation certificate will be removed from memory pool.
+    Obviously, in this case delegation certificate will never be added in the blockchain.
+2.  If user commits heavyweight delegation certificate and _after that_ he loses money, he still
+    can revoke that delegation even if he already doesn't have enough money (i.e. less than
+    threshold `T` mentioned above).
+
+## Transaction Distribution Trick
+
+Both heavyweight and lightweight delegation certificate contains issuer's and delegate's public keys.
+But sometimes we don't want to disclose these public keys because of possible security problems.
+In this case issuer sends transaction to himself and stores an address `I2` in `txDistr`, where
+`I2` is an address of "other" issuer. After that issuer commits heavyweight PSK `I2 -> D`. We
+can freely disclose `I2` address.
+
+Please read more about transaction distribution [here](/cardano/transactions/#transaction-distribution).
