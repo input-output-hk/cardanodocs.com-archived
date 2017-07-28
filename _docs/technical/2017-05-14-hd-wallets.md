@@ -41,13 +41,13 @@ tree of addresses for keypairs, derived from `K` (and having positive balance)
 and held in **utxo**.
 
 `a -> b` denotes `b` is derivable form `a`. `a -x b` denotes `b` is not
-derivable from `a` (under no circumstances)
+derivable from `a` (under no circumstances):
 
      priv(K) -> pub(K)
      pub(K) -> A(K)
      pub(K) -x priv(K)
 
-For **Hardened** keys:
+For **hardened** keys:
 
     A(K) -x pub(K)
     A(K) -x A(child(K, i))
@@ -55,7 +55,7 @@ For **Hardened** keys:
     (priv(K), utxo) -> tree(K)
     priv(K) -> priv(child(K, i))
 
-For **Non-hardened** keys
+For **non-hardened** keys
 
     A(K) -x pub(K)
     (pub(K), utxo) -> tree(K)
