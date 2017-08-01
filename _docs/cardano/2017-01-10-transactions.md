@@ -145,13 +145,18 @@ and can be processed independently.
 
 ## Transaction Distribution
 
-As a part of address design, we introduced transaction distribution feature.
+Transaction distribution is another part of Cardano SL, not directly related to delegation,
+but one we can exploit for its benefit.
 
-Suppose we have an address `A`. Which stakeholders should benefit from money
-stored on this address? For [`PublicKey`](/cardano/addresses/)-address it's
-obvious and straightforward, though it's not for
-[`ScriptAddress`](/cardano/addresses/) (e.g. for `2-of-3` multisig address
-implemented via script we might want to have distribution
+Some addresses have multiple owners, which poses a problem of stake computation as per
+Follow-the-Satoshi each coin should only be counted once towards each stakeholder's stake total.
+Unlike balance (real amount of coins on the balance), stake gives user power to control different
+algorithm parts: being the slot leader, voting in Update system, taking part in MPC/SSC.
+
+Suppose we have an address `A`. If it is a [`PublicKey`](https://cardanodocs.com/cardano/addresses/)-address
+it's obvious and straightforward which stakeholders should benefit from money stored on this address,
+though it's not for [`ScriptAddress`](https://cardanodocs.com/cardano/addresses/) (e.g. for `2-of-3` multisig
+address implemented via script we might want to have distribution
 `[(A, 1/3), (B, 1/3), (C, 1/3)]`). For any new address' type introduced via
 softfork in the future it might be useful as well because we don't know in
 advance about semantics of the new address' type and which stakeholder it should
@@ -164,17 +169,16 @@ identificator and corresponding amount of money. E.g. for output `(A, 100)`
 distribution might be `[(B, 10), (C, 90)]`.
 
 Transaction distributions are considered by both [slot-leader election
-process](/technical/leader-selection/) and Richmen Computations.
+process](https://cardanodocs.com/technical/leader-selection/) and Richmen Computations.
 
-This feature is very similar to [delegation](/technical/delegation/), but there
+This feature can be used in similar way to [delegation](https://cardanodocs.com/technical/delegation/), but there
 are differences:
 
 1.  There is no certificate(s): to revoke delegation `A` has to move funds,
     providing different distribution.
-2.  Stake is delegated partially (with regular delegation types, it's done for
-    whole address' stake).
-3.  Only part of `A`'s balance associated with this transaction output is
-    delegated.
+2.  Only part of `A`'s balance associated with this transaction output is delegated.
+    This can be done in chunks per balance parts (on contrary, delegation requires you
+    to delegate all funds of whole address at once).
 
 By consensus, transaction distribution for `PublicKey`-address should be set to
 empty.
