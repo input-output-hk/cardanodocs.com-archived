@@ -27,12 +27,16 @@ cloud.
 
 The Bootstrap era is the period of Cardano SL existence that allows only fixed predefined
 users to have control over the system. The set of such users (the bootstrap stakeholders)
-is defined in [`gcdBootstrapStakeholders`](https://github.com/input-output-hk/cardano-sl/blob/f73d41b2bbd0a823911490974a71608fb4dbe014/core/Pos/Core/Genesis/Types.hs#L74). The Bootstrap era will end when bootstrap stakeholders
+is defined in [`gcdBootstrapStakeholders`](https://github.com/input-output-hk/cardano-sl/blob/f73d41b2bbd0a823911490974a71608fb4dbe014/core/Pos/Core/Genesis/Types.hs#L74). Purpose of Bootstrap era is to address concern that at the beginning of mainnet majority
+of stake will probably be offline (which protocol broken at start).
+
+The Bootstrap era will end when bootstrap stakeholders
 will vote for it. Special update proposal will be formed, where a particular constant will
 be set appropriately to trigger Bootstrap era end at the point update proposal gets adopted.
 Please see [`isBootstrapEra`](https://github.com/input-output-hk/cardano-sl/blob/18997b4e3db62ed9e9c9d69baf8ef2a8800fbf1f/core/Pos/Core/Slotting.hs#L137) function for more details.
 
-The next era after Bootstrap is called [the Reward era](/timeline/reward/).
+The next era after Bootstrap is called [the Reward era](/timeline/reward/). Reward era is
+actually a "normal" operation mode of Cardano SL as a PoS-cryptocurrency.
 
 Every transaction output (which is a pair `(address,coin)`) is accompanied by transaction
 output distribution (`txOutDistr`). [`TxOutDistribution`](https://github.com/input-output-hk/cardano-sl/blob/f73d41b2bbd0a823911490974a71608fb4dbe014/txp/Pos/Txp/Core/Types.hs#L132) type is `[(StakeholderId, Coin)]` and it defines
@@ -52,14 +56,15 @@ Let us now present the Bootstrap era solution:
     attributes `coin / (length gcdBootstrapStakeholders)` to every party in `gcdBootstrapStakeholders`,
     remainder to arbitrary `b ∈ gcdBootstrapStakeholders` (based on `hash coin`).
 2.  While the Bootstrap era takes place, users can send transactions changing initial `utxo`. We enforce
-    spreading `txDistr` to `gcdBootstrapStakeholders` in our wallet/client and forbid transactions that
-    move stake out of `gcdBootstrapStakeholders` set. This effectively makes stake distribution is system
-    constant.
-3.  When the Bootstrap era is over, we disable restriction on `txOutDistr`. System operates the same way as in
-    Bootstrap era, but users need to explicitly state they understand owning their stake leads to
-    responsibility to handle the node. For user to get his stake back he should send a transaction
-    to delegate key(s). It may be the key owned by user himself or the key of some delegate (which may
-    also be one or few of `gcdBootstrapStakeholders`).
+    setting txOutDistr for each transaction output to spread stake to `gcdBootstrapStakeholders` in
+    proportion specified by genesis block. This effectively makes stake distribution is system constant.
+3.  When the Bootstrap era is over, we disable restriction on `txOutDistr`. Bootstrap stakeholders will
+    vote for Bootstrap era ending: special update proposal will be formed, where a particular constant
+    will be set appropriately to trigger Bootstrap era end at the point update proposal gets adopted.
+    System operates the same way as in Bootstrap era, but users need to explicitly state they understand
+    owning their stake leads to responsibility to handle the node. For user to get his stake back he
+    should send a transaction, specifying delegate key(s) in `txOutDistr`. It may be the key owned by
+    user himself or the key of some delegate (which may also be one or few of `gcdBootstrapStakeholders`).
 
 Please read about [Stake Delegation in Cardano SL](/technical/delegation/) for more details about
 delegation mechanism.
