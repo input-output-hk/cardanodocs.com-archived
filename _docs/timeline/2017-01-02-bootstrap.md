@@ -56,8 +56,9 @@ Let us now present the Bootstrap era solution:
     attributes `coin / (length gcdBootstrapStakeholders)` to every party in `gcdBootstrapStakeholders`,
     remainder to arbitrary `b ∈ gcdBootstrapStakeholders` (based on `hash coin`).
 2.  While the Bootstrap era takes place, users can send transactions changing initial `utxo`. We enforce
-    setting txOutDistr for each transaction output to spread stake to `gcdBootstrapStakeholders` in
+    setting `txOutDistr` for each transaction output to spread stake to `gcdBootstrapStakeholders` in
     proportion specified by genesis block. This effectively makes stake distribution is system constant.
+    But transactions don't have any limit on what addresses they have in outputs.
 3.  When the Bootstrap era is over, we disable restriction on `txOutDistr`. Bootstrap stakeholders will
     vote for Bootstrap era ending: special update proposal will be formed, where a particular constant
     will be set appropriately to trigger Bootstrap era end at the point update proposal gets adopted.
