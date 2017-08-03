@@ -5,7 +5,7 @@ permalink: /technical/hd-wallets/
 group: technical
 visible: true
 ---
-<!-- Reviewed at cd26fb28eb48f893a4ca2d045a10da19c211b807 -->
+<!-- Reviewed at 866fd6a29a15c503e54426f17b91bd8b0903c5dc -->
 
 # HD wallets
 
@@ -23,9 +23,9 @@ We distinguish two types of keys:
 -   **Non-hardened**
 
 The only distinction here is that **hardened** keys allow only generation of
-child secret keys out of parent secret keys. Thus, for to derive a child key for
-a hardened, you have to own private key. **Non-hardened** keys allow one to
-derive a child public key out of a parent public key (not having a secret key
+child secret keys out of parent secret keys. Thus, to derive a child key for
+a hardened key, you have to own the private key. **Non-hardened** keys allow one to
+derive a child public key out of a parent public key (not having the secret key
 available).
 
 Each child is assigned a 4-byte index `i`:
@@ -35,7 +35,7 @@ Each child is assigned a 4-byte index `i`:
 
 ## Requirements
 
-Let `A(K)` denote the address which holds information about keypair `K`. Let
+Let `A(K)` denote the address that holds information about keypair `K`. Let
 `child(K, i)` denote the `i`-th child keypair of `K`. Let `tree(K)` denote the
 tree of addresses for keypairs, derived from `K` (and having positive balance)
 and held in **utxo**.
@@ -73,17 +73,17 @@ We use `PublicKey` address (already present in the system) and add the attribute
 field. In the attribute indexed by `0` (**HD wallets attribute**) we store tree
 data.
 
-Tree is stored as list of **derivation paths**. Each **derivaion path** is
-specified as list of **derivation indices**. Each **derivation index** is 4-byte
+Tree is stored as a list of **derivation paths**. Each **derivaion path** is
+specified as a list of **derivation indices**. Each **derivation index** is 4-byte
 unsigned int.
 
 The resulting object is serialized and encrypted with symmetric scheme
 (*ChaChaPoly1305* algorithm) with the passphrase computed as SHA-512 hash of the
-root public key. This won’t allow an adversary to map all addresses on chain to
-their root as long as we don’t actually store any funds on the root key (which
-isn't forced by consensus rules, rather by UI).
+root public key. This will not allow an adversary to map all addresses on the chain to
+their root as long as we do not actually store any funds on the root key (which
+is not forced by consensus rules, rather by UI).
 
-**Crucial point in design:** root public keys aren't used to actually store
+**Crucial point in design:** root public keys are not used to actually store
 money.
 
 ## Use cases
@@ -128,16 +128,16 @@ For wallet to operate over some subtree, one needs to provide either:
 
 ### Notation:
 
--   `kp` denotes a private key with index `p`. Just a **Ed25519** private key.
+-   `kp` denotes a private key with index `p`. Just an **Ed25519** private key.
 
--   `Kp` denotes public key with index `p`. Just a **Ed25519** public key.
+-   `Kp` denotes public key with index `p`. Just an **Ed25519** public key.
 
 -   `cp` denotes chain code with index `p`.
 
 ### Entropy
 
 In BTC, they use 512-bit hash, but `kp` is only 256 bit. For this reason we need
-to comply key to 512 bit, so we don't reduce hashing space.
+to comply key to 512 bit, so we do not reduce hashing space.
 
 -   Extended private key is a pair denoted as `(ki, ci)`.
 
@@ -156,7 +156,7 @@ crypto primitives:
 
 # Daedalus HD wallets
 
-This section describes the way the HD wallets feature is actually used. It's
+This section describes the way the HD wallets feature is used. It is
 split into two parts:
 
 1.  Extension of wallet backend API to support HD wallet structure locally (as
@@ -169,9 +169,9 @@ split into two parts:
 
 ### Old storage
 
-Old wallet storage stored list of addresses. Each address was associated a name
+The old wallet storage stored a list of addresses. Each address was associated with a name
 and was derived from separate secret key (backed up by mnemonics and encrypted
-with spending password).
+with the spending password).
 
 ### New storage
 
@@ -182,9 +182,9 @@ password).
 Each wallet contains a number of **accounts**.
 
 Each account contains a number of **addresses** (i.e. an address is a key of the
-2nd level in HD tree).
+2nd level in a HD tree).
 
-This maps to HD tree:
+This maps to a HD tree:
 
 -   wallet set corresponds to key of 0-th level (*root*),
 
@@ -199,7 +199,7 @@ for money remainder, if any.
 
 ### Usability
 
-User is able to:
+A user is able to:
 
 -   import/export an arbitrary number of **wallets**,
 
@@ -218,10 +218,10 @@ There are two ways of importing/exporting wallet:
 -   via **mnemonics**,
 -   via export file.
 
-**Mnemonics** is generated on frontend side and allows to deterministically
-generate secret key. Names won't be restored.
+**Mnemonics** is generated on front end side and allows to deterministically
+generate secret key. Names will not be restored.
 
-Export file allows to restore whole wallet structure.
+Export file allows to restore the whole wallet structure.
 
 ### Import
 
@@ -234,8 +234,8 @@ applied for import:
     corresponding to this root key and add them to storage along with their
     parents (wallets).
 
--   In case of file import, structure resulted from step 2 is labeled with
-    names. Also wallets/addresses which existed in file and were not spent are
+-   In case of file import, the structure that resulted from step 2 is labeled with
+    names. Also, the wallets/addresses listed in the imported file and not spent at the moment are
     created.
 
 ### New transaction handling
