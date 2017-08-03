@@ -161,10 +161,6 @@ chapter.
 
 Messages have maximum length limits. Different types of messages have different limits, as defined in [`Pos.Communication.Limits`](https://github.com/input-output-hk/cardano-sl/blob/895619d7056fe397e9c2a56d88994f167263c397/src/Pos/Communication/Limits.hs) module.
 
-## Communication Messages
-
-OUTDATED.
-
 ## Delegation Messages
 
 *Delegation* is a feature that allows one stakeholder, called *issuer*, to let
