@@ -28,10 +28,10 @@ a hardened, you have to own private key. **Non-hardened** keys allow one to
 derive a child public key out of a parent public key (not having a secret key
 available).
 
-Each child is assigned a 4-byte index `i`
+Each child is assigned a 4-byte index `i`:
 
--   `i ≤ 2³¹ - 1` for **non-hardened** keys
--   `i > 2³¹ - 1` for **hardened** keys
+-   `i ≤ 2³¹ - 1` for **non-hardened** keys,
+-   `i > 2³¹ - 1` for **hardened** keys.
 
 ## Requirements
 
@@ -69,7 +69,7 @@ For **non-hardened** keys
 
 ## Address format
 
-We use `PubKey` address (already present in system) and add the attributes
+We use `PublicKey` address (already present in the system) and add the attributes
 field. In the attribute indexed by `0` (**HD wallets attribute**) we store tree
 data.
 
@@ -88,14 +88,14 @@ money.
 
 ## Use cases
 
-#### Financial audit
+### Financial audit
 
 One should provide the auditor hash of a root public key to let auditor find all
 keys in hierarchy.
 
-#### Payment server
+### Payment server
 
-(applicable for **non-hardened** keys only)
+_It is applicable for **non-hardened** keys only._
 
 For server to be able to derive subsequent addresses to receive payments to
 them, one needs to upload there either:
@@ -110,7 +110,7 @@ them, one needs to upload there either:
 
     -   Tree path for `PK`
 
-#### Wallet
+### Wallet
 
 For wallet to operate over some subtree, one needs to provide either:
 
@@ -124,26 +124,22 @@ For wallet to operate over some subtree, one needs to provide either:
 
     -   Tree path for `SK`
 
-## Derivation crypto interface
+## Derivation Crypto Interface
 
-#### Notation:
+### Notation:
 
--   `kp` denotes a private key with index `p`.
+-   `kp` denotes a private key with index `p`. Just a **Ed25519** private key.
 
-    Just a **Ed25519** private key
-
--   `Kp` denotes public key with index `p`.
-
-    Just a **Ed25519** public key
+-   `Kp` denotes public key with index `p`. Just a **Ed25519** public key.
 
 -   `cp` denotes chain code with index `p`.
 
-###### Entropy
+### Entropy
 
 In BTC, they use 512-bit hash, but `kp` is only 256 bit. For this reason we need
 to comply key to 512 bit, so we don't reduce hashing space.
 
--   Extended private key is a pair denoted as `(ki, ci)`
+-   Extended private key is a pair denoted as `(ki, ci)`.
 
 -   Extended public key is a pair denoted as `(Ki, ci)`.
 
@@ -164,7 +160,7 @@ This section describes the way the HD wallets feature is actually used. It's
 split into two parts:
 
 1.  Extension of wallet backend API to support HD wallet structure locally (as
-    it is done in Bitcoin)
+    it is done in Bitcoin).
 
 2.  Extension to blockchain handling to utilize new address attribute to keep HD
     structure on several client instances in sync.
@@ -190,11 +186,11 @@ Each account contains a number of **addresses** (i.e. an address is a key of the
 
 This maps to HD tree:
 
--   Wallet set corresponds to key of 0-th level (*root*)
+-   wallet set corresponds to key of 0-th level (*root*),
 
--   Wallet corresponds to key of 1-th level (children of root)
+-   wallet corresponds to key of 1-th level (children of root),
 
--   Address corresponds to key of 2-th level (grandchildren of root)
+-   address corresponds to key of 2-th level (grandchildren of root).
 
 Money are kept only on addresses.
 
@@ -205,30 +201,29 @@ for money remainder, if any.
 
 User is able to:
 
--   import/export an arbitrary number of **wallets**
+-   import/export an arbitrary number of **wallets**,
 
--   generate an arbitrary number of **accounts**
+-   generate an arbitrary number of **accounts**,
 
--   assign name to **wallets** and **accounts**
+-   assign name to **wallets** and **accounts**,
 
--   generate an arbitrary number of **addresses**
+-   generate an arbitrary number of **addresses**,
 
 -   change **wallet** spending password.
 
-## Read HD wallet data from blockchain
+## Read HD Wallet Data from Blockchain
 
 There are two ways of importing/exporting wallet:
 
--   Via **mnemonics**
+-   via **mnemonics**,
+-   via export file.
 
 **Mnemonics** is generated on frontend side and allows to deterministically
 generate secret key. Names won't be restored.
 
--   Via export file
+Export file allows to restore whole wallet structure.
 
-This file allows to restore whole wallet structure.
-
-#### Import
+### Import
 
 In both cases we have a secret root key. The following procedure should be
 applied for import:
@@ -243,7 +238,7 @@ applied for import:
     names. Also wallets/addresses which existed in file and were not spent are
     created.
 
-#### New transaction handling
+### New transaction handling
 
 When a new transaction gets available (appears either in block or in mempool),
 inputs are analyzed. If the input corresponds to public key address with **HD
