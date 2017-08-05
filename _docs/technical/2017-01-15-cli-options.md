@@ -23,21 +23,27 @@ Usage: cardano-node [--version] [--db-path FILEPATH] [--rebuild-db]
                     [--keyfile FILEPATH] [--backup-phrase PHRASE]
                     [--address IP:PORT] [--listen IP:PORT] [--supporter]
                     [--kademlia-address IP:PORT] [--kademlia-id HOST_ID]
-                    [--kademlia-peer HOST:PORT] [--kademlia-peers-file FILEPATH]
-                    [--kademlia-explicit-initial] [--json-log FILEPATH]
-                    [--attack NoBlocks | NoCommitments]
+                    [--kademlia-peer HOST:PORT] [--kademlia-explicit-initial]
+                    [--node-type core|relay|edge] [--peer-core HOST:PORT]
+                    [--peer-relay HOST:PORT] [--kademlia-peers-file FILEPATH]
+                    [--topology FILEPATH] [--kademlia FILEPATH]
+                    [--node-id NODE_ID] [--default-port PORT]
+                    [--json-log FILEPATH] [--attack NoBlocks | NoCommitments]
                     [--attack-target HOST:PORT | PUBKEYHASH]
                     [--kademlia-dump-path FILEPATH] [--web] [--web-port PORT]
+                    [--tlscert FILEPATH] [--tlskey FILEPATH] [--tlsca FILEPATH]
                     [--wallet] [--wallet-port PORT] [--wallet-db-path ARG]
                     [--wallet-rebuild-db] [--wallet-debug]
                     [--log-config FILEPATH] [--logs-prefix FILEPATH]
                     [--ssc-algo ALGO] [--disable-propagation]
                     [--report-server URI] [--update-server URI]
                     [--flat-distr (INT,INT)] [--bitcoin-distr (INT,INT)]
-                    [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr]
+                    [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
                     --system-start TIMESTAMP [--update-latest-path FILEPATH]
-                    [--update-with-package] [--monitor-port INT] [--no-ntp]
-                    [--static-peers]
+                    [--update-with-package] [--no-ntp] [--metrics]
+                    [--ekg-server IP:PORT] [--statsd-server IP:PORT]
+                    [--statsd-interval MILLISECONDS] [--statsd-debug BOOL]
+                    [--statsd-prefix TEXT] [--statsd-suffix TEXT]
   Cardano SL main server node.
 
 Available options:
@@ -70,12 +76,22 @@ Available options:
   --kademlia-id HOST_ID    Kademlia id for this node in base64-url
   --kademlia-peer HOST:PORT
                            Identifier of a node in a Kademlia network
-  --kademlia-peers-file FILEPATH
-                           Path to a file containing a newline-separated list of
-                           Kademlia peers
   --kademlia-explicit-initial
                            Explicitely contact to initial peers as to neighbors
                            (even if they appeared offline once)
+  --node-type core|relay|edge
+                           The type of this node (core, relay, edge), default
+                           core
+  --peer-core HOST:PORT    Address of a peer
+  --peer-relay HOST:PORT   Address of a peer
+  --kademlia-peers-file FILEPATH
+                           Path to a file containing a newline-separated list of
+                           Kademlia peers
+  --topology FILEPATH      Path to a YAML file containing the network topology
+  --kademlia FILEPATH      Path to a YAML file containing the kademlia
+                           configuration
+  --node-id NODE_ID        Identifier for this node within the network
+  --default-port PORT      Port number for IP address to node ID translation
   --json-log FILEPATH      Path to JSON log file.
   --attack NoBlocks | NoCommitments
                            Attack type to emulate. This option can be defined
@@ -89,6 +105,9 @@ Available options:
   --web                    Activate web API (it’s not linked with a wallet web
                            API).
   --web-port PORT          Port for web API. (default: 8080)
+  --tlscert FILEPATH       Path to file with TLS certificate
+  --tlskey FILEPATH        Path to file with TLS key
+  --tlsca FILEPATH         Path to file with TLS certificate authority
   --wallet                 Activate Wallet web API.
   --wallet-port PORT       Port for Daedalus Wallet API. (default: 8090)
   --wallet-db-path ARG     Path to the wallet's database.
@@ -115,17 +134,24 @@ Available options:
                            Use rich'n'poor stake distribution with given
                            parameters (number of richmen, number of poors, total
                            stake, richmen's share of stake).
-  --exp-distr              Enable exponential distribution
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
   --update-latest-path FILEPATH
                            Path to update installer file, which should be
                            downloaded by Update System.
   --update-with-package    Enable updating via installer.
-  --monitor-port INT       Run web monitor on this port.
   --no-ntp                 Whether to use real NTP servers to synchronise time
                            or rely on local time
-  --static-peers           Don't use Kademlia, use only static peers
+  --metrics                Enable metrics (EKG, statsd)
+  --ekg-server IP:PORT     Host and port for the EKG server
+  --statsd-server IP:PORT  Host and port for the statsd server
+  --statsd-interval MILLISECONDS
+                           Polling interval for statsd (milliseconds)
+  --statsd-debug BOOL      Enable statsd debug mode
+  --statsd-prefix TEXT     Prefix for statsd
+  --statsd-suffix TEXT     Suffix for statsd
 
 Command example:
 
@@ -155,8 +181,9 @@ Usage: cardano-wallet [--version] [--db-path FILEPATH] [--rebuild-db]
                       [--ssc-algo ALGO] [--disable-propagation]
                       [--report-server URI] [--update-server URI]
                       [--flat-distr (INT,INT)] [--bitcoin-distr (INT,INT)]
-                      [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr]
-                      --system-start TIMESTAMP COMMAND [--peer HOST:PORT]
+                      [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
+                      --system-start TIMESTAMP COMMAND [--tlscert FILEPATH]
+                      [--tlskey FILEPATH] [--tlsca FILEPATH] [--peer HOST:PORT]
   Cardano SL CLI-wallet.
 
 Available options:
@@ -187,9 +214,13 @@ Available options:
                            Use rich'n'poor stake distribution with given
                            parameters (number of richmen, number of poors, total
                            stake, richmen's share of stake).
-  --exp-distr              Enable exponential distribution
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
+  --tlscert FILEPATH       Path to file with TLS certificate
+  --tlskey FILEPATH        Path to file with TLS key
+  --tlsca FILEPATH         Path to file with TLS certificate authority
   --peer HOST:PORT         Address of a peer.
 
 Available commands:
@@ -213,66 +244,19 @@ Command example:
 ## cardano-keygen
 
 ~~~
-Tool to generate keyfiles.
+Tool to generate keyfiles-related data
 
-Usage: cardano-keygen [--version] [--genesis-dir DIR] [--rearrange-mask PATTERN]
-                      [--dump-dev-genesis-keys PATTERN]
-                      [-f|--file-pattern PATTERN] [-n|--testnet-keys INT]
-                      [-m|--richmen INT] [--richmen-share FLOAT]
-                      [--testnet-stake INT] [--utxo-file FILE] [--randcerts]
-                      [--fileholder FILE] [--blacklisted FILE]
-                      [--fake-avvm-seed-pattern PATTERN]
-                      [--fake-avvm-entries INT] [--fake-avvm-stake INT]
-  Produce 'genesis-*' directory with generated keys.
+Usage: cardano-keygen [--version] COMMAND
 
 Available options:
   -h,--help                Show this help text
   --version                Show version.
-  --genesis-dir DIR        Directory to dump genesis data into
-  --rearrange-mask PATTERN Secret keyfiles to rearrange.
-  --dump-dev-genesis-keys PATTERN
-                           Dump keys from genesisDevSecretKeys to files named
-                           according to this pattern.
-  -f,--file-pattern PATTERN
-                           Filename pattern for generated keyfiles (`{}` is a
-                           place for number).
-  -n,--testnet-keys INT    Number of testnet stakeholders to generate.
-  -m,--richmen INT         Number of rich stakeholders to generate.
-  --richmen-share FLOAT    Percent of stake dedicated to richmen (between 0 and
-                           1).
-  --testnet-stake INT      Total coins in genesis stake, excluding RSCoin
-                           ledger.
-  --utxo-file FILE         JSON file with AVVM stakes data.
-  --randcerts              Whether to include random VSS certificates to genesis
-                           data.
-  --fileholder FILE        A keyfile from which to read public key of
-                           stakeholder to which AVVM stakes are delegated.
-  --blacklisted FILE       Path to the file containing blacklisted addresses (an
-                           address per line).
-  --fake-avvm-seed-pattern PATTERN
-                           Filename pattern for generated AVVM seeds (`{}` is a
-                           place for number).
-  --fake-avvm-entries INT  Number of fake AVVM stakeholders.
-  --fake-avvm-stake INT    A stake assigned to each of fake AVVM stakeholders.
 
-Command example:
-
-  stack exec -- cardano-keygen                          \
-    --genesis-dir genesis                               \
-    -f secrets/secret-{}.key                            \
-    -m 5                                                \
-    -n 1000                                             \
-    --richmen-share 0.94                                \
-    --testnet-stake 19072918462000000                   \
-    --utxo-file /tmp/avvm-files/utxo-dump-last-new.json \
-    --randcerts                                         \
-    --blacklisted /tmp/avvm-files/full_blacklist.js     \
-    --fake-avvm-seed-pattern avvm/fake-{}.seed          \
-    --fake-avvm-entries 100
-
-Subdirectory 'genesis-*/nodes' contains keys for uploading to nodes (in cluster).
-Subdirectory 'genesis-*/avvm' contains AVVM seeds.
-Subdirectory 'genesis-*/secrets' contains secret keys.
+Available commands:
+  rearrange                Rearrange keyfiles.
+  dump-dev-keys            Dump CSL dev-mode keys.
+  generate-avvm-seeds      Generate avvm seeds with public keys.
+  generate-genesis         Generate CSL genesis files.
 ~~~
 
 ## cardano-checks
@@ -338,8 +322,8 @@ Tool to launch Cardano SL.
 Usage: cardano-launcher [--version] --node PATH [-n ARG]
                         [--node-log-config PATH] [--node-log-path PATH]
                         [--wallet PATH] [-w ARG] --updater PATH [-u ARG]
-                        [--update-archive PATH] --node-timeout SEC
-                        [--report-server URL]
+                        [--update-archive PATH] [--updater-windows-runner PATH]
+                        --node-timeout SEC [--report-server URL]
 
 Available options:
   -h,--help                Show this help text
@@ -355,6 +339,9 @@ Available options:
   -u ARG                   An argument to be passed to the updater.
   --update-archive PATH    Path to the update archive, it will be passed to the
                            updater.
+  --updater-windows-runner PATH
+                           Path to write the Windows batch file executing
+                           updater
   --node-timeout SEC       How much to wait for the node to exit before killing
                            it.
   --report-server URL      Where to send logs in case of failure.
@@ -388,24 +375,54 @@ Command example:
     --update-archive updateDownloaded.tar
 ~~~
 
+## cardano-block-gen
+
+~~~
+Generating in DEV mode
+Cardano SL blockchain generator
+
+Usage: cardano-block-gen [--version] --blocks INT --nodes INT
+                         [--generated-db FILEPATH] [--append] [--seed INT]
+  It generates database of node, corresponding to some correct blockchain
+
+Available options:
+  -h,--help                Show this help text
+  --version                Show version.
+  --blocks INT             Length of blockchain.
+  --nodes INT              Number of nodes.
+  --generated-db FILEPATH  Location of generated database.
+  --append                 If database already exists, append to it.
+  --seed INT               Custom seed to generate blocks.
+
+Command example:
+
+  stack exec -- cardano-block-gen           \
+    --blocks 5000                           \
+    --nodes 3                               \
+    --coins 100
+    --generated-db /path/to/existed/db      \
+    --seed 123
+    --append
+~~~
+
 ## cardano-report-server
 
 ~~~
 CardanoSL report server
 
-Usage: cardano-report-server [--version] [--help] [-p|--port INTEGER]
-                             [--logsdir FILEPATH] [--severity SEVERITY]
-                             [--size-limit BYTES]
+Usage: cardano-report-server [-p|--port INTEGER] [--logsdir FILEPATH]
+                             [--severity SEVERITY] [--size-limit BYTES]
+                             [--version]
   CardanoSL reporting server daemon
 
 Available options:
-  --version                Show version
-  --help                   Show this help text
   -p,--port INTEGER        Port server is running on
   --logsdir FILEPATH       Directory server will be saving logs in
   --severity SEVERITY      Logging severity
   --size-limit BYTES       Maximum body size allowed (will send 413 responses if
                            bigger)
+  -h,--help                Show this help text
+  --version                Show version
 ~~~
 
 ## cardano-smart-generator
@@ -424,10 +441,7 @@ Usage: cardano-smart-generator [--version] [-i|--index INT]
                                [--log-config FILEPATH] [--logs-prefix FILEPATH]
                                [--ssc-algo ALGO] [--disable-propagation]
                                [--report-server URI] [--update-server URI]
-                               [--flat-distr (INT,INT)]
-                               [--bitcoin-distr (INT,INT)]
-                               [--rich-poor-distr (INT,INT,INT,FLOAT)]
-                               [--exp-distr] --system-start TIMESTAMP
+                               [--system-start TIMESTAMP]
   It starts a stress test to see an actual number of generated transactions per
   second (TPS).
 
@@ -462,35 +476,25 @@ Available options:
                            on his own.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
-  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
-                           (nodes, coins).
-  --bitcoin-distr (INT,INT)
-                           Use bitcoin stake distribution with given parameters
-                           (nodes,coins).
-  --rich-poor-distr (INT,INT,INT,FLOAT)
-                           Use rich'n'poor stake distribution with given
-                           parameters (number of richmen, number of poors, total
-                           stake, richmen's share of stake).
-  --exp-distr              Enable exponential distribution
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
 
 Command example:
 
-  stack exec -- cardano-smart-generator     \
-    -i 0                                    \
-    --disable-propagation                   \
-    --peer 35.157.97.210:3000               \
-    -R 4                                    \
-    -N 100                                  \
-    -p 30                                   \
-    --init-money 60000000                   \
-    -t 1                                    \
-    -S 1                                    \
-    -P 2                                    \
-    --recipients-share 0.3                  \
-    --log-config static/txgen-logging.yaml  \
-    --json-log txgen.json                   \
+  stack exec -- cardano-smart-generator                     \
+    -i 0                                                    \
+    --disable-propagation                                   \
+    --peer 35.157.97.210:3000/MHdrsP-oPf7UWl0007QuXnLK5RD=  \
+    -R 4                                                    \
+    -N 100                                                  \
+    -p 30                                                   \
+    --init-money 60000000                                   \
+    -t 1                                                    \
+    -S 1                                                    \
+    -P 2                                                    \
+    --recipients-share 0.3                                  \
+    --log-config static/txgen-logging.yaml                  \
+    --json-log txgen.json                                   \
     --flat-distr "(80,60000000)"
 ~~~
 
@@ -607,4 +611,26 @@ This program runs during 'cardano-sl' building on Travis CI. Generated file
 'wallet-web-api-swagger.json' will be used to produce HTML documentation. This
 documentation will be published at cardanodocs.com using
 'update_wallet_web_api_docs.sh'.
+~~~
+
+## cardano-post-mortem
+
+~~~
+cardano-post-mortem
+
+Usage: cardano-post-mortem COMMAND
+  analyzes the json logs from several directories or focusses on a single
+  transaction
+
+Available options:
+  -h,--help                Show this help text
+
+Available commands:
+  overview                 analyzes the json logs from LOGDIRS...
+  focus                    analyzes transaction FOCUS in log folder LOGDIR
+  txrelay                  analyzes transaction relays in the json logs from
+                           LOGDIRS...
+  throughput               analyzes transaction throughput and waiting time per
+                           time windows TXWINDOW and WAITWINDOW in the json logs
+                           from LOGDIRS...
 ~~~
