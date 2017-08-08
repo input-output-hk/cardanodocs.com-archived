@@ -33,7 +33,7 @@ Thus, when we are talking about the stake, we are talking about a user's ability
 ### Balance and Stake Relation
 
 Every coin in Cardano SL is associated with a balance and with a stake. We use [transaction output](/cardano/transactions/#design)
-to associate coin `C` with user's balance, and use [stake distribution](/timeline/bootstrap/#stake-locking)
+to associate coin `C` with user's balance, and use [stake distribution](/cardano/transactions/#transaction-distribution)
 to associate coin `C` with user's stake.
 
 It is possible to change association between coin and stake using [stake delegation](/technical/delegation/).
