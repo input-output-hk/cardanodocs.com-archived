@@ -4,33 +4,31 @@ title: Balance and Stake
 permalink: /cardano/balance-and-stake/
 group: cardano
 ---
-<!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
+<!-- Reviewed at e070e675764738b5190b2f93424de403f1937216 -->
 
 # Balance and Stake in Cardano SL
 
-There are two important concepts in Cardano SL &mdash; **balance** and **stake**. This article
+There are two important concepts in Cardano SL: **balance** and **stake**. This chapter
 explains the difference between these concepts.
 
 ### Balance
 
-Balance is a real amount of coins user has. After user installed a Daedalus wallet on his computer
-and made [Ada redemption](/timeline/bootstrap/), he received some amount of Ada. This amount of
-money is his balance. User can send some amount of Ada (within his balance) to other users as well as
-receive some amount of Ada from them.
+Balance is a real amount of coins a user has. Upon installing a Daedalus wallet on one's computer
+and performing [Ada redemption](/timeline/bootstrap/), one receives some amount of Ada. This amount of
+Ada is called one's balance. A user can send some amount of Ada (within his balance) to other users, as well as
+receive any amount of Ada from them.
 
-Thus, when we are talking about the balance &mdash; we are talking just about user's money.
+Thus, when we are talking about the balance, we are talking just about user's money.
 
 ### Stake
 
-Stake is a concept from the [paper](/glossary/#paper). Unlike the balance (real amount of money),
-you can think of a stake as a part of the whole financial power of Cardano SL. Stake gives user the
-power to control different Cardano SL algorithm parts: being the [slot leader](/glossary/#slot-leader),
-voting in [Update system](/cardano/update-mechanism/), taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi).
-This is the reason why all thresholds in Cardano SL protocol are defined in terms of the stake,
-not the balance.
+Stake is a concept from the [paper](/glossary/#paper). Unlike balance (the real amount of money one has),
+you can think of "stake" as a part of the whole financial power of Cardano SL. Stake gives a user the
+power to control various Cardano SL algorithm parts, for example: being the [slot leader](/glossary/#slot-leader),
+voting in the [Update system](/cardano/update-mechanism/), taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi). This is why all thresholds in Cardano SL protocol are expressed in terms of stake,
+not balance.
 
-Thus, when we are talking about the stake &mdash; we are talking about user's abilities to control
-Cardano SL.
+Thus, when we are talking about the stake, we are talking about a user's ability to control Cardano SL.
 
 ### Balance and Stake Relation
 
