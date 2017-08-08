@@ -1237,7 +1237,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+                        <p>Export full information about wallets in JSON format into a file under given path. Wallets may be later restored with &#39;ImportBackupJSON&#39; endpoint.</p>
+            
                     </section>
                         
                             <section class="sw-request-body">
@@ -1311,7 +1312,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+                        <p>Import full information about wallets from a given file.</p>
+            
                     </section>
                         
                             <section class="sw-request-body">
@@ -2000,7 +2002,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+                        <p>Estimate fees for performing given transaction. Transaction will not be created.</p>
+            
                     </section>
                     
                         <section class="sw-request-params">
@@ -2882,8 +2885,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Change passphrase of given wallet.
-            NOTE: this will change IDs of all accounts belonging to given wallet, and will send all money from old accounts to newly created ones. In case of transaction rollback, wallet will become to store new empty accounts, while money will remain at the old accounts, thus make sure to create a backup before performing this action.</p>
+                        <p>Change passphrase of given wallet.</p>
             
                     </section>
                     
@@ -3219,7 +3221,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Delete given wallet with all contained wallets.</p>
+                        <p>Delete given wallet with all contained accounts.</p>
             
                     </section>
                     
@@ -3391,7 +3393,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+                        <p>Update wallet&#39;s meta information.</p>
+            
                     </section>
                         
                             <section class="sw-request-body">
