@@ -79,5 +79,23 @@ Clone Daedalus repository and go to the root directory:
 
 Then run the following script: 
 
-    [nix-shell:~/cardano-sl]$ ./scripts/link-bridge.sh
-    [nix-shell:~/cardano-sl]$ npm install
+    [nix-shell:~/daedalus]$ ./scripts/link-bridge.sh
+    [nix-shell:~/daedalus]$ npm install
+
+### Running acceptance tests
+
+To run acceptance tests one first has to have cluster running. We can run cluster on our machine with:
+
+    [nix-shell:~/cardano-sl]$ ./scripts/launch/demo-with-wallet-api.sh
+
+Then navigate to daedalus repo and run tests server with:
+
+    [nix-shell:~/daedalus]$ npm run hot-server
+
+and in the seperate terminal window run tests:
+
+    [nix-shell:~/daedalus]$ npm run test
+
+You should see acceptance tests being run for about 5 minutes. Note that acceptance tests will be actively be taking window focus until they are finished. If it complains about `cardano-node.log` not existing just create it in the path with:
+
+    [nix-shell:~/daedalus]$ touch ~/.config/Daedalus/Logs/cardano-node.log
