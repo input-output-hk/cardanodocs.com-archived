@@ -18,43 +18,41 @@ Currently, it allows a user to use their ADA in the aforementioned actions, and
 providing support for other currencies is planned for the near future — as is
 the exchange between different currencies, both digital and not.
 
-## Building `daedalus-client-api`
+## Building Daedalus client API
 
-To run `daedalus-client-api` locally, you have to start the `wallet-api` of
-[`cardano-sl`](https://github.com/input-output-hk/cardano-sl/) as follows. Make
-sure that you are in the root folder of `cardano-sl`.
+To run Daedalus client API locally, you have to start [`cardano-sl`](https://github.com/input-output-hk/cardano-sl/)
+with wallet API as follows.
+
+Make sure that you are in the root directory of `cardano-sl` repository.
 
 ``` bash
-util-scripts/build-client-api.sh
+$ ./scripts/clean/daedalus-bridge.sh
+$ ./scripts/build/daedalus-bridge.sh
 ```
 
-## Running and testing `daedalus-client-api`
+Please make sure you have [npm](https://www.npmjs.com/) program.
 
-In order to see `daedalus-client-api` in action, first run a local Cardano
-network:
+## Running and testing Daedalus client API
+
+In order to see Daedalus client API in action, first run a local Cardano SL network:
 
 ``` bash
 # run tmux in another window
-tmux
+$ tmux
 # launch nodes
-util-scripts/start-dev.sh
+$ ./scripts/launch/demo-with-wallet-api.sh
 ```
 
-By default, this should launch Cardano network consisting of 3 nodes talking to
-each other. `WALLET_TEST=1` tells the launcher script to run `wallet-api` with
-one node. This one node running `wallet-api` will behave the same as Daedalus
+By default, this should launch Cardano SL network consisting of 3 nodes talking to
+each other. One node is running wallet API, and it will behave the same as Daedalus
 wallet that is run in production.
 
-With `wallet-api` running, you can run `daedalus-client-api` locally as follows.
-Please note that [npm](https://www.npmjs.com/) is required to build
-`daedalus-client-api`.
-
-Now we can try using the client API with [nodejs](https://nodejs.org/):
+Now we can try to use the client API with [nodejs](https://nodejs.org/):
 
 ``` bash
 $ node
-> var api = require('../output/Daedalus.ClientApi')
-undefined
+> var api = require('./daedalus/output/Daedalus.ClientApi')
+
 > api
 { applyUpdate: [Function],
   blockchainSlotDuration: [Function],
@@ -118,7 +116,7 @@ This is an example session that shows how the user/client can work with the
 Daedalus-bridge library.
 
 ``` bash
-var api = require('../output/Daedalus.ClientApi')
+var api = require('./daedalus/output/Daedalus.ClientApi')
 ```
 
 ### Clear all data (DEVELOPMENT)
