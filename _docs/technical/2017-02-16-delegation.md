@@ -25,6 +25,8 @@ stakeholders `S1...Sn` in the [Coin Tossing protocol](https://github.com/input-o
 number of nodes participating in the Coin Tossing protocol can be much lower,
 see [paper](/glossary/#paper), page 38.
 
+Moreover, delegates are able not only to generate new blocks or taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi), but also to vote in the [Update system](/cardano/update-mechanism/).
+
 ## Schema
 
 The slot leader can transfer its right to generate a new block to the delegate. To do
