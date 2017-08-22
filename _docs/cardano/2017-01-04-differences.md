@@ -63,9 +63,9 @@ SL](/technical/pvss/) for more details.
 In *Ouroboros* paper, they do not state explicitly when a slot leader should
 generate a new block and send it to the network: it can be done at the beginning
 of a slot, at the end of a slot, in the middle of a slot, etc. In `cardano-sl`
-there is a special constant (`networkDiameter`) which approximates maximal time
-necessary to broadcast a block to all nodes in the network. A block is generated
-and announced `networkDiameter` seconds before the end of a slot.
+there is a special constant called "network diameter" which approximates maximal time
+necessary to broadcast a block to all nodes in the network. For example, if network
+diameter is 3, then block is generated and announced 3 seconds before the end of a slot.
 
 ## Stake Delegation
 
