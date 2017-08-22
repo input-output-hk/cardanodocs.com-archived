@@ -45,7 +45,8 @@ transactions are legitimate.
 
 “Stake” means “the relative value held by addresses on the node”. By “relative
 value” we mean “all value held by wallets on a particular node divided by total
-value in the system”.
+value in the system”. Please read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)
+for more information.
 
 ## Proof of Stake
 
