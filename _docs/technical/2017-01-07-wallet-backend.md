@@ -64,11 +64,32 @@ The `servant` Haskell library that provides a modular approach to API-building
 is used. This library uses combinators both to build atomic HTTP actions and to
 glue these atomic methods together to form larger and more complete APIs.
 
-If the event requests fail, there is a `WalletError` type, which is simply a
-wrapper over `Text` to show what happened.
+Please notice that wallet web API is available only if you run a node with
+`--wallet` option. Default port for this API is `8090` which can be changed with
+the `--wallet-port` option.
 
 Documentation for wallet web API is available
 [here](https://cardanodocs.com/technical/wallet/api/).
 
-Please notice that wallet web API is available only if you run a node with
-`--wallet` option. Default port for this API is `8090`.
+### TLS Connections
+
+The Wallet Web API uses TLS for secure communication. Calls to the API need
+to send a client CA certificate that was used when launching the node and
+identifies the client as being permitted to invoke the server API.
+
+Note that the client certificate file is the one which was supplied as the
+`--tlsca` option, when launching the node.
+
+For example, If that file is available as `ca.crt`, then a curl call to a node
+running on `localhost:8090` can be made like so -
+
+``` bash
+curl --cacert ca.crt -v https://localhost:8090/api/settings/sync/progress
+```
+
+If that request succeeds, then you have configured TLS properly.
+
+### Handling errors
+
+If the event requests fail, there is a `WalletError` type, which is simply a
+wrapper over `Text` to show what happened.
