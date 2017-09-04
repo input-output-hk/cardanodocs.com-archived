@@ -55,7 +55,7 @@ owner of `i`-th coin).
 The result is a non-empty sequence of `StakeholderId`, ids of selected stakeholders.
 This sequense of [`SlotLeaders`](https://github.com/input-output-hk/cardano-sl/blob/5f7b619c6ec9056c6fe778d862c426233af165df/core/Pos/Core/Types.hs#L264)
 is storing in the [node's runtime
-context](https://github.com/input-output-hk/cardano-sl/blob/master/src/Pos/Context/Context.hs#L93).
+context](https://github.com/input-output-hk/cardano-sl/blob/da70b2597aab352d7574a3946a366395b09e97eb/node/src/Pos/Context/Context.hs#L94).
 
 With P2SH addresses, node doesn't know who is going to end up with funds sent to
 them. Therefore, P2SH addresses can contain destination address which specifies
