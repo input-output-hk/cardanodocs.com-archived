@@ -58,7 +58,7 @@ The proxy secret key includes:
 Omega (or ω) is a special value from the [paper](/glossary/#paper). In our
 implementation, it is a [pair of epochs'
 identifiers](https://github.com/input-output-hk/cardano-sl/blob/f374a970dadef0fe62cf69e8b9a6b8cc606b5c7d/core/Pos/Core/Types.hs#L235). These identifiers define the delegation validity period: the produced block is
-valid if its epoch index is inside of this range.
+valid if its epoch index is inside this range.
 
 [Proxy certificate](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/Pos/Crypto/Signing.hs#L209)
 is a [signature](https://github.com/input-output-hk/cardano-crypto/blob/84f8c358463bbf6bb09168aac5ad990faa9d310a/src/Cardano/Crypto/Wallet.hs#L74)
@@ -66,14 +66,9 @@ of omega and delegate's public key.
 
 ## Heavyweight Delegation
 
-Heavyweight delegation is using stake threshold `T`. It means that stakeholder
+Heavyweight delegation is using stake threshold `T`. It means that the issuer
 has to posses not less than `T` in order to participate in heavyweight
 delegation. The value of this threshold is defined in the [configuration file](https://github.com/input-output-hk/cardano-sl/blob/d01d392d49db8a25e17749173ec9bce057911191/core/constants.yaml#L22).
-
-Moreover, the issuer stakeholder must have particular amount of stake too, otherwise [it
-cannot
-be](https://github.com/input-output-hk/cardano-sl/blob/763822c4fd906f36fa97b6b1f973d31d52342f3f/src/Pos/Delegation/Logic/VAR.hs#L394)
-a valid issuer.
 
 Proxy signing certificates from heavyweight delegation are stored within the
 blockchain. Issuer can post [only one
@@ -90,38 +85,38 @@ to another account, and then repeats the operation.
 ## Lightweight Delegation
 
 In contrast to heavyweight delegation, lightweight delegation doesn't require
-that delegate posses `T`-or-more stake. So lightweight delegation is available
+the issuer to posses `T`-or-more stake. So lightweight delegation is available
 for any node. But proxy signing certificates for lightweight delegation are not
 stored in the blockchain. Lightweight delegation certificate must be broadcasted
-to reach delegate.
+to reach the delegate.
 
 Later lightweight PSK can be
 [verified](https://github.com/input-output-hk/cardano-sl/blob/9d7be20eeafac27e682551d05f4aba2faba537bc/src/Pos/Delegation/Logic/Mempool.hs#L285)
-given issuer's public key, signature and message itself.
+given the issuer's public key, signature and message itself.
 
 ### Confirmation of proxy signature delivery
 
-Delegate should take the proxy signing key he has and make a signature of PSK using
-PSK and delegate's key. If the signature is correct, then it was done by delegate
+The delegate should take the proxy signing key he has and make a signature of PSK using
+PSK and delegate's key. If the signature is correct, then it was done by the delegate
 (guaranteed by the PSK scheme).
 
 ## Revocation Certificate
 
-Revoke certificate is a special certificate that issuer creates to revoke delegation.
+A revoke certificate is a special certificate that the issuer creates to revoke delegation.
 Both heavyweight and lightweight delegation can be revoked, but not in the same way.
 
-The revoke certificate is just a normal one where [issuer and delegate are the same](https://github.com/input-output-hk/cardano-sl/blob/db306d7db0d05610005c5bee98c7be3918fb7947/src/Pos/Delegation/Helpers.hs#L35)
-(in other words, issuer delegates to himself).
+The revoke certificate is just a normal one where [the issuer and the delegate are the same](https://github.com/input-output-hk/cardano-sl/blob/db306d7db0d05610005c5bee98c7be3918fb7947/src/Pos/Delegation/Helpers.hs#L35)
+(in other words, the issuer delegates to himself).
 
-To revoke lightweight delegation issuer sends revoke certificate to the network and
+To revoke lightweight delegation the issuer sends revoke certificate to the network and
 _asks_ to revoke delegation, but it cannot _enforce_ this revocation, since lightweight PSKs
 are not the part of the blockchain.
 
-Revocation of heavyweight delegation is handled other way. Since proxy signing certificates
-from heavyweight delegation are stored within the blockchain, revoke certificate will be
-committed in the blockchain as well. In this case the node removes heavyweight delegation
-certificate which was issued before revocation certificate. But there are two important notes
-about it.
+Revocation of heavyweight delegation is handled in a different way. Since proxy signing certificates
+from heavyweight delegation are stored within the blockchain, the revoke certificate will be
+committed in the blockchain as well. In this case the node removes the heavyweight delegation
+certificate which was issued before the revocation certificate. There are two
+important things to note about it, though:
 
 1.  If the committed heavyweight delegation certificate is in the node's memory pool yet, and revoke
     certificate was committed as well, the delegation certificate will be removed from memory pool.
@@ -132,10 +127,10 @@ about it.
 
 ## Transaction Distribution Trick
 
-Both heavyweight and lightweight delegation certificate contains issuer's and delegate's public keys.
+Both heavyweight and lightweight delegation certificates contain issuer's and delegate's public keys.
 But sometimes we do not want to disclose these public keys because of possible security problems.
-In this case issuer sends transaction to itself and stores the address `I2` in `txDistr`, where
-`I2` is an address of "other" issuer. After that issuer commits heavyweight PSK `I2 -> D`. We
-can freely disclose `I2` address.
+In this case the issuer sends a transaction to itself and stores the address `I2` in `txDistr`, where
+`I2` is an address of another issuer. After that the issuer commits heavyweight PSK `I2 -> D`. We
+can freely disclose the `I2` address.
 
 Please read more about transaction distribution [here](/cardano/transactions/#transaction-distribution).
