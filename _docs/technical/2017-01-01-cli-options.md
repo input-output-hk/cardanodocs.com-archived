@@ -19,6 +19,7 @@ This guide describes all executable files that are used in Cardano SL and all co
 Cardano SL node.
 
 Usage: cardano-node [--version] [--db-path FILEPATH] [--rebuild-db]
+                    [--spending-genesis INT] [--vss-genesis INT]
                     [--keyfile FILEPATH] [--backup-phrase PHRASE]
                     [--address IP:PORT] [--listen IP:PORT]
                     [--peer-core HOST:PORT] [--peer-relay HOST:PORT]
@@ -27,15 +28,17 @@ Usage: cardano-node [--version] [--db-path FILEPATH] [--rebuild-db]
                     [--policies FILEPATH] [--json-log FILEPATH]
                     [--kademlia-dump-path FILEPATH] [--log-config FILEPATH]
                     [--logs-prefix FILEPATH] [--report-server URI]
-                    [--update-server URI] [--system-start TIMESTAMP]
-                    [--update-latest-path FILEPATH] [--update-with-package]
-                    [--no-ntp] [--metrics] [--ekg-server IP:PORT]
-                    [--statsd-server IP:PORT] [--statsd-interval MILLISECONDS]
-                    [--statsd-debug BOOL] [--statsd-prefix TEXT]
-                    [--statsd-suffix TEXT] [--web] [--web-port PORT]
-                    [--tlscert FILEPATH] [--tlskey FILEPATH] [--tlsca FILEPATH]
-                    [--wallet-port PORT] [--wallet-db-path ARG]
-                    [--wallet-rebuild-db] [--wallet-debug]
+                    [--update-server URI] [--flat-distr (INT,INT)]
+                    [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
+                    --system-start TIMESTAMP [--update-latest-path FILEPATH]
+                    [--update-with-package] [--no-ntp] [--metrics]
+                    [--ekg-server IP:PORT] [--statsd-server IP:PORT]
+                    [--statsd-interval MILLISECONDS] [--statsd-debug BOOL]
+                    [--statsd-prefix TEXT] [--statsd-suffix TEXT] [--web]
+                    [--web-port PORT] [--tlscert FILEPATH] [--tlskey FILEPATH]
+                    [--tlsca FILEPATH] [--wallet-port PORT]
+                    [--wallet-db-path ARG] [--wallet-rebuild-db]
+                    [--wallet-debug]
   Cardano SL main server node w/ wallet.
 
 Available options:
@@ -46,6 +49,8 @@ Available options:
                            created.
   --rebuild-db             If node's database already exists, discard its
                            contents and create a new one from scratch.
+  --spending-genesis INT   Used genesis secret key index.
+  --vss-genesis INT        Index of using VSS key pair in genesis.
   --keyfile FILEPATH       Path to file with secret key (we use it for
                            Daedalus).
   --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
@@ -73,6 +78,14 @@ Available options:
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
+  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
+                           (nodes, coins).
+  --rich-poor-distr (INT,INT,INT,FLOAT)
+                           Use rich'n'poor stake distribution with given
+                           parameters (number of richmen, number of poors, total
+                           stake, richmen's share of stake).
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
   --update-latest-path FILEPATH
@@ -129,7 +142,9 @@ Usage: cardano-wallet [--version] [--db-path FILEPATH] [--rebuild-db]
                       [--keys-path FILEPATH] [--debug] [--json-log FILEPATH]
                       [--log-config FILEPATH] [--logs-prefix FILEPATH]
                       [--report-server URI] [--update-server URI]
-                      [--system-start TIMESTAMP] COMMAND [--peer HOST:PORT]
+                      [--flat-distr (INT,INT)]
+                      [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
+                      --system-start TIMESTAMP COMMAND [--peer HOST:PORT]
   Cardano SL CLI-wallet.
 
 Available options:
@@ -145,6 +160,14 @@ Available options:
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
+  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
+                           (nodes, coins).
+  --rich-poor-distr (INT,INT,INT,FLOAT)
+                           Use rich'n'poor stake distribution with given
+                           parameters (number of richmen, number of poors, total
+                           stake, richmen's share of stake).
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
   --peer HOST:PORT         Address of a peer.
@@ -214,13 +237,17 @@ Command example:
 ~~~
 Cardano SL Explorer web API docs generator.
 
-Usage: cardano-explorer-swagger
+Usage: cardano-explorer-swagger [--version]
   Generate Swagger specification for Explorer web API.
 
+Available options:
+  -h,--help                Show this help text
+  --version                Show version.
+
 This program runs during 'cardano-sl' building on Travis CI. Generated file
-'explorer-web-api-swagger.json' will be used to produce HTML documentation.
-This documentation will be published at cardanodocs.com using
-'update_wallet_web_api_docs.sh'.
+'explorer-web-api-swagger.json' will be used to produce HTML documentation. This
+documentation will be published at cardanodocs.com using
+'update-explorer-web-api-docs.sh'.
 ~~~
 
 ## cardano-node-simple
@@ -229,6 +256,7 @@ This documentation will be published at cardanodocs.com using
 Cardano SL node.
 
 Usage: cardano-node-simple [--version] [--db-path FILEPATH] [--rebuild-db]
+                           [--spending-genesis INT] [--vss-genesis INT]
                            [--keyfile FILEPATH] [--backup-phrase PHRASE]
                            [--address IP:PORT] [--listen IP:PORT]
                            [--peer-core HOST:PORT] [--peer-relay HOST:PORT]
@@ -238,7 +266,9 @@ Usage: cardano-node-simple [--version] [--db-path FILEPATH] [--rebuild-db]
                            [--kademlia-dump-path FILEPATH]
                            [--log-config FILEPATH] [--logs-prefix FILEPATH]
                            [--report-server URI] [--update-server URI]
-                           [--system-start TIMESTAMP]
+                           [--flat-distr (INT,INT)]
+                           [--rich-poor-distr (INT,INT,INT,FLOAT)]
+                           [--exp-distr INT] --system-start TIMESTAMP
                            [--update-latest-path FILEPATH]
                            [--update-with-package] [--no-ntp] [--metrics]
                            [--ekg-server IP:PORT] [--statsd-server IP:PORT]
@@ -256,6 +286,8 @@ Available options:
                            created.
   --rebuild-db             If node's database already exists, discard its
                            contents and create a new one from scratch.
+  --spending-genesis INT   Used genesis secret key index.
+  --vss-genesis INT        Index of using VSS key pair in genesis.
   --keyfile FILEPATH       Path to file with secret key (we use it for
                            Daedalus).
   --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
@@ -283,6 +315,14 @@ Available options:
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
+  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
+                           (nodes, coins).
+  --rich-poor-distr (INT,INT,INT,FLOAT)
+                           Use rich'n'poor stake distribution with given
+                           parameters (number of richmen, number of poors, total
+                           stake, richmen's share of stake).
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
   --update-latest-path FILEPATH
@@ -388,7 +428,7 @@ Command example:
 ~~~
 Cardano SL blockchain generator
 
-Usage: cardano-block-gen [--version] --blocks INT [--secret FILEPATH]
+Usage: cardano-block-gen [--version] --blocks INT --nodes INT
                          [--generated-db FILEPATH] [--append] [--seed INT]
                          [--tx-count (INT,INT)] [--tx-max-outs INT]
   It generates database of node, corresponding to some correct blockchain
@@ -397,7 +437,7 @@ Available options:
   -h,--help                Show this help text
   --version                Show version.
   --blocks INT             Length of blockchain.
-  --secret FILEPATH        Path to secret
+  --nodes INT              Number of nodes.
   --generated-db FILEPATH  Location of generated database.
   --append                 If database already exists, append to it.
   --seed INT               Custom seed to generate blocks.
@@ -462,6 +502,23 @@ Available options:
   -h,--help                Show this help text
   --version                Show version.
   -n,--nonce STRING        14-characters string.
+~~~
+
+## cardano-explorer-mock
+
+~~~
+Cardano SL Explorer web mock.
+
+Usage: cardano-explorer-mock [--version]
+  Run mock for Explorer web API.
+
+Available options:
+  -h,--help                Show this help text
+  --version                Show version.
+
+This program returns just the mocked data. It doesn't call any CSL functions and
+doesn't interact with it. It just implements the API and returns simeple test
+data.
 ~~~
 
 ## cardano-addr-convert
@@ -567,7 +624,9 @@ Usage: cardano-explorer [--version] [--help] [--db-path FILEPATH] [--rebuild-db]
                         [--json-log FILEPATH] [--kademlia-dump-path FILEPATH]
                         [--web-port PORT] [--log-config FILEPATH]
                         [--logs-prefix FILEPATH] [--report-server URI]
-                        [--update-server URI] [--system-start TIMESTAMP]
+                        [--update-server URI] [--flat-distr (INT,INT)]
+                        [--rich-poor-distr (INT,INT,INT,FLOAT)]
+                        [--exp-distr INT] --system-start TIMESTAMP
                         [--system-start TIMESTAMP] [--no-ntp]
                         [--notifier-port PORT] [--metrics]
                         [--ekg-server IP:PORT] [--statsd-server IP:PORT]
@@ -627,6 +686,14 @@ Available options:
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
+  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
+                           (nodes, coins).
+  --rich-poor-distr (INT,INT,INT,FLOAT)
+                           Use rich'n'poor stake distribution with given
+                           parameters (number of richmen, number of poors, total
+                           stake, richmen's share of stake).
+  --exp-distr INT          Use exponential distribution with given amount of
+                           nodes.
   --system-start TIMESTAMP System start time. Mandatory in development mode.
                            Format - seconds since Unix-epoch.
   --no-ntp                 Whether to use real NTP servers to synchronise time
