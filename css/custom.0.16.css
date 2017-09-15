@@ -261,7 +261,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
 #search-results .search-result .output span{background:#ff0;color:#222}
 
 
+/* Footer Styles */
 
+.foot .more h5{font-size:110%; text-transform: uppercase;color:#eee;margin:0 0 50px 0;font-weight:300;}
+.foot .more a{font-size:220%;color:#dadadb; display:inline-block;width:48px;height:48px;line-height:1;text-align: center}
+.foot .more a:hover{background:#49484c;color:#fff;}
+.foot .more a .fa{line-height:1.9; display:inline-block;}
+.foot .more a em {height:48px;}
+.foot .logo .split{display:inline-block;background: #444;width:1px;height:40px;margin:-25px 0 -25px 20px}
+@media (max-width: 767px) {
+#foot footer, #foot footer p, #foot footer li {
+  text-align: center;
+}
+}
 
 
 
