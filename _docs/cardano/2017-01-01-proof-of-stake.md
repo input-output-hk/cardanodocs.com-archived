@@ -12,13 +12,13 @@ visible: true
 Ouroboros Proof of Stake Algorithm is the most important part of the protocol. It defines the
 way nodes reach consensus about the state of ledger.
 
-Ouroboros is unique as it is the first blockchain protocol based on Proof of
-Stake that is scientifically proved to be secure.
+Ouroboros is unique as it is the first blockchain protocol based on proof of
+stake that is scientifically proved to be secure.
 
 ## Why Proof of Stake?
 
-The most important thing about picking Proof of Stake algorithm over Proof of
-Work — the one adopted by Bitcoin — is the energy consumption considerations.
+The most important thing about picking proof of stake algorithm over proof of
+work — the one adopted by Bitcoin — is the energy consumption considerations.
 Running the Bitcoin protocol is a tremendously expensive endeavor. It is
 estimated that 3.8 American households can be powered for a day by the energy
 spent to generate one Bitcoin transaction. These energy requirements for running
@@ -26,38 +26,38 @@ the Bitcoin protocol only grow as more and more Bitcoin miners sink money into
 mining, and the difficulty of the problems that their computers (mining rigs)
 are cracking increases. This is why researchers did their best to investigate
 alternative ways to reach consensus — such as using the so-called BFT (Byzantine
-Fault Tolerant) consensus algorithms and Proof of Stake algorithms. The first
-significant work on Proof of Stake was conducted by the team of the Nxt
+Fault Tolerant) consensus algorithms and proof of stake algorithms. The first
+significant work on proof of stake was conducted by the team of the Nxt
 cryptocurrency, but their protocol had significant flaws and no formal
 verification.
 
 ## What is Proof of Stake?
 
-In this section we explain what “Proof” and “Stake” mean, and then put it all
-together, explaining what “Proof of Stake” means.
+In this section we explain what “proof” and “stake” mean, and then put it all
+together, explaining what “proof of stake” means.
 
 ### Proof
 
-The “Proof” part of "Proof of Stake" is about having evidence that blocks of
+The “proof” part of "proof of stake" is about having evidence that blocks of
 transactions are legitimate.
 
 ### Stake
 
 “Stake” means “the relative value held by addresses on the node”. By “relative
 value” we mean “all value held by wallets on a particular node divided by total
-value in the system”. Please read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)
+value in the system”. Please read [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)
 for more information.
 
 ## Proof of Stake
 
 Rather than saying that miners are pouring money into mining rigs running the
-protocol, in order to participate in running the protocol in Proof of Stake
+protocol, in order to participate in running the protocol in proof of stake
 environment, we say that slot leaders generate blocks for the blockchain. Anyone
 can become a slot leader if the coin selection algorithm would select a coin
 they own. We say that this blockchain is self-referential, which means that
 maintaining the blockchain depends on the network participants themselves and on
 the network state. Nothing except for the network state and network participants
-being online matters for the sake of Proof of Stake.
+being online matters for the sake of proof of stake.
 
 ## Follow the Satoshi
 
