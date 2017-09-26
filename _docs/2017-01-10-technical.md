@@ -6,7 +6,7 @@ permalink: /technical/
 children: technical
 ---
 
-<!-- Reviewed at 42f226733a3d0e92af736f076a9fb1a7388d8da1 -->
+<!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->
 
 # Cardano SL Technical Details
 
