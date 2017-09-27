@@ -7,12 +7,16 @@ group: cardano
 <!-- Reviewed at 1bd2a2f5979233f4f50a7e66ab4e1819ac486400 -->
 
 # Cardano Monetary Policy
-
+<div class="warning-box" markdown="1">
 *Disclaimer: The actual number of Ada Vouchers sold will be updated after the
 Sale ends. The numbers shared in this document will be updated when actual
 number is finalized.*
+</div>
 
-**There will never be more than 45,000,000,000 ADA**
+## There will never be more than 45,000,000,000 ADA
+
+<div class="attention-box" markdown="1">
+# This policy is now outdated. Details of the new monetary policy are coming soon.
 
 ### Ada Available at the Launch of the Cardano Protocol
 
@@ -55,3 +59,4 @@ Of the ADA that will be issued per block:
     which the Cardano Treasury will operate will not be available at the launch
     of Cardano but the mechanism and its implementation are currently under
     research and development.)
+</div>
