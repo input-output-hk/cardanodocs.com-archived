@@ -8,9 +8,7 @@ group: cardano
 
 # Cardano Monetary Policy
 <div style="border-radius:5px;padding:10px;background: #ede9a1;margin-bottom:20px" markdown="1">
-*Disclaimer: The actual number of Ada Vouchers sold will be updated after the
-Sale ends. The numbers shared in this document will be updated when actual
-number is finalized. This outdated version of the monetary policy is still good in spirit but will be revised. Look forward to a blog post about this topic next week.*
+*Disclaimer: This outdated version of the monetary policy is still good in spirit but will be revised. Look forward to a blog post about this topic next week.*
 </div>
 
 <div style="border-radius:5px;padding:10px;background: #ede9a1;margin-bottom:20px" markdown="1">
