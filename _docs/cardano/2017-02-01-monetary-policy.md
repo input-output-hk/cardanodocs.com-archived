@@ -7,27 +7,29 @@ group: cardano
 <!-- Reviewed at 1bd2a2f5979233f4f50a7e66ab4e1819ac486400 -->
 
 # Cardano Monetary Policy
-<div style="border-radius:5px;padding:10px;background: #ede9a1" markdown="1">
+<div style="border-radius:5px;padding:10px;background: #ede9a1;margin-bottom:20px" markdown="1">
 *Disclaimer: The actual number of Ada Vouchers sold will be updated after the
 Sale ends. The numbers shared in this document will be updated when actual
-number is finalized.*
+number is finalized. This outdated version of the monetary policy is still good in spirit but will be revised. Look forward to a blog post about this topic next week.*
 </div>
 
-## There will never be more than 45,000,000,000 ADA
+<div style="border-radius:5px;padding:10px;background: #ede9a1;margin-bottom:20px" markdown="1">
+### There will never be more than 45,000,000,000 ADA.
+</div>
 
-<div style="border-radius:5px;padding:10px;background: #cdeffc" markdown="1">
-# This policy is now outdated. Details of the new monetary policy are coming soon.
+<div style="border-radius:5px;padding:10px;background: #cdeffc;" markdown="1">
+### This policy is now outdated. Details of the new monetary policy are coming soon.
 
 ### Ada Available at the Launch of the Cardano Protocol
 
 Although the actual number of **Ada Vouchers** sold will be determined after the
-**Ada Sale** ends, **25,016,796,935** Ada Vouchers are planned to be sold. After
+**Ada Sale** ends, **25,927,070,538** Ada Vouchers are planned to be sold. After
 the Ada Sale ends, an amount equal to **20%** of the Ada Vouchers sold during
 the Sale period, or **5,003,359,387** Ada Vouchers, will be generated and
 distributed to three entities of the Cardano ecosystem that are part of the
 **Technical and Business Development Pool**: [IOHK](https://iohk.io), [Emurgo](http://emurgo.io/) and the [Cardano
 Foundation](https://cardanofoundation.org/). The total amount of Ada available
-at Launch will therefore be equal to **30,020,156,322** ADA.
+at Launch will therefore be equal to **31,112,484,646** ADA.
 
 ### Ada to Be Issued During the Operation of the Cardano Protocol
 
