@@ -23,7 +23,7 @@ group: cardano
 Although the actual number of **Ada Vouchers** sold will be determined after the
 **Ada Sale** ends, **25,927,070,538** Ada Vouchers are planned to be sold. After
 the Ada Sale ends, an amount equal to **20%** of the Ada Vouchers sold during
-the Sale period, or **5,003,359,387** Ada Vouchers, will be generated and
+the Sale period, or **5,185,414,108** Ada Vouchers, will be generated and
 distributed to three entities of the Cardano ecosystem that are part of the
 **Technical and Business Development Pool**: [IOHK](https://iohk.io), [Emurgo](http://emurgo.io/) and the [Cardano
 Foundation](https://cardanofoundation.org/). The total amount of Ada available
