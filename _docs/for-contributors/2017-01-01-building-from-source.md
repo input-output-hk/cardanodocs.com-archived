@@ -35,17 +35,58 @@ Clone Cardano SL repository and go to the root directory:
     $ git clone git@github.com:input-output-hk/cardano-sl.git
     $ cd cardano-sl
 
+Switch to the latest release branch, for example, `cardano-sl-1.0`:
+
+    $ git checkout cardano-sl-1.0
+
 Then enter `nix-shell`:
 
     $ nix-shell
 
-And if it's the first project in Haskell on this machine, run `stack setup`:
+And if it is the first project in Haskell on this machine, run `stack setup`:
 
     [nix-shell:~/cardano-sl]$ stack setup
 
 After that, in order to build Cardano SL with wallet capabilities, run the following script:
 
     [nix-shell:~/cardano-sl]$ ./scripts/build/cardano-sl.sh
+
+It is suggested having at least 8GB of RAM and some swap space for the build process. As the project is fairly large and GHC parallelizes builds very effectively, memory and CPU consumption during the build process is high. Please make sure you have enough free disk space as well.
+
+After the project is built - it can take quite a long time -  the built binaries can be launched using the `stack exec` command. Let's discuss important binaries briefly before proceeding to the next step.
+
+### Build Commands without Nix
+
+We **strongly recommend** you to use [Nix package manager](https://nixos.org/nix/download.html) to build Cardano SL, but it is possible to build it without Nix as well.
+
+Clone Cardano SL repository and go to the root directory:
+
+    $ git clone git@github.com:input-output-hk/cardano-sl.git
+    $ cd cardano-sl
+
+Switch to the latest release branch, for example, `cardano-sl-1.0`:
+
+    $ git checkout cardano-sl-1.0
+
+And if it is the first project in Haskell on this machine, run `stack setup`:
+
+    $ stack setup
+
+Now install Haskell package `cpphs`:
+
+    $ stack install cpphs
+
+After that install `rocksdb` package using your package manager, for example:
+
+    $ brew install rocksdb
+
+or
+
+    $ sudo apt-get install librocksdb-dev
+
+Then run the following script:
+
+    $ ./scripts/build/cardano-sl.sh --no-nix
 
 It is suggested having at least 8GB of RAM and some swap space for the build process. As the project is fairly large and GHC parallelizes builds very effectively, memory and CPU consumption during the build process is high. Please make sure you have enough free disk space as well.
 
