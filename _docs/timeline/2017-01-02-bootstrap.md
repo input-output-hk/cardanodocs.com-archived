@@ -27,8 +27,8 @@ cloud.
 
 The Bootstrap era is the period of Cardano SL existence that allows only fixed predefined
 users to have control over the system. The set of such users (the bootstrap stakeholders)
-is defined in [`gcdBootstrapStakeholders`](https://github.com/input-output-hk/cardano-sl/blob/f73d41b2bbd0a823911490974a71608fb4dbe014/core/Pos/Core/Genesis/Types.hs#L74). Purpose of Bootstrap era is to address concern that at the beginning of mainnet majority
-of stake will probably be offline (which protocol broken at start).
+is defined in [`gcdBootstrapStakeholders`](https://github.com/input-output-hk/cardano-sl/blob/f73d41b2bbd0a823911490974a71608fb4dbe014/core/Pos/Core/Genesis/Types.hs#L74). Purpose of Bootstrap era is to address concern that at the beginning of Mainnet majority
+of stakeholders will probably be offline (in such a situation protocol would be broken at the start).
 
 The Bootstrap era will end when bootstrap stakeholders
 will vote for it. Special update proposal will be formed, where a particular constant will
