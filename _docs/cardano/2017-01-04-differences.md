@@ -36,8 +36,7 @@ In `cardano-sl`, current time is obtained by querying a predefined set of NTP
 servers. Specifically, each node periodically queries NTP servers and calculates
 mean of results. A node stores last margin (the difference between local time and
 global time) and last obtained global time. А node also stores last slot to ensure
-that slots are monotonic. Please read about [Time in Cardano SL](/technical/time)
-for implementation details.
+that slots are monotonic.
 
 ## Coin Tossing and Verifiable Secret Sharing
 
