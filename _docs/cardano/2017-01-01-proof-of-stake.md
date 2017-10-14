@@ -26,10 +26,7 @@ the Bitcoin protocol only grow as more and more Bitcoin miners sink money into
 mining, and the difficulty of the problems that their computers (mining rigs)
 are cracking increases. This is why researchers did their best to investigate
 alternative ways to reach consensus — such as using the so-called BFT (Byzantine
-Fault Tolerant) consensus algorithms and proof of stake algorithms. The first
-significant work on proof of stake was conducted by the team of the Nxt
-cryptocurrency, but their protocol had significant flaws and no formal
-verification.
+Fault Tolerant) consensus algorithms and proof of stake algorithms.
 
 ## What is Proof of Stake?
 
