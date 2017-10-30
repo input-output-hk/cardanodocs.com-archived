@@ -21,14 +21,22 @@ Electron-based wallet called “Daedalus”.
 The source code for both Cardano SL and Daedalus Bridge can be obtained
 from the [official repository](https://github.com/input-output-hk/cardano-sl).
 
-The [Haskell Tool Stack](https://haskellstack.org) is required to build Cardano SL. Furthermore, we strongly suggest using [Nix package manager](https://nixos.org/nix/download.html) to get the correct dependencies for building Cardano SL. It will fetch the correct `openssl` version, but won't override the system-installed version. The following commands assume that you already has `stack` and `nix-*` programs.
+Cardano SL supports three ways for building itself:
+
+-   Pure [Nix](https://nixos.org/nix/)-based (backed by a build cache from the IOHK CI)
+-   Mixed Stack+Nix mode (also cache-backed)
+-   Pure [Haskell Tool Stack](https://haskellstack.org)-based
+
+In any case, we strongly suggest using [Nix package manager](https://nixos.org/nix/download.html) to get the correct dependencies for building Cardano SL. It will fetch the correct `openssl` version, but won't override the system-installed version. The following commands assume that you already has `stack` and `nix-*` programs.
 
 ### Binaries
 
 As a result of building Cardano SL, you will get a set of components (binary files). This set includes the main node for Cardano SL network and various helper tools. Please read [this page of the documentation](https://cardanodocs.com/technical/cli-options/) for technical details.
 <!-- CARDANO_SL_README_END_4 -->
 
-## Build Commands
+## Common build steps
+
+The following steps are shared between all three methods of building Cardano: fetching source and deciding on a branch to be built.
 
 Clone Cardano SL repository and go to the root directory:
 
@@ -39,7 +47,31 @@ Switch to the latest release branch, for example, `cardano-sl-1.0`:
 
     $ git checkout cardano-sl-1.0
 
-Then enter `nix-shell`:
+## Pure Nix build mode (recommended)
+
+Two simple steps:
+
+1.  To employ the signed IOHK build cache:
+
+        $ sudo mkdir -p /etc/nix
+        $ sudo vi /etc/nix/nix.conf       # ..or any other editor, if you prefer
+
+    ..and then add two following lines:
+
+        $ binary-caches             = https://cache.nixos.org https://hydra.iohk.io
+        $ binary-caches-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
+
+2.  Actually building Cardano SL (or, most likely, simply obtaining it from the IOHK's binary caches) can be performed by:
+
+        $ nix-build -A cardano-sl-static --cores 0 --jobs 2 --no-build-output --out-link cardano-sl-1.0
+
+    The build output directory will be symlinked as `cardano-sl-1.0` (as specified by the command).
+
+## Mixed Stack + Nix build mode
+
+Please, see the previous section on how to enable use of the IOHK binary cache.
+
+Enter `nix-shell`:
 
     $ nix-shell
 
@@ -55,9 +87,9 @@ It is suggested having at least 8GB of RAM and some swap space for the build pro
 
 After the project is built - it can take quite a long time -  the built binaries can be launched using the `stack exec` command. Let's discuss important binaries briefly before proceeding to the next step.
 
-### Build Commands without Nix
+## Pure Stack-based build (not recommended)
 
-We **strongly recommend** you to use [Nix package manager](https://nixos.org/nix/download.html) to build Cardano SL, but it is possible to build it without Nix as well.
+We **strongly recommend** you to use [Nix package manager](https://nixos.org/nix/download.html) to build Cardano SL (see the "Pure Nix build mode" section above), but it is possible to build it without Nix as well.
 
 Clone Cardano SL repository and go to the root directory:
 
