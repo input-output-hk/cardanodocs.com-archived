@@ -143,9 +143,9 @@ Bitcoin](https://bitcoincore.org/en/2016/01/26/segwit-benefits/)). Under this
 scheme, transactions and proofs are stored in two separate places in a block,
 and can be processed independently.
 
-## Transaction Distribution
+## Stake Distribution
 
-Transaction distribution is another part of Cardano SL, not directly related to delegation,
+Stake distribution is another part of Cardano SL, not directly related to delegation,
 but one we can exploit for its benefit.
 
 Some addresses have multiple owners, which poses a problem of stake computation as per
@@ -153,35 +153,24 @@ Follow-the-Satoshi each coin should only be counted once towards each stakeholde
 Unlike balance (real amount of coins on the balance), stake gives user power to control different
 algorithm parts: being the slot leader, voting in Update system, taking part in MPC/SSC.
 
-Suppose we have an address `A`. If it is a [`PublicKey`](https://cardanodocs.com/cardano/addresses/)-address
-it's obvious and straightforward which stakeholders should benefit from money stored on this address,
-though it's not for [`ScriptAddress`](https://cardanodocs.com/cardano/addresses/) (e.g. for `2-of-3` multisig
-address implemented via script we might want to have distribution
-`[(A, 1/3), (B, 1/3), (C, 1/3)]`). For any new address' type introduced via
-softfork in the future it might be useful as well because we don't know in
-advance about semantics of the new address' type and which stakeholder it should
-be attributed to.
+Stake distribution is a value associated with each address. Technically stake distribution is a value
+which is a part of address' attributes. This value corresponds to one of three different cases:
 
-Transaction distribution is a value associated with each transaction's output,
-holding information on which stakeholder should receive which particular amount
-of money on his stake. Technically it's a list of pairs composed from stakeholder's
-identificator and corresponding amount of money. E.g. for output `(A, 100)`
-distribution might be `[(B, 10), (C, 90)]`.
+1.  Bootstrap era distribution. This is a special value which is mandatory in Bootstrap era, but it can be used
+    after Bootstrap era as well.
+2.  Single key distribution, which means that all stake will go to the given stakeholder.
+    In this case distribution contains stakeholder's identifier.
+3.  Multiple key distribution, which means that stake will go to the multiple stakeholders (at least two).
+    In this case distribution contains pairs "stakeholder's identifier - portion of an output".
+    Transaction's output has a value, portion of this value is a stake.
 
-Transaction distributions are considered by both [slot-leader election
-process](https://cardanodocs.com/technical/leader-selection/) and Richmen Computations.
+Stake distributions are considered by both [slot-leader election process](https://cardanodocs.com/technical/leader-selection/)
+and Richmen Computations.
 
 This feature can be used in similar way to [delegation](https://cardanodocs.com/technical/delegation/), but there
 are differences:
 
-1.  There is no certificate(s): to revoke delegation `A` has to move funds,
-    providing different distribution.
-2.  Only part of `A`'s balance associated with this transaction output is delegated.
-    This can be done in chunks per balance parts (on contrary, delegation requires you
-    to delegate all funds of whole address at once).
-
-By consensus, transaction distribution for `PublicKey`-address should be set to
-empty.
-
-Binary representation of transaction distribution is described
-[here](/technical/protocols/binary-protocols/#transaction-distribution).
+1.  There is no certificate(s): to revoke stake delegation _$A$_ has to move funds, providing
+    different stake distribution.
+2.  The portion of _$A$_'s stake can be delegated via distribution. On the contrary, delegation
+    requires you to delegate all funds of whole address at once.
