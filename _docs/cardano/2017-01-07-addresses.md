@@ -9,80 +9,49 @@ group: cardano
 # Addresses in Cardano SL
 
 To send and receive value, addresses are used in virtually all cryptocurrencies.
-Cardano supports 3 main types of addresses:
+Cardano SL supports 3 main types of addresses:
 
-1.  `PubKeyAddress`,
-2.  `ScriptAddress`,
-3.  `RedeemAddress`.
+1.  public key address,
+2.  script address,
+3.  redeem address.
 
-`PubKeyAddress` is a normal address like in any other cryptocurrency. It is
+Public key address is a normal address like in any other cryptocurrency. It is
 a hashed public key. Read more about public key addresses [below](#public-key-addresses).
 
-`ScriptAddress` is used in so-called "Pay to Script Hash" (P2SH) transactions.
+Script addres is used in so-called "Pay to Script Hash" (P2SH) transactions.
 It operates autonomously and acts somewhat like a bank deposit: you can send
 money to it, but in order to redeem it you have to satisfy certain conditions,
 determined by a script associated with the address. The address itself contains
 the hash of the serialized script. Read more about P2SH [below](#pay-to-script-hash).
 
-`RedeemAddress` is a special type of address for ADA redemption. Read more about redeem
+Redeem address is a special type of address for ADA redemption. Read more about redeem
 addresses [below](#redeem-addresses).
 
-Moreover, Cardano SL support `UnknownAddressType` as well. This type will allow us to use
+Moreover, Cardano SL support `Unknown` address type as well. This type will allow us to use
 custom types of addresses in the future.
 
 ## What Does an Address Look Like?
 
-Addresses are `base58`-encoded bytestrings, consisting of:
+Addresses are `base58`-encoded bytestrings, for example:
 
--   1 byte: address type;
--   28 bytes: hash of some data structure (different for each type);
--   4 bytes: CRC32 checksum.
+```
+Ae2tdPwUPEZKmwoy3AU3cXb5Chnasj6mvVNxV1H11997q3VW5ihbSfQwGpm
+```
 
-All addresses are 33 bytes long.
+### Encoding
 
-`Base58` is the same encoding as used in Bitcoin. It uses a 58-symbol alphabet
+`base58` encoding is the same one as used in Bitcoin. It uses a 58-symbol alphabet
 to encode data, hence the name. Here is the alphabet we are using:
 
-    123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+```
+123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+```
 
 It avoids both non-alphanumeric characters and letters which might look
 ambiguous when printed (`0`, `O`, `I`, `l`); therefore it is suitable for human
 users who enter the data manually, copying it from some visual source, and also
 allows easy copy and paste by double-clicking which usually selects the whole
 string.
-
-Here are the `type`s for each supported address:
-
-| `type`           | Address type         |
-|------------------|----------------------|
-| `0`              | `PubKeyAddress`      |
-| `1`              | `ScriptAddress`      |
-| `2`              | `RedeemAddress`      |
-| arbitrary number | `UnknownAddressType` |
-
-For hashing, we use a combination of `SHA3-256` and `BLAKE2b-224` hashes, i.e.:
-
-    address_hash(x) = BLAKE2b_224(SHA3_256(x))
-
-Please see about [hash functions](https://en.wikipedia.org/wiki/Hash_function)
-for more info. See also sections below for a description of what `x` is in each case.
-
-We also adopt a way to make sure that an address is entered correctly by
-appending a 32-bit Cyclic Redundancy Code checksum (`CRC32`) to the end of the
-address. This way, the full address is generated with the following rule, where
-`+` means concatenation:
-
-    address' ← type + address_hash(x)
-    address ← toBase58(address' + crc32(address'))
-
-Here is an example of a valid address:
-
-    1fsAhhf4E1LQDB8agSds8teuD4E7U8JsRESngEX52kinBhi
-
-It can be decoded into the byte string like this one (with spaces separating
-type, hash and checksum):
-
-    00 C8B9519459F5D4E42B002EF06AE94DC9C0A5B87E52D0D0375FD83ECE C52CEB43
 
 ## Public Key Addresses
 
@@ -94,16 +63,10 @@ answer is that along with the secret key which is used to control the value in
 your wallets, a public key is generated. This public component can be known by
 anybody, hence the name.
 
-A `PubKeyAddress` contains the hash of this public key.
+A public key address contains the hash of this public key.
 
 Public keys are also used for verifying your identity when your create a
 transaction and other auxiliary purposes.
-
-To sum up, a public key address represents your personal account. It is
-constructed as
-
-    address' ← 0x00 + address_hash(public_key)
-    address ← toBase58(address' + crc32(address'))
 
 ## Pay to Script Hash
 
@@ -122,25 +85,71 @@ To quote Bitcoin Wiki,
 > these bitcoins, or a password might be required, or the requirements could be
 > completely unique.
 
-`ScriptHash` addresses are constructed as follows:
-
-    address' ← 0x01 + address_hash(serialize(validator_script))
-    address ← toBase58(address' + crc32(address'))
-
 ## Redeem Addresses
 
 Redeem addresses are Pay To PubKey Hash (P2PKH). Such an address contains the hash
 of redeem public key, and this key is actually [Ed25519](http://ed25519.cr.yp.to/)
 public key.
 
-Redeem addresses are constructed as follows:
- 
-    address' ← 0x02 + address_hash(redeem_public_key)
-    address ← toBase58(address' + crc32(address'))
-
 ## Other Address Types
 
-In the future, we may use the update system to introduce other address types
-with different values in the `type` field. [See
-more](/cardano/update-mechanism/#soft-fork-updates) on extending the system in
+In the future, we may use the update system to introduce other address types. Please
+[see more](/cardano/update-mechanism/#soft-fork-updates) on extending the system in
 non-breaking fashion.
+
+## Address Structure
+
+Address consists of 3 parts:
+
+*  address root,
+*  address attributes,
+*  address type.
+
+We can imagine an address as a JSON-like structure, for example:
+
+```
+Address {
+    addrRoot = AbstractHash e63175c654dfd93a9290342a067158dc0f57a1108ddbd8cace3839bd,
+    addrAttributes = Attributes {
+        data: AddrAttributes {
+            aaPkDerivationPath = Nothing,
+            aaStakeDistribution = BootstrapEraDistr
+        } 
+    },
+    addrType = ATPubKey
+}
+```
+
+`addrRoot` is the BLAKE2b-224 hash of the tuple made from `addrType`, `addrSpendingData` and `addrAttributes`.
+
+`addrSpendingData is a special value which is bound to an address and must be revealed in order to spend coins belonging to
+this address. For example, for public key address this value contains the public key. In this case it is impossible to change
+address attributes without knowing of the public key because if the attributes have been changed the whole address becomes
+invalid.
+
+`addrAttributes` include important attributes of each address: derivation path and stake distribution.
+
+For more info about derivation path please read [HD Wallets in Cardano SL](https://cardanodocs.com/technical/hd-wallets/) chapter.
+
+For more info about stake distribution please read [Transactions in Cardano SL](https://cardanodocs.com/cardano/transactions/#stake-distribution)
+chapter.
+
+Value of `addrType` corresponds to address type as was mentioned above, in this example it is a public key address.
+
+### Length
+
+Addresses may have different lengths depending on address type and additional data in it.
+
+For example, this address
+
+```
+Ae2tdPwUPEZKmwoy3AU3cXb5Chnasj6mvVNxV1H11997q3VW5ihbSfQwGpm
+```
+
+and this one
+
+```
+4swhHtxKapQbj3TZEipgtp7NQzcRWDYqCxXYoPQWjGyHmhxS1w1TjUEszCQT1sQucGwmPQMYdv1FYs3d51KgoubviPBf
+```
+
+are both public key addresses.
