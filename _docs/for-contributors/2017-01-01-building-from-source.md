@@ -21,11 +21,10 @@ Electron-based wallet called “Daedalus”.
 The source code for both Cardano SL and Daedalus Bridge can be obtained
 from the [official repository](https://github.com/input-output-hk/cardano-sl).
 
-Cardano SL supports three ways for building itself:
+Cardano SL supports two ways for building itself:
 
--   Pure [Nix](https://nixos.org/nix/)-based (backed by a build cache from the IOHK CI)
--   Mixed Stack+Nix mode (also cache-backed)
--   Pure [Haskell Tool Stack](https://haskellstack.org)-based
+-   (preferred) [Nix](https://nixos.org/nix/) package manager (backed by a binary cache by IOHK continuous integration)
+-   [Stack](https://haskellstack.org) with Nix for system libraries
 
 In any case, we strongly suggest using [Nix package manager](https://nixos.org/nix/download.html) to get the correct dependencies for building Cardano SL. It will fetch the correct `openssl` version, but won't override the system-installed version. The following commands assume that you already has `stack` and `nix-*` programs.
 
@@ -36,7 +35,7 @@ As a result of building Cardano SL, you will get a set of components (binary fil
 
 ## Common build steps
 
-The following steps are shared between all three methods of building Cardano: fetching source and deciding on a branch to be built.
+The following steps are shared between the two methods of building Cardano: fetching source and deciding on a branch to be built.
 
 Clone Cardano SL repository and go to the root directory:
 
@@ -47,11 +46,15 @@ Switch to the latest release branch, for example, `cardano-sl-1.0`:
 
     $ git checkout cardano-sl-1.0
 
-## Pure Nix build mode (recommended)
+## Nix build mode (recommended)
 
-Two simple steps:
+First, prerequisite: install Nix (full instructions at https://nixos.org/nix/download.html):
 
-1.  To employ the signed IOHK build cache:
+    curl https://nixos.org/nix/install | sh
+
+Two steps remain, then:
+
+1.  To employ the signed IOHK binary cache:
 
         $ sudo mkdir -p /etc/nix
         $ sudo vi /etc/nix/nix.conf       # ..or any other editor, if you prefer
@@ -67,7 +70,7 @@ Two simple steps:
 
     The build output directory will be symlinked as `cardano-sl-1.0` (as specified by the command).
 
-## Mixed Stack + Nix build mode
+## Stack with Nix for system libraries (mixed mode)
 
 Please, see the previous section on how to enable use of the IOHK binary cache.
 
@@ -82,43 +85,6 @@ And if it is the first project in Haskell on this machine, run `stack setup`:
 After that, in order to build Cardano SL with wallet capabilities, run the following script:
 
     [nix-shell:~/cardano-sl]$ ./scripts/build/cardano-sl.sh
-
-It is suggested having at least 8GB of RAM and some swap space for the build process. As the project is fairly large and GHC parallelizes builds very effectively, memory and CPU consumption during the build process is high. Please make sure you have enough free disk space as well.
-
-After the project is built - it can take quite a long time -  the built binaries can be launched using the `stack exec` command. Let's discuss important binaries briefly before proceeding to the next step.
-
-## Pure Stack-based build (not recommended)
-
-We **strongly recommend** you to use [Nix package manager](https://nixos.org/nix/download.html) to build Cardano SL (see the "Pure Nix build mode" section above), but it is possible to build it without Nix as well.
-
-Clone Cardano SL repository and go to the root directory:
-
-    $ git clone git@github.com:input-output-hk/cardano-sl.git
-    $ cd cardano-sl
-
-Switch to the latest release branch, for example, `cardano-sl-1.0`:
-
-    $ git checkout cardano-sl-1.0
-
-And if it is the first project in Haskell on this machine, run `stack setup`:
-
-    $ stack setup
-
-Now install Haskell package `cpphs`:
-
-    $ stack install cpphs
-
-After that install `rocksdb` package using your package manager, for example:
-
-    $ brew install rocksdb
-
-or
-
-    $ sudo apt-get install librocksdb-dev
-
-Then run the following script:
-
-    $ ./scripts/build/cardano-sl.sh --no-nix
 
 It is suggested having at least 8GB of RAM and some swap space for the build process. As the project is fairly large and GHC parallelizes builds very effectively, memory and CPU consumption during the build process is high. Please make sure you have enough free disk space as well.
 
