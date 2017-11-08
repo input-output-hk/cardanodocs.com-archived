@@ -170,7 +170,7 @@ and Richmen Computations.
 This feature can be used in similar way to [delegation](https://cardanodocs.com/technical/delegation/), but there
 are differences:
 
-1.  There is no certificate(s): to revoke stake delegation _$A$_ has to move funds, providing
+1.  There is no certificate(s): to revoke stake delegation `A` has to move funds, providing
     different stake distribution.
-2.  The portion of _$A$_'s stake can be delegated via distribution. On the contrary, delegation
+2.  The portion of `A`'s stake can be delegated via distribution. On the contrary, delegation
     requires you to delegate all funds of whole address at once.
