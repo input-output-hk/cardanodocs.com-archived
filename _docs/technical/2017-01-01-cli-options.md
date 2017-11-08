@@ -19,26 +19,26 @@ This guide describes all executable files that are used in Cardano SL and all co
 Cardano SL node.
 
 Usage: cardano-node [--version] [--db-path FILEPATH] [--rebuild-db]
-                    [--spending-genesis INT] [--vss-genesis INT]
-                    [--keyfile FILEPATH] [--backup-phrase PHRASE]
-                    [--address IP:PORT] [--listen IP:PORT]
-                    [--peer-core HOST:PORT] [--peer-relay HOST:PORT]
-                    [--topology FILEPATH] [--kademlia FILEPATH]
-                    [--node-id NODE_ID] [--default-port PORT]
-                    [--policies FILEPATH] [--json-log FILEPATH]
-                    [--kademlia-dump-path FILEPATH] [--log-config FILEPATH]
-                    [--logs-prefix FILEPATH] [--report-server URI]
-                    [--update-server URI] [--flat-distr (INT,INT)]
-                    [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
-                    --system-start TIMESTAMP [--update-latest-path FILEPATH]
-                    [--update-with-package] [--no-ntp] [--metrics]
+                    [--genesis-secret INT] [--keyfile FILEPATH]
+                    [--backup-phrase PHRASE] [--topology FILEPATH]
+                    [--kademlia FILEPATH] [--node-id NODE_ID]
+                    [--default-port PORT] [--policies FILEPATH]
+                    [--address IP:PORT] [--listen IP:PORT] [--json-log FILEPATH]
+                    [--log-config FILEPATH] [--logs-prefix FILEPATH]
+                    [--report-server URI] [--update-server URI]
+                    [--configuration-file FILEPATH] [--configuration-key TEXT]
+                    [--system-start TIMESTAMP] [--configuration-seed INTEGER]
+                    [--update-latest-path FILEPATH] [--update-with-package]
+                    [--no-ntp] [--route53-health-check IP:PORT] [--metrics]
                     [--ekg-server IP:PORT] [--statsd-server IP:PORT]
                     [--statsd-interval MILLISECONDS] [--statsd-debug BOOL]
-                    [--statsd-prefix TEXT] [--statsd-suffix TEXT] [--web]
-                    [--web-port PORT] [--tlscert FILEPATH] [--tlskey FILEPATH]
-                    [--tlsca FILEPATH] [--wallet-port PORT]
-                    [--wallet-db-path ARG] [--wallet-rebuild-db]
-                    [--wallet-debug]
+                    [--statsd-prefix TEXT] [--statsd-suffix TEXT]
+                    [--dump-genesis-data-to ARG] [--web] [--web-port PORT]
+                    [--tlscert FILEPATH] [--tlskey FILEPATH] [--tlsca FILEPATH]
+                    [--wallet-address IP:PORT] [--wallet-db-path ARG]
+                    [--wallet-rebuild-db]
+                    [--wallet-acid-cleanup-interval MINUTES] [--wallet-debug]
+                    [--flush-wallet-db]
   Cardano SL main server node w/ wallet.
 
 Available options:
@@ -49,12 +49,17 @@ Available options:
                            created.
   --rebuild-db             If node's database already exists, discard its
                            contents and create a new one from scratch.
-  --spending-genesis INT   Used genesis secret key index.
-  --vss-genesis INT        Index of using VSS key pair in genesis.
+  --genesis-secret INT     Used genesis secret key index.
   --keyfile FILEPATH       Path to file with secret key (we use it for
                            Daedalus).
   --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
                            separated by spaces.
+  --topology FILEPATH      Path to a YAML file containing the network topology
+  --kademlia FILEPATH      Path to a YAML file containing the kademlia
+                           configuration
+  --node-id NODE_ID        Identifier for this node within the network
+  --default-port PORT      Port number for IP address to node ID translation
+  --policies FILEPATH      Path to a YAML file containing the network policies
   --address IP:PORT        IP and port of external address. Please make sure
                            these IP and port (on which node is running) are
                            accessible otherwise proper work of CSL isn't
@@ -62,38 +67,26 @@ Available options:
   --listen IP:PORT         IP and port on which to bind and listen. Please make
                            sure these IP and port are accessible, otherwise
                            proper work of CSL isn't guaranteed.
-  --peer-core HOST:PORT    Address of a peer
-  --peer-relay HOST:PORT   Address of a peer
-  --topology FILEPATH      Path to a YAML file containing the network topology
-  --kademlia FILEPATH      Path to a YAML file containing the kademlia
-                           configuration
-  --node-id NODE_ID        Identifier for this node within the network
-  --default-port PORT      Port number for IP address to node ID translation
-  --policies FILEPATH      Path to a YAML file containing the network policies
   --json-log FILEPATH      Path to JSON log file.
-  --kademlia-dump-path FILEPATH
-                           Path to Kademlia dump file. If file doesn't exist, it
-                           will be created. (default: "kademlia.dump")
   --log-config FILEPATH    Path to logger configuration.
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
-  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
-                           (nodes, coins).
-  --rich-poor-distr (INT,INT,INT,FLOAT)
-                           Use rich'n'poor stake distribution with given
-                           parameters (number of richmen, number of poors, total
-                           stake, richmen's share of stake).
-  --exp-distr INT          Use exponential distribution with given amount of
-                           nodes.
-  --system-start TIMESTAMP System start time. Mandatory in development mode.
-                           Format - seconds since Unix-epoch.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
   --update-latest-path FILEPATH
                            Path to update installer file, which should be
                            downloaded by Update System.
   --update-with-package    Enable updating via installer.
   --no-ntp                 Whether to use real NTP servers to synchronise time
                            or rely on local time
+  --route53-health-check IP:PORT
+                           Host and port for the Route53 DNS health check.
   --metrics                Enable metrics (EKG, statsd)
   --ekg-server IP:PORT     Host and port for the EKG server
   --statsd-server IP:PORT  Host and port for the statsd server
@@ -102,18 +95,29 @@ Available options:
   --statsd-debug BOOL      Enable statsd debug mode
   --statsd-prefix TEXT     Prefix for statsd
   --statsd-suffix TEXT     Suffix for statsd
+  --dump-genesis-data-to ARG
+                           Dump genesis data in canonical JSON format to this
+                           file.
   --web                    Activate web API (it’s not linked with a wallet web
                            API).
   --web-port PORT          Port for web API. (default: 8080)
   --tlscert FILEPATH       Path to file with TLS certificate
   --tlskey FILEPATH        Path to file with TLS key
   --tlsca FILEPATH         Path to file with TLS certificate authority
-  --wallet-port PORT       Port for Daedalus Wallet API. (default: 8090)
+  --wallet-address IP:PORT IP and port for backend wallet
+                           API. (default: ("127.0.0.1",8090))
   --wallet-db-path ARG     Path to the wallet's database.
   --wallet-rebuild-db      If wallet's database already exists, discard its
                            contents and create a new one from scratch.
+  --wallet-acid-cleanup-interval MINUTES
+                           Interval on which to execute wallet cleanup action
+                           (create checkpoint and archive and cleanup archive
+                           partially)
   --wallet-debug           Run wallet with debug params (e.g. include all the
                            genesis keys in the set of secret keys).
+  --flush-wallet-db        Flushes all blockchain-recoverable data from DB
+                           (everything excluding wallets/accounts/addresses,
+                           metadata)
 
 Command example:
 
@@ -195,19 +199,31 @@ Command example:
 ~~~
 Tool to generate keyfiles-related data
 
-Usage: cardano-keygen [--version] COMMAND
+Usage: cardano-keygen [--version] COMMAND [--configuration-file FILEPATH]
+                      [--configuration-key TEXT] [--system-start TIMESTAMP]
+                      [--configuration-seed INTEGER]
 
 Available options:
   -h,--help                Show this help text
   --version                Show version.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
 
 Available commands:
   rearrange                Rearrange keyfiles.
   generate-key             Generate keyfile.
+  generate-vss             Generate VSS certificate.
   read-key                 Dump keyfile contents.
-  dump-dev-keys            Dump CSL dev-mode keys.
   generate-avvm-seeds      Generate avvm seeds with public keys.
-  generate-genesis         Generate CSL genesis files.
+  generate-keys-by-spec    Generate secret keys and avvm seed by
+                           genesis-spec.yaml
+  dump-genesis-data        Dump genesis data (as per configuration) in json
+                           format
 ~~~
 
 ## cardano-analyzer
@@ -256,25 +272,23 @@ documentation will be published at cardanodocs.com using
 Cardano SL node.
 
 Usage: cardano-node-simple [--version] [--db-path FILEPATH] [--rebuild-db]
-                           [--spending-genesis INT] [--vss-genesis INT]
-                           [--keyfile FILEPATH] [--backup-phrase PHRASE]
+                           [--genesis-secret INT] [--keyfile FILEPATH]
+                           [--backup-phrase PHRASE] [--topology FILEPATH]
+                           [--kademlia FILEPATH] [--node-id NODE_ID]
+                           [--default-port PORT] [--policies FILEPATH]
                            [--address IP:PORT] [--listen IP:PORT]
-                           [--peer-core HOST:PORT] [--peer-relay HOST:PORT]
-                           [--topology FILEPATH] [--kademlia FILEPATH]
-                           [--node-id NODE_ID] [--default-port PORT]
-                           [--policies FILEPATH] [--json-log FILEPATH]
-                           [--kademlia-dump-path FILEPATH]
-                           [--log-config FILEPATH] [--logs-prefix FILEPATH]
-                           [--report-server URI] [--update-server URI]
-                           [--flat-distr (INT,INT)]
-                           [--rich-poor-distr (INT,INT,INT,FLOAT)]
-                           [--exp-distr INT] --system-start TIMESTAMP
+                           [--json-log FILEPATH] [--log-config FILEPATH]
+                           [--logs-prefix FILEPATH] [--report-server URI]
+                           [--update-server URI] [--configuration-file FILEPATH]
+                           [--configuration-key TEXT] [--system-start TIMESTAMP]
+                           [--configuration-seed INTEGER]
                            [--update-latest-path FILEPATH]
-                           [--update-with-package] [--no-ntp] [--metrics]
+                           [--update-with-package] [--no-ntp]
+                           [--route53-health-check IP:PORT] [--metrics]
                            [--ekg-server IP:PORT] [--statsd-server IP:PORT]
                            [--statsd-interval MILLISECONDS]
                            [--statsd-debug BOOL] [--statsd-prefix TEXT]
-                           [--statsd-suffix TEXT] [--ssc-algo ALGO]
+                           [--statsd-suffix TEXT] [--dump-genesis-data-to ARG]
                            [--behavior FILE]
   Cardano SL main server node.
 
@@ -286,12 +300,17 @@ Available options:
                            created.
   --rebuild-db             If node's database already exists, discard its
                            contents and create a new one from scratch.
-  --spending-genesis INT   Used genesis secret key index.
-  --vss-genesis INT        Index of using VSS key pair in genesis.
+  --genesis-secret INT     Used genesis secret key index.
   --keyfile FILEPATH       Path to file with secret key (we use it for
                            Daedalus).
   --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
                            separated by spaces.
+  --topology FILEPATH      Path to a YAML file containing the network topology
+  --kademlia FILEPATH      Path to a YAML file containing the kademlia
+                           configuration
+  --node-id NODE_ID        Identifier for this node within the network
+  --default-port PORT      Port number for IP address to node ID translation
+  --policies FILEPATH      Path to a YAML file containing the network policies
   --address IP:PORT        IP and port of external address. Please make sure
                            these IP and port (on which node is running) are
                            accessible otherwise proper work of CSL isn't
@@ -299,38 +318,26 @@ Available options:
   --listen IP:PORT         IP and port on which to bind and listen. Please make
                            sure these IP and port are accessible, otherwise
                            proper work of CSL isn't guaranteed.
-  --peer-core HOST:PORT    Address of a peer
-  --peer-relay HOST:PORT   Address of a peer
-  --topology FILEPATH      Path to a YAML file containing the network topology
-  --kademlia FILEPATH      Path to a YAML file containing the kademlia
-                           configuration
-  --node-id NODE_ID        Identifier for this node within the network
-  --default-port PORT      Port number for IP address to node ID translation
-  --policies FILEPATH      Path to a YAML file containing the network policies
   --json-log FILEPATH      Path to JSON log file.
-  --kademlia-dump-path FILEPATH
-                           Path to Kademlia dump file. If file doesn't exist, it
-                           will be created. (default: "kademlia.dump")
   --log-config FILEPATH    Path to logger configuration.
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
-  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
-                           (nodes, coins).
-  --rich-poor-distr (INT,INT,INT,FLOAT)
-                           Use rich'n'poor stake distribution with given
-                           parameters (number of richmen, number of poors, total
-                           stake, richmen's share of stake).
-  --exp-distr INT          Use exponential distribution with given amount of
-                           nodes.
-  --system-start TIMESTAMP System start time. Mandatory in development mode.
-                           Format - seconds since Unix-epoch.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
   --update-latest-path FILEPATH
                            Path to update installer file, which should be
                            downloaded by Update System.
   --update-with-package    Enable updating via installer.
   --no-ntp                 Whether to use real NTP servers to synchronise time
                            or rely on local time
+  --route53-health-check IP:PORT
+                           Host and port for the Route53 DNS health check.
   --metrics                Enable metrics (EKG, statsd)
   --ekg-server IP:PORT     Host and port for the EKG server
   --statsd-server IP:PORT  Host and port for the statsd server
@@ -339,8 +346,9 @@ Available options:
   --statsd-debug BOOL      Enable statsd debug mode
   --statsd-prefix TEXT     Prefix for statsd
   --statsd-suffix TEXT     Suffix for statsd
-  --ssc-algo ALGO          Shared Seed Calculation algorithm which nodes will
-                           use. (default: GodTossingAlgo)
+  --dump-genesis-data-to ARG
+                           Dump genesis data in canonical JSON format to this
+                           file.
   --behavior FILE          Path to the behavior config
 
 Command example:
@@ -371,6 +379,9 @@ Usage: cardano-launcher [--version] --node PATH [-n ARG]
                         [--wallet PATH] [-w ARG] --updater PATH [-u ARG]
                         [--update-archive PATH] [--updater-windows-runner PATH]
                         --node-timeout SEC [--report-server URL]
+                        [--configuration-file FILEPATH]
+                        [--configuration-key TEXT] [--system-start TIMESTAMP]
+                        [--configuration-seed INTEGER]
 
 Available options:
   -h,--help                Show this help text
@@ -392,6 +403,13 @@ Available options:
   --node-timeout SEC       How much to wait for the node to exit before killing
                            it.
   --report-server URL      Where to send logs in case of failure.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
 
 Command example:
 
@@ -412,8 +430,6 @@ Command example:
     -n "--wallet"                                                  \
     -n "--web-port"                                                \
     -n 8080                                                        \
-    -n "--wallet-port"                                             \
-    -n 8090                                                        \
     -n "--wallet-rebuild-db"                                       \
     --updater cardano-updater                                      \
     -u "dir"                                                       \
@@ -547,6 +563,161 @@ In this case each entered vending address is echoed with a testnet address.
 
 ~~~
 
+## cardano-blockchain-analyser
+
+~~~
+Cardano SL blockchain generator
+
+Usage: cardano-blockchain-analyser --db FILEPATH ([-k] | [-m] | [-g] | [-a] |
+                                   [-b]) [--print-mode [human|csv|table]]
+                                   [-i|--incremental] [--log-config FILEPATH]
+                                   [--logs-prefix FILEPATH]
+                                   [--report-server URI] [--update-server URI]
+                                   [--configuration-file FILEPATH]
+                                   [--configuration-key TEXT]
+                                   [--system-start TIMESTAMP]
+                                   [--configuration-seed INTEGER]
+  Analyse a blockchain and spit out useful metrics.
+
+Available options:
+  -h,--help                Show this help text
+  --db FILEPATH            Location of the database where the blockchain is
+                           stored.
+  -k                       Display block counts in kilobytes (KB).
+  -m                       Display block counts in megabytes (MB).
+  -g                       Display block counts in gigabytes (GB).
+  -a                       Display block counts using an adaptive multiplier.
+  -b                       Display block counts in bytes (B).
+  --print-mode [human|csv|table]
+                           Select the desidered rendering mode, one between
+                           'human', 'csv' or 'table'.
+  -i,--incremental         Run in incremental mode. In this mode, table output
+                           will be disabled and rendered as a .csv, as is not
+                           possible to generate nice-looking tables whilst
+                           reading the blockchain one block at time. You almost
+                           always want to be using this mode for huge
+                           blockchains, as it's much more memory efficient.
+  --log-config FILEPATH    Path to logger configuration.
+  --logs-prefix FILEPATH   Prefix to logger output path.
+  --report-server URI      Reporting server to send crash/error logs on.
+  --update-server URI      Server to download updates from.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
+
+Command example:
+
+  cardano-blockchain-analyser --db /path/to/existing/db
+
+~~~
+
+## cardano-auxx
+
+~~~
+CLI-based utilities (auxx).
+
+Usage: cardano-auxx [--version] COMMAND [--db-path FILEPATH] [--rebuild-db]
+                    [--genesis-secret INT] [--keyfile FILEPATH]
+                    [--backup-phrase PHRASE] [--topology FILEPATH]
+                    [--kademlia FILEPATH] [--node-id NODE_ID]
+                    [--default-port PORT] [--policies FILEPATH]
+                    [--address IP:PORT] [--listen IP:PORT] [--json-log FILEPATH]
+                    [--log-config FILEPATH] [--logs-prefix FILEPATH]
+                    [--report-server URI] [--update-server URI]
+                    [--configuration-file FILEPATH] [--configuration-key TEXT]
+                    [--system-start TIMESTAMP] [--configuration-seed INTEGER]
+                    [--update-latest-path FILEPATH] [--update-with-package]
+                    [--no-ntp] [--route53-health-check IP:PORT] [--metrics]
+                    [--ekg-server IP:PORT] [--statsd-server IP:PORT]
+                    [--statsd-interval MILLISECONDS] [--statsd-debug BOOL]
+                    [--statsd-prefix TEXT] [--statsd-suffix TEXT]
+                    [--dump-genesis-data-to ARG] [--peer HOST:PORT]
+                    [--node-enabled]
+  Cardano SL CLI utilities.
+
+Available options:
+  -h,--help                Show this help text
+  --version                Show version.
+  --db-path FILEPATH       Path to directory with all DBs used by the node. If
+                           specified path doesn’t exist, a directory will be
+                           created.
+  --rebuild-db             If node's database already exists, discard its
+                           contents and create a new one from scratch.
+  --genesis-secret INT     Used genesis secret key index.
+  --keyfile FILEPATH       Path to file with secret key (we use it for
+                           Daedalus).
+  --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
+                           separated by spaces.
+  --topology FILEPATH      Path to a YAML file containing the network topology
+  --kademlia FILEPATH      Path to a YAML file containing the kademlia
+                           configuration
+  --node-id NODE_ID        Identifier for this node within the network
+  --default-port PORT      Port number for IP address to node ID translation
+  --policies FILEPATH      Path to a YAML file containing the network policies
+  --address IP:PORT        IP and port of external address. Please make sure
+                           these IP and port (on which node is running) are
+                           accessible otherwise proper work of CSL isn't
+                           guaranteed. 0.0.0.0 is not accepted as a valid host.
+  --listen IP:PORT         IP and port on which to bind and listen. Please make
+                           sure these IP and port are accessible, otherwise
+                           proper work of CSL isn't guaranteed.
+  --json-log FILEPATH      Path to JSON log file.
+  --log-config FILEPATH    Path to logger configuration.
+  --logs-prefix FILEPATH   Prefix to logger output path.
+  --report-server URI      Reporting server to send crash/error logs on.
+  --update-server URI      Server to download updates from.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
+  --update-latest-path FILEPATH
+                           Path to update installer file, which should be
+                           downloaded by Update System.
+  --update-with-package    Enable updating via installer.
+  --no-ntp                 Whether to use real NTP servers to synchronise time
+                           or rely on local time
+  --route53-health-check IP:PORT
+                           Host and port for the Route53 DNS health check.
+  --metrics                Enable metrics (EKG, statsd)
+  --ekg-server IP:PORT     Host and port for the EKG server
+  --statsd-server IP:PORT  Host and port for the statsd server
+  --statsd-interval MILLISECONDS
+                           Polling interval for statsd (milliseconds)
+  --statsd-debug BOOL      Enable statsd debug mode
+  --statsd-prefix TEXT     Prefix for statsd
+  --statsd-suffix TEXT     Suffix for statsd
+  --dump-genesis-data-to ARG
+                           Dump genesis data in canonical JSON format to this
+                           file.
+  --peer HOST:PORT         Address of a peer.
+  --node-enabled           Run auxx as a plugin for the node, as opposed to
+                           running it standalone (default: standalone).
+
+Available commands:
+  repl                     Run REPL in console to evaluate the commands.
+  cmd                      Execute a list of predefined commands.
+
+Command example:
+
+  stack exec -- cardano-auxx                                     \
+    --db-path run/auxx-db                                        \
+    --rebuild-db                                                 \
+    --json-log=/tmp/logs/2017-05-22_181224/node0.json            \
+    --logs-prefix /tmp/logs/2017-05-22_181224                    \
+    --log-config /tmp/logs/2017-05-22_181224/conf/node0.log.yaml \
+    --system-start 1495462345                                    \
+    --peer 127.0.0.1:3001                                        \
+    repl
+
+~~~
+
 ## cardano-cli-docs
 
 ~~~
@@ -609,96 +780,74 @@ Please note that 'cardano-genupdate' uses 'bsdiff' program, so make sure 'bsdiff
 ## cardano-explorer
 
 ~~~
-CardanoSL explorer node
+Cardano SL explorer.
 
-Usage: cardano-explorer [--version] [--help] [--db-path FILEPATH] [--rebuild-db]
-                        [--keyfile FILEPATH] [--backup-phrase PHRASE]
-                        [--address IP:PORT] [--listen IP:PORT]
-                        [--kademlia-address IP:PORT]
-                        [--kademlia-explicit-initial]
-                        [--kademlia-peer HOST:PORT]
-                        [--kademlia-peers-file FILEPATH] [--topology FILEPATH]
+Usage: cardano-explorer [--version] [--db-path FILEPATH] [--rebuild-db]
+                        [--genesis-secret INT] [--keyfile FILEPATH]
+                        [--backup-phrase PHRASE] [--topology FILEPATH]
                         [--kademlia FILEPATH] [--node-id NODE_ID]
                         [--default-port PORT] [--policies FILEPATH]
-                        [--kademlia-id HOST_ID] [--time-lord]
-                        [--json-log FILEPATH] [--kademlia-dump-path FILEPATH]
-                        [--web-port PORT] [--log-config FILEPATH]
+                        [--address IP:PORT] [--listen IP:PORT]
+                        [--json-log FILEPATH] [--log-config FILEPATH]
                         [--logs-prefix FILEPATH] [--report-server URI]
-                        [--update-server URI] [--flat-distr (INT,INT)]
-                        [--rich-poor-distr (INT,INT,INT,FLOAT)]
-                        [--exp-distr INT] --system-start TIMESTAMP
-                        [--system-start TIMESTAMP] [--no-ntp]
-                        [--notifier-port PORT] [--metrics]
+                        [--update-server URI] [--configuration-file FILEPATH]
+                        [--configuration-key TEXT] [--system-start TIMESTAMP]
+                        [--configuration-seed INTEGER]
+                        [--update-latest-path FILEPATH] [--update-with-package]
+                        [--no-ntp] [--route53-health-check IP:PORT] [--metrics]
                         [--ekg-server IP:PORT] [--statsd-server IP:PORT]
                         [--statsd-interval MILLISECONDS] [--statsd-debug BOOL]
                         [--statsd-prefix TEXT] [--statsd-suffix TEXT]
-                        [--static-peers]
-  CardanoSL explorer node.
+                        [--dump-genesis-data-to ARG] [--web-port PORT]
+                        [--notifier-port PORT]
+  Cardano SL main server node w/ explorer.
 
 Available options:
-  --version                Show version
-  --help                   Show this help text
+  -h,--help                Show this help text
+  --version                Show version.
   --db-path FILEPATH       Path to directory with all DBs used by the node. If
                            specified path doesn’t exist, a directory will be
                            created.
   --rebuild-db             If node's database already exists, discard its
                            contents and create a new one from scratch.
+  --genesis-secret INT     Used genesis secret key index.
   --keyfile FILEPATH       Path to file with secret key (we use it for
                            Daedalus).
   --backup-phrase PHRASE   12-word phrase to recover the wallet. Words should be
                            separated by spaces.
-  --address IP:PORT        IP and port of external address. Please make sure
-                           these IP and port (on which node is running) are
-                           accessible otherwise proper work of CSL isn't
-                           guaranteed. 0.0.0.0 is not accepted as a valid
-                           host. (default: ("0.0.0.0",0))
-  --listen IP:PORT         IP and port on which to bind and listen. Please make
-                           sure these IP and port are accessible, otherwise
-                           proper work of CSL isn't
-                           guaranteed. (default: ("0.0.0.0",0))
-  --kademlia-address IP:PORT
-                           Ip and port to which kademlia should
-                           bind. (default: ("0.0.0.0",0))
-  --kademlia-explicit-initial
-                           Explicitely contact to initial peers as to neighbors
-                           (even if they appeared offline once)
-  --kademlia-peer HOST:PORT
-                           Identifier of a node in a Kademlia network
-  --kademlia-peers-file FILEPATH
-                           Path to a file containing a newline-separated list of
-                           Kademlia peers
   --topology FILEPATH      Path to a YAML file containing the network topology
   --kademlia FILEPATH      Path to a YAML file containing the kademlia
                            configuration
   --node-id NODE_ID        Identifier for this node within the network
   --default-port PORT      Port number for IP address to node ID translation
   --policies FILEPATH      Path to a YAML file containing the network policies
-  --kademlia-id HOST_ID    Kademlia id for this node in base64-url
-  --time-lord              Peer is time lord, i.e. one responsible for system
-                           start time decision and propagation (used only in
-                           development mode).
+  --address IP:PORT        IP and port of external address. Please make sure
+                           these IP and port (on which node is running) are
+                           accessible otherwise proper work of CSL isn't
+                           guaranteed. 0.0.0.0 is not accepted as a valid host.
+  --listen IP:PORT         IP and port on which to bind and listen. Please make
+                           sure these IP and port are accessible, otherwise
+                           proper work of CSL isn't guaranteed.
   --json-log FILEPATH      Path to JSON log file.
-  --kademlia-dump-path FILEPATH
-                           Path to Kademlia dump file. If file doesn't exist, it
-                           will be created. (default: "kademlia.dump")
-  --web-port PORT          Port for web API. (default: 8100)
   --log-config FILEPATH    Path to logger configuration.
   --logs-prefix FILEPATH   Prefix to logger output path.
   --report-server URI      Reporting server to send crash/error logs on.
   --update-server URI      Server to download updates from.
-  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
-                           (nodes, coins).
-  --rich-poor-distr (INT,INT,INT,FLOAT)
-                           Use rich'n'poor stake distribution with given
-                           parameters (number of richmen, number of poors, total
-                           stake, richmen's share of stake).
-  --exp-distr INT          Use exponential distribution with given amount of
-                           nodes.
-  --system-start TIMESTAMP System start time. Mandatory in development mode.
-                           Format - seconds since Unix-epoch.
+  --configuration-file FILEPATH
+                           Path to a yaml configuration file
+  --configuration-key TEXT Key within the configuration file to use
+  --system-start TIMESTAMP System start time. Format - seconds since Unix Epoch.
+  --configuration-seed INTEGER
+                           Seed for genesis generation. Overrides one from
+                           configuration file.
+  --update-latest-path FILEPATH
+                           Path to update installer file, which should be
+                           downloaded by Update System.
+  --update-with-package    Enable updating via installer.
   --no-ntp                 Whether to use real NTP servers to synchronise time
                            or rely on local time
-  --notifier-port PORT     Port for update notifier (default: 8110)
+  --route53-health-check IP:PORT
+                           Host and port for the Route53 DNS health check.
   --metrics                Enable metrics (EKG, statsd)
   --ekg-server IP:PORT     Host and port for the EKG server
   --statsd-server IP:PORT  Host and port for the statsd server
@@ -707,7 +856,13 @@ Available options:
   --statsd-debug BOOL      Enable statsd debug mode
   --statsd-prefix TEXT     Prefix for statsd
   --statsd-suffix TEXT     Suffix for statsd
-  --static-peers           Don't use Kademlia, use only static peers
+  --dump-genesis-data-to ARG
+                           Dump genesis data in canonical JSON format to this
+                           file.
+  --web-port PORT          Port for web API. (default: 8100)
+  --notifier-port PORT     Port for update notifier, the socket.io
+                           backend. (default: 8110)
+
 ~~~
 
 ## cardano-swagger
