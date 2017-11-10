@@ -87,6 +87,11 @@ NOTE: the various other Cardano components can be obtained through other attribu
 -  `cardano-sl-wallet`:
    - `cardano-node`, `cardano-wallet-hs2purs`, `cardano-swagger`
 
+In general, for any given cabal `PACKAGE` provided by Cardano, there is a
+corresponding Nix attribute for it -- `PACKAGE`, and sometimes, in case of
+packages providing executables, the `PACKAGE-static` also provides a
+statically-linked variation.
+
 ## Stack with Nix for system libraries (mixed mode)
 
 Please, see the previous section on how to enable use of the IOHK binary cache.
@@ -133,7 +138,7 @@ Clone Daedalus repository and go to the root directory:
     [nix-shell:~/cardano-sl]$ git clone https://github.com/input-output-hk/daedalus.git
     [nix-shell:~/cardano-sl]$ cd daedalus
 
-Then run the following script: 
+Then run the following script:
 
     [nix-shell:~/daedalus]$ ./scripts/link-bridge.sh
     [nix-shell:~/daedalus]$ npm install
