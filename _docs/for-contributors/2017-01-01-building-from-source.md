@@ -64,11 +64,28 @@ Two steps remain, then:
         $ binary-caches             = https://cache.nixos.org https://hydra.iohk.io
         $ binary-caches-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
 
-2.  Actually building Cardano SL (or, most likely, simply obtaining it from the IOHK's binary caches) can be performed by:
+2.  Actually building the Cardano SL node (or, most likely, simply obtaining it
+    from the IOHK's binary caches) can be performed by building the attribute `cardano-sl-static`:
 
         $ nix-build -A cardano-sl-static --cores 0 --jobs 2 --no-build-output --out-link cardano-sl-1.0
 
-    The build output directory will be symlinked as `cardano-sl-1.0` (as specified by the command).
+    The build output directory will be symlinked as `cardano-sl-1.0` (as specified by the command), and it will contain:
+
+        $ ls /nix/store/jflq87535pwh0ldq79m23fkn9x5qbncl-cardano-sl-1.0.3/bin/
+        cardano-node-simple
+
+NOTE: the various other Cardano components can be obtained through other attributes:
+
+-  `cardano-report-server-static`
+   - `cardano-report-server`
+-  `cardano-sl-auxx`
+   - `cardano-hash-installer`, `cardano-auxx`
+-  `cardano-sl-explorer-static`
+   - `cardano-explorer`, `cardano-explorer-hs2purs`, `cardano-explorer-swagger`, `cardano-explorer-mock`
+-  `cardano-sl-tools-static`:
+   - `cardano-analyzer`, `cardano-dht-keygen`, `cardano-genupdate`, `cardano-keygen`, `cardano-launcher`, `cardano-addr-convert`, `cardano-cli-docs`, `cardano-block-gen`, `cardano-post-mortem`
+-  `cardano-sl-wallet`
+   - `cardano-node`, `cardano-wallet-hs2purs`, `cardano-swagger`
 
 ## Stack with Nix for system libraries (mixed mode)
 
