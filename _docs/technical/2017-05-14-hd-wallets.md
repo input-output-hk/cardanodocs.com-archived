@@ -33,35 +33,6 @@ Each child is assigned a 4-byte index `i`:
 -   `i ≤ 2³¹ - 1` for **non-hardened** keys,
 -   `i > 2³¹ - 1` for **hardened** keys.
 
-## Requirements
-
-Let `A(K)` denote the address that holds information about keypair `K`. Let
-`child(K, i)` denote the `i`-th child keypair of `K`. Let `tree(K)` denote the
-tree of addresses for keypairs, derived from `K` (and having positive balance)
-and held in **utxo**.
-
-`a -> b` denotes `b` is derivable form `a`. `a -x b` denotes `b` is not
-derivable from `a` (under no circumstances):
-
-     priv(K) -> pub(K)
-     pub(K) -> A(K)
-     pub(K) -x priv(K)
-
-For **hardened** keys:
-
-    A(K) -x pub(K)
-    A(K) -x A(child(K, i))
-    pub(K) -x pub(child(K, i))
-    (priv(K), utxo) -> tree(K)
-    priv(K) -> priv(child(K, i))
-
-For **non-hardened** keys
-
-    A(K) -x pub(K)
-    (pub(K), utxo) -> tree(K)
-    pub(K) -> pub(child(K, i))
-    priv(K) -> priv(child(K, i))
-
 ## Properties:
 
 1.  The tree structure is kept in root address. Users need to copy their public
@@ -123,6 +94,34 @@ For wallet to operate over some subtree, one needs to provide either:
     -   Hash of root public key
 
     -   Tree path for `SK`
+
+## Requirements
+
+Let `A(K)` denote the address that holds information about keypair `K`. Let
+`child(K, i)` denote the `i`-th child keypair of `K`. Let `tree(K)` denote the
+tree of addresses for keypairs, derived from `K` (and having positive balance)
+and held in **utxo**.
+
+`a -> b` denotes `b` is derivable form `a`. `a -x b` denotes `b` is not
+derivable from `a` (under no circumstances):
+
+    priv(K) -> pub(K)
+    pub(K) -> A(K)
+    pub(K) -x priv(K)
+    A(K) -x pub(K)
+    A(K) -x A(child(K, i))
+
+For **hardened** keys:
+
+    (priv(K), utxo) -> tree(K)
+    pub(K) -x pub(child(K, i))
+    priv(K) -> priv(child(K, i))
+
+For **non-hardened** keys
+
+    (pub(K), utxo) -> tree(K)
+    pub(K) -> pub(child(K, i))
+    priv(K) -> priv(child(K, i))
 
 ## Derivation Crypto Interface
 
