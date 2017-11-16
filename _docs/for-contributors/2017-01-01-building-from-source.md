@@ -71,7 +71,7 @@ Two steps remain, then:
 
     The build output directory will be symlinked as `cardano-sl-1.0` (as specified by the command), and it will contain:
 
-        $ ls cardano-sl-1.0
+        $ ls cardano-sl-1.0/bin
         cardano-node-simple
 
 NOTE: the various other Cardano components can be obtained through other attributes:
