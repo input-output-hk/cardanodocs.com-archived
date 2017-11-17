@@ -87,6 +87,9 @@ to another account, and then repeats the operation.
 
 ## Lightweight Delegation
 
+**WARNING: Currently, lightweight delegation is disabled and will be reworked in [Shelley release](https://cardanoroadmap.com/),
+so information below can be outdated.**
+
 In contrast to heavyweight delegation, lightweight delegation doesn't require
 that delegate posses `T`-or-more stake. So lightweight delegation is available
 for any node. But proxy signing certificates for lightweight delegation are not

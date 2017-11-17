@@ -180,6 +180,9 @@ more information.
 
 ### Lightweight Delegation
 
+**WARNING: Currently, lightweight delegation is disabled and will be reworked in
+[Shelley release](https://cardanoroadmap.com/), so information below can be outdated.**
+
 Lightweight delegation allows delegate to sign blocks instead of issuer for some
 range of epochs (this range is specified for a signing key created).
 
