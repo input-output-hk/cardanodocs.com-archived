@@ -53,7 +53,7 @@ transaction should cost enough to hurt an attacker who tries to generate many th
 Parameter `b` has been introduced to reflect actual costs: storing larger transactions needs more computer memory
 than storing smaller transactions, so larger transactions should be more expensive than smaller ones.
 
-Althought particular values for parameters `a` and `b` were calculated, these values will probably be adjusted in
+Although particular values for parameters `a` and `b` were calculated, these values will probably be adjusted in
 future to better reflect actual costs.
 
 ## Transaction fees distribution
