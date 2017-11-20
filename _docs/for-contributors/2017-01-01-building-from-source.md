@@ -39,7 +39,7 @@ The following steps are shared between the two methods of building Cardano: fetc
 
 Clone Cardano SL repository and go to the root directory:
 
-    $ git clone git@github.com:input-output-hk/cardano-sl.git
+    $ git clone https://github.com/input-output-hk/cardano-sl.git
     $ cd cardano-sl
 
 Switch to the latest release branch, for example, `cardano-sl-1.0`:
