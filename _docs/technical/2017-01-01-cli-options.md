@@ -470,20 +470,6 @@ Available options:
   --version                Show version
 ~~~
 
-## cardano-explorer-hs2purs
-
-~~~
-CardanoSL explorer ps datatypes generator
-
-Usage: cardano-explorer-hs2purs [--version] [--help] [--bridge-path FILEPATH]
-  CardanoSL explorer ps datatypes generator.
-
-Available options:
-  --version                Show version
-  --help                   Show this help text
-  --bridge-path FILEPATH   Path where to dump generated modules
-~~~
-
 ## cardano-dht-keygen
 
 ~~~
@@ -713,21 +699,6 @@ Available options:
 Assumed that this program will run on Travis CI. Produced file
 'cardano-cli-docs.md' will be renamed in a chapter and pushed in cardanodocs.com
 repository.
-~~~
-
-## cardano-wallet-hs2purs
-
-~~~
-Cardano SL PureScript types generator.
-
-Usage: cardano-wallet-hs2purs [--version]
-  Generate PureScript types based on Haskell types. Program produces .purs-files
-  in 'daedalus/src/Generated' subdirectory. These types are used to build
-  Daedalus wallet.
-
-Available options:
-  -h,--help                Show this help text
-  --version                Show version.
 ~~~
 
 ## cardano-genupdate
