@@ -56,6 +56,19 @@ maintaining the blockchain depends on the network participants themselves and on
 the network state. Nothing except for the network state and network participants
 being online matters for the sake of proof of stake.
 
+An important idea of proof of stake is that the more value one has, the more
+chances one has to produce a new block and add it to the blockchain.
+
+For example, the user *Alice* has some money in her wallet, let's say `12`
+units, and the user *Bob* has `10` units in his wallet. Both Alice' wallet and
+Bob's wallet can be chosen to add a new block to the blockchain (strictly
+speaking, a new block is added by a node, not by a wallet). But the
+*probability* of actually choosing the particular node is determined by the
+*percentage* of the total value in the system this node owns. By this percentage
+we mean "all the value held by wallets on the particular node divided by the
+total value in the system". This relative value is called *stake*, and the node
+chosen to produce a new block is called a slot leader.
+
 ## Follow the Satoshi
 
 Let's elaborate a little bit on how a slot leader gets selected. The smallest,
