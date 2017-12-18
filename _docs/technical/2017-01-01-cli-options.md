@@ -137,63 +137,6 @@ Command example:
 
 ~~~
 
-## cardano-wallet
-
-~~~
-CLI-based wallet + node.
-
-Usage: cardano-wallet [--version] [--db-path FILEPATH] [--rebuild-db]
-                      [--keys-path FILEPATH] [--debug] [--json-log FILEPATH]
-                      [--log-config FILEPATH] [--logs-prefix FILEPATH]
-                      [--report-server URI] [--update-server URI]
-                      [--flat-distr (INT,INT)]
-                      [--rich-poor-distr (INT,INT,INT,FLOAT)] [--exp-distr INT]
-                      --system-start TIMESTAMP COMMAND [--peer HOST:PORT]
-  Cardano SL CLI-wallet.
-
-Available options:
-  -h,--help                Show this help text
-  --version                Show version.
-  --db-path FILEPATH       Path to the wallet database.
-  --rebuild-db             If the DB already exist, discard its contents and
-                           create new one from scratch.
-  --keys-path FILEPATH     Path to file with secret keys
-  --debug                  Run in debug mode (with genesis keys included)
-  --json-log FILEPATH      Path to JSON log file.
-  --log-config FILEPATH    Path to logger configuration.
-  --logs-prefix FILEPATH   Prefix to logger output path.
-  --report-server URI      Reporting server to send crash/error logs on.
-  --update-server URI      Server to download updates from.
-  --flat-distr (INT,INT)   Use flat stake distribution with given parameters
-                           (nodes, coins).
-  --rich-poor-distr (INT,INT,INT,FLOAT)
-                           Use rich'n'poor stake distribution with given
-                           parameters (number of richmen, number of poors, total
-                           stake, richmen's share of stake).
-  --exp-distr INT          Use exponential distribution with given amount of
-                           nodes.
-  --system-start TIMESTAMP System start time. Mandatory in development mode.
-                           Format - seconds since Unix-epoch.
-  --peer HOST:PORT         Address of a peer.
-
-Available commands:
-  repl                     Run REPL in console to evaluate the commands.
-  cmd                      Execute a list of predefined commands.
-
-Command example:
-
-  stack exec -- cardano-wallet                                   \
-    --db-path node-db0                                           \
-    --rebuild-db                                                 \
-    --json-log=/tmp/logs/2017-05-22_181224/node0.json            \
-    --logs-prefix /tmp/logs/2017-05-22_181224                    \
-    --log-config /tmp/logs/2017-05-22_181224/conf/node0.log.yaml \
-    --system-start 1495462345                                    \
-    --peer-id UJqMkyR7xplAn9fQdMo=                               \
-    repl
-
-~~~
-
 ## cardano-keygen
 
 ~~~
