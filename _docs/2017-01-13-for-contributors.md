@@ -19,7 +19,7 @@ Please make sure your contributions adhere to our coding guidelines:
 
 * Code must adhere to the [Serokell Haskell Style Guide](https://github.com/serokell/serokell-util/blob/master/serokell-style.md).
 * Code must be documented with [Haddock](https://www.haskell.org/haddock/doc/html/index.html).
-* Pull requests need to be based on and opened against the `master` branch.
+* Pull requests need to be based on and opened against the `develop` branch.
 
 Please note that this project uses a custom prelude [Universum](https://github.com/serokell/universum) instead of the default one.
 
