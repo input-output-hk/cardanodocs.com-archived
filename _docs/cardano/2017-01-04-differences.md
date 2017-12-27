@@ -9,9 +9,10 @@ visible: true
 
 # Differences Between Paper and Implementation
 
-The goal of this document is to enumerate all ways in which `cardano-sl`
-implementation differs from the specifications presented in the paper and
-to clarify everything that may be obscure after reading the paper.
+The goal of this document is to enumerate all ways in which Cardano SL
+implementation differs from the specifications presented in the *Ouroboros*
+protocol [paper](/glossary/#paper) and to clarify everything that may be obscure
+after reading the paper.
 
 This document is divided into four parts:
 
@@ -28,20 +29,23 @@ This document is divided into four parts:
 
 ## Time, Slots, and Synchrony
 
-In a basic model of *Ouroboros* time is divided into discrete units called
+In a basic model of the protocol time is divided into discrete units called
 *slots*. However, there are no details on how to obtain current time securely
 and with enough precision.
 
-In `cardano-sl`, current time is obtained by querying a predefined set of NTP
-servers. Specifically, each node periodically queries NTP servers and calculates
-mean of results. A node stores last margin (the difference between local time and
-global time) and last obtained global time. А node also stores last slot to ensure
-that slots are monotonic.
+In Cardano SL, current time is obtained from user computer's system time.
+
+We also have a feature to notify users if their system time is incorrect
+(we compare it with the time obtained from NTP servers). This feature is not
+released yet, but will be released soon.
 
 ## Coin Tossing and Verifiable Secret Sharing
 
-As *Ouroboros* paper suggests, PVSS scheme by Schoenmakers is used in
-`cardano-sl`. One of the challenges while using a VSS scheme is associating the
+The paper suggests PVSS scheme by Schoenmakers for Cardano SL. However,
+currently Cardano SL uses ["SCRAPE: Scalable Randomness Attested by
+Public Entities"](https://eprint.iacr.org/2017/216.pdf) PVSS scheme.
+
+One of the challenges while using a VSS scheme is associating the
 public key used for signing with the public key used for VSS scheme
 (`VssPublicKey`). This is solved by introducing `VssCertificate`s. This
 certificate is a signature given by a signing key for a pair consisting of
@@ -51,17 +55,17 @@ have certificates. When a new stakeholder with enough stake appears or when an
 existing certificate expires, a new certificate should be generated and
 submitted to the network. `VssCertificate`s are stored in blocks.
 
-PVSS scheme by Schoenmakers uses share verification information which also
+PVSS scheme uses share verification information which also
 includes a commitment to the secret. It is also used as a commitment in
-Ouroboros protocol. The PVSS scheme has been implemented over the elliptic curve
+the protocol. The PVSS scheme has been implemented over the elliptic curve
 secp256r1. Please read about [PVSS implementation in Cardano
 SL](/technical/pvss/) for more details.
 
 ## Block Generation Time
 
-In *Ouroboros* paper, they do not state explicitly when a slot leader should
+In the paper, they do not state explicitly when a slot leader should
 generate a new block and send it to the network: it can be done at the beginning
-of a slot, at the end of a slot, in the middle of a slot, etc. In `cardano-sl`
+of a slot, at the end of a slot, in the middle of a slot, etc. In Cardano SL
 there is a special constant called "network diameter" which approximates maximal time
 necessary to broadcast a block to all nodes in the network. For example, if network
 diameter is 3, then block is generated and announced 3 seconds before the end of a slot.
@@ -78,7 +82,7 @@ when a big portion of blocks will be occupied by proxy certificates. Submitting
 a certificate is free, so adversaries can generate as many certificates as they
 want.
 
-There are two types of delegation in `cardano-sl`: heavyweight and lightweight.
+There are two types of delegation in Cardano SL: heavyweight and lightweight.
 There is a threshold on stake that one has to posses in order to participate in
 heavyweight delegation. Proxy signing certificates from heavyweight delegation
 are stored within the blockchain. On the contrary, lightweight delegation is
@@ -93,12 +97,12 @@ implementation details.
 
 ## Leader Selection Process
 
-In *Ouroboros*, Leader Selection Process is described as flipping a
+In the paper, Leader Selection Process is described as flipping a
 `(1 - p₁) … (1 - pⱼ₋₁) pⱼ`-biased coin to see whether the `j`-th stakeholder is
 selected as the leader of the given slot. Here `pⱼ` is probability of selecting the `j`-th
 stakeholder.
 
-In `cardano-sl`, it is implemented in a slightly different way. `R` random
+In Cardano SL, it is implemented in a slightly different way. `R` random
 numbers in a range `[0 .. totalCoins]` are generated, where `R` is a number of
 slots in an epoch. Stakeholders occupy different subsegments on this range,
 proportional to their stakes. This way, each random number maps into stakeholder.
@@ -118,7 +122,7 @@ of a certain phase, it can happen that data will not be included into the block.
 
 ## Multishares
 
-In *Ouroboros*, each stakeholder is presented as exactly one participant of the
+In the paper, each stakeholder is presented as exactly one participant of the
 underlying VSS scheme. However, it is natural that a stakeholder with more stake
 is more important than a stakeholder with less stake with regards to secret
 sharing. For instance, if three honest stakeholders control 60% of stake in
@@ -126,13 +130,13 @@ total (each of them controls 20%) and there are 40 adversary stakeholders each
 having 1% of stake, then the adversary has full control over secret sharing.
 
 To overcome this problem, a number of shares for each stakeholder proportional
-to their stake is generated in `cardano-sl`.
+to their stake is generated in Cardano SL.
 
 ## Randomness Generation Failure
 
-*Ouroboros* does not cover the situation when commitments cannot be recovered.
+The paper does not cover the situation when commitments cannot be recovered.
 However, a practical implementation should account for such scenarios.
-`cardano-sl` implementation uses a seed consisting of all zeroes if there are no
+Cardano SL implementation uses a seed consisting of all zeroes if there are no
 commitments that could be recovered.
 
 # Added Features
