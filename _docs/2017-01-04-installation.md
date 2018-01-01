@@ -19,6 +19,6 @@ which include a main node and [Daedalus wallet](https://github.com/input-output-
 
 Linux installer is going to be released soon. For now, to
 get Cardano SL on Linux, please refer to the [How to Build Cardano SL and Daedalus from
-Source Code](https://github.com/input-output-hk/cardano-sl/blob/master/docs/how-to/build-cardano-sl-and-daedalus-from-source-code.md)
+Source Code](https://github.com/input-output-hk/cardano-sl/blob/develop/docs/how-to/build-cardano-sl-and-daedalus-from-source-code.md)
 manual.
 <!-- CARDANO_SL_README_END_3 -->
