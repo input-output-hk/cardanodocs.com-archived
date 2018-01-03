@@ -1,64 +1,64 @@
 ---
 layout: default
-title: Differences Between the Paper and the Implementation
+title: Differences Between Paper and the Implementation
 permalink: /cardano/differences/
 group: cardano
 visible: true
 ---
 <!-- Reviewed at c4c45ce9a7a8f4aa6d88a32829755196a017f6a1 -->
 
-# Differences Between Paper and Implementation
+# Differences Between the Ouroborous Protocol Paper and the Implementation
 
-The goal of this document is to enumerate all ways in which Cardano SL
+The goal of this document is to outline the ways in which the Cardano SL
 implementation differs from the specifications presented in the *Ouroboros*
-protocol [paper](/glossary/#paper) and to clarify everything that may be obscure
+protocol [paper](/glossary/#paper) and to clarify any outstanding questions 
 after reading the paper.
 
 This document is divided into four parts:
 
-1.  *Clarifications* part clarifies some details which are not specified in the
-    paper, but are important for practical implementation.
-2.  *Modifications* part outlines things which are specified in the paper, but are
+1.  *Clarifications* - clarifies any details that are not specified in the
+    paper, but are important for practical implementations.
+2.  *Modifications* - outlines elements that are specified in the paper, but are
     implemented differently in Cardano SL.
-3.  *Added features* part briefly mentions new features which are not described
-    in paper, but have been implemented in Cardano SL.
-4.  *Omissions* part lists topics described in paper but not implemented into
+3.  *Added features* - briefly outlines new features which are not described
+    in the paper, but have been implemented in Cardano SL.
+4.  *Omissions* - lists topics described in the paper but are not yet implemented into
     Cardano SL.
 
 # Clarifications
+This section outlines any topics that require clarifications. 
 
 ## Time, Slots, and Synchrony
 
 In a basic model of the protocol time is divided into discrete units called
-*slots*. However, there are no details on how to obtain current time securely
+*slots*. However, there are no details on how to obtain the current time value securely
 and with enough precision.
 
-In Cardano SL, current time is obtained from user computer's system time.
+In Cardano SL, the current time value is obtained from a user's computer system time value.
 
 We also have a feature to notify users if their system time is incorrect
-(we compare it with the time obtained from NTP servers). This feature is not
-released yet, but will be released soon.
+(we compare it with the time value that is obtained from NTP servers). This feature is planned for a future release.
 
 ## Coin Tossing and Verifiable Secret Sharing
 
-The paper suggests PVSS scheme by Schoenmakers for Cardano SL. However,
+The paper suggests PVSS (Publicly Verifiable Secret Sharing) scheme by Schoenmakers for Cardano SL. However,
 currently Cardano SL uses ["SCRAPE: Scalable Randomness Attested by
 Public Entities"](https://eprint.iacr.org/2017/216.pdf) PVSS scheme.
 
-One of the challenges while using a VSS scheme is associating the
-public key used for signing with the public key used for VSS scheme
+One of the challenges while using a VSS (Verifiable Secret Sharing) scheme is associating the
+public key used for signing with the public key used for the VSS scheme
 (`VssPublicKey`). This is solved by introducing `VssCertificate`s. This
 certificate is a signature given by a signing key for a pair consisting of
 `VssPublicKey` and the epoch until which this certificate is valid. Initially,
 all stakeholders with stake enough for participation in randomness generation
-have certificates. When a new stakeholder with enough stake appears or when an
+hold certificates. When a new stakeholder with enough stake appears, or when an
 existing certificate expires, a new certificate should be generated and
 submitted to the network. `VssCertificate`s are stored in blocks.
 
 PVSS scheme uses share verification information which also
 includes a commitment to the secret. It is also used as a commitment in
 the protocol. The PVSS scheme has been implemented over the elliptic curve
-secp256r1. Please read about [PVSS implementation in Cardano
+secp256r1. Please refer to [PVSS implementation in Cardano
 SL](/technical/pvss/) for more details.
 
 ## Block Generation Time
