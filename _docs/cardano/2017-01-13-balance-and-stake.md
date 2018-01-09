@@ -6,34 +6,33 @@ group: cardano
 ---
 <!-- Reviewed at e070e675764738b5190b2f93424de403f1937216 -->
 
-# Balance and Stake in Cardano SL
+# How Balance and Stake work within the Cardano SL
 
-There are two important concepts in Cardano SL: **balance** and **stake**. This chapter
-explains the difference between these concepts.
+There are two important concepts within the Cardano SL: these are **balance** and **stake**. This chapter
+explains the difference between these two concepts and how they both function.
 
 ### Balance
 
-Balance is a real amount of coins a user has. Upon installing a Daedalus wallet on one's computer
-and performing [Ada redemption](/timeline/bootstrap/), one receives some amount of Ada. This amount of
-Ada is called one's balance. A user can send some amount of Ada (within his balance) to other users, as well as
-receive any amount of Ada from them.
+Balance is the real amount of coins that each user has. When you install a Daedalus wallet on your computer
+and perform the [Ada redemption](/timeline/bootstrap/) process, you receive an amount of Ada. This amount of
+Ada is called your balance. You can send an amount of Ada (within this balance), to other users, as well as
+receive any amount of Ada from other users.
 
-Thus, when we are talking about the balance, we are talking just about user's money.
+Thus, when we refer to the balance, we are talking about the user's actual money.
 
 ### Stake
 
-Stake is a concept from the [paper](/glossary/#paper). Unlike balance (the real amount of money one has),
-you can think of "stake" as a part of the whole financial power of Cardano SL. Stake gives a user the
+Unlike balance (the real amount of money you have),
+stake is a key element of the entire financial power of Cardano SL. Stake gives a user the
 power to control various Cardano SL algorithm parts, for example: being the [slot leader](/glossary/#slot-leader),
-voting in the [Update system](/cardano/update-mechanism/), taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi). This is why all thresholds in Cardano SL protocol are expressed in terms of stake,
-not balance.
+voting in the [Update system](/cardano/update-mechanism/), taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi). This is why all thresholds in the Cardano SL protocol are expressed in terms of stake, rather than balance.
 
-Thus, when we are talking about the stake, we are talking about a user's ability to control Cardano SL.
+Thus, when we refer to the stake, we are talking about the user's ability to control the actual Cardano SL. For more information about stake, please refer to the following [paper](/glossary/#paper). 
 
-### Balance and Stake Relation
+### The Relationship Between Balance and Stake
 
 Every coin in Cardano SL is associated with a balance and with a stake. We use [transaction output](/cardano/transactions/#design)
-to associate coin `C` with user's balance, and use [stake distribution](/cardano/transactions/#stake-distribution)
-to associate coin `C` with user's stake.
+to associate coin `C` with a user's balance, and we use [stake distribution](/cardano/transactions/#stake-distribution)
+to associate coin `C` with a user's stake.
 
-It is possible to change association between coin and stake using [stake delegation](/technical/delegation/).
+Note: It is possible to change the association between coin and stake using what is known as [stake delegation](/technical/delegation/).
