@@ -35,7 +35,7 @@ Cardano is currently in its bootstrapping phase. During this phase, fees are not
 ### TREASURY
 Cardano will have a treasury going forward. This treasury will be endowed via some portion (yet to be defined), of newly-minted Ada and transaction fees. The treasury will be governed by Ada holders.
 
-### MININMAL FEE (Current Calculation)
+### MINIMAL FEE (Current Calculation)
 The minimal fee = 0.155381 ADA + 0.000043946 (ADA/Byte) x size-of-transaction.
 
 Note: Fee calculations and incentives are areas that are currently being researched and their development is in progress.
