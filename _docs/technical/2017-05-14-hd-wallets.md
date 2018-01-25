@@ -44,7 +44,7 @@ We use `PublicKey` address (already present in the system) and add the attribute
 field. In the attribute indexed by `0` (**HD wallets attribute**) we store tree
 data.
 
-Tree is stored as a list of **derivation paths**. Each **derivaion path** is
+Tree is stored as a list of **derivation paths**. Each **derivation path** is
 specified as a list of **derivation indices**. Each **derivation index** is 4-byte
 unsigned int.
 
@@ -151,7 +151,7 @@ crypto primitives:
 
 -   `CKDpub :: ((Kpar, cpar), i) → (Ki, ci)`
 
-    Сomputes a child extended public key from the parent extended public key.
+    Computes a child extended public key from the parent extended public key.
 
 # Daedalus HD wallets
 
