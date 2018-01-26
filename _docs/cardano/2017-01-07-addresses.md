@@ -18,7 +18,7 @@ Cardano SL supports 3 main types of addresses:
 Public key address is a normal address like in any other cryptocurrency. It is
 a hashed public key. Read more about public key addresses [below](#public-key-addresses).
 
-Script addres is used in so-called "Pay to Script Hash" (P2SH) transactions.
+Script address is used in so-called "Pay to Script Hash" (P2SH) transactions.
 It operates autonomously and acts somewhat like a bank deposit: you can send
 money to it, but in order to redeem it you have to satisfy certain conditions,
 determined by a script associated with the address. The address itself contains
