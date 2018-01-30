@@ -65,7 +65,7 @@ anybody, hence the name.
 
 A public key address contains the hash of this public key.
 
-Public keys are also used for verifying your identity when your create a
+Public keys are also used for verifying your identity when you create a
 transaction and other auxiliary purposes.
 
 ## Pay to Script Hash
@@ -122,8 +122,8 @@ Address {
 
 `addrRoot` is the BLAKE2b-224 hash of the tuple made from `addrType`, `addrSpendingData` and `addrAttributes`.
 
-`addrSpendingData is a special value which is bound to an address and must be revealed in order to spend coins belonging to
-this address. For example, for public key address this value contains the public key. In this case it is impossible to change
+`addrSpendingData` is a special value which is bound to an address and must be revealed in order to spend coins belonging to
+this address. For example, for public key address this value contains the public key. In this case, it is impossible to change
 address attributes without knowing of the public key because if the attributes have been changed the whole address becomes
 invalid.
 

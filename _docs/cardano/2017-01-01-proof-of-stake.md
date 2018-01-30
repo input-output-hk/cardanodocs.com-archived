@@ -141,7 +141,7 @@ First of all, an elector generates a secret (or special random value). Next, an 
 proof of secret.
 
 The next step is when an elector signs this commitment with its secret key, specifies the epoch's
-number and attaches its public key. In this case everybody can check who created this commitment
+number and attaches its public key. In this case, everybody can check who created this commitment
 and which epoch this commitment relates to.
 
 Subsequently, an elector sends its commitment to other electors, so eventually each elector collects
@@ -173,7 +173,7 @@ So all electors get the same seed, and it will be used for Follow the Satoshi (F
 
 ### Follow the Satoshi
 
-At this moment electors have the seed (randomness we need). Now they have to select particular slot
+At this moment, electors have the seed (randomness we need). Now they have to select a particular slot
 leaders for the next epoch. This is where the Follow the Satoshi (FTS) algorithm comes into effect:
 
 ```
