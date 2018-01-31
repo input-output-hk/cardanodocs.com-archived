@@ -102,7 +102,7 @@ Let `A(K)` denote the address that holds information about keypair `K`. Let
 tree of addresses for keypairs, derived from `K` (and having positive balance)
 and held in **utxo**.
 
-`a -> b` denotes `b` is derivable form `a`. `a -x b` denotes `b` is not
+`a -> b` denotes `b` is derivable from `a`. `a -x b` denotes `b` is not
 derivable from `a` (under no circumstances):
 
     priv(K) -> pub(K)

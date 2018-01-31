@@ -50,7 +50,7 @@ so on:
       +----------------------+      +----------------------+     ...
 
 Inputs and outputs carry information about *money flow*: inputs inform where the
-money came from, and outputs inform where the money come to. Please notice that
+money came from, and outputs inform where the money comes to. Please notice that
 there's `N` and `M`, because the actual number of inputs and outputs can be
 different.
 
@@ -101,7 +101,7 @@ transaction informs us that:
 ## Verification
 
 As mentioned above, the transaction's output becomes the input of the other
-transaction. In this case we treat such output as *spent transaction output*.
+transaction. In this case, we treat such output as *spent transaction output*.
 Thus, an output `Out0` of the transaction `891971a4cc31e32..` is a spent output,
 because it already is an input of the `f9bcbe752aee4512..` transaction.
 
@@ -111,7 +111,7 @@ unspent outputs can be used as inputs for other transactions, to prevent
 [double-spending](https://en.bitcoin.it/wiki/Double-spending).
 
 So every node in the network not only accepts transactions, but also
-verifies them. To do it, every node have to keep track of unspent outputs, it
+verifies them. To do it, every node has to keep track of unspent outputs, it
 allows to validate that inputs in a published transaction are indeed the unspent
 outputs. Actually, all unspent outputs called *utxo*, and this is a part of the
 special key-value database called *Global State*.
