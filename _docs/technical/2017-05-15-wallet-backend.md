@@ -64,9 +64,8 @@ The `servant` Haskell library that provides a modular approach to API-building
 is used. This library uses combinators both to build atomic HTTP actions and to
 glue these atomic methods together to form larger and more complete APIs.
 
-Please notice that wallet web API is available only if you run a node with
-`--wallet` option. Default port for this API is `8090` which can be changed with
-the `--wallet-port` option.
+The wallet web API is enabled by default. It uses the `IP:PORT` specified with a
+`--wallet-address` option (defaults to: `127.0.0.1:8090`).
 
 Documentation for wallet web API is available
 [here](https://cardanodocs.com/technical/wallet/api/).
