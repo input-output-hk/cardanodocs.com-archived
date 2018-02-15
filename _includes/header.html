@@ -12,6 +12,10 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/"><img src="//static.iohk.io/cardano/images/cardano-white-120.png" alt="" width="50" height="45" /></a>
+        <ul id="lang-select" class="lang-select menu pad0 langs">
+          <li><a href="/"> <img width="23px" height="17px" src="/img/en.png" alt="English"/> English </a></li>
+          <li><a href="/cn"> <img width="23px" height="17px" src="/img/cn.png" alt="Chinese"/> 中文 </a></li>
+        </ul>
       </div>
       
 
@@ -28,10 +32,8 @@
     <div class="row">
 
       <div class="col-md-6 col-md-offset-3">
-        <div class="lang-select">
-          <a href="/"> <img width="23px" height="17px" src="/img/en.png" alt="English"/> English </a>
-          <a href="/cn"> <img width="23px" height="17px" src="/img/cn.png" alt="Chinese"/> 中文 </a>
-        </div>
+        
+        
         {% if page.language == "en" %}
 
       <h1>Cardano Settlement Layer <span>Documentation</span></h1>
