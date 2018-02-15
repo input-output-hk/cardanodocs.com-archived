@@ -3,6 +3,7 @@ layout: default
 title: CSL Application-Level Messaging
 permalink: /technical/protocols/csl-application-level/
 group: technical-protocols
+language: en
 ---
 <!-- Reviewed at 721474b760466b888cf26545b52b35989b2162de -->
 

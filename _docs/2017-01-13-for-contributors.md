@@ -4,6 +4,7 @@ title: For Contributors
 group: base
 permalink: /for-contributors/
 children: for-contributors
+language: en
 ---
 
 # Redirecting...

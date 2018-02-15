@@ -4,6 +4,7 @@ title: Installation
 permalink: /installation/
 group: base
 children: dsa
+language: en
 ---
 
 # Installation

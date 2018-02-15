@@ -3,6 +3,7 @@ layout: default
 title: Introduction
 permalink: /technical/plutus/introduction/
 group: technical-plutus
+language: en
 ---
 <!-- Reviewed at f766612fb6c75b941cbe3c2d9c2db17dd2dc9bd3 -->
 

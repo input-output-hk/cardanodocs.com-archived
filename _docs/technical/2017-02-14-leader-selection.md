@@ -4,6 +4,7 @@ title: Leader Selection in Cardano SL
 permalink: /technical/leader-selection/
 group: technical
 visible: true
+language: en
 ---
 <!-- Reviewed at e1d0f9fb37a3f1378341716916f0321fb55698df -->
 

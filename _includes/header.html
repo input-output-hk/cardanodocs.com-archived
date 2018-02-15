@@ -28,20 +28,42 @@
     <div class="row">
 
       <div class="col-md-6 col-md-offset-3">
-
+        <div class="lang-select">
+          <a href="/"> <img width="23px" height="17px" src="/img/en.png" alt="English"/> English </a>
+          <a href="/cn"> <img width="23px" height="17px" src="/img/cn.png" alt="Chinese"/> 中文 </a>
+        </div>
+        {% if page.language == "en" %}
 
       <h1>Cardano Settlement Layer <span>Documentation</span></h1>
+
+        {% endif %}
+
+        {% if page.language == "cn" %}
+
+        <h1>卡尔达诺结算层文档</h1>
+
+        {% endif %}
 
       <form id="site_search_form" class="" action="javascript:io_search_site()">
 
 
+                      {% if page.language == "en" %}
                       <div class="input-group">
                         <input id="site_search_input" type="text" class="form-control input-lg" placeholder="Search docs ..." onfocus="io_search_site()" />
                             <span class="input-group-btn">
                               <button type="submit" class="btn btn-default btn-lg"><em class="fa fa-search"></em></button>
                             </span>
                           </div><!-- /input-group -->
+                          {% endif %}
 
+                        {% if page.language == "cn" %}
+                          <div class="input-group">
+                           <input id="site_search_input" type="text" class="form-control input-lg" placeholder="搜索文档 ..." onfocus="io_search_site()" />
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default btn-lg"><em class="fa fa-search"></em></button>
+                            </span>
+                          </div><!-- /input-group -->
+                          {% endif %}
 
       </form>
 

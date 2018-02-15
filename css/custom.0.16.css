@@ -261,6 +261,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
 #search-results .search-result .output span{background:#ff0;color:#222}
 
 
+/* Language select styles */
+
+ .lang-select a {color: rgba(255,255,255,0.5);text-decoration: none}
+
 /* Footer Styles */
 
 .foot .more h5{font-size:110%; text-transform: uppercase;color:#eee;margin:0 0 50px 0;font-weight:300;}

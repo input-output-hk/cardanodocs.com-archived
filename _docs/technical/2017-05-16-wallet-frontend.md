@@ -4,6 +4,7 @@ title: Cardano SL Wallet Frontend
 permalink: /technical/wallet-frontend/
 group: technical
 visible: true
+language: en
 ---
 <!-- Reviewed at cd26fb28eb48f893a4ca2d045a10da19c211b807 -->
 

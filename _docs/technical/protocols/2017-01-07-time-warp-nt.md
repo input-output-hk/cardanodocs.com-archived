@@ -3,6 +3,7 @@ layout: default
 title: Time-Warp-NT Layer
 permalink: /technical/protocols/time-warp-nt/
 group: technical-protocols
+language: en
 ---
 <!-- Reviewed at dcf5509d8fc93ac4c221726d076dafe632d32b70 -->
 
