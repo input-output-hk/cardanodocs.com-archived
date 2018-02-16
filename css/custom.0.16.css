@@ -261,6 +261,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
 #search-results .search-result .output span{background:#ff0;color:#222}
 
 
+/* Language select styles */
+
+ .lang-select a {color: rgba(255,255,255,0.5);text-decoration: none}
+
 /* Footer Styles */
 
 .foot .more h5{font-size:110%; text-transform: uppercase;color:#eee;margin:0 0 50px 0;font-weight:300;}
@@ -269,12 +273,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
 .foot .more a .fa{line-height:1.9; display:inline-block;}
 .foot .more a em {height:48px;}
 .foot .logo .split{display:inline-block;background: #444;width:1px;height:40px;margin:-25px 0 -25px 20px}
+.foot #lang-select {padding:0;width:100%;}
+.foot #lang-select li {margin-left:0;margin-right: 10px;margin-bottom:10px;}
+.foot #lang-select li a {opacity: 0.9}
 @media (max-width: 767px) {
 #foot footer, #foot footer p, #foot footer li {
   text-align: center;
 }
 }
 
+@media (max-width: 767px){
+.foot #lang-select {
+    text-align: center;
+    float: none;
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+  }
+}
 /* No Script Styles */
 
 .banner .noscript {
@@ -293,5 +311,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
        padding-top:15px;
    }
 
+/* Language Selection List Styles */
+
+#lang-select {list-style: none;margin-left:0px;padding-left:10px;padding-top: 28px;text-align: left;display: inline-block;float: left;}
+#lang-select li {display: inline-block;margin:0 15px;}
+#lang-select li a {color: rgba(255,255,255,0.5);}
+#lang-select li a:hover {cursor: pointer;text-decoration: none}
+
+/* Navbar Styles */
+.navbar-brand {padding: 14px 15px;font-size: 11px;line-height: 20px;font-weight: 500;display: inline-block;margin: auto;float:left;}
 
 .nothing{}

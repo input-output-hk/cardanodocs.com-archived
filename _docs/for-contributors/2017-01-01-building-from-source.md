@@ -3,6 +3,7 @@ layout: default
 title: Building Cardano SL From Source Code
 permalink: /for-contributors/building-from-source/
 group: for-contributors
+language: en
 ---
 
 # Redirecting...

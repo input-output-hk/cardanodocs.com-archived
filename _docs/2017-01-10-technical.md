@@ -4,6 +4,7 @@ title: Technical details
 group: base
 permalink: /technical/
 children: technical
+language: en
 ---
 
 <!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->

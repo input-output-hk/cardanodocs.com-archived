@@ -4,6 +4,7 @@ title: Cardano SL Wallet Backend
 permalink: /technical/wallet-backend/
 group: technical
 visible: true
+language: en
 ---
 <!-- Reviewed at ac0126b2753f1f5ca6fbfb555783fbeb1aa141bd -->
 

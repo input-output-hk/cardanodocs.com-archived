@@ -4,6 +4,7 @@ title: Stake Delegation in Cardano SL
 permalink: /technical/delegation/
 group: technical
 visible: true
+language: en
 ---
 <!-- Reviewed at c23493d7a33a82d559d5bd9d289486795cf6592f -->
 

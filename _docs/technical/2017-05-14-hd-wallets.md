@@ -4,6 +4,7 @@ title: HD wallets
 permalink: /technical/hd-wallets/
 group: technical
 visible: true
+language: en
 ---
 <!-- Reviewed at 866fd6a29a15c503e54426f17b91bd8b0903c5dc -->
 
