@@ -54,9 +54,9 @@ data CTx = CTx
 
 目前，钱包 API 提供了一系列使用钱包的方法。Haskell 库 `servant` 提供了一个模块化的 API 构建方法。该库使用组合器来构建院子 HTTP 操作，并将这些原子方法粘合在一起以形成更大和更完整的 API。
 
-请注意，只有当您使用 `--wallet` 选项运行节点时，钱包 Web API 才可用，这个 API 的默认端口 `8090` 可以通过 `--wallet-port` 选项进行更改。
+钱包 web API 默认开启。它通过 `--wallet-port` 选项的 `IP:PORT` 格式描述（默认为：`127.0.0.1:8090`）。
 
-钱包 Web API 文档可以在[这里](https://cardanodocs.com/technical/wallet/api/)找到
+钱包 Web API 文档可以在[这里](https://cardanodocs.com/technical/wallet/api/)找到。
 
 
 ### TLS 连接
