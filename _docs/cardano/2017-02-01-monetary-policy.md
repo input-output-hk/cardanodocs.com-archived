@@ -3,6 +3,7 @@ layout: default
 title: Monetary Policy
 permalink: /cardano/monetary-policy/
 group: cardano
+language: en
 ---
 <!-- Reviewed at 1bd2a2f5979233f4f50a7e66ab4e1819ac486400 -->
 

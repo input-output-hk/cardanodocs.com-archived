@@ -4,6 +4,7 @@ title: Differences Between Paper and the Implementation
 permalink: /cardano/differences/
 group: cardano
 visible: true
+language: en
 ---
 <!-- Reviewed at c4c45ce9a7a8f4aa6d88a32829755196a017f6a1 -->
 

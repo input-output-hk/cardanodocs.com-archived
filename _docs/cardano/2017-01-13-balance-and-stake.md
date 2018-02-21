@@ -3,6 +3,7 @@ layout: default
 title: Balance and Stake
 permalink: /cardano/balance-and-stake/
 group: cardano
+language: en
 ---
 <!-- Reviewed at e070e675764738b5190b2f93424de403f1937216 -->
 

@@ -3,6 +3,7 @@ layout: default
 title: Transaction Assurance Level
 permalink: /cardano/transaction-assurance/
 group: cardano
+language: en
 ---
 <!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
 

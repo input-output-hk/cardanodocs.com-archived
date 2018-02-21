@@ -4,6 +4,7 @@ title: Ouroboros Proof of Stake Algorithm
 permalink: /cardano/proof-of-stake/
 group: cardano
 visible: true
+language: en
 ---
 <!-- Reviewed at c4c45ce9a7a8f4aa6d88a32829755196a017f6a1 -->
 

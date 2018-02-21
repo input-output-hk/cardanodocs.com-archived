@@ -3,6 +3,7 @@ layout: default
 title: Transaction Fees
 permalink: /cardano/transaction-fees/
 group: cardano
+language: en
 ---
 
 # Transaction Fees in Cardano SL

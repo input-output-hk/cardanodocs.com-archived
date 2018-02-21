@@ -3,6 +3,7 @@ layout: default
 title: Transactions
 permalink: /cardano/transactions/
 group: cardano
+language: en
 ---
 <!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
 
