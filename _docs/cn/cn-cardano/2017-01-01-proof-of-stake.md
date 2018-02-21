@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 乌洛波罗斯权益证明算法
-permalink: /cardano/proof-of-stake/cn/
+permalink: /v1.0.1/cardano/proof-of-stake/cn/
+version: 1.0.1
 group: cn-cardano
 visible: true
 language: cn

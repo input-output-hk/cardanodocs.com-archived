@@ -2,7 +2,8 @@
 layout: default
 title: 对于贡献者
 group: base
-permalink: /for-contributors/cn/
+permalink: /v1.0.1/for-contributors/cn/
+version: 1.0.1
 children: cn-for-contributors
 language: cn
 ---

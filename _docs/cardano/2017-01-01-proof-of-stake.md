@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Ouroboros Proof of Stake Algorithm
-permalink: /cardano/proof-of-stake/
+permalink: /v1.0.1/cardano/proof-of-stake/
+version: 1.0.1
 group: cardano
 visible: true
 ---
@@ -117,7 +118,7 @@ changed.
 
 You can think of this election as a “fair lottery”; anyone from the group of stakeholders can
 become a slot leader. However, an important idea of PoS is that the more stake stakeholder has,
-the more chances one has to be elected as a slot leader. 
+the more chances one has to be elected as a slot leader.
 
 **Note:** One stakeholder can be elected as a slot leader for more than one slot
 during the same epoch.
@@ -190,7 +191,7 @@ stake. FTS is an algorithm that verifiably picks a coin, and when coin owned by 
 of his coins will be picked.
 
 The reason why it is called “Follow the Satoshi” is that in bitcoin, an atomic piece of currency
-is called “Satoshi”, honoring Satoshi Nakamoto, the creator of bitcoin. 
+is called “Satoshi”, honoring Satoshi Nakamoto, the creator of bitcoin.
 
 ## Honest Majority
 

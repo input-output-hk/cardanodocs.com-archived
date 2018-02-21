@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Leader Selection in Cardano SL
-permalink: /technical/leader-selection/
+permalink: /v1.0.1/technical/leader-selection/
+version: 1.0.1
 group: technical
 visible: true
 language: en

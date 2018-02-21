@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 从源码构建卡尔达诺结算层
-permalink: /for-contributors/building-from-source/cn/
+permalink: /v1.0.1/for-contributors/building-from-source/cn/
+version: 1.0.1
 group: cn-for-contributors
 language: cn
 ---

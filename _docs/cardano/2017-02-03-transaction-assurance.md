@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Transaction Assurance Level
-permalink: /cardano/transaction-assurance/
+permalink: /v1.0.1/cardano/transaction-assurance/
+version: 1.0.1
 group: cardano
 ---
 <!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
@@ -89,7 +90,7 @@ correspond to Cardano market capitalization of $60 millions.
 <table class="full-width">
 <tr>
     <th class="center">             Attackers' stake, %</th>
-    <th class="center pct25">       Attackers’ stake, $ mln </th> 
+    <th class="center pct25">       Attackers’ stake, $ mln </th>
     <th colspan="6" class="center"> Assurance level         </th>
 
 </tr>
@@ -246,7 +247,7 @@ capitalization of $60 millions.
 <table class="full-width">
 <tr>
     <th class="center">             Attackers' stake, %</th>
-    <th class="center pct25">       Attackers’ stake, $ mln </th> 
+    <th class="center pct25">       Attackers’ stake, $ mln </th>
     <th colspan="6" class="center"> Assurance level         </th>
 
 </tr>
@@ -394,4 +395,3 @@ capitalization of $60 millions.
 
 </tr>
 </table>
-

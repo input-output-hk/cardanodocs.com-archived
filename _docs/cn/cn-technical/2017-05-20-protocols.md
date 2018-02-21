@@ -2,6 +2,7 @@
 layout: default
 title: 协议
 group: cn-technical
+version: 1.0.1
 children: cn-technical-protocols
 language: cn
 ---

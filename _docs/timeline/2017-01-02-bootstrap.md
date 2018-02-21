@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Bootstrap Era
-permalink: /timeline/bootstrap/
+permalink: /v1.0.1/timeline/bootstrap/
+version: 1.0.1
 group: timeline
 language: en
 ---

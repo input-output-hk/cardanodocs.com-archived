@@ -1,7 +1,8 @@
 ---
 layout: default
 title:  Cardano SL CLI Options
-permalink: /technical/cli-options/
+permalink: /v1.0.1/technical/cli-options/
+version: 1.0.1
 group: technical
 language: en
 ---

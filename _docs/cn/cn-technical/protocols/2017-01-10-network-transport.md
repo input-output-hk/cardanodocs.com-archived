@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 网络传输层
-permalink: /technical/protocols/network-transport/cn/
+permalink: /v1.0.1/technical/protocols/network-transport/cn/
+version: 1.0.1
 group: cn-technical-protocols
 language: cn
 ---

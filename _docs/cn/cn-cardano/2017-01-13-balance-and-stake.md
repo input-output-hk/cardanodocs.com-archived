@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 余额和权益
-permalink: /cardano/balance-and-stake/cn/
+permalink: /v1.0.1/cardano/balance-and-stake/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---

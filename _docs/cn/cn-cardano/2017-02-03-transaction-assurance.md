@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 交易确认层级
-permalink: /cardano/transaction-assurance/cn/
+permalink: /v1.0.1/cardano/transaction-assurance/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---
@@ -83,7 +84,7 @@ language: cn
 <table class="full-width">
 <tr>
     <th class="center">             攻击者的份额，%</th>
-    <th class="center pct25">       攻击者的份额，$ mln </th> 
+    <th class="center pct25">       攻击者的份额，$ mln </th>
     <th colspan="6" class="center"> 确认水平         </th>
 
 </tr>
@@ -239,7 +240,7 @@ language: cn
 <table class="full-width">
 <tr>
     <th class="center">             攻击者的份额，%</th>
-    <th class="center pct25">       攻击者的份额，$ mln </th> 
+    <th class="center pct25">       攻击者的份额，$ mln </th>
     <th colspan="6" class="center"> 确认水平         </th>
 
 </tr>
@@ -387,4 +388,3 @@ language: cn
 
 </tr>
 </table>
-

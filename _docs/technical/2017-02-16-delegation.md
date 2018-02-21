@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Stake Delegation in Cardano SL
-permalink: /technical/delegation/
+permalink: /v1.0.1/technical/delegation/
+version: 1.0.1
 group: technical
 visible: true
 language: en

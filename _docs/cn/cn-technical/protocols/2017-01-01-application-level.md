@@ -1,7 +1,8 @@
 ---
 layout: default
 title: CSL 应用层消息
-permalink: /technical/protocols/csl-application-level/cn/
+permalink: /v1.0.1/technical/protocols/csl-application-level/cn/
+version: 1.0.1
 group: cn-technical-protocols
 language: cn
 ---
@@ -130,7 +131,7 @@ class MessagePart a where
 
 ## 消息限制
 
-消息具有最大长度限制。不同类型的消息具有不同的限制，在 [`Pos.Communication.Limits`](https://github.com/input-output-hk/cardano-sl/blob/895619d7056fe397e9c2a56d88994f167263c397/src/Pos/Communication/Limits.hs) 模块中有定义。 
+消息具有最大长度限制。不同类型的消息具有不同的限制，在 [`Pos.Communication.Limits`](https://github.com/input-output-hk/cardano-sl/blob/895619d7056fe397e9c2a56d88994f167263c397/src/Pos/Communication/Limits.hs) 模块中有定义。
 
 ## 委派消息
 
@@ -174,7 +175,7 @@ class MessagePart a where
 |------------------|----------------------------------------------------|
 | `UpdateProposal` | Serialized update proposal, sent to a DHT peers    |
 | `UpdateVote`     | Message, payload of which contains the actual vote |
-       
+
 
 请参阅 [`sendUpdateProposal`](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Communication/Methods.hs#L47) 和 [`sendVote`](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Communication/Methods.hs#L40) 功能的更多细节。
 
@@ -271,4 +272,3 @@ class MessagePart a where
 有一个特殊的类型称为 [`WorkMode`](https://github.com/input-output-hk/cardano-sl/blob/73cf4fc35d3cfb068458f2b6982990d08a99906e/src/Pos/WorkMode/Class.hs#L65)，[`MinWorkMode`](https://github.com/input-output-hk/cardano-sl/blob/73cf4fc35d3cfb068458f2b6982990d08a99906e/src/Pos/WorkMode/Class.hs#L107)  表示一系列执行真实世界的分布式系统的工作的约束条件。你可以把约束看做*运行时保证*，它可以在特定的上下文执行特定的操作。例如，如果我们根据 **logging** 约束定义一些函数 `f` 的类型，我们肯定知道我们在这个函数 `f` 里面记录不同的信息。
 
 上面描述的所有 workers 和 handlers 都受 `WorkMode` 的限制。
-

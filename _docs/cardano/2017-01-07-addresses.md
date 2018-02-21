@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Addresses
-permalink: /cardano/addresses/
+permalink: /v1.0.1/cardano/addresses/
+version: 1.0.1
 group: cardano
 ---
 <!-- Reviewed at a6a1cdf72c7e167a13f500c0679c01fe4cfa0ca8 -->
@@ -114,7 +115,7 @@ Address {
         data: AddrAttributes {
             aaPkDerivationPath = Nothing,
             aaStakeDistribution = BootstrapEraDistr
-        } 
+        }
     },
     addrType = ATPubKey
 }

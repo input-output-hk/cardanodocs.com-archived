@@ -2,7 +2,8 @@
 layout: default
 title: Technical details
 group: base
-permalink: /technical/
+permalink: /v1.0.1/technical/
+version: 1.0.1
 children: technical
 language: en
 ---

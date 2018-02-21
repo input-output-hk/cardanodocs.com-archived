@@ -1,7 +1,8 @@
 ---
 layout: default
 title: HD wallets
-permalink: /technical/hd-wallets/
+permalink: /v1.0.1/technical/hd-wallets/
+version: 1.0.1
 group: technical
 visible: true
 language: en

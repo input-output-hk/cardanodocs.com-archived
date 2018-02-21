@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Cardano SL Wallet Backend
-permalink: /technical/wallet-backend/
+permalink: /v1.0.1/technical/wallet-backend/
+version: 1.0.1
 group: technical
 visible: true
 language: en

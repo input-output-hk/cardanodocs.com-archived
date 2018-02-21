@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Differences Between Paper and the Implementation
-permalink: /cardano/differences/
+permalink: /v1.0.1/cardano/differences/
+version: 1.0.1
 group: cardano
 visible: true
 ---
@@ -11,7 +12,7 @@ visible: true
 
 The goal of this document is to outline the ways in which the Cardano SL
 implementation differs from the specifications presented in the *Ouroboros*
-protocol [paper](/glossary/#paper) and to clarify any outstanding questions 
+protocol [paper](/glossary/#paper) and to clarify any outstanding questions
 after reading the paper.
 
 This document is divided into four parts:
@@ -26,7 +27,7 @@ This document is divided into four parts:
     Cardano SL.
 
 # Clarifications
-This section outlines any topics that require clarifications. 
+This section outlines any topics that require clarifications.
 
 ## Time, Slots, and Synchrony
 

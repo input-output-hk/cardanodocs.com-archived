@@ -2,7 +2,8 @@
 layout: default
 title: For Contributors
 group: base
-permalink: /for-contributors/
+permalink: /v1.0.1/for-contributors/
+version: 1.0.1
 children: for-contributors
 language: en
 ---

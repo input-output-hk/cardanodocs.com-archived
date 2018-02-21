@@ -1,7 +1,8 @@
 ---
 layout: default
 title: HD 钱包
-permalink: /technical/hd-wallets/cn/
+permalink: /v1.0.1/technical/hd-wallets/cn/
+version: 1.0.1
 group: cn-technical
 visible: true
 language: cn

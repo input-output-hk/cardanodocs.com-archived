@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 卡尔达诺结算层钱包后端
-permalink: /technical/wallet-backend/cn/
+permalink: /v1.0.1/technical/wallet-backend/cn/
+version: 1.0.1
 group: cn-technical
 visible: true
 language: cn
@@ -78,4 +79,3 @@ curl --cacert ca.crt -v https://localhost:8090/api/settings/sync/progress
 ### 处理错误
 
 如果事件请求失败，则有一个 `WalletError` 类型，它只封装一个 `Text` 来显示发生了什么。
-

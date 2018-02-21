@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Installation
-permalink: /installation/
+permalink: /v1.0.1/installation/
+version: 1.0.1
 group: base
 children: dsa
 language: en

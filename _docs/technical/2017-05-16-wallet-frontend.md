@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Cardano SL Wallet Frontend
-permalink: /technical/wallet-frontend/
+permalink: /v1.0.1/technical/wallet-frontend/
+version: v1.0.1
 group: technical
 visible: true
 language: en

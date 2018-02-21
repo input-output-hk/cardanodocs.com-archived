@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Time-Warp-NT Layer
-permalink: /technical/protocols/time-warp-nt/
+permalink: /v1.0.1/technical/protocols/time-warp-nt/
+version: 1.0.1
 group: technical-protocols
 language: en
 ---

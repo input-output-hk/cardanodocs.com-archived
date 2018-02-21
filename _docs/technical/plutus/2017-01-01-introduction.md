@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Introduction
-permalink: /technical/plutus/introduction/
+permalink: /v1.0.1/technical/plutus/introduction/
+version: 1.0.1
 group: technical-plutus
 language: en
 ---
@@ -82,7 +83,7 @@ This is most useful for building validator scripts for smart contracts. The
 standard way of doing this is by asking for a redeemer program of type `Comp A`
 and a validator program of type `A -> Comp B`, which then are composed to form
 `do { x <- redeemer ; validator x }`. The `redeemer` program is run, returning
-whatever data `validator` needs, and then that data is given to `validator` 
+whatever data `validator` needs, and then that data is given to `validator`
 which is then run.
 
 ## More Detailed Overview

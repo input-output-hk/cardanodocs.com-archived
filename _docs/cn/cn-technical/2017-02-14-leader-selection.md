@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 卡尔达诺结算层中的领导者选举
-permalink: /technical/leader-selection/cn/
+permalink: /v1.0.1/technical/leader-selection/cn/
+version: 1.0.1
 group: cn-technical
 visible: true
 language: cn
@@ -32,4 +33,3 @@ FTS 使用[共享种子](https://github.com/input-output-hk/cardano-sl/blob/4464
 结果是一个非空的 `StakeholderId` 序列，也就是被选中的股东们的 ID，[`SlotLeaders`](https://github.com/input-output-hk/cardano-sl/blob/5f7b619c6ec9056c6fe778d862c426233af165df/core/Pos/Core/Types.hs#L264) 序列保存在[节点运行环境中](https://github.com/input-output-hk/cardano-sl/blob/da70b2597aab352d7574a3946a366395b09e97eb/node/src/Pos/Context/Context.hs#L94)。
 
 由于是 P2SH 地址，所以节点不知道是会谁将要给它们发送资金。因此，P2SH 地址可以包含目标地址，该目标地址指明哪些地址应该被视为『拥有』用于 FTS 的基金。
-

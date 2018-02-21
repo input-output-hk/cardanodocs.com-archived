@@ -1,7 +1,8 @@
 ---
 layout: default
 title:  卡尔达诺结算层命令行选项
-permalink: /technical/cli-options/cn/
+permalink: /v1.0.1/technical/cli-options/cn/
+version: 1.0.1
 group: cn-technical
 language: cn
 ---

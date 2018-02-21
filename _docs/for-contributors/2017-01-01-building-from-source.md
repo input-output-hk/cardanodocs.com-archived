@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Building Cardano SL From Source Code
-permalink: /for-contributors/building-from-source/
+permalink: /v1.0.1/for-contributors/building-from-source/
+version: 1.0.1
 group: for-contributors
 language: en
 ---

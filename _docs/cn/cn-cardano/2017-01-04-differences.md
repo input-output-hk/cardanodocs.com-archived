@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 论文与实现的区别
-permalink: /cardano/differences/cn/
+permalink: /v1.0.1/cardano/differences/cn/
+version: 1.0.1
 group: cn-cardano
 visible: true
 language: cn
@@ -36,7 +37,7 @@ language: cn
 ## 投币和可验证的密钥共享
 
 论文中由 Schoenmakers 为卡尔达诺结算层提供 PVSS(Publicly Verifiable Secret Sharing) 方案。但是，卡尔达诺结算层目前使用 ["SCRAPE: Scalable Randomness Attested by
-Public Entities"](https://eprint.iacr.org/2017/216.pdf) PVSS 方案 
+Public Entities"](https://eprint.iacr.org/2017/216.pdf) PVSS 方案
 
 使用 VSS（可验证的密钥分享，Verifiable Secret Sharing）方案时的一个挑战是将用于签名的公钥与用于 VSS 方案的公钥相关联（`VssPublicKey`）。这是通过引入 `VssCertificate` 来解决的。这个证书是一个由签名密钥给出的签名，它由一个对 `VssPublicKey` 以及这个证书的有效时间组成。最初，所有参与随机生成的权益所有者都拥有证书。当出现一个拥有足够股份的新权益所有人时，或现有证书到期时，应该生成一个新的证书并提交给网络。`VssCertificate` 被存储在区块中。
 
@@ -95,4 +96,3 @@ secp256r1 实现，请参考 [PVSS 在卡尔达诺结算层的实现](/technical
 
 # 遗漏
 *输入背书人*和*激励结构*还没有实现。这些部分将与侧链悬而未决的研究一起实现，并随侧链的发布一起发布。
-

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: CSL Application-Level Messaging
-permalink: /technical/protocols/csl-application-level/
+permalink: /v1.0.1/technical/protocols/csl-application-level/
+version: 1.0.1
 group: technical-protocols
 language: en
 ---
@@ -226,7 +227,7 @@ in [`Pos.Communication.Methods`](https://github.com/input-output-hk/cardano-sl/b
 |------------------|----------------------------------------------------|
 | `UpdateProposal` | Serialized update proposal, sent to a DHT peers    |
 | `UpdateVote`     | Message, payload of which contains the actual vote |
-       
+
 Plea see [`sendUpdateProposal`](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Communication/Methods.hs#L47)
 and [`sendVote`](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Communication/Methods.hs#L40)
 functions for more details.

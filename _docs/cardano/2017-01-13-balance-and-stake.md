@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Balance and Stake
-permalink: /cardano/balance-and-stake/
+permalink: /v1.0.1/cardano/balance-and-stake/
+version: 1.0.1
 group: cardano
 ---
 <!-- Reviewed at e070e675764738b5190b2f93424de403f1937216 -->
@@ -27,7 +28,7 @@ stake is a key element of the entire financial power of Cardano SL. Stake gives 
 power to control various Cardano SL algorithm parts, for example: being the [slot leader](/glossary/#slot-leader),
 voting in the [Update system](/cardano/update-mechanism/), taking part in [MPC/SSC](/technical/leader-selection/#follow-the-satoshi). This is why all thresholds in the Cardano SL protocol are expressed in terms of stake, rather than balance.
 
-Thus, when we refer to the stake, we are talking about the user's ability to control the actual Cardano SL. For more information about stake, please refer to the following [paper](/glossary/#paper). 
+Thus, when we refer to the stake, we are talking about the user's ability to control the actual Cardano SL. For more information about stake, please refer to the following [paper](/glossary/#paper).
 
 ### The Relationship Between Balance and Stake
 

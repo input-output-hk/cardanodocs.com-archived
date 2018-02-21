@@ -2,7 +2,8 @@
 layout: default
 title: 技术细节
 group: base
-permalink: /technical/cn
+permalink: /v1.0.1/technical/cn
+version: 1.0.1
 children: cn-technical
 language: cn
 ---
@@ -137,15 +138,15 @@ Kademlia 已经提供了已知节点的概念。这样的节点可以被称为*�
 
 有两种计算富人的方法：
 
-- 考虑共同权益 
+- 考虑共同权益
 - 考虑委派权益（乌洛波洛斯提供委派自己权益给其他节点的机会，更多信息请参阅[委派章节](/cardano/differences/#权益委派)。
 
 MPC 和更新系统组件需要具有委派权益的富人，但不需要拥有共同权益的委派组成。
 
 ## 常量
 
-卡尔达诺结算层使用一些基础常量。他们的值经过了协议原作者和独立安全评论员的讨论，因此强烈推荐可选客户端使用这些常量。 
+卡尔达诺结算层使用一些基础常量。他们的值经过了协议原作者和独立安全评论员的讨论，因此强烈推荐可选客户端使用这些常量。
 
-这些常量在 
+这些常量在
 [`constants.yaml` 配置文件](https://github.com/input-output-hk/cardano-sl/blob/bf5dd592b7bf77a68bf71314718dc7a8d5cc8877/core/constants.yaml)
 中定义，分为生产环境和开发环境。

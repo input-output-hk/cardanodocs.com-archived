@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 安装
-permalink: /installation/cn
+permalink: /v1.0.1/installation/cn/
+version: 1.0.1
 group: base
 children: dsa
 language: cn

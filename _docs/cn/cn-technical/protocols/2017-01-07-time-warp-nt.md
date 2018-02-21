@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Time-Warp-NT 层
-permalink: /technical/protocols/time-warp-nt/cn/
+permalink: /v1.0.1/technical/protocols/time-warp-nt/cn/
+version: 1.0.1
 group: cn-technical-protocols
 language: cn
 ---
@@ -123,4 +124,3 @@ language: cn
 
 
 请查阅 `Serializable` [实例](https://github.com/serokell/time-warp-nt/blob/fef2c9943d279403386d204554b1c08fc357f196/src/Node/Message/Binary.hs#L43)作为 [`BinaryP` 数据类型](https://github.com/serokell/time-warp-nt/blob/fef2c9943d279403386d204554b1c08fc357f196/src/Node/Message/Binary.hs#L20)的例子。
-

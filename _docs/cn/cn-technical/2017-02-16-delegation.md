@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 卡尔达诺股权委派
-permalink: /technical/delegation/cn/
+permalink: /v1.0.1/technical/delegation/cn/
+version: 1.0.1
 group: cn-technical
 visible: true
 language: cn
@@ -91,4 +92,3 @@ Omega (or ω) 是[论文](/glossary/#paper)中一个特殊的值。在我们的�
 * 如果提交的重量级委派证书是在节点的内存池里，而且撤销证书也被提交了，那么委派证书将会从内存池中被删除，显然，这种情况下委派证书将永远不会添加到区块链中。  
 * 如果一个用户提交委派证书后丢失了他的钱，他仍然可以撤销那个委派，即使那个时候他已经没有足够的钱了（也就是说他拥有的钱少于上面提到的阈值 `T`)  
 * 尽管发行者在当前的 epoch 只能发布一个证书，在同一个 epoch 他可以撤销他的重量级委派。
-

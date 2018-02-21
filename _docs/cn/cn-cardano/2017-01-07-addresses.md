@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 地址
-permalink: /cardano/addresses/cn/
+permalink: /v1.0.1/cardano/addresses/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---
@@ -86,7 +87,7 @@ Address {
         data: AddrAttributes {
             aaPkDerivationPath = Nothing,
             aaStakeDistribution = BootstrapEraDistr
-        } 
+        }
     },
     addrType = ATPubKey
 }

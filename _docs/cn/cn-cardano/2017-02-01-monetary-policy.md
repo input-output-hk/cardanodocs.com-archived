@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 货币政策
-permalink: /cardano/monetary-policy/cn/
+permalink: /v1.0.1/cardano/monetary-policy/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 转账费用
-permalink: /cardano/transaction-fees/cn/
+permalink: /v1.0.1/cardano/transaction-fees/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---
@@ -60,4 +61,3 @@ a + b × size
 
 
 不久，卡尔达诺结算层进入下一个阶段，[完全分布式阶段](https://cardanoroadmap.com/)后，费用会按如上所述分配。
-

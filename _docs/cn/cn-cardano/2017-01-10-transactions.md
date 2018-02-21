@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 转账
-permalink: /cardano/transactions/cn/
+permalink: /v1.0.1/cardano/transactions/cn/
+version: 1.0.1
 group: cn-cardano
 language: cn
 ---
@@ -111,7 +112,7 @@ language: cn
 
 权益分配关联了每个地址的值。技术上来说该值是地址属性的一部分，该值对应于下面三种情况的某一种：
 
-1. Bootstrap 时代分配。这是一个特殊的值，它是 Bootstrap 时代里的受托者，但是它在 Bootstrap 时代之后还可以使用。 
+1. Bootstrap 时代分配。这是一个特殊的值，它是 Bootstrap 时代里的受托者，但是它在 Bootstrap 时代之后还可以使用。
 2. 单密钥分配，这是指所有的权益会被分配给一个指定的股东。在这种分配情况下会包含股东的身份。
 3。 多个密钥分配，这是指权益会被分配给多个股东（至少两个）。在这种分配情况下包含了一对『股东身份-输出部分』的信息。交易的输出有一个值，该值的一部分就是权益。
 

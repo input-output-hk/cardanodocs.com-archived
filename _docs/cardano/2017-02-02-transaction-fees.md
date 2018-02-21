@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Transaction Fees
-permalink: /cardano/transaction-fees/
+permalink: /v1.0.1/cardano/transaction-fees/
+version: 1.0.1
 group: cardano
 ---
 

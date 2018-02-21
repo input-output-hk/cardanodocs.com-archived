@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Network Transport Layer
-permalink: /technical/protocols/network-transport/
+permalink: /v1.0.1/technical/protocols/network-transport/
+version: 1.0.1
 group: technical-protocols
 language: en
 ---

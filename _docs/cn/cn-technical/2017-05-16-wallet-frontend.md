@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 卡尔达诺结算层钱包前端
-permalink: /technical/wallet-frontend/cn/
+permalink: /v1.0.1/technical/wallet-frontend/cn/
+version: 1.0.1
 group: cn-technical
 visible: true
 language: cn
@@ -80,4 +81,3 @@ Accound 应该重命名为地址。请查看这个 issues [CSM-249](https://issu
  - `ConnectionClosed` - 关闭 websocket 连接。
 
 由于此通道是单向的，因此从客户端发送到通道的任何消息都会被忽略。
-

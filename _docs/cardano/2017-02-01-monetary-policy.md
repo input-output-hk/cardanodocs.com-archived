@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Monetary Policy
-permalink: /cardano/monetary-policy/
+permalink: /v1.0.1/cardano/monetary-policy/
+version: 1.0.1
 group: cardano
 ---
 <!-- Reviewed at 1bd2a2f5979233f4f50a7e66ab4e1819ac486400 -->
@@ -47,7 +48,7 @@ Note: Fee calculations and incentives are areas that are currently being researc
 - 1.000000 = 1 ADA
 - 0.000001 = 1 Lovelace
 
-In terms of money units, there are two points of consideration. Firstly in Japan, yen amounts are much larger, where 10,000 yen is similar to a 100 dollar bill. Factoring this into unit calculations, the amount changes from 25 billion Ada to 250 million. Remember that a unit of Ada is equal to a million Lovelaces (the smallest unit), and after factoring in this adjustment, equates to a total of 2.5 million. Secondly, Ada has six digits from the decimal point, rather than eight digits for Bitcoin. 
+In terms of money units, there are two points of consideration. Firstly in Japan, yen amounts are much larger, where 10,000 yen is similar to a 100 dollar bill. Factoring this into unit calculations, the amount changes from 25 billion Ada to 250 million. Remember that a unit of Ada is equal to a million Lovelaces (the smallest unit), and after factoring in this adjustment, equates to a total of 2.5 million. Secondly, Ada has six digits from the decimal point, rather than eight digits for Bitcoin.
 
 
 </div>
