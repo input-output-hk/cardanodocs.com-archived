@@ -29,13 +29,13 @@
 {% if page.thumbnail %}
 <meta name="twitter:image" content="{{page.thumbnail}}">
 {% else %}
-<meta name="twitter:image" content="//cardano-docs.iohk.io/img/sharing.jpg">
+<meta name="twitter:image" content="//cardanodocs.com/img/sharing.jpg">
 {% endif %}
 
 {% if page.thumbnail %}
 <meta property="og:image" content="{{page.thumbnail}}" />
 {% else %}
-<meta property="og:image" content="//cardano-docs.iohk.io/img/sharing.jpg" />
+<meta property="og:image" content="//cardanodocs.com/img/sharing.jpg" />
 {% endif %}
 
 
@@ -51,7 +51,8 @@
 
 <link href="/css/montserrat.css" rel="stylesheet">
 <link href="/css/app.css" rel="stylesheet" media="screen">
-<link href="/css/custom.0.16.css" rel="stylesheet" media="screen">
+<link href="/css/base.css" rel="stylesheet" media="screen">
+<link href="/css/custom.css?bust={{ site.time | date: '%s' }}" rel="stylesheet" media="screen">
 
 <!--[if lte IE 10]>
 <script>webglIE = false;</script>
@@ -68,5 +69,12 @@
 
 <script type="text/javascript" src="{{ '/js/app/jquery-1.11.2.min.js' | prepend: urlprefix }}"></script>
 <script type="text/javascript" src="{{ '/js/app/jquery-ui.js' | prepend: urlprefix }}"></script>
+
+<script>
+var docs_version = '{{page.version}}';
+</script>
+
+
+
 
 </head>
