@@ -9,6 +9,7 @@
 
                       {% for subdoc in site.pages %}
                       {% if subdoc.visible != false %}
+                      {% if subdoc.version == page.version %}
                       {% if subdoc.title != '' %}
                       {% if subdoc.group == include.item.children %}
 
@@ -22,6 +23,7 @@
                         {% include nav-subsubmenu.html item=subdoc %}
                       </li>
 
+                      {% endif %}
                       {% endif %}
                       {% endif %}
                       {% endif %}

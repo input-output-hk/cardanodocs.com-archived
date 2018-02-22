@@ -27,7 +27,8 @@
                                         {% if doc.visible != false %}
                                         {% if doc.title != '' %}
                                         {% if doc.group == 'base' %}
-                                        {% if page.language == doc.language %}
+                                        {% if doc.language == page.language %}
+                                        {% if doc.version == page.version %}
 
                                         <li>
                                           {% if doc.permalink %}
@@ -38,6 +39,7 @@
                                           {% include nav-submenu.html item=doc %}
                                         </li>
 
+                                        {% endif %}
                                         {% endif %}
                                         {% endif %}
                                         {% endif %}

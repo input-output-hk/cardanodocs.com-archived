@@ -3,6 +3,7 @@
 
                       {% for subsubdoc in site.pages %}
                       {% if subsubdoc.visible != false %}
+                      {% if subsubdoc.version == page.version %}
                       {% if subsubdoc.title != '' %}
                       {% if subsubdoc.group == include.item.children %}
 
@@ -14,6 +15,7 @@
                         {% endif %}
                       </li>
 
+                      {% endif %}
                       {% endif %}
                       {% endif %}
                       {% endif %}
