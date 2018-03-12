@@ -69,7 +69,7 @@ The wallet web API is enabled by default. It uses the `IP:PORT` specified with a
 `--wallet-address` option (defaults to: `127.0.0.1:8090`).
 
 Documentation for wallet web API is available
-[here](https://cardanodocs.com/technical/wallet/api/).
+[here](/technical/wallet/api/v0).
 
 ### TLS Connections
 
