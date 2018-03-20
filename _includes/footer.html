@@ -20,6 +20,7 @@
                     <li><a href="{{ site.baseurl }}/introduction/cn"><img src="/img/cn.png" alt="Chinese" width="23" height="17"> 中文</a></li>
                     <!--<li><a href="/kr/"><img src="/img/kr.png" alt="Korean" width="23" height="17"> 한국어</a></li>-->
                     <!--<li><a href="/ru/"><img src="/img/ru.png" alt="Russian" width="23" height="17"> Русский</a></li>-->
+                    <li><a href="/de/"><img src="/img/de.png" alt="German" width="23" height="17"> Deutsch</a></li>-->
                   </ul>
                   <br>
 
@@ -73,6 +74,17 @@
                     <p>Естественно, валюты в блокчейнах, которые вы обменяли на другие, могут вырасти уже после совершения обменной операции. Данные о прошлых курсах валют не являются показательными при оценке курса валют в будущем. Любая инвестиция в валюты в блокчейнах включает риск потерять часть инвестируемых средств или все инвестируемые средства полностью. Ценность валют в блокчейнах, которые вы приобретаете, подвержена рыночным и другим инвестиционным рискам.</p>
                     <br>
                     <p><a href="https://cardanofoundation.org/project/"><small>The Project</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/protocol/"><small>The Protocol</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/foundation/"><small>The Foundation</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/learn-more/"><small>Learn More</small></a></p>
+
+					
+                    {% elsif page.language == "de" %}
+
+                    <p><a href="https://opensource.org/licenses/MIT" target="_blank">Cardano ist ein Quell-offenes Projekt.</a></p>
+
+                    <p>Cardano ist NUR eine Software-Plattform und führt keine unabhängige Prüfung oder inhaltliche Prüfung von Blockchain-Assets, digitalen Währungen, Krypto-Währungen oder verwandten Fonds durch. Sie sind voll und ganz verantwortlich für die Bewertung Ihrer Investitionen, für die Entscheidung, ob Sie Blockchain-Assets auf der Grundlage Ihrer eigenen Werte austauschen werden, und für alle Ihre Entscheidungen, ob Sie Blockchain-Assets mit Cardano austauschen wollen. In vielen Fällen kann es vorkommen, dass Blockchain-Assets, die Sie auf der Grundlage Ihrer Forschung austauschen, nicht an Wert gewinnen und an Wert verlieren. Ebenso können Blockchain-Assets, die Sie auf der Grundlage Ihrer Forschung austauschen, nach Ihrem Austausch an Wert gewinnen.</p>
+
+                    <p>Die Wertentwicklung in der Vergangenheit ist kein Indikator für zukünftige Ergebnisse. Jede Investition in Blockchain-Assets birgt das Risiko des Verlusts eines Teils oder der gesamten Investition. Der Wert der Blockchain-Assets, die Sie tauschen, unterliegt Markt- und anderen Investitionsrisiken.</p>
+                    <br>
+                    <p><a href="https://cardanofoundation.org/project/"><small>Das Projekt (EN)</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/protocol/"><small>Das Protokoll (EN)</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/foundation/"><small>Die Stiftung (EN)</small></a> &nbsp; | &nbsp; <a href="https://cardanofoundation.org/learn-more/"><small>Lerne mehr (EN)</small></a></p>
 
                     {% endif %}
 
@@ -144,6 +156,34 @@
                   </ul>
                 </div>
 
+                    {% if page.language == "de" %}
+
+                  <div class="col-sm-6">
+                  <ul class="nolist pd0 margin0">
+                    <li><a href="https://cardanoexplorer.com" title="Ein quelloffener block explorer für das Cardano Projekt" target="_blank">Cardano Blockchain Explorer</a></li>
+                    <li><a href="https://cardanodocs.com" title="Technische Dokumentation des Projekts" target="_blank">Cardano Dokumentation</a></li>
+                    <li><a href="https://cardanoroadmap.com" title="Entwicklungsweg des Cardano Projekts" target="_blank">Cardano Roadmap</a></li>
+                    <li><a href="https://github.com/input-output-hk/cardano-sl" title="Cardano SL repository" target="_blank">Cardano SL Source</a></li>
+                    <li><a href="https://cardanofoundation.org" title="Vorgesetzter und Bildungsinstitution für das Cardano Protokol" target="_blank">Cardano Stiftung</a></li>
+                    <li><a href="https://cardano.org" title="Cardano Hub" target="_blank">Cardano Hub</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg" target="_blank">Cardano Stiftung YouTube</a></li>
+                    <li><a href="https://twitter.com/CardanoStiftung" title="Folge der Stiftung" target="_blank">Cardano Stiftung Twitter</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-sm-6">
+                  <ul class="nolist pd0 margin0">
+                    <li><a href="https://chat.cardano.org/" title="Nimm an der Konversation teil" target="_blank">Cardano Chat</a></li>
+                    <li><a href="https://forum.cardano.org/" title="Nimm an der Konversation teil" target="_blank">Cardano Forum</a></li>
+                    <li><a href="https://www.reddit.com/r/cardano/" title="Nimm an der Konversation teil" target="_blank">Cardano Reddit </a></li>
+                    <li><a href="http://cardano.org" title="Community hub Für das Ökosystem" target="_blank">Cardano Community</a></li>
+                     <li><a href="https://daedaluswallet.io" title="Open source platform" target="_blank">Daedalus Platform</a></li>
+                    <li><a href="https://iohk.io" title="Development partner" target="_blank">IOHK</a></li>
+                    <li><a href="https://iohk.io/blog/" target="_blank">IOHK blog</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w" target="_blank">IOHK YouTube</a></li>
+                  </ul>
+                </div>
+
 
 
               {% endif %}
@@ -176,7 +216,7 @@
 
                         <span class="split"></span>
 
-                        <a href="//iohk.io/projects/cardano/" target="_blank" class="support">IOHK supported project</a>
+                        <a href="//iohk.io/projects/cardano/" target="_blank" class="support">Projekt unterstützt von IOHK</a>
                         <a href="//iohk.io/" target="_blank" class="iohk"><img src="/img/iohk-logo.svg" alt="" width="138.4" height="30" /></a>
 
                       </div>
