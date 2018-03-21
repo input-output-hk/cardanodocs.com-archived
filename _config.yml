@@ -9,3 +9,5 @@ permalink: /:title
 markdown: kramdown
 highlighter: rouge
 array: []
+
+theme: jekyll-theme-slate
