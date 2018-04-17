@@ -98,6 +98,7 @@
                     <li><a href="https://github.com/input-output-hk/cardano-sl" title="Cardano SL repository" target="_blank">Cardano SL Source</a></li>
                     <li><a href="https://cardanofoundation.org" title="Supervisory and educational body for the Cardano Protocol" target="_blank">Cardano Foundation</a></li>
                     <li><a href="https://cardano.org" title="Cardano Hub" target="_blank">Cardano Hub</a></li>
+                    <li><a href="https://whycardano.com" target="_blank" title="Why we are building Cardano">Why Cardano</a></li>
                     <li><a href="https://staking.cardano.org" title="Cardano Staking" target="_blank">Cardano Staking</a></li>
                     <li><a href="https://feedback.cardano.org" title="Cardano Feedback" target="_blank">Cardano Feedback</a></li>
                     <li><a href="https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg" target="_blank">Cardano Foundation YouTube</a></li>
@@ -107,7 +108,7 @@
 
                 <div class="col-sm-6">
                   <ul class="nolist pd0 margin0">
-                    <li><a href="https://chat.cardano.org/" title="Join the conversation" target="_blank">Cardano Chat</a></li>
+                    <li><a href="https://t.me/CardanoAnnouncements" title="Join the conversation" target="_blank">Cardano Telegram</a></li>
                     <li><a href="https://forum.cardano.org/" title="Join the conversation" target="_blank">Cardano Forum</a></li>
                     <li><a href="https://www.reddit.com/r/cardano/" title="Join the conversation" target="_blank">Cardano Reddit </a></li>
                     <li><a href="http://cardano.org" title="Community hub for the ecosystem" target="_blank">Cardano Community</a></li>
@@ -128,6 +129,7 @@
                     <li><a href="https://github.com/input-output-hk/cardano-sl" title="Cardano SL repository" target="_blank">卡尔达诺结算层资源</a></li>
                     <li><a href="https://cardanofoundation.org" title="Supervisory and educational body for the Cardano Protocol" target="_blank">卡尔达诺基金会</a></li>
                     <li><a href="https://www.cardano.org" title="Cardano Hub" target="_blank">卡尔达诺社区中心</a></li>
+                    <li><a href="https://whycardano.com" target="_blank" title="Why we are building Cardano">为何我们正在建立卡尔达诺</a></li>
                     <li><a href="https://staking.cardano.org" title="Cardano Staking" target="_blank">卡尔达诺权益</a></li>
                     <li><a href="https://feedback.cardano.org" title="Cardano Feedback" target="_blank">卡尔达诺反馈</a></li> 
                     <li><a href="https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg" target="_blank">卡尔达诺基金会YouTube</a></li>
@@ -137,7 +139,7 @@
 
                 <div class="col-sm-6">
                   <ul class="nolist pd0 margin0">
-                    <li><a href="https://chat.cardano.org/" title="Join the conversation" target="_blank">卡尔达诺聊</a></li>
+                    <li><a href="https://t.me/CardanoAnnouncements" title="Join the conversation" target="_blank">卡尔达诺聊</a></li>
                     <li><a href="https://forum.cardano.org/" title="Join the conversation" target="_blank">卡尔达诺論壇</a></li>
                     <li><a href="https://www.reddit.com/r/cardano/" title="Join the conversation" target="_blank">卡尔达诺Reddit</a></li>
                     <li><a href="http://cardano.org" title="Community hub for the ecosystem" target="_blank">卡尔达诺社区</a></li>
@@ -224,6 +226,8 @@
         var trackcmp_h = document.getElementsByTagName(“head”);
         trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
     }
+    function removeHSParams(_0x67a9x1) { var _0x67a9x2 = _0x67a9x1["split"]("?"); if (_0x67a9x2["length"] >= 2) { var _0x67a9x3 = _0x67a9x2[1]["split"](/[&;]/g); for (var _0x67a9x4 = _0x67a9x3["length"]; _0x67a9x4-- > 0;) { if (_0x67a9x3[_0x67a9x4]["startsWith"]("__hs")) { _0x67a9x3["splice"](_0x67a9x4, 1) } }; _0x67a9x1 = _0x67a9x2[0] + (_0x67a9x3["length"] > 0 ? "?" + _0x67a9x3["join"]("&") : ""); return _0x67a9x1 } else { return _0x67a9x1 } } $(function () { var _0x67a9x1 = window["location"]["href"]; if (_0x67a9x1["indexOf"]("?") < 0) { return }; var _0x67a9x5 = removeHSParams(_0x67a9x1); if (Modernizr && Modernizr["history"]) { history["replaceState"](null, null, _0x67a9x5) } else { window["location"] = _0x67a9x5 } });
+    removeHSParams();
 </script>
 
 
