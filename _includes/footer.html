@@ -202,6 +202,13 @@
   <script type="text/javascript" src="/js/app/app.js"></script>
   <script type="text/javascript" src="/js/app/base.1.js"></script>
   <script type="text/javascript" src="/js/app/searcher.js"></script>
+
+<!-- Include Modernizer for HS tracking rewrite -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4268286.js"></script>
+<!-- End of HubSpot Embed Code -->
+
   <script>
 
   $(".navbar-side li").each(function(){
@@ -213,13 +220,19 @@
 
   </script>
 
-  <script type=“text/javascript”>
-    var trackcmp_email = ‘’;
-    var trackcmp = document.createElement(“script”);
+<!-- Include Modernizer for HS tracking rewrite -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4268286.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  <script type="text/javascript">
+    var trackcmp_email = '';
+    var trackcmp = document.createElement("script");
     trackcmp.async = true;
-    trackcmp.type = ‘text/javascript’;
-    trackcmp.src = ‘//trackcmp.net/visit?actid=251940219&e=‘+encodeURIComponent(trackcmp_email)+‘&r=‘+encodeURIComponent(document.referrer)+‘&u=’+encodeURIComponent(window.location.href);
-    var trackcmp_s = document.getElementsByTagName(“script”);
+    trackcmp.type = 'text/javascript';
+    trackcmp.src = '//trackcmp.net/visit?actid=251940219&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+    var trackcmp_s = document.getElementsByTagName("script");
     if (trackcmp_s.length) {
         trackcmp_s[0].parentNode.appendChild(trackcmp);
     } else {
