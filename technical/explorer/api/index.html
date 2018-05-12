@@ -169,7 +169,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
     <h1>Cardano SL Explorer Web API</h1>
     <p class="sw-info">
         
-        Version: <span class="sw-info-version">0.1.0</span>
+        Version: <span class="sw-info-version">1.1.1</span>
     </p>
     <p><p>This is an API for Cardano SL Explorer.</p>
     </p>
@@ -198,7 +198,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-addresses-summary--address--get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get summary information about an address.</p>
+        
                         </td>
                     </tr>
                     <tr>
@@ -209,7 +210,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-blocks-pages-get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get the list of blocks, contained in pages.</p>
+        
                         </td>
                     </tr>
                     <tr>
@@ -220,7 +222,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-blocks-pages-total-get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get the list of total pages.</p>
+        
                         </td>
                     </tr>
                     <tr>
@@ -231,7 +234,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-blocks-summary--hash--get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get block&#39;s summary information.</p>
+        
                         </td>
                     </tr>
                     <tr>
@@ -242,15 +246,40 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-blocks-txs--hash--get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get brief information about transactions.</p>
+        
                         </td>
                     </tr>
                     <tr>
                             <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--api-genesis-address-pages">/api/genesis/address/pages</a>
+                                <a href="#path--api-epochs--epoch-">/api/epochs/{epoch}</a>
                             </td>
                         <td>
-                            <a href="#operation--api-genesis-address-pages-get">GET</a>
+                            <a href="#operation--api-epochs--epoch--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Get epoch pages, all the paged slots in the epoch.</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-epochs--epoch---slot-">/api/epochs/{epoch}/{slot}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-epochs--epoch---slot--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Get the slot information in an epoch.</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-genesis-address">/api/genesis/address</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-genesis-address-get">GET</a>
                         </td>
                         <td>
                             
@@ -280,10 +309,21 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                     </tr>
                     <tr>
                             <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--api-search-epoch--epoch-">/api/search/epoch/{epoch}</a>
+                                <a href="#path--api-stats-txs">/api/stats/txs</a>
                             </td>
                         <td>
-                            <a href="#operation--api-search-epoch--epoch--get">GET</a>
+                            <a href="#operation--api-stats-txs-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--api-supply-ada">/api/supply/ada</a>
+                            </td>
+                        <td>
+                            <a href="#operation--api-supply-ada-get">GET</a>
                         </td>
                         <td>
                             
@@ -297,7 +337,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-txs-last-get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get information about the N latest transactions.</p>
+        
                         </td>
                     </tr>
                     <tr>
@@ -308,7 +349,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                             <a href="#operation--api-txs-summary--txid--get">GET</a>
                         </td>
                         <td>
-                            
+                            <p>Get summary information about a transaction.</p>
+        
                         </td>
                     </tr>
             </tbody>
@@ -322,13 +364,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-addresses-summary--address-"></span>
             <div id="operation--api-addresses-summary--address--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get summary information about an address.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/addresses/summary/{address}</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get summary information about an address.</p>
-            
+                        
                     </section>
             
                     
@@ -383,7 +424,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError CAddressSummary">Either ExplorerError CAddressSummary</a>
+                                                                <a class="json-schema-ref" href="#/definitions/CAddressSummary">CAddressSummary</a>
                                                     </div>
                                                 </div></div>
                                             
@@ -413,13 +454,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-blocks-pages"></span>
             <div id="operation--api-blocks-pages-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get the list of blocks, contained in pages.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/blocks/pages</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get the list of blocks, contained in pages.</p>
-            
+                        
                     </section>
             
                     
@@ -487,8 +527,16 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError (Integer,[CBlockEntry])">Either ExplorerError (Integer,[CBlockEntry])</a>
-                                                    </div>
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
                                                 </div></div>
                                             
                                             </div>                </dd>
@@ -517,13 +565,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-blocks-pages-total"></span>
             <div id="operation--api-blocks-pages-total-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get the list of total pages.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/blocks/pages/total</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get the list of total pages.</p>
-            
+                        
                     </section>
             
                     
@@ -577,7 +624,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError Integer">Either ExplorerError Integer</a>
+                                                            
                                                     </div>
                                                 </div></div>
                                             
@@ -607,13 +654,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-blocks-summary--hash-"></span>
             <div id="operation--api-blocks-summary--hash--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get block&apos;s summary information.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/blocks/summary/{hash}</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get block&#39;s summary information.</p>
-            
+                        
                     </section>
             
                     
@@ -668,7 +714,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError CBlockSummary">Either ExplorerError CBlockSummary</a>
+                                                                <a class="json-schema-ref" href="#/definitions/CBlockSummary">CBlockSummary</a>
                                                     </div>
                                                 </div></div>
                                             
@@ -698,13 +744,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-blocks-txs--hash-"></span>
             <div id="operation--api-blocks-txs--hash--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get brief information about transactions.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/blocks/txs/{hash}</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get brief information about transactions.</p>
-            
+                        
                     </section>
             
                     
@@ -787,8 +832,17 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError [CTxBrief]">Either ExplorerError [CTxBrief]</a>
-                                                    </div>
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CTxBrief">CTxBrief</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
                                                 </div></div>
                                             
                                             </div>                </dd>
@@ -831,11 +885,254 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
             </div>
         
-        <span id="path--api-genesis-address-pages"></span>
-            <div id="operation--api-genesis-address-pages-get" class="swagger--panel-operation-get panel">
+        <span id="path--api-epochs--epoch-"></span>
+            <div id="operation--api-epochs--epoch--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Get epoch pages, all the paged slots in the epoch.</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/epochs/{epoch}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                epoch
+                                            </td>
+                                            <td></td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 18446744073709552000 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                page
+                                            </td>
+                                            <td></td>
+                                            <td>query</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | -9223372036854776000 ≤ x ≤ 9223372036854776000 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json;charset=utf-8</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+                                    
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Invalid <code>page</code></p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p><code>epoch</code> not found</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--api-epochs--epoch---slot-"></span>
+            <div id="operation--api-epochs--epoch---slot--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Get the slot information in an epoch.</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/epochs/{epoch}/{slot}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                epoch
+                                            </td>
+                                            <td></td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 18446744073709552000 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                slot
+                                            </td>
+                                            <td></td>
+                                            <td>path</td>
+                                            <td>
+                                        <span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 65535 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json;charset=utf-8</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CBlockEntry">CBlockEntry</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+                                    
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p><code>epoch</code> or <code>slot</code> not found</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--api-genesis-address"></span>
+            <div id="operation--api-genesis-address-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/genesis/address/pages</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/genesis/address</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -885,12 +1182,20 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                         </tr>
                                         <tr>
                                             <td>
-                                                redeemed
+                                                filter
                                             </td>
                                             <td></td>
                                             <td>query</td>
                                             <td>
-                                        <span class="json-property-type">boolean</span>
+                                        <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                        <span class="json-property-enum-item">RedeemedAddresses</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">NonRedeemedAddresses</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">AllAddresses</span>
+                                                    
+                                                }
+                                                </span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
@@ -921,8 +1226,17 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError (Integer,[CGenesisAddressInfo])">Either ExplorerError (Integer,[CGenesisAddressInfo])</a>
-                                                    </div>
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CGenesisAddressInfo">CGenesisAddressInfo</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
                                                 </div></div>
                                             
                                             </div>                </dd>
@@ -933,7 +1247,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p>Invalid <code>redeemed</code> or <code>pageSize</code> or <code>page</code></p>
+                                                    <p>Invalid <code>filter</code> or <code>pageSize</code> or <code>page</code></p>
                                             
                                                 </div>
                                             </div>
@@ -988,12 +1302,20 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                         </tr>
                                         <tr>
                                             <td>
-                                                redeemed
+                                                filter
                                             </td>
                                             <td></td>
                                             <td>query</td>
                                             <td>
-                                        <span class="json-property-type">boolean</span>
+                                        <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                        <span class="json-property-enum-item">RedeemedAddresses</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">NonRedeemedAddresses</span>
+                                                    ,
+                                                        <span class="json-property-enum-item">AllAddresses</span>
+                                                    
+                                                }
+                                                </span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
@@ -1024,7 +1346,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError Integer">Either ExplorerError Integer</a>
+                                                            
                                                     </div>
                                                 </div></div>
                                             
@@ -1036,7 +1358,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p>Invalid <code>redeemed</code> or <code>pageSize</code></p>
+                                                    <p>Invalid <code>filter</code> or <code>pageSize</code></p>
                                             
                                                 </div>
                                             </div>
@@ -1084,7 +1406,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError CGenesisSummary">Either ExplorerError CGenesisSummary</a>
+                                                                <a class="json-schema-ref" href="#/definitions/CGenesisSummary">CGenesisSummary</a>
                                                     </div>
                                                 </div></div>
                                             
@@ -1094,16 +1416,15 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
             </div>
         
-        <span id="path--api-search-epoch--epoch-"></span>
-            <div id="operation--api-search-epoch--epoch--get" class="swagger--panel-operation-get panel">
+        <span id="path--api-stats-txs"></span>
+            <div id="operation--api-stats-txs-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/search/epoch/{epoch}</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/stats/txs</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Search the blocks by epoch and slot. Slot is optional.</p>
-            
+                        
                     </section>
             
                     
@@ -1121,28 +1442,13 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                 <tbody>
                                         <tr>
                                             <td>
-                                                epoch
-                                            </td>
-                                            <td></td>
-                                            <td>path</td>
-                                            <td>
-                                        <span class="json-property-type">integer</span>
-                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 18446744073709552000 }</span>
-                                        
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                slot
+                                                page
                                             </td>
                                             <td></td>
                                             <td>query</td>
                                             <td>
                                         <span class="json-property-type">integer</span>
-                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 65535 }</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 0 ≤ x ≤ 18446744073709552000 }</span>
                                         
                                             </td>
                                             <td>
@@ -1172,8 +1478,16 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError [CBlockEntry]">Either ExplorerError [CBlockEntry]</a>
-                                                    </div>
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">object</span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
                                                 </div></div>
                                             
                                             </div>                </dd>
@@ -1184,24 +1498,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p>Invalid <code>slot</code></p>
-                                            
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-                                            
-                                            </div>                </dd>
-                                    <dt class="sw-response-404">
-                                        404 Not Found
-                                    
-                                    </dt>
-                                    <dd class="sw-response-404">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p><code>epoch</code> not found</p>
+                                                    <p>Invalid <code>page</code></p>
                                             
                                                 </div>
                                             </div>
@@ -1216,16 +1513,15 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                 </div>
             </div>
         
-        <span id="path--api-txs-last"></span>
-            <div id="operation--api-txs-last-get" class="swagger--panel-operation-get panel">
+        <span id="path--api-supply-ada"></span>
+            <div id="operation--api-supply-ada-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/txs/last</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/supply/ada</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get information about the N latest transactions.</p>
-            
+                        
                     </section>
             
                     
@@ -1250,8 +1546,60 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError [CTxEntry]">Either ExplorerError [CTxEntry]</a>
+                                                                <a class="json-schema-ref" href="#/definitions/CAda">CAda</a>
                                                     </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+        
+        <span id="path--api-txs-last"></span>
+            <div id="operation--api-txs-last-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Get information about the N latest transactions.</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/txs/last</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+            
+                    
+                    
+                        <section class="sw-responses">
+                                <p><span class="label label-default">application/json;charset=utf-8</span> 
+                    </p>
+                    
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CTxEntry">CTxEntry</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
                                                 </div></div>
                                             
                                             </div>                </dd>
@@ -1263,13 +1611,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <span id="path--api-txs-summary--txid-"></span>
             <div id="operation--api-txs-summary--txid--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary"></div>
+                    <div class="operation-summary">Get summary information about a transaction.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/api/txs/summary/{txid}</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Get summary information about a transaction.</p>
-            
+                        
                     </section>
             
                     
@@ -1324,7 +1671,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                                <a class="json-schema-ref" href="#/definitions/Either ExplorerError CTxSummary">Either ExplorerError CTxSummary</a>
+                                                                <a class="json-schema-ref" href="#/definitions/CTxSummary">CTxSummary</a>
                                                     </div>
                                                 </div></div>
                                             
@@ -1357,6 +1704,53 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
         <h2>Schema definitions</h2>
     
             
+                <div id="definition-Byte" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Byte"></a>Byte:
+                                    <span class="json-property-type">
+                <span class="json-property-type">integer</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                    </div>
+                </div>        
+                <div id="definition-CAda" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/CAda"></a>CAda:
+                                    <span class="json-property-type">
+                <span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="getAda">
+                                                    <span class="json-property-name">getAda:</span>
+                                                    
+                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Fixed">Fixed</a>
+                                                    </span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                        <span class="json-property-required"></span>
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>        
                 <div id="definition-CAddress" class="panel panel-definition">
                         <div class="panel-heading">
                                 <h3 class="panel-title"><a name="/definitions/CAddress"></a>CAddress:
@@ -1466,19 +1860,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                                                 
                                                                             </div>
                                                                         </section>                </div>
-                                                </dd>
-                                                <dt data-property-name="caIsRedeemed">
-                                                    <span class="json-property-name">caIsRedeemed:</span>
-                                                    
-                                                    <span class="json-property-type">boolean</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
                                                 </dd>
                                         </dl>
                                     </section>
@@ -1866,8 +2247,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                         
                                                     </div>
                                                 </dd>
-                                                <dt data-property-name="cgsNumRemaining">
-                                                    <span class="json-property-name">cgsNumRemaining:</span>
+                                                <dt data-property-name="cgsNumNotRedeemed">
+                                                    <span class="json-property-name">cgsNumNotRedeemed:</span>
                                                     
                                                     <span class="json-property-type">integer</span>
                                                     <span class="json-property-range" title="Value limits">, { x ∈ ℤ | -9223372036854776000 ≤ x ≤ 9223372036854776000 }</span>
@@ -1880,8 +2261,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                         
                                                     </div>
                                                 </dd>
-                                                <dt data-property-name="cgsAmountRedeemed">
-                                                    <span class="json-property-name">cgsAmountRedeemed:</span>
+                                                <dt data-property-name="cgsRedeemedAmountTotal">
+                                                    <span class="json-property-name">cgsRedeemedAmountTotal:</span>
                                                     
                                                     <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CCoin">CCoin</a>
                                                     </span>
@@ -1895,8 +2276,8 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                         
                                                     </div>
                                                 </dd>
-                                                <dt data-property-name="cgsAmountRemaining">
-                                                    <span class="json-property-name">cgsAmountRemaining:</span>
+                                                <dt data-property-name="cgsNonRedeemedAmountTotal">
+                                                    <span class="json-property-name">cgsNonRedeemedAmountTotal:</span>
                                                     
                                                     <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CCoin">CCoin</a>
                                                     </span>
@@ -1977,7 +2358,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                     <span class="json-property-type">integer</span>
                                                     <span class="json-property-range" title="Value limits"></span>
                                                     
-                                                        <span class="json-property-required"></span>
                                                 </dt>
                                                 <dd>
                                                     
@@ -2114,7 +2494,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                                     <span class="json-property-type">integer</span>
                                                     <span class="json-property-range" title="Value limits"></span>
                                                     
-                                                        <span class="json-property-required"></span>
                                                 </dt>
                                                 <dd>
                                                     
@@ -2386,508 +2765,11 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
                                     </section>
                     </div>
                 </div>        
-                <div id="definition-Either-ExplorerError--Integer--CBlockEntry--" class="panel panel-definition">
+                <div id="definition-Fixed" class="panel panel-definition">
                         <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError (Integer,[CBlockEntry])"></a>Either ExplorerError (Integer,[CBlockEntry]):
+                                <h3 class="panel-title"><a name="/definitions/Fixed"></a>Fixed:
                                     <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">object[]</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                                        <section class="json-schema-array-items">
-                                                                            
-                                                                            <span class="json-property-type">object</span>
-                                                                            <span class="json-property-range" title="Value limits"></span>
-                                                                            
-                                                                            <div class="json-inner-schema">
-                                                                                
-                                                                            </div>
-                                                                        </section>                </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError--Integer--CGenesisAddressInfo--" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError (Integer,[CGenesisAddressInfo])"></a>Either ExplorerError (Integer,[CGenesisAddressInfo]):
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">object[]</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                                        <section class="json-schema-array-items">
-                                                                            
-                                                                            <span class="json-property-type">object</span>
-                                                                            <span class="json-property-range" title="Value limits"></span>
-                                                                            
-                                                                            <div class="json-inner-schema">
-                                                                                
-                                                                            </div>
-                                                                        </section>                </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError--CBlockEntry-" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError [CBlockEntry]"></a>Either ExplorerError [CBlockEntry]:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">object[]</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                                        <section class="json-schema-array-items">
-                                                                            
-                                                                            <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CBlockEntry">CBlockEntry</a>
-                                                                            </span>
-                                                                            <span class="json-property-range" title="Value limits"></span>
-                                                                            
-                                                                            <div class="json-inner-schema">
-                                                                                
-                                                                            </div>
-                                                                        </section>                </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError--CTxBrief-" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError [CTxBrief]"></a>Either ExplorerError [CTxBrief]:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">object[]</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                                        <section class="json-schema-array-items">
-                                                                            
-                                                                            <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CTxBrief">CTxBrief</a>
-                                                                            </span>
-                                                                            <span class="json-property-range" title="Value limits"></span>
-                                                                            
-                                                                            <div class="json-inner-schema">
-                                                                                
-                                                                            </div>
-                                                                        </section>                </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError--CTxEntry-" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError [CTxEntry]"></a>Either ExplorerError [CTxEntry]:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">object[]</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                                        <section class="json-schema-array-items">
-                                                                            
-                                                                            <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CTxEntry">CTxEntry</a>
-                                                                            </span>
-                                                                            <span class="json-property-range" title="Value limits"></span>
-                                                                            
-                                                                            <div class="json-inner-schema">
-                                                                                
-                                                                            </div>
-                                                                        </section>                </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError-CAddressSummary" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError CAddressSummary"></a>Either ExplorerError CAddressSummary:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CAddressSummary">CAddressSummary</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError-CBlockSummary" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError CBlockSummary"></a>Either ExplorerError CBlockSummary:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CBlockSummary">CBlockSummary</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError-CGenesisSummary" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError CGenesisSummary"></a>Either ExplorerError CGenesisSummary:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CGenesisSummary">CGenesisSummary</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError-CTxSummary" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError CTxSummary"></a>Either ExplorerError CTxSummary:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CTxSummary">CTxSummary</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-Either-ExplorerError-Integer" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/Either ExplorerError Integer"></a>Either ExplorerError Integer:
-                                    <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-                
-                </span>
-                                </h3>
-                        </div>
-                    <div class="panel-body">
-                            
-                                    <section class="json-schema-properties">
-                                        <dl>
-                                                <dt data-property-name="Left">
-                                                    <span class="json-property-name">Left:</span>
-                                                    
-                                                    <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ExplorerError">ExplorerError</a>
-                                                    </span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                                <dt data-property-name="Right">
-                                                    <span class="json-property-name">Right:</span>
-                                                    
-                                                    <span class="json-property-type">integer</span>
-                                                    <span class="json-property-range" title="Value limits"></span>
-                                                    
-                                                </dt>
-                                                <dd>
-                                                    
-                                                    <div class="json-inner-schema">
-                                                        
-                                                    </div>
-                                                </dd>
-                                        </dl>
-                                    </section>
-                    </div>
-                </div>        
-                <div id="definition-ExplorerError" class="panel panel-definition">
-                        <div class="panel-heading">
-                                <h3 class="panel-title"><a name="/definitions/ExplorerError"></a>ExplorerError:
-                                    <span class="json-property-type">
-                <span class="json-property-type">string</span>
+                <span class="json-property-type">integer</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
                 </span>
