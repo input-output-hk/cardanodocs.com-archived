@@ -9,7 +9,10 @@ language: en
 
 # Staking objects
 
-A _staking object_ is used to identify a [staking key](TODO:link).
+- A _staking object_ is used to identify a [staking key](TODO:link). 
+- They are part of addresses.
+- They identify the address to what the funds are delegated, and provide a
+  proof for this delegation.
 
 There are three kind of staking objects:
 
