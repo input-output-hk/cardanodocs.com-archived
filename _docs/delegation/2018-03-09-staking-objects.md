@@ -9,7 +9,7 @@ language: en
 
 # Staking objects
 
-- A _staking object_ is used to identify a [staking key](TODO:link). 
+- A _staking object_ is used to identify a [staking key](/delegation/staking-keys). 
 - They are part of addresses.
 - They identify the address to what the funds are delegated, and provide a
   proof for this delegation.
@@ -21,7 +21,7 @@ There are three kind of staking objects:
 - Pointer: they are of the form `(nBlock, nTx, nCert)`, where
   `nBlock` is the index of a block in the chain, `nTx` is the index of a
   transaction within that block, and `nReg` is the index of the [registration
-  certificate](TODO:link) within that transaction.
+  certificate](/delegation/regitstration-certificates) within that transaction.
 - Enterprise: they are a empty string.
 
 ## On the need for different kind of addresses
