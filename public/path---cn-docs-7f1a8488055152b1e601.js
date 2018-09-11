@@ -1,0 +1,2 @@
+webpackJsonp([70372777942703],{342:function(e,a){e.exports={data:{allMarkdownRemark:{edges:[{node:{id:"/Users/robinclark/sites/gatsby-blog/src/pages/cn/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark",frontmatter:{path:"/cn/post-1",title:"Post 1 (CN)",author:"Tom V",date:"06-09-2018",language:"cn"},excerpt:"*** This is Chinese, Honest Guv! Cillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip…"}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---cn-docs-7f1a8488055152b1e601.js.map
