@@ -1,14 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
-const Button = {
-
-}
-
-const ListItem = {
-
-}
-
+import Search from './search'
 
 const linkStyle = {
   color: 'white',
@@ -16,45 +8,33 @@ const linkStyle = {
   textDecoration: 'none'
 }
 
-const getLangs = (e) => {
-  let pathArray = location.pathname.split('/');
-  pathArray = pathArray.filter( (n) => n != "" ); //just get the actual directories
-  const clickedLang = e.target.attributes.getNamedItem('data-lang').value;
-  if (pathArray[0] === clickedLang) return;
-  return replaceLangDirectory(pathArray, clickedLang)
-}
-
-const replaceLangDirectory = (pathArray, clickedLang) => {
-  pathArray.splice(0, 1, `${clickedLang}`);
-  rebuildPathAndRedirect(pathArray);
-}
-
-const rebuildPathAndRedirect = (pathArray) => {
-  let newPath = ''
-  pathArray.forEach( (e, i) => {
-    newPath += '/';
-    newPath += pathArray[i];
-  });
-  window.location = newPath;
-}
-
 // TODO: Language link should be a component
-function languageLink(lang) {
-  function handleClick(e) {
-    e.preventDefault();
-    getLangs(e);
-  }
-  return (
-    <a href="#" onClick={handleClick} id='btn_' style={linkStyle} onClick={handleClick} data-lang={lang}>
-      {lang === 'en' ? 'English' : 'Chinese'}
-    </a>
-  )
-}
 
-const Header = ( {siteTitle} ) => (
-  <div
+class Header extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+
+  languageLink(lang) {
+    const handleClick = (e) => {
+      e.preventDefault();
+      this.props.toggleLanguageButtonState();
+      const clickedLang = e.target.attributes.getNamedItem('data-lang').value;
+      this.props.changeLanguage(clickedLang);
+    }
+    return (
+      <a href="#" onClick={handleClick} id='btn_' style={linkStyle} data-lang={lang}>
+        {lang === 'en' ? 'English' : 'Chinese'}
+      </a>
+    )
+  }
+
+  render() {
+    const { siteTitle } = this.props;
+    return (
+      <div
     style={{
-      background: 'tomato',
+      background: 'darkblue',
     }}
   >
     <div
@@ -62,6 +42,8 @@ const Header = ( {siteTitle} ) => (
         margin: '0 auto',
         maxWidth: 960,
         padding: '1.45rem 1.0875rem',
+        display: 'flex',
+        justifyContent: 'space-between',
       }}
     >
       <h1 style={{ 
@@ -78,6 +60,7 @@ const Header = ( {siteTitle} ) => (
           {siteTitle}
         </Link>
       </h1>
+      <Search {...this.props}/>
       <ul style={{
         listStyle: 'none',
         display: 'flex',
@@ -86,12 +69,14 @@ const Header = ( {siteTitle} ) => (
         float: 'right',
         margin: '0'
       }}>
-        <li>{languageLink(`en`)}</li>
+        <li>{this.languageLink(`en`)}</li>
         <li style={linkStyle}>&nbsp; | &nbsp;</li>
-        <li>{languageLink(`cn`)}</li>
+        <li>{this.languageLink(`cn`)}</li>
       </ul>
     </div>
   </div>
-)
+    )
+  }
+}
 
 export default Header

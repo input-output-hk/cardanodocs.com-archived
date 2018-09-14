@@ -1,32 +1,35 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
 const BlogPage = ({ data }) => (
-  <div>
-    <h1>Cardano Docs List</h1>
-    <ul>
-      <li style={{ 
-        listStyleType: 'none'
-      }}>
-        {data.allMarkdownRemark.edges.map( post => (
-          <Link to={post.node.frontmatter.path} key={post.node.id} style={{
-            color: '#333',
-            fontFamily: 'sans-serif'
-          }}>
-            <h3>{post.node.frontmatter.title}</h3>
-            <small>Posted by: {post.node.frontmatter.author} | {post.node.frontmatter.date} | {post.node.frontmatter.language}</small>
-            <br/>
-            <br/>
-            <strong>Read more ...</strong>
-            <br/>
-            <br/>
-            <hr/>
-          </Link>
-          )
-        )}
-      </li>
-    </ul>
-  </div>
+  <PageTransition>
+    <div>
+      <h1>Cardano Docs List</h1>
+      <ul>
+        <li style={{ 
+          listStyleType: 'none'
+        }}>
+          {data.allMarkdownRemark.edges.map( post => (
+            <Link to={post.node.frontmatter.path} key={post.node.id} style={{
+              color: '#333',
+              fontFamily: 'sans-serif'
+            }}>
+              <h3>{post.node.frontmatter.title}</h3>
+              <small>Posted by: {post.node.frontmatter.author} | {post.node.frontmatter.date} | {post.node.frontmatter.language}</small>
+              <br/>
+              <br/>
+              <strong>Read more ...</strong>
+              <br/>
+              <br/>
+              <hr/>
+            </Link>
+            )
+          )}
+        </li>
+      </ul>
+    </div>
+  </PageTransition>
 )
 
 export const pageQuery = graphql`
@@ -37,6 +40,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          excerpt
           frontmatter {
             path
             title
@@ -44,7 +48,6 @@ export const pageQuery = graphql`
             date
             language
           }
-          excerpt
         }
       }
     }

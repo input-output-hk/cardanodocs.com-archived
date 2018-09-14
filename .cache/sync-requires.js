@@ -24,9 +24,12 @@ exports.components = {
 
 exports.json = {
   "layout-index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/layout-index.json"),
+  "en-for-contributors.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-for-contributors.json"),
   "en-post-1.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-1.json"),
-  "cn-post-1.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
   "en-post-2.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-2.json"),
+  "cn-post-1.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
+  "en-glossary.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-glossary.json"),
+  "cn-introduction.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-introduction.json"),
   "dev-404-page.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn-about.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-about.json"),
@@ -38,6 +41,5 @@ exports.json = {
   "en-contact.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-contact.json"),
   "en-docs.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-docs.json"),
   "en.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en.json"),
-  "index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/index.json"),
-  "en-cardano-shizz-shizz.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-cardano-shizz-shizz.json")
+  "index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/index.json")
 }

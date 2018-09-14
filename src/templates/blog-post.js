@@ -1,16 +1,29 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import PageTransition from 'gatsby-plugin-page-transitions'
 
-const BlogPost = ({ data }) => {
+const getLanguage = () => {
+  // Skip build, Browsers only
+  if (typeof window !== 'undefined') {
+    let lang = location.pathname.split('/');
+    lang = lang.filter( (n) => n != "" ); //strip unwanted
+    lang = lang[0]; // 1st one is language
+    return lang;
+  }
+}
+
+const BlogPost = ({data}) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      <Link to='/docs'>{`< `}Go back</Link>
-      <hr/>
-      <h1>{post.frontmatter.title}</h1>
-      <h4>By {post.frontmatter.author}</h4>
-      <div dangerouslySetInnerHTML={{__html: post.html}}/>
-    </div>
+    <PageTransition>
+      <div>
+        <Link to={`/${getLanguage()}/docs`}>{`< `}Go back</Link>
+        <hr/>
+        <h1>{post.frontmatter.title}</h1>
+        <h4>By {post.frontmatter.author}</h4>
+        <div dangerouslySetInnerHTML={{__html: post.html}}/>
+      </div>
+    </PageTransition>
   )
 }
 

@@ -16,7 +16,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "666ca46b984ec7a01f6fba1c4dd38188",
+        "contentDigest": "a6bb1f18b06b7056646452b96e0bed7c",
         "description": "Plugin dev-404-page",
         "owner": "internal-data-bridge"
       }
@@ -334,102 +334,91 @@
         "owner": "internal-data-bridge"
       }
     },
-    "Plugin gatsby-source-filesystem": {
-      "resolve": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-source-filesystem",
-      "id": "Plugin gatsby-source-filesystem",
-      "name": "gatsby-source-filesystem",
-      "version": "1.5.39",
+    "Plugin gatsby-plugin-page-transitions": {
+      "resolve": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-plugin-page-transitions",
+      "id": "Plugin gatsby-plugin-page-transitions",
+      "name": "gatsby-plugin-page-transitions",
+      "version": "1.0.7",
       "pluginOptions": {
-        "plugins": [],
-        "path": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/",
-        "name": "docs"
+        "plugins": []
       },
-      "nodeAPIs": [
-        "sourceNodes",
-        "setFieldsOnGraphQLNodeType"
+      "nodeAPIs": [],
+      "browserAPIs": [
+        "onClientEntry",
+        "replaceHistory"
       ],
-      "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-source-filesystem",
+      "pluginFilepath": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-plugin-page-transitions",
       "packageJson": {
-        "name": "gatsby-source-filesystem",
-        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
-        "version": "1.5.39",
+        "name": "gatsby-plugin-page-transitions",
+        "description": "Gatsby plugin to set page transitions",
+        "version": "1.0.7",
+        "main": "index.js",
         "keywords": [
           "gatsby",
-          "gatsby-plugin"
+          "gatsby-plugin",
+          "page",
+          "transitions",
+          "page-transitions"
         ],
-        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "author": "Mong-Kuen Sun <mongkuen.sun@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
+            "name": "history",
+            "version": "^4.7.2"
+          },
+          {
+            "name": "prop-types",
+            "version": "^15.6.2"
+          },
+          {
+            "name": "react-transition-group",
+            "version": "^2.4.0"
+          }
+        ],
+        "devDependencies": [
+          {
             "name": "babel-cli",
             "version": "^6.26.0"
+          },
+          {
+            "name": "babel-plugin-transform-object-rest-spread",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "babel-preset-es2015",
+            "version": "^6.24.1"
+          },
+          {
+            "name": "babel-preset-react",
+            "version": "^6.24.1"
           },
           {
             "name": "babel-runtime",
             "version": "^6.26.0"
           },
           {
-            "name": "better-queue",
-            "version": "^3.8.7"
+            "name": "concurrently",
+            "version": "^3.6.0"
           },
           {
-            "name": "bluebird",
-            "version": "^3.5.0"
+            "name": "onchange",
+            "version": "^4.0.0"
           },
           {
-            "name": "chokidar",
-            "version": "^1.7.0"
-          },
-          {
-            "name": "fs-extra",
-            "version": "^4.0.1"
-          },
-          {
-            "name": "got",
-            "version": "^7.1.0"
-          },
-          {
-            "name": "md5-file",
-            "version": "^3.1.1"
-          },
-          {
-            "name": "mime",
-            "version": "^1.3.6"
-          },
-          {
-            "name": "pretty-bytes",
-            "version": "^4.0.2"
-          },
-          {
-            "name": "slash",
-            "version": "^1.0.0"
-          },
-          {
-            "name": "valid-url",
-            "version": "^1.0.9"
+            "name": "prettier",
+            "version": "^1.13.7"
           }
         ],
-        "devDependencies": [
-          {
-            "name": "cross-env",
-            "version": "^5.0.5"
-          }
-        ],
-        "peerDependencies": [
-          {
-            "name": "gatsby",
-            "version": "^1.9.250"
-          }
-        ],
+        "peerDependencies": [],
         "optionalDependecies": [],
         "bundledDependecies": []
       },
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "e5cdbb78cf4d57086845a0be08fd6b8c",
+        "contentDigest": "df50604b3b5129c3e6d1e79996d95faa",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -440,7 +429,8 @@
       "name": "gatsby-transformer-remark",
       "version": "1.7.44",
       "pluginOptions": {
-        "plugins": []
+        "plugins": [],
+        "excerpt_separator": "<!-- end -->"
       },
       "nodeAPIs": [
         "onCreateNode",
@@ -564,7 +554,197 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "07240944c0e6cb0d8b5f5ca131526cc1",
+        "contentDigest": "4163edf1af14daccddfe5f2f6d3e7747",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-source-filesystem": {
+      "resolve": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-source-filesystem",
+      "id": "Plugin gatsby-source-filesystem",
+      "name": "gatsby-source-filesystem",
+      "version": "1.5.39",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/",
+        "name": "docs"
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-source-filesystem",
+      "packageJson": {
+        "name": "gatsby-source-filesystem",
+        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
+        "version": "1.5.39",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "babel-runtime",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "better-queue",
+            "version": "^3.8.7"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^4.0.1"
+          },
+          {
+            "name": "got",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "md5-file",
+            "version": "^3.1.1"
+          },
+          {
+            "name": "mime",
+            "version": "^1.3.6"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "valid-url",
+            "version": "^1.0.9"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^1.9.250"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "e5cdbb78cf4d57086845a0be08fd6b8c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin @andrew-codes/gatsby-plugin-elasticlunr-search": {
+      "resolve": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/@andrew-codes/gatsby-plugin-elasticlunr-search",
+      "id": "Plugin @andrew-codes/gatsby-plugin-elasticlunr-search",
+      "name": "@andrew-codes/gatsby-plugin-elasticlunr-search",
+      "version": "1.0.4",
+      "pluginOptions": {
+        "plugins": [],
+        "fields": [
+          "title",
+          "keywords",
+          "excerpt"
+        ],
+        "resolvers": {
+          "MarkdownRemark": {}
+        }
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "onCreateNode",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/@andrew-codes/gatsby-plugin-elasticlunr-search",
+      "packageJson": {
+        "name": "@andrew-codes/gatsby-plugin-elasticlunr-search",
+        "description": "Search for gatsby; implemented via elastic lunr.",
+        "version": "1.0.4",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "lunr",
+          "search",
+          "elastic lunr"
+        ],
+        "author": "Andrew Smith <andrew@andrew.codes>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "elasticlunr",
+            "version": "^0.9.5"
+          },
+          {
+            "name": "graphql",
+            "version": "^0.11.7"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0-beta.32"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0-beta.32"
+          },
+          {
+            "name": "@babel/plugin-proposal-object-rest-spread",
+            "version": "^7.0.0-beta.32"
+          },
+          {
+            "name": "@babel/preset-env",
+            "version": "^7.0.0-beta.32"
+          },
+          {
+            "name": "eslint",
+            "version": "^4.12.1"
+          },
+          {
+            "name": "nps",
+            "version": "^5.7.1"
+          },
+          {
+            "name": "nps-utils",
+            "version": "^1.5.0"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "6387fe60dbc3781d5e1a3d016d94169b",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -573,7 +753,7 @@
       "resolve": "/Users/robinclark/iohk-sites/cardanodocs.com",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "318999979399ddbee7bf5cc85d3365ff",
+      "version": "cc73eee0979256ab42e1bbcf8afdbeea",
       "pluginOptions": {
         "plugins": []
       },
@@ -594,6 +774,10 @@
         "license": "MIT",
         "dependencies": [
           {
+            "name": "elasticlunr",
+            "version": "^0.9.5"
+          },
+          {
             "name": "gatsby",
             "version": "^1.9.277"
           },
@@ -604,6 +788,10 @@
           {
             "name": "gatsby-plugin-catch-links",
             "version": "^1.0.24"
+          },
+          {
+            "name": "gatsby-plugin-page-transitions",
+            "version": "^1.0.7"
           },
           {
             "name": "gatsby-plugin-react-helmet",
@@ -618,11 +806,19 @@
             "version": "^1.7.44"
           },
           {
+            "name": "markdown-to-jsx",
+            "version": "^6.7.2"
+          },
+          {
             "name": "react-helmet",
             "version": "^5.2.0"
           }
         ],
         "devDependencies": [
+          {
+            "name": "@andrew-codes/gatsby-plugin-elasticlunr-search",
+            "version": "^1.0.4"
+          },
           {
             "name": "prettier",
             "version": "^1.13.7"
@@ -635,7 +831,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "1a88e38d33905aeaa87e76bc72903cc7",
+        "contentDigest": "f6adea913aed26a0a51aeb7ea2536526",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -725,12 +921,14 @@
       },
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2018-09-10T14:37:17.932Z",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2018-09-14T15:37:43.389Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "09783f0dfab5a377d2041ad45a334c01",
+        "contentDigest": "30ad8f8c225f79de16b915ce1661dc2d",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -740,7 +938,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "5dcd880f841b41db8950498c97e58b96",
+        "contentDigest": "66c28d4e07a90de895a59bdc949ad4b1",
         "type": "Directory",
         "description": "Directory \"src/pages\"",
         "owner": "gatsby-source-filesystem"
@@ -752,8 +950,8 @@
       "size": 192,
       "prettySize": "192 B",
       "modifiedTime": "2018-09-07T13:26:40.488Z",
-      "accessTime": "2018-09-10T14:37:26.018Z",
-      "changeTime": "2018-09-07T13:26:40.488Z",
+      "accessTime": "2018-09-14T15:37:55.299Z",
+      "changeTime": "2018-09-14T14:53:42.961Z",
       "birthTime": "2018-09-06T16:31:48.369Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src",
@@ -768,67 +966,23 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897466,
+      "ino": 13264855,
       "blocks": 0,
-      "atimeMs": 1536590246018.2625,
+      "atimeMs": 1536939475298.7976,
       "mtimeMs": 1536326800487.6865,
-      "ctimeMs": 1536326800487.6865,
+      "ctimeMs": 1536936822961.3376,
       "birthtimeMs": 1536251508369.3958,
-      "atime": "2018-09-10T14:37:26.018Z",
+      "atime": "2018-09-14T15:37:55.299Z",
       "mtime": "2018-09-07T13:26:40.488Z",
-      "ctime": "2018-09-07T13:26:40.488Z",
+      "ctime": "2018-09-14T14:53:42.961Z",
       "birthtime": "2018-09-06T16:31:48.369Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "236559a6f912053cb059f5ef0a6d8006",
-        "type": "Directory",
-        "description": "Directory \"src/pages/en\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
-      "relativePath": "en",
-      "extension": "",
-      "size": 256,
-      "prettySize": "256 B",
-      "modifiedTime": "2018-09-07T13:22:47.102Z",
-      "accessTime": "2018-09-10T14:37:26.020Z",
-      "changeTime": "2018-09-07T13:22:47.102Z",
-      "birthTime": "2018-09-06T17:41:44.104Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
-      "base": "en",
-      "ext": "",
-      "name": "en",
-      "relativeDirectory": "",
-      "dev": 16777220,
-      "mode": 16877,
-      "nlink": 8,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897474,
-      "blocks": 0,
-      "atimeMs": 1536590246020.4026,
-      "mtimeMs": 1536326567102.3062,
-      "ctimeMs": 1536326567102.3062,
-      "birthtimeMs": 1536255704104.3481,
-      "atime": "2018-09-10T14:37:26.020Z",
-      "mtime": "2018-09-07T13:22:47.102Z",
-      "ctime": "2018-09-07T13:22:47.102Z",
-      "birthtime": "2018-09-06T17:41:44.104Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "359d503a9256b420f221581f28a79def",
+        "contentDigest": "0b43b98ee0853adee205826bb0200037",
         "type": "Directory",
         "description": "Directory \"src/pages/cn\"",
         "owner": "gatsby-source-filesystem"
@@ -839,9 +993,9 @@
       "extension": "",
       "size": 256,
       "prettySize": "256 B",
-      "modifiedTime": "2018-09-07T13:22:30.329Z",
-      "accessTime": "2018-09-10T14:37:26.020Z",
-      "changeTime": "2018-09-07T13:22:30.329Z",
+      "modifiedTime": "2018-09-11T14:46:24.825Z",
+      "accessTime": "2018-09-14T15:37:55.302Z",
+      "changeTime": "2018-09-14T14:53:42.955Z",
       "birthTime": "2018-09-06T17:41:54.752Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
@@ -856,23 +1010,67 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897468,
+      "ino": 13264857,
       "blocks": 0,
-      "atimeMs": 1536590246020.4124,
-      "mtimeMs": 1536326550328.9026,
-      "ctimeMs": 1536326550328.9026,
+      "atimeMs": 1536939475301.678,
+      "mtimeMs": 1536677184824.535,
+      "ctimeMs": 1536936822955.0461,
       "birthtimeMs": 1536255714752.3416,
-      "atime": "2018-09-10T14:37:26.020Z",
-      "mtime": "2018-09-07T13:22:30.329Z",
-      "ctime": "2018-09-07T13:22:30.329Z",
+      "atime": "2018-09-14T15:37:55.302Z",
+      "mtime": "2018-09-11T14:46:24.825Z",
+      "ctime": "2018-09-14T14:53:42.955Z",
       "birthtime": "2018-09-06T17:41:54.752Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "201a5b9290672023d626f0cf94ed6aed",
+        "type": "Directory",
+        "description": "Directory \"src/pages/en\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "relativePath": "en",
+      "extension": "",
+      "size": 256,
+      "prettySize": "256 B",
+      "modifiedTime": "2018-09-14T12:49:20.860Z",
+      "accessTime": "2018-09-14T15:37:55.302Z",
+      "changeTime": "2018-09-14T14:53:42.961Z",
+      "birthTime": "2018-09-06T17:41:44.104Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
+      "base": "en",
+      "ext": "",
+      "name": "en",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 8,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264868,
+      "blocks": 0,
+      "atimeMs": 1536939475301.6587,
+      "mtimeMs": 1536929360859.5073,
+      "ctimeMs": 1536936822961.2402,
+      "birthtimeMs": 1536255704104.3481,
+      "atime": "2018-09-14T15:37:55.302Z",
+      "mtime": "2018-09-14T12:49:20.860Z",
+      "ctime": "2018-09-14T14:53:42.961Z",
+      "birthtime": "2018-09-06T17:41:44.104Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "f13b56e57d1f07fa55ecff43fb1c1d0a",
+        "contentDigest": "675253443583ee1b03ec354184c5fbb9",
         "type": "Directory",
         "description": "Directory \"src/pages/en/docs\"",
         "owner": "gatsby-source-filesystem"
@@ -881,11 +1079,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
       "relativePath": "en/docs",
       "extension": "",
-      "size": 128,
-      "prettySize": "128 B",
-      "modifiedTime": "2018-09-07T13:22:47.102Z",
-      "accessTime": "2018-09-10T14:37:26.022Z",
-      "changeTime": "2018-09-07T13:22:47.102Z",
+      "size": 224,
+      "prettySize": "224 B",
+      "modifiedTime": "2018-09-14T12:49:20.868Z",
+      "accessTime": "2018-09-14T15:37:55.303Z",
+      "changeTime": "2018-09-14T14:53:42.961Z",
       "birthTime": "2018-09-07T13:22:39.911Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
@@ -895,20 +1093,20 @@
       "relativeDirectory": "en",
       "dev": 16777220,
       "mode": 16877,
-      "nlink": 4,
+      "nlink": 7,
       "uid": 501,
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12898009,
+      "ino": 13264873,
       "blocks": 0,
-      "atimeMs": 1536590246022.0613,
-      "mtimeMs": 1536326567102.306,
-      "ctimeMs": 1536326567102.306,
+      "atimeMs": 1536939475303.3135,
+      "mtimeMs": 1536929360868.021,
+      "ctimeMs": 1536936822960.5693,
       "birthtimeMs": 1536326559910.9746,
-      "atime": "2018-09-10T14:37:26.022Z",
-      "mtime": "2018-09-07T13:22:47.102Z",
-      "ctime": "2018-09-07T13:22:47.102Z",
+      "atime": "2018-09-14T15:37:55.303Z",
+      "mtime": "2018-09-14T12:49:20.868Z",
+      "ctime": "2018-09-14T14:53:42.961Z",
       "birthtime": "2018-09-07T13:22:39.911Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs absPath of file": {
@@ -916,7 +1114,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "e9a1a6a4b65764337079e8e877b5c79a",
+        "contentDigest": "6114687898d9b1b8070de8b61afb6a4f",
         "type": "Directory",
         "description": "Directory \"src/pages/cn/docs\"",
         "owner": "gatsby-source-filesystem"
@@ -925,11 +1123,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs",
       "relativePath": "cn/docs",
       "extension": "",
-      "size": 96,
-      "prettySize": "96 B",
-      "modifiedTime": "2018-09-07T13:22:30.329Z",
-      "accessTime": "2018-09-10T14:37:26.022Z",
-      "changeTime": "2018-09-07T13:22:30.329Z",
+      "size": 160,
+      "prettySize": "160 B",
+      "modifiedTime": "2018-09-14T12:49:20.858Z",
+      "accessTime": "2018-09-14T15:37:55.303Z",
+      "changeTime": "2018-09-14T14:53:42.954Z",
       "birthTime": "2018-09-07T13:22:25.417Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
@@ -939,21 +1137,291 @@
       "relativeDirectory": "cn",
       "dev": 16777220,
       "mode": 16877,
-      "nlink": 3,
+      "nlink": 5,
       "uid": 501,
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897989,
+      "ino": 13264862,
       "blocks": 0,
-      "atimeMs": 1536590246022.0842,
-      "mtimeMs": 1536326550328.9026,
-      "ctimeMs": 1536326550328.9026,
+      "atimeMs": 1536939475303.3364,
+      "mtimeMs": 1536929360857.5981,
+      "ctimeMs": 1536936822954.277,
       "birthtimeMs": 1536326545416.8994,
-      "atime": "2018-09-10T14:37:26.022Z",
-      "mtime": "2018-09-07T13:22:30.329Z",
-      "ctime": "2018-09-07T13:22:30.329Z",
+      "atime": "2018-09-14T15:37:55.303Z",
+      "mtime": "2018-09-14T12:49:20.858Z",
+      "ctime": "2018-09-14T14:53:42.954Z",
       "birthtime": "2018-09-07T13:22:25.417Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "2a653edb241cc3f58673fe9e64832f85",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/en/about.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js",
+      "relativePath": "en/about.js",
+      "extension": "js",
+      "size": 475,
+      "prettySize": "475 B",
+      "modifiedTime": "2018-09-13T12:43:48.625Z",
+      "accessTime": "2018-09-14T14:53:44.222Z",
+      "changeTime": "2018-09-14T14:53:42.956Z",
+      "birthTime": "2018-09-06T17:09:25.662Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "base": "about.js",
+      "ext": ".js",
+      "name": "about",
+      "relativeDirectory": "en",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264869,
+      "blocks": 8,
+      "atimeMs": 1536936824222.1382,
+      "mtimeMs": 1536842628625.0923,
+      "ctimeMs": 1536936822955.9993,
+      "birthtimeMs": 1536253765661.8696,
+      "atime": "2018-09-14T14:53:44.222Z",
+      "mtime": "2018-09-13T12:43:48.625Z",
+      "ctime": "2018-09-14T14:53:42.956Z",
+      "birthtime": "2018-09-06T17:09:25.662Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "173c63e999af976de9c2af5adef6d328",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/index.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js",
+      "relativePath": "index.js",
+      "extension": "js",
+      "size": 786,
+      "prettySize": "786 B",
+      "modifiedTime": "2018-09-12T08:30:58.598Z",
+      "accessTime": "2018-09-14T14:53:44.224Z",
+      "changeTime": "2018-09-14T14:53:42.955Z",
+      "birthTime": "2018-09-07T13:26:40.488Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
+      "base": "index.js",
+      "ext": ".js",
+      "name": "index",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264867,
+      "blocks": 8,
+      "atimeMs": 1536936824223.9377,
+      "mtimeMs": 1536741058598.3774,
+      "ctimeMs": 1536936822955.4753,
+      "birthtimeMs": 1536326800487.6711,
+      "atime": "2018-09-14T14:53:44.224Z",
+      "mtime": "2018-09-12T08:30:58.598Z",
+      "ctime": "2018-09-14T14:53:42.955Z",
+      "birthtime": "2018-09-07T13:26:40.488Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "cf4b25efc61237a7f91f3d58a5365e45",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/en/contact.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js",
+      "relativePath": "en/contact.js",
+      "extension": "js",
+      "size": 699,
+      "prettySize": "699 B",
+      "modifiedTime": "2018-09-13T12:43:44.466Z",
+      "accessTime": "2018-09-14T14:53:44.214Z",
+      "changeTime": "2018-09-14T14:53:42.961Z",
+      "birthTime": "2018-09-06T17:21:50.611Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "base": "contact.js",
+      "ext": ".js",
+      "name": "contact",
+      "relativeDirectory": "en",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264879,
+      "blocks": 8,
+      "atimeMs": 1536936824213.9705,
+      "mtimeMs": 1536842624465.7122,
+      "ctimeMs": 1536936822961.0864,
+      "birthtimeMs": 1536254510610.7654,
+      "atime": "2018-09-14T14:53:44.214Z",
+      "mtime": "2018-09-13T12:43:44.466Z",
+      "ctime": "2018-09-14T14:53:42.961Z",
+      "birthtime": "2018-09-06T17:21:50.611Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "1aeca0de66be56d3f03f3784a5c03d0a",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/en/404.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js",
+      "relativePath": "en/404.js",
+      "extension": "js",
+      "size": 305,
+      "prettySize": "305 B",
+      "modifiedTime": "2018-09-13T12:43:52.126Z",
+      "accessTime": "2018-09-14T14:53:44.219Z",
+      "changeTime": "2018-09-14T14:53:42.958Z",
+      "birthTime": "2018-09-06T16:31:48.369Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "base": "404.js",
+      "ext": ".js",
+      "name": "404",
+      "relativeDirectory": "en",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264871,
+      "blocks": 8,
+      "atimeMs": 1536936824218.5166,
+      "mtimeMs": 1536842632125.947,
+      "ctimeMs": 1536936822957.9138,
+      "birthtimeMs": 1536251508369.4536,
+      "atime": "2018-09-14T14:53:44.219Z",
+      "mtime": "2018-09-13T12:43:52.126Z",
+      "ctime": "2018-09-14T14:53:42.958Z",
+      "birthtime": "2018-09-06T16:31:48.369Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "c341fda47137726080a9fa3cdc7f4ac6",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/en/docs.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js",
+      "relativePath": "en/docs.js",
+      "extension": "js",
+      "size": 1341,
+      "prettySize": "1.34 kB",
+      "modifiedTime": "2018-09-14T12:49:20.860Z",
+      "accessTime": "2018-09-14T14:53:44.220Z",
+      "changeTime": "2018-09-14T14:53:42.957Z",
+      "birthTime": "2018-09-14T12:49:20.859Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "base": "docs.js",
+      "ext": ".js",
+      "name": "docs",
+      "relativeDirectory": "en",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264870,
+      "blocks": 8,
+      "atimeMs": 1536936824220.3176,
+      "mtimeMs": 1536929360859.9395,
+      "ctimeMs": 1536936822957.3572,
+      "birthtimeMs": 1536929360859.4934,
+      "atime": "2018-09-14T14:53:44.220Z",
+      "mtime": "2018-09-14T12:49:20.860Z",
+      "ctime": "2018-09-14T14:53:42.957Z",
+      "birthtime": "2018-09-14T12:49:20.859Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "3763a7f0c7721ce29127fd6ff3f54197",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/en/index.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js",
+      "relativePath": "en/index.js",
+      "extension": "js",
+      "size": 417,
+      "prettySize": "417 B",
+      "modifiedTime": "2018-09-13T12:43:30.336Z",
+      "accessTime": "2018-09-14T14:53:44.217Z",
+      "changeTime": "2018-09-14T14:53:42.958Z",
+      "birthTime": "2018-09-06T16:31:48.370Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "base": "index.js",
+      "ext": ".js",
+      "name": "index",
+      "relativeDirectory": "en",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264872,
+      "blocks": 8,
+      "atimeMs": 1536936824216.6394,
+      "mtimeMs": 1536842610335.9976,
+      "ctimeMs": 1536936822958.2905,
+      "birthtimeMs": 1536251508370.0605,
+      "atime": "2018-09-14T14:53:44.217Z",
+      "mtime": "2018-09-13T12:43:30.336Z",
+      "ctime": "2018-09-14T14:53:42.958Z",
+      "birthtime": "2018-09-06T16:31:48.370Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/.DS_Store absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/.DS_Store absPath of file",
@@ -973,8 +1441,8 @@
       "size": 6148,
       "prettySize": "6.15 kB",
       "modifiedTime": "2018-09-07T13:21:54.650Z",
-      "accessTime": "2018-09-10T12:46:53.343Z",
-      "changeTime": "2018-09-07T13:21:54.650Z",
+      "accessTime": "2018-09-14T14:53:27.370Z",
+      "changeTime": "2018-09-14T14:53:42.949Z",
       "birthTime": "2018-09-07T13:21:54.649Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
@@ -989,89 +1457,44 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897949,
+      "ino": 13264856,
       "blocks": 16,
-      "atimeMs": 1536583613342.584,
+      "atimeMs": 1536936807370.3452,
       "mtimeMs": 1536326514649.5483,
-      "ctimeMs": 1536326514649.5483,
+      "ctimeMs": 1536936822949.1753,
       "birthtimeMs": 1536326514648.902,
-      "atime": "2018-09-10T12:46:53.343Z",
+      "atime": "2018-09-14T14:53:27.370Z",
       "mtime": "2018-09-07T13:21:54.650Z",
-      "ctime": "2018-09-07T13:21:54.650Z",
+      "ctime": "2018-09-14T14:53:42.949Z",
       "birthtime": "2018-09-07T13:21:54.649Z"
     },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js absPath of file",
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "8d50d9a7e3f04ddcc5ff8d43b6effe79",
+        "contentDigest": "2b320ce0965f6b079005d1e40ecec667",
         "mediaType": "application/javascript",
         "type": "File",
-        "description": "File \"src/pages/en/404.js\"",
+        "description": "File \"src/pages/cn/about.js\"",
         "owner": "gatsby-source-filesystem"
       },
       "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js",
-      "relativePath": "en/404.js",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js",
+      "relativePath": "cn/about.js",
       "extension": "js",
-      "size": 198,
-      "prettySize": "198 B",
-      "modifiedTime": "2018-09-06T16:31:48.370Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:21:51.812Z",
-      "birthTime": "2018-09-06T16:31:48.369Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
-      "base": "404.js",
-      "ext": ".js",
-      "name": "404",
-      "relativeDirectory": "en",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897471,
-      "blocks": 8,
-      "atimeMs": 1536590246020.5852,
-      "mtimeMs": 1536251508369.515,
-      "ctimeMs": 1536326511812.1833,
-      "birthtimeMs": 1536251508369.4536,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-06T16:31:48.370Z",
-      "ctime": "2018-09-07T13:21:51.812Z",
-      "birthtime": "2018-09-06T16:31:48.369Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "2559278df99fe1e86e193518d35b44ae",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/en/about.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/about.js",
-      "relativePath": "en/about.js",
-      "extension": "js",
-      "size": 364,
-      "prettySize": "364 B",
-      "modifiedTime": "2018-09-06T17:24:52.375Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:21:51.814Z",
+      "size": 482,
+      "prettySize": "482 B",
+      "modifiedTime": "2018-09-13T12:44:12.084Z",
+      "accessTime": "2018-09-14T14:53:43.466Z",
+      "changeTime": "2018-09-14T14:53:42.950Z",
       "birthTime": "2018-09-06T17:09:25.662Z",
       "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
       "base": "about.js",
       "ext": ".js",
       "name": "about",
-      "relativeDirectory": "en",
+      "relativeDirectory": "cn",
       "dev": 16777220,
       "mode": 33188,
       "nlink": 1,
@@ -1079,203 +1502,23 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897467,
+      "ino": 13264858,
       "blocks": 8,
-      "atimeMs": 1536590246020.6003,
-      "mtimeMs": 1536254692374.5664,
-      "ctimeMs": 1536326511813.837,
+      "atimeMs": 1536936823465.8477,
+      "mtimeMs": 1536842652084.016,
+      "ctimeMs": 1536936822949.708,
       "birthtimeMs": 1536253765661.8696,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-06T17:24:52.375Z",
-      "ctime": "2018-09-07T13:21:51.814Z",
+      "atime": "2018-09-14T14:53:43.466Z",
+      "mtime": "2018-09-13T12:44:12.084Z",
+      "ctime": "2018-09-14T14:53:42.950Z",
       "birthtime": "2018-09-06T17:09:25.662Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "453da105bc0d6e1a569af5b4ebb120ff",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/en/contact.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/contact.js",
-      "relativePath": "en/contact.js",
-      "extension": "js",
-      "size": 582,
-      "prettySize": "582 B",
-      "modifiedTime": "2018-09-06T17:23:09.561Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:21:51.815Z",
-      "birthTime": "2018-09-06T17:21:50.611Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
-      "base": "contact.js",
-      "ext": ".js",
-      "name": "contact",
-      "relativeDirectory": "en",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897473,
-      "blocks": 8,
-      "atimeMs": 1536590246020.6204,
-      "mtimeMs": 1536254589561.134,
-      "ctimeMs": 1536326511815.007,
-      "birthtimeMs": 1536254510610.7654,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-06T17:23:09.561Z",
-      "ctime": "2018-09-07T13:21:51.815Z",
-      "birthtime": "2018-09-06T17:21:50.611Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "4f257a0118000e4103296a2ae07aadb7",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/en/docs.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs.js",
-      "relativePath": "en/docs.js",
-      "extension": "js",
-      "size": 1192,
-      "prettySize": "1.19 kB",
-      "modifiedTime": "2018-09-07T12:49:03.000Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:19:33.048Z",
-      "birthTime": "2018-09-06T18:03:29.494Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
-      "base": "docs.js",
-      "ext": ".js",
-      "name": "docs",
-      "relativeDirectory": "en",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897476,
-      "blocks": 8,
-      "atimeMs": 1536590246020.6677,
-      "mtimeMs": 1536324542999.7021,
-      "ctimeMs": 1536326373048.4453,
-      "birthtimeMs": 1536257009494.2705,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-07T12:49:03.000Z",
-      "ctime": "2018-09-07T13:19:33.048Z",
-      "birthtime": "2018-09-06T18:03:29.494Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "caaed49606bc8d45bf18e1e8015c428d",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/en/index.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/index.js",
-      "relativePath": "en/index.js",
-      "extension": "js",
-      "size": 306,
-      "prettySize": "306 B",
-      "modifiedTime": "2018-09-06T17:40:04.875Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:21:51.816Z",
-      "birthTime": "2018-09-06T16:31:48.370Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
-      "base": "index.js",
-      "ext": ".js",
-      "name": "index",
-      "relativeDirectory": "en",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897472,
-      "blocks": 8,
-      "atimeMs": 1536590246020.675,
-      "mtimeMs": 1536255604874.8894,
-      "ctimeMs": 1536326511816.403,
-      "birthtimeMs": 1536251508370.0605,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-06T17:40:04.875Z",
-      "ctime": "2018-09-07T13:21:51.816Z",
-      "birthtime": "2018-09-06T16:31:48.370Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "b6319e242be08852ad9ff7631f4bf2cf",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/index.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js",
-      "relativePath": "index.js",
-      "extension": "js",
-      "size": 555,
-      "prettySize": "555 B",
-      "modifiedTime": "2018-09-10T14:33:19.265Z",
-      "accessTime": "2018-09-10T14:34:22.675Z",
-      "changeTime": "2018-09-10T14:33:19.265Z",
-      "birthTime": "2018-09-07T13:26:40.488Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
-      "base": "index.js",
-      "ext": ".js",
-      "name": "index",
-      "relativeDirectory": "",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12898442,
-      "blocks": 8,
-      "atimeMs": 1536590062675.4998,
-      "mtimeMs": 1536589999265.1062,
-      "ctimeMs": 1536589999265.1062,
-      "birthtimeMs": 1536326800487.6711,
-      "atime": "2018-09-10T14:34:22.675Z",
-      "mtime": "2018-09-10T14:33:19.265Z",
-      "ctime": "2018-09-10T14:33:19.265Z",
-      "birthtime": "2018-09-07T13:26:40.488Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "5d94a052921f2b3dd725674fd12b593c",
+        "contentDigest": "8e2883d6d56ea855434d40777a5835f2",
         "mediaType": "application/javascript",
         "type": "File",
         "description": "File \"src/pages/cn/404.js\"",
@@ -1285,11 +1528,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js",
       "relativePath": "cn/404.js",
       "extension": "js",
-      "size": 205,
-      "prettySize": "205 B",
-      "modifiedTime": "2018-09-07T13:25:13.630Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:25:13.630Z",
+      "size": 312,
+      "prettySize": "312 B",
+      "modifiedTime": "2018-09-13T12:44:15.556Z",
+      "accessTime": "2018-09-14T14:53:43.466Z",
+      "changeTime": "2018-09-14T14:53:42.951Z",
       "birthTime": "2018-09-06T16:31:48.369Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
@@ -1304,15 +1547,15 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897950,
+      "ino": 13264860,
       "blocks": 8,
-      "atimeMs": 1536590246020.761,
-      "mtimeMs": 1536326713629.8562,
-      "ctimeMs": 1536326713629.8562,
+      "atimeMs": 1536936823465.8398,
+      "mtimeMs": 1536842655555.7668,
+      "ctimeMs": 1536936822950.5623,
       "birthtimeMs": 1536251508369.4536,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-07T13:25:13.630Z",
-      "ctime": "2018-09-07T13:25:13.630Z",
+      "atime": "2018-09-14T14:53:43.466Z",
+      "mtime": "2018-09-13T12:44:15.556Z",
+      "ctime": "2018-09-14T14:53:42.951Z",
       "birthtime": "2018-09-06T16:31:48.369Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/contact.js absPath of file": {
@@ -1320,7 +1563,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "10ba9acbb004d8fb7a1c4c81c554aca5",
+        "contentDigest": "c00fb90d634cdde57ac397f823b5f7ea",
         "mediaType": "application/javascript",
         "type": "File",
         "description": "File \"src/pages/cn/contact.js\"",
@@ -1330,11 +1573,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/contact.js",
       "relativePath": "cn/contact.js",
       "extension": "js",
-      "size": 589,
-      "prettySize": "589 B",
-      "modifiedTime": "2018-09-07T13:25:03.638Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:25:03.638Z",
+      "size": 706,
+      "prettySize": "706 B",
+      "modifiedTime": "2018-09-13T12:44:07.615Z",
+      "accessTime": "2018-09-14T14:53:43.467Z",
+      "changeTime": "2018-09-14T14:53:42.955Z",
       "birthTime": "2018-09-06T17:21:50.611Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
@@ -1349,68 +1592,23 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897952,
+      "ino": 13264866,
       "blocks": 8,
-      "atimeMs": 1536590246020.7695,
-      "mtimeMs": 1536326703638.4092,
-      "ctimeMs": 1536326703638.4092,
+      "atimeMs": 1536936823467.3318,
+      "mtimeMs": 1536842647615.1565,
+      "ctimeMs": 1536936822954.9229,
       "birthtimeMs": 1536254510610.7654,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-07T13:25:03.638Z",
-      "ctime": "2018-09-07T13:25:03.638Z",
+      "atime": "2018-09-14T14:53:43.467Z",
+      "mtime": "2018-09-13T12:44:07.615Z",
+      "ctime": "2018-09-14T14:53:42.955Z",
       "birthtime": "2018-09-06T17:21:50.611Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "f4096bd3be851ae4c219af13f4be4dda",
-        "mediaType": "application/javascript",
-        "type": "File",
-        "description": "File \"src/pages/cn/docs.js\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js",
-      "relativePath": "cn/docs.js",
-      "extension": "js",
-      "size": 1200,
-      "prettySize": "1.2 kB",
-      "modifiedTime": "2018-09-07T13:24:58.974Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:24:58.974Z",
-      "birthTime": "2018-09-07T11:48:52.683Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
-      "base": "docs.js",
-      "ext": ".js",
-      "name": "docs",
-      "relativeDirectory": "cn",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897470,
-      "blocks": 8,
-      "atimeMs": 1536590246020.827,
-      "mtimeMs": 1536326698973.7656,
-      "ctimeMs": 1536326698973.7656,
-      "birthtimeMs": 1536320932683.1885,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-07T13:24:58.974Z",
-      "ctime": "2018-09-07T13:24:58.974Z",
-      "birthtime": "2018-09-07T11:48:52.683Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "b9d606fe7ce293b99edec767595ff1f5",
+        "contentDigest": "725e935a52a05999e8ea497894636b22",
         "mediaType": "application/javascript",
         "type": "File",
         "description": "File \"src/pages/cn/index.js\"",
@@ -1420,11 +1618,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js",
       "relativePath": "cn/index.js",
       "extension": "js",
-      "size": 313,
-      "prettySize": "313 B",
-      "modifiedTime": "2018-09-07T13:24:53.935Z",
-      "accessTime": "2018-09-10T14:34:35.817Z",
-      "changeTime": "2018-09-07T13:24:53.935Z",
+      "size": 424,
+      "prettySize": "424 B",
+      "modifiedTime": "2018-09-13T12:44:00.612Z",
+      "accessTime": "2018-09-14T14:53:43.466Z",
+      "changeTime": "2018-09-14T14:53:42.952Z",
       "birthTime": "2018-09-06T16:31:48.370Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
@@ -1439,16 +1637,153 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897953,
+      "ino": 13264861,
       "blocks": 8,
-      "atimeMs": 1536590075816.7422,
-      "mtimeMs": 1536326693935.1282,
-      "ctimeMs": 1536326693935.1282,
+      "atimeMs": 1536936823465.812,
+      "mtimeMs": 1536842640612.2744,
+      "ctimeMs": 1536936822951.9504,
       "birthtimeMs": 1536251508370.0605,
-      "atime": "2018-09-10T14:34:35.817Z",
-      "mtime": "2018-09-07T13:24:53.935Z",
-      "ctime": "2018-09-07T13:24:53.935Z",
+      "atime": "2018-09-14T14:53:43.466Z",
+      "mtime": "2018-09-13T12:44:00.612Z",
+      "ctime": "2018-09-14T14:53:42.952Z",
       "birthtime": "2018-09-06T16:31:48.370Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "0ea5e3b5ba4922df7e93b694c4b553e5",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "description": "File \"src/pages/cn/docs.js\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs.js",
+      "relativePath": "cn/docs.js",
+      "extension": "js",
+      "size": 1349,
+      "prettySize": "1.35 kB",
+      "modifiedTime": "2018-09-13T12:44:04.520Z",
+      "accessTime": "2018-09-14T14:53:43.466Z",
+      "changeTime": "2018-09-14T14:53:42.950Z",
+      "birthTime": "2018-09-11T14:46:24.825Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
+      "base": "docs.js",
+      "ext": ".js",
+      "name": "docs",
+      "relativeDirectory": "cn",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264859,
+      "blocks": 8,
+      "atimeMs": 1536936823465.851,
+      "mtimeMs": 1536842644520.4417,
+      "ctimeMs": 1536936822950.079,
+      "birthtimeMs": 1536677184824.5261,
+      "atime": "2018-09-14T14:53:43.466Z",
+      "mtime": "2018-09-13T12:44:04.520Z",
+      "ctime": "2018-09-14T14:53:42.950Z",
+      "birthtime": "2018-09-11T14:46:24.825Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
+      "children": [
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "c62b17987c8ced29855ba668ebe7955c",
+        "mediaType": "text/markdown",
+        "type": "File",
+        "description": "File \"src/pages/en/docs/2017-01-13-for-contributors.en.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md",
+      "relativePath": "en/docs/2017-01-13-for-contributors.en.md",
+      "extension": "md",
+      "size": 350,
+      "prettySize": "350 B",
+      "modifiedTime": "2018-09-14T12:49:20.862Z",
+      "accessTime": "2018-09-14T14:53:44.247Z",
+      "changeTime": "2018-09-14T14:53:42.961Z",
+      "birthTime": "2018-09-14T12:49:20.861Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
+      "base": "2017-01-13-for-contributors.en.md",
+      "ext": ".md",
+      "name": "2017-01-13-for-contributors.en",
+      "relativeDirectory": "en/docs",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264878,
+      "blocks": 8,
+      "atimeMs": 1536936824247.4568,
+      "mtimeMs": 1536929360861.827,
+      "ctimeMs": 1536936822960.5088,
+      "birthtimeMs": 1536929360861.2793,
+      "atime": "2018-09-14T14:53:44.247Z",
+      "mtime": "2018-09-14T12:49:20.862Z",
+      "ctime": "2018-09-14T14:53:42.961Z",
+      "birthtime": "2018-09-14T12:49:20.861Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/.DS_Store absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/.DS_Store absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "194577a7e20bdcc7afbb718f502c134c",
+        "mediaType": "application/octet-stream",
+        "type": "File",
+        "description": "File \"src/pages/en/docs/.DS_Store\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/.DS_Store",
+      "relativePath": "en/docs/.DS_Store",
+      "extension": "",
+      "size": 6148,
+      "prettySize": "6.15 kB",
+      "modifiedTime": "2018-09-11T14:41:10.815Z",
+      "accessTime": "2018-09-14T14:53:26.788Z",
+      "changeTime": "2018-09-14T14:53:42.959Z",
+      "birthTime": "2018-09-11T14:31:24.753Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
+      "base": ".DS_Store",
+      "ext": "",
+      "name": ".DS_Store",
+      "relativeDirectory": "en/docs",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264875,
+      "blocks": 16,
+      "atimeMs": 1536936806787.8696,
+      "mtimeMs": 1536676870815.4758,
+      "ctimeMs": 1536936822959.2058,
+      "birthtimeMs": 1536676284753.0945,
+      "atime": "2018-09-14T14:53:26.788Z",
+      "mtime": "2018-09-11T14:41:10.815Z",
+      "ctime": "2018-09-14T14:53:42.959Z",
+      "birthtime": "2018-09-11T14:31:24.753Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file",
@@ -1457,7 +1792,7 @@
       ],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "9354694ed8974b59fa09850f19953e96",
+        "contentDigest": "d5df3ec9740a5c0be82c79451ed979c4",
         "mediaType": "text/markdown",
         "type": "File",
         "description": "File \"src/pages/en/docs/2018-06-09-post1.en.md\"",
@@ -1467,12 +1802,12 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md",
       "relativePath": "en/docs/2018-06-09-post1.en.md",
       "extension": "md",
-      "size": 625,
-      "prettySize": "625 B",
-      "modifiedTime": "2018-09-07T13:26:01.927Z",
-      "accessTime": "2018-09-10T14:37:26.022Z",
-      "changeTime": "2018-09-07T13:26:01.927Z",
-      "birthTime": "2018-09-06T17:44:50.848Z",
+      "size": 670,
+      "prettySize": "670 B",
+      "modifiedTime": "2018-09-14T12:49:20.867Z",
+      "accessTime": "2018-09-14T14:53:44.319Z",
+      "changeTime": "2018-09-14T14:53:42.959Z",
+      "birthTime": "2018-09-14T12:49:20.866Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
       "base": "2018-06-09-post1.en.md",
@@ -1486,63 +1821,16 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897475,
+      "ino": 13264874,
       "blocks": 8,
-      "atimeMs": 1536590246022.1245,
-      "mtimeMs": 1536326761926.5957,
-      "ctimeMs": 1536326761926.5957,
-      "birthtimeMs": 1536255890848.2766,
-      "atime": "2018-09-10T14:37:26.022Z",
-      "mtime": "2018-09-07T13:26:01.927Z",
-      "ctime": "2018-09-07T13:26:01.927Z",
-      "birthtime": "2018-09-06T17:44:50.848Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
-      "children": [
-        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark"
-      ],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "8fde484e61f2b47e4f0428b1b0bf6eb5",
-        "mediaType": "text/markdown",
-        "type": "File",
-        "description": "File \"src/pages/cn/docs/2019-06-09-post1.cn.md\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md",
-      "relativePath": "cn/docs/2019-06-09-post1.cn.md",
-      "extension": "md",
-      "size": 611,
-      "prettySize": "611 B",
-      "modifiedTime": "2018-09-07T13:25:53.485Z",
-      "accessTime": "2018-09-10T14:37:26.022Z",
-      "changeTime": "2018-09-07T13:25:53.485Z",
-      "birthTime": "2018-09-06T17:48:23.460Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs",
-      "base": "2019-06-09-post1.cn.md",
-      "ext": ".md",
-      "name": "2019-06-09-post1.cn",
-      "relativeDirectory": "cn/docs",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12897469,
-      "blocks": 8,
-      "atimeMs": 1536590246022.1736,
-      "mtimeMs": 1536326753485.404,
-      "ctimeMs": 1536326753485.404,
-      "birthtimeMs": 1536256103459.8743,
-      "atime": "2018-09-10T14:37:26.022Z",
-      "mtime": "2018-09-07T13:25:53.485Z",
-      "ctime": "2018-09-07T13:25:53.485Z",
-      "birthtime": "2018-09-06T17:48:23.460Z"
+      "atimeMs": 1536936824319.4753,
+      "mtimeMs": 1536929360866.5483,
+      "ctimeMs": 1536936822958.7898,
+      "birthtimeMs": 1536929360866.1282,
+      "atime": "2018-09-14T14:53:44.319Z",
+      "mtime": "2018-09-14T12:49:20.867Z",
+      "ctime": "2018-09-14T14:53:42.959Z",
+      "birthtime": "2018-09-14T12:49:20.866Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file",
@@ -1551,7 +1839,7 @@
       ],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "6a33e12acfb6e0f53b04d339704f07b0",
+        "contentDigest": "744a11ed333840190424e8c5645f413a",
         "mediaType": "text/markdown",
         "type": "File",
         "description": "File \"src/pages/en/docs/2019-06-09-post2.en.md\"",
@@ -1561,12 +1849,12 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md",
       "relativePath": "en/docs/2019-06-09-post2.en.md",
       "extension": "md",
-      "size": 615,
-      "prettySize": "615 B",
-      "modifiedTime": "2018-09-07T13:26:09.021Z",
-      "accessTime": "2018-09-10T14:37:26.022Z",
-      "changeTime": "2018-09-07T13:26:09.021Z",
-      "birthTime": "2018-09-06T17:47:24.786Z",
+      "size": 660,
+      "prettySize": "660 B",
+      "modifiedTime": "2018-09-14T12:49:20.868Z",
+      "accessTime": "2018-09-14T14:53:44.271Z",
+      "changeTime": "2018-09-14T14:53:42.960Z",
+      "birthTime": "2018-09-14T12:49:20.868Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
       "base": "2019-06-09-post2.en.md",
@@ -1580,44 +1868,44 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897477,
+      "ino": 13264877,
       "blocks": 8,
-      "atimeMs": 1536590246022.1338,
-      "mtimeMs": 1536326769021.2847,
-      "ctimeMs": 1536326769021.2847,
-      "birthtimeMs": 1536256044786.4119,
-      "atime": "2018-09-10T14:37:26.022Z",
-      "mtime": "2018-09-07T13:26:09.021Z",
-      "ctime": "2018-09-07T13:26:09.021Z",
-      "birthtime": "2018-09-06T17:47:24.786Z"
+      "atimeMs": 1536936824270.8506,
+      "mtimeMs": 1536929360868.3772,
+      "ctimeMs": 1536936822960.1077,
+      "birthtimeMs": 1536929360868.007,
+      "atime": "2018-09-14T14:53:44.271Z",
+      "mtime": "2018-09-14T12:49:20.868Z",
+      "ctime": "2018-09-14T14:53:42.960Z",
+      "birthtime": "2018-09-14T12:49:20.868Z"
     },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js absPath of file",
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/.DS_Store absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/.DS_Store absPath of file",
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "70efc62c25ce7796c5f729d581cab50e",
-        "mediaType": "application/javascript",
+        "contentDigest": "194577a7e20bdcc7afbb718f502c134c",
+        "mediaType": "application/octet-stream",
         "type": "File",
-        "description": "File \"src/pages/cn/about.js\"",
+        "description": "File \"src/pages/cn/docs/.DS_Store\"",
         "owner": "gatsby-source-filesystem"
       },
       "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/about.js",
-      "relativePath": "cn/about.js",
-      "extension": "js",
-      "size": 371,
-      "prettySize": "371 B",
-      "modifiedTime": "2018-09-07T13:25:08.406Z",
-      "accessTime": "2018-09-10T14:37:26.021Z",
-      "changeTime": "2018-09-07T13:25:08.406Z",
-      "birthTime": "2018-09-06T17:09:25.662Z",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/.DS_Store",
+      "relativePath": "cn/docs/.DS_Store",
+      "extension": "",
+      "size": 6148,
+      "prettySize": "6.15 kB",
+      "modifiedTime": "2018-09-11T14:40:41.068Z",
+      "accessTime": "2018-09-14T14:53:26.781Z",
+      "changeTime": "2018-09-14T14:53:42.954Z",
+      "birthTime": "2018-09-11T14:26:07.872Z",
       "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
-      "base": "about.js",
-      "ext": ".js",
-      "name": "about",
-      "relativeDirectory": "cn",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs",
+      "base": ".DS_Store",
+      "ext": "",
+      "name": ".DS_Store",
+      "relativeDirectory": "cn/docs",
       "dev": 16777220,
       "mode": 33188,
       "nlink": 1,
@@ -1625,25 +1913,192 @@
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 12897951,
+      "ino": 13264864,
+      "blocks": 16,
+      "atimeMs": 1536936806780.6018,
+      "mtimeMs": 1536676841068.0037,
+      "ctimeMs": 1536936822953.8005,
+      "birthtimeMs": 1536675967872.486,
+      "atime": "2018-09-14T14:53:26.781Z",
+      "mtime": "2018-09-11T14:40:41.068Z",
+      "ctime": "2018-09-14T14:53:42.954Z",
+      "birthtime": "2018-09-11T14:26:07.872Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
+      "children": [
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "1b03e44dbd47401ffaeb430d6d6a7371",
+        "mediaType": "text/markdown",
+        "type": "File",
+        "description": "File \"src/pages/cn/docs/2019-06-09-post1.cn.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md",
+      "relativePath": "cn/docs/2019-06-09-post1.cn.md",
+      "extension": "md",
+      "size": 657,
+      "prettySize": "657 B",
+      "modifiedTime": "2018-09-14T12:49:20.858Z",
+      "accessTime": "2018-09-14T14:53:43.474Z",
+      "changeTime": "2018-09-14T14:53:42.953Z",
+      "birthTime": "2018-09-14T12:49:20.858Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs",
+      "base": "2019-06-09-post1.cn.md",
+      "ext": ".md",
+      "name": "2019-06-09-post1.cn",
+      "relativeDirectory": "cn/docs",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264863,
       "blocks": 8,
-      "atimeMs": 1536590246020.7651,
-      "mtimeMs": 1536326708405.5378,
-      "ctimeMs": 1536326708405.5378,
-      "birthtimeMs": 1536253765661.8696,
-      "atime": "2018-09-10T14:37:26.021Z",
-      "mtime": "2018-09-07T13:25:08.406Z",
-      "ctime": "2018-09-07T13:25:08.406Z",
-      "birthtime": "2018-09-06T17:09:25.662Z"
+      "atimeMs": 1536936823474.0906,
+      "mtimeMs": 1536929360858.0867,
+      "ctimeMs": 1536936822953.2625,
+      "birthtimeMs": 1536929360857.582,
+      "atime": "2018-09-14T14:53:43.474Z",
+      "mtime": "2018-09-14T12:49:20.858Z",
+      "ctime": "2018-09-14T14:53:42.953Z",
+      "birthtime": "2018-09-14T12:49:20.858Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file",
+      "children": [
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "bcc8cc158a7660494a60639a974a2712",
+        "mediaType": "text/markdown",
+        "type": "File",
+        "description": "File \"src/pages/en/docs/2017-01-19-glossary.en.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md",
+      "relativePath": "en/docs/2017-01-19-glossary.en.md",
+      "extension": "md",
+      "size": 6753,
+      "prettySize": "6.75 kB",
+      "modifiedTime": "2018-09-14T12:49:20.864Z",
+      "accessTime": "2018-09-14T14:53:44.312Z",
+      "changeTime": "2018-09-14T14:53:42.960Z",
+      "birthTime": "2018-09-14T12:49:20.864Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
+      "base": "2017-01-19-glossary.en.md",
+      "ext": ".md",
+      "name": "2017-01-19-glossary.en",
+      "relativeDirectory": "en/docs",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264876,
+      "blocks": 16,
+      "atimeMs": 1536936824312.197,
+      "mtimeMs": 1536929360864.4316,
+      "ctimeMs": 1536936822959.7312,
+      "birthtimeMs": 1536929360863.8682,
+      "atime": "2018-09-14T14:53:44.312Z",
+      "mtime": "2018-09-14T12:49:20.864Z",
+      "ctime": "2018-09-14T14:53:42.960Z",
+      "birthtime": "2018-09-14T12:49:20.864Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file",
+      "children": [
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "9b553e68a60ccc5f37e7851575bd2f96",
+        "mediaType": "text/markdown",
+        "type": "File",
+        "description": "File \"src/pages/cn/docs/2017-01-01-index.cn.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "docs",
+      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md",
+      "relativePath": "cn/docs/2017-01-01-index.cn.md",
+      "extension": "md",
+      "size": 7635,
+      "prettySize": "7.63 kB",
+      "modifiedTime": "2018-09-14T12:49:20.856Z",
+      "accessTime": "2018-09-14T14:53:43.489Z",
+      "changeTime": "2018-09-14T14:53:42.954Z",
+      "birthTime": "2018-09-14T12:49:20.855Z",
+      "root": "/",
+      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs",
+      "base": "2017-01-01-index.cn.md",
+      "ext": ".md",
+      "name": "2017-01-01-index.cn",
+      "relativeDirectory": "cn/docs",
+      "dev": 16777220,
+      "mode": 33261,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4194304,
+      "ino": 13264865,
+      "blocks": 16,
+      "atimeMs": 1536936823489.4033,
+      "mtimeMs": 1536929360855.8513,
+      "ctimeMs": 1536936822954.2014,
+      "birthtimeMs": 1536929360855.3606,
+      "atime": "2018-09-14T14:53:43.489Z",
+      "mtime": "2018-09-14T12:49:20.856Z",
+      "ctime": "2018-09-14T14:53:42.954Z",
+      "birthtime": "2018-09-14T12:49:20.855Z"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
+      "internal": {
+        "content": "---\nlayout: default\ntitle: For Contributors\ngroup: base\npermalink: /for-contributors/\npath: '/en/for-contributors/'\nchildren: for-contributors\nlanguage: en\nkeywords: 'contributors bar'\n---\n\n# Redirecting bar...\n<!-- end -->\n<script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script>\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "3c7f1137e0a56ef6b719b2e9da758476",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "For Contributors",
+        "layout": "default",
+        "group": "base",
+        "permalink": "/for-contributors/",
+        "path": "/en/for-contributors/",
+        "children": "for-contributors",
+        "language": "en",
+        "keywords": "contributors bar",
+        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
+        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file"
+      },
+      "excerpt": "\n# Redirecting bar...\n",
+      "rawMarkdownBody": "\n# Redirecting bar...\n<!-- end -->\n<script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script>\n",
+      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark",
       "children": [],
       "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file",
       "internal": {
-        "content": "---\npath: '/en/post-1'\ntitle: 'Post 1'\ndate: '06-09-2018'\nauthor: 'Charles Hoskinson'\nlanguage: 'en'\n---\n\n##This is Post 1\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
+        "content": "---\npath: '/en/post-1'\ntitle: 'Post 1'\ndate: '06-09-2018'\nauthor: 'Charles Hoskinson'\nlanguage: 'en'\nkeywords: 'post1 one'\n---\n\n##This is Post 1\n\npost1 one Cillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n<!-- end -->\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
         "type": "MarkdownRemark",
-        "contentDigest": "611bd31562511c2aad05a7b1e29ae2c3",
+        "contentDigest": "ebcb0f43b451f0cbafe88d6f3064fd37",
         "owner": "gatsby-transformer-remark"
       },
       "frontmatter": {
@@ -1652,44 +2107,22 @@
         "date": "06-09-2018",
         "author": "Charles Hoskinson",
         "language": "en",
+        "keywords": "post1 one",
         "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file",
         "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file"
       },
-      "excerpt": "",
-      "rawMarkdownBody": "\n##This is Post 1\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
+      "excerpt": "\n##This is Post 1\n\npost1 one Cillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n",
+      "rawMarkdownBody": "\n##This is Post 1\n\npost1 one Cillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n<!-- end -->\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
       "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark",
-      "children": [],
-      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
-      "internal": {
-        "content": "---\npath: '/cn/post-1'\ntitle: 'Post 1 (CN)'\ndate: '06-09-2018'\nauthor: 'Tom V'\nlanguage: 'cn'\n---\n\n##你好!\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
-        "type": "MarkdownRemark",
-        "contentDigest": "d866ffbf2d07ad3d8c7f68d0d7e19921",
-        "owner": "gatsby-transformer-remark"
-      },
-      "frontmatter": {
-        "title": "Post 1 (CN)",
-        "path": "/cn/post-1",
-        "date": "06-09-2018",
-        "author": "Tom V",
-        "language": "cn",
-        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
-        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file"
-      },
-      "excerpt": "",
-      "rawMarkdownBody": "\n##你好!\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
-      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file >>> MarkdownRemark",
       "children": [],
       "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file",
       "internal": {
-        "content": "---\npath: '/en/post-2'\ntitle: 'Post 2'\ndate: '06-09-2018'\nauthor: 'Jonny S'\nlanguage: 'en'\n---\n\n##This is Post 2\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.",
+        "content": "---\npath: '/en/post-2'\ntitle: 'Post 2'\ndate: '06-09-2018'\nauthor: 'Jonny S'\nlanguage: 'en'\nkeywords: 'post2 two'\n---\n\n##This is Post 2\n\npost2 two Tempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.\n<!-- end -->\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.",
         "type": "MarkdownRemark",
-        "contentDigest": "fcb82c566828c4c6f826e15116a7bc6b",
+        "contentDigest": "c81612111329fc0e7cad60d5480268a7",
         "owner": "gatsby-transformer-remark"
       },
       "frontmatter": {
@@ -1698,12 +2131,129 @@
         "date": "06-09-2018",
         "author": "Jonny S",
         "language": "en",
+        "keywords": "post2 two",
         "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file",
         "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file"
       },
-      "excerpt": "",
-      "rawMarkdownBody": "\n##This is Post 2\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.",
+      "excerpt": "\n##This is Post 2\n\npost2 two Tempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.\n",
+      "rawMarkdownBody": "\n##This is Post 2\n\npost2 two Tempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.\n<!-- end -->\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.",
       "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
+      "internal": {
+        "content": "---\npath: '/cn/post-1'\ntitle: 'Post 1 (CN)'\ndate: '06-09-2018'\nauthor: 'Tom V'\nlanguage: 'cn'\nkeywords: 'post1 one cn baz'\n---\n\n##你好!\n\nbaz\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n<!-- end -->\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
+        "type": "MarkdownRemark",
+        "contentDigest": "d04ba589da6178838e940ee34040f527",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "Post 1 (CN)",
+        "path": "/cn/post-1",
+        "date": "06-09-2018",
+        "author": "Tom V",
+        "language": "cn",
+        "keywords": "post1 one cn baz",
+        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file",
+        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file"
+      },
+      "excerpt": "\n##你好!\n\nbaz\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n",
+      "rawMarkdownBody": "\n##你好!\n\nbaz\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n<!-- end -->\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
+      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md"
+    },
+    "SearchIndex < Site": {
+      "id": "SearchIndex < Site",
+      "parent": "___SOURCE___",
+      "children": [],
+      "pages": [
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark"
+      ],
+      "internal": {
+        "type": "SiteSearchIndex",
+        "content": "\"/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark\"",
+        "contentDigest": "63be7048587d07582153a30e627a2888",
+        "owner": "@andrew-codes/gatsby-plugin-elasticlunr-search"
+      }
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file",
+      "internal": {
+        "content": "---\nlayout: default\ntitle: Glossary\npermalink: /glossary/\npath: '/en/glossary/'\ngroup: base\nlanguage: en\nkeywords: 'glossary foo'\n---\n\n<!-- Reviewed at d0d6c2fedefb642744a24b4b0a6d8d7ad11532f6 -->\n\n# glossary foo\n\n## Ada\n\nThe name of our currency, named in honor of [Ada\nLovelace](https://en.wikipedia.org/wiki/Ada_Lovelace).\n\n## Address\n\nThe unique identifier of a [node](#node). Please read about [Addresses in\nCardano SL](/cardano/addresses/) for more details.\n\n<!-- end -->\n\n## Balance\n\nPlease read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)\nfor explanation.\n\n## Block\n\nA fundamental part of a [Ledger](#ledger). Please read about [Blocks in Cardano\nSL](/technical/blocks/) for technical details.\n\n## Blockchain\n\nPlease see [Ledger](#ledger).\n\n## Cardano SL\n\nCardano SL (or Cardano Settlement Layer) is a decentralized cryptographic\ncurrency designed and developed by [IOHK](https://iohk.io/team). Named in honor\nof [Gerolamo Cardano](https://en.wikipedia.org/wiki/Gerolamo_Cardano).\n\n## Coin Tossing\n\nA Coin Tossing is a protocol that allows two or more parties to obtain\na uniformly random value. We use Coin Tossing protocol as a base of [SSC](#ssc).\nPlease read [paper](#paper) (page 36) for more details about Coin Tossing.\n\n## Consensus Algorithm\n\nA way for a decentralized system to reach a consistent view on shared\ncollections of data. Cardano SL uses the [Ouroboros Consensus\nAlgorithm](/cardano/proof-of-stake/), which is an algorithm based on\n[Proof of Stake](#proof-of-stake).\n\n## Cryptocurrency\n\nA computer system which uses cryptographic protocols to generate a ledger.\nPlease read about [Cryptocurrency Basics](/introduction/#cryptocurrency-basics)\nfor more details.\n\n## Daedalus\n\nCardano SL wallet application. It provides a GUI for users, so they can access\ntheir funds, send and receive transactions, etc. Please read about [Cardano SL\nWallet Frontend](/technical/wallet-frontend/) for more details.\n\n## Decentralization\n\nA notion of a computer system operating through interaction of independent\nnodes. In case of maintaining a shared data collection such as a ledger, a\nconsensus is required for consistency and reliability of data.\n\n## Epoch\n\nA bigger period of time for which we know in advance who will have the right to\ngenerate a block in each slot. Please read [paper](#paper) (page 3) for\ntechnical details.\n\n## Follow The Satoshi\n\nA mechanism whereby stakeholders are selected at random to forge a new block in\nthe blockchain, with a proportional chance to get elected depending on their\namount of stake in the protocol.\n\n## Guaranteed Output Delivery\n\nGuaranteed output delivery is a mechanism that proves that the honest parties\nare guaranteed to successfully complete the multiparty computation (MPC). We\nuse G.O.D. in [SSC](#ssc).\n\n## Honest Majority\n\nHonest majority is a situation when the number of honest participants is strictly\ngreater than the number of adversaries, i.e. at least 50% + 1. Honest majority \nis assumed by default.\n\n## Kademlia\n\nPlease see [Peer Discovery](#peer-discovery).\n\n## Leader Election\n\nA process of picking who will generate blocks during the next epoch. Leaders are\nelected with a probability proportional to their stake (see [Proof of\nStake](#proof-of-stake), [Follow the Satoshi](#follow-the-satoshi)).\n\n## Ledger\n\nA collection of data that keeps track of value assigned to individuals. Please\nread [paper](#paper) (page 32) for technical details.\n\n## Lovelace\n\nName of a smallest unit of our currency. Named in honor of [Ada\nLovelace](https://en.wikipedia.org/wiki/Ada_Lovelace).\n\n## Minting\n\nA process of a new block creation in [Proof of\nStake](/introduction/#proof-of-stake-and-minting) systems.\n\n## Node\n\nA computer program that participates in a decentralized protocol system. Please\nread [High-level technical overview](/technical/#high-level-overview) for more\ndetails.\n\n## Paper\n\nOfficial protocol report [Ouroboros: A Provably Secure Proof-of-Stake Blockchain\nProtocol](https://eprint.iacr.org/2016/889). Please notice that Cardano SL\nimplementation differs from the paper, [read about\ndifferences](/cardano/differences/) for more details.\n\n## Peer Discovery\n\nA way how a node can find other nodes after running. Peer discovery we use is\nbased on Kademlia DHT. Please read [a Kademlia\npaper](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf)\nfor technical details.\n\n## Plutus\n\nStrictly typed pure functional programming language used for defining smart\ncontracts in Cardano. Please read about\n[Plutus](/technical/plutus/introduction/) for more details.\n\n## Proof of Stake\n\nOuroboros Proof of Stake algorithm is the most important part of the [protocol](#paper).\nIt defines the way [nodes](#node) reach consensus about the state of [ledger](#ledger).\nPlease read about [Ouroboros Proof of Stake Algorithm](/cardano/proof-of-stake/)\nfor more details.\n\n## PVSS\n\nPVSS (Publicly Verifiable Secret Sharing) is a cryptographic scheme we use in [SSC](#ssc).\nPlease read about [PVSS implementation in Cardano SL](/technical/pvss/) for more details.\n\n## Richman\n\nStakeholder with stake enough for participation in some action. Particularly,\nthere are three kinds of such actions: randomness generation (for [slot leaders\nelections process](/technical/leader-selection/)),\n[heavyweight stake delegation](/technical/delegation/#heavyweight-delegation)\nand voting for [update proposals](/cardano/update-mechanism/#application-update-sign-and-announce).\n\n## Signing\n\nA way to generate a proof of genuine authenticity of any kind of information we\nuse in [cryptocurrency](#cryptocurrency).\n\n## Slot\n\nA small period of physical time that is significantly larger than the expected\ndifference in clocks on different nodes. Please read [paper](#paper) (page 4) for\ntechnical details.\n\n## Slot Leader\n\nA slot leader is a node which was elected to have a right to create a block in\nthe current slot. Please read [paper](#paper) (page 7) for technical details.\n\n## SSC\n\nSSC (Shared Seed Computation) is a part of [slot leader election](#leader-election)\nprocess. This part is implemented as a [Coin Tossing](#coin-tossing) protocol with\n[Guaranteed Output Delivery](#guaranteed-output-delivery). As a result of SSC we get\na randomness which will be used in [Follow The Satoshi](#follow-the-satoshi) mechanism.\n\n## Stake\n\nPlease read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)\nfor explanation.\n\n## Stakeholder\n\nA node with a positive stake.\n\n## Transaction\n\nThe data that represents the act of transferring value. Please read about\n[Transactions in Cardano SL](/cardano/transactions/) for more details.\n\n## Transaction Fees\n\nPlease read about [Transaction Fees in Cardano SL](/cardano/transaction-fees/)\nfor explanation.\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "47245982fc53cd11a0785b7f1efaf9c0",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "Glossary",
+        "layout": "default",
+        "permalink": "/glossary/",
+        "path": "/en/glossary/",
+        "group": "base",
+        "language": "en",
+        "keywords": "glossary foo",
+        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file",
+        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file"
+      },
+      "excerpt": "\n<!-- Reviewed at d0d6c2fedefb642744a24b4b0a6d8d7ad11532f6 -->\n\n# glossary foo\n\n## Ada\n\nThe name of our currency, named in honor of [Ada\nLovelace](https://en.wikipedia.org/wiki/Ada_Lovelace).\n\n## Address\n\nThe unique identifier of a [node](#node). Please read about [Addresses in\nCardano SL](/cardano/addresses/) for more details.\n\n",
+      "rawMarkdownBody": "\n<!-- Reviewed at d0d6c2fedefb642744a24b4b0a6d8d7ad11532f6 -->\n\n# glossary foo\n\n## Ada\n\nThe name of our currency, named in honor of [Ada\nLovelace](https://en.wikipedia.org/wiki/Ada_Lovelace).\n\n## Address\n\nThe unique identifier of a [node](#node). Please read about [Addresses in\nCardano SL](/cardano/addresses/) for more details.\n\n<!-- end -->\n\n## Balance\n\nPlease read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)\nfor explanation.\n\n## Block\n\nA fundamental part of a [Ledger](#ledger). Please read about [Blocks in Cardano\nSL](/technical/blocks/) for technical details.\n\n## Blockchain\n\nPlease see [Ledger](#ledger).\n\n## Cardano SL\n\nCardano SL (or Cardano Settlement Layer) is a decentralized cryptographic\ncurrency designed and developed by [IOHK](https://iohk.io/team). Named in honor\nof [Gerolamo Cardano](https://en.wikipedia.org/wiki/Gerolamo_Cardano).\n\n## Coin Tossing\n\nA Coin Tossing is a protocol that allows two or more parties to obtain\na uniformly random value. We use Coin Tossing protocol as a base of [SSC](#ssc).\nPlease read [paper](#paper) (page 36) for more details about Coin Tossing.\n\n## Consensus Algorithm\n\nA way for a decentralized system to reach a consistent view on shared\ncollections of data. Cardano SL uses the [Ouroboros Consensus\nAlgorithm](/cardano/proof-of-stake/), which is an algorithm based on\n[Proof of Stake](#proof-of-stake).\n\n## Cryptocurrency\n\nA computer system which uses cryptographic protocols to generate a ledger.\nPlease read about [Cryptocurrency Basics](/introduction/#cryptocurrency-basics)\nfor more details.\n\n## Daedalus\n\nCardano SL wallet application. It provides a GUI for users, so they can access\ntheir funds, send and receive transactions, etc. Please read about [Cardano SL\nWallet Frontend](/technical/wallet-frontend/) for more details.\n\n## Decentralization\n\nA notion of a computer system operating through interaction of independent\nnodes. In case of maintaining a shared data collection such as a ledger, a\nconsensus is required for consistency and reliability of data.\n\n## Epoch\n\nA bigger period of time for which we know in advance who will have the right to\ngenerate a block in each slot. Please read [paper](#paper) (page 3) for\ntechnical details.\n\n## Follow The Satoshi\n\nA mechanism whereby stakeholders are selected at random to forge a new block in\nthe blockchain, with a proportional chance to get elected depending on their\namount of stake in the protocol.\n\n## Guaranteed Output Delivery\n\nGuaranteed output delivery is a mechanism that proves that the honest parties\nare guaranteed to successfully complete the multiparty computation (MPC). We\nuse G.O.D. in [SSC](#ssc).\n\n## Honest Majority\n\nHonest majority is a situation when the number of honest participants is strictly\ngreater than the number of adversaries, i.e. at least 50% + 1. Honest majority \nis assumed by default.\n\n## Kademlia\n\nPlease see [Peer Discovery](#peer-discovery).\n\n## Leader Election\n\nA process of picking who will generate blocks during the next epoch. Leaders are\nelected with a probability proportional to their stake (see [Proof of\nStake](#proof-of-stake), [Follow the Satoshi](#follow-the-satoshi)).\n\n## Ledger\n\nA collection of data that keeps track of value assigned to individuals. Please\nread [paper](#paper) (page 32) for technical details.\n\n## Lovelace\n\nName of a smallest unit of our currency. Named in honor of [Ada\nLovelace](https://en.wikipedia.org/wiki/Ada_Lovelace).\n\n## Minting\n\nA process of a new block creation in [Proof of\nStake](/introduction/#proof-of-stake-and-minting) systems.\n\n## Node\n\nA computer program that participates in a decentralized protocol system. Please\nread [High-level technical overview](/technical/#high-level-overview) for more\ndetails.\n\n## Paper\n\nOfficial protocol report [Ouroboros: A Provably Secure Proof-of-Stake Blockchain\nProtocol](https://eprint.iacr.org/2016/889). Please notice that Cardano SL\nimplementation differs from the paper, [read about\ndifferences](/cardano/differences/) for more details.\n\n## Peer Discovery\n\nA way how a node can find other nodes after running. Peer discovery we use is\nbased on Kademlia DHT. Please read [a Kademlia\npaper](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf)\nfor technical details.\n\n## Plutus\n\nStrictly typed pure functional programming language used for defining smart\ncontracts in Cardano. Please read about\n[Plutus](/technical/plutus/introduction/) for more details.\n\n## Proof of Stake\n\nOuroboros Proof of Stake algorithm is the most important part of the [protocol](#paper).\nIt defines the way [nodes](#node) reach consensus about the state of [ledger](#ledger).\nPlease read about [Ouroboros Proof of Stake Algorithm](/cardano/proof-of-stake/)\nfor more details.\n\n## PVSS\n\nPVSS (Publicly Verifiable Secret Sharing) is a cryptographic scheme we use in [SSC](#ssc).\nPlease read about [PVSS implementation in Cardano SL](/technical/pvss/) for more details.\n\n## Richman\n\nStakeholder with stake enough for participation in some action. Particularly,\nthere are three kinds of such actions: randomness generation (for [slot leaders\nelections process](/technical/leader-selection/)),\n[heavyweight stake delegation](/technical/delegation/#heavyweight-delegation)\nand voting for [update proposals](/cardano/update-mechanism/#application-update-sign-and-announce).\n\n## Signing\n\nA way to generate a proof of genuine authenticity of any kind of information we\nuse in [cryptocurrency](#cryptocurrency).\n\n## Slot\n\nA small period of physical time that is significantly larger than the expected\ndifference in clocks on different nodes. Please read [paper](#paper) (page 4) for\ntechnical details.\n\n## Slot Leader\n\nA slot leader is a node which was elected to have a right to create a block in\nthe current slot. Please read [paper](#paper) (page 7) for technical details.\n\n## SSC\n\nSSC (Shared Seed Computation) is a part of [slot leader election](#leader-election)\nprocess. This part is implemented as a [Coin Tossing](#coin-tossing) protocol with\n[Guaranteed Output Delivery](#guaranteed-output-delivery). As a result of SSC we get\na randomness which will be used in [Follow The Satoshi](#follow-the-satoshi) mechanism.\n\n## Stake\n\nPlease read about [Balance and Stake in Cardano SL](/cardano/balance-and-stake/)\nfor explanation.\n\n## Stakeholder\n\nA node with a positive stake.\n\n## Transaction\n\nThe data that represents the act of transferring value. Please read about\n[Transactions in Cardano SL](/cardano/transactions/) for more details.\n\n## Transaction Fees\n\nPlease read about [Transaction Fees in Cardano SL](/cardano/transaction-fees/)\nfor explanation.\n",
+      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md"
+    },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file",
+      "internal": {
+        "content": "---\nlayout: default\ntitle: 介绍\npath: '/cn/introduction'\npermalink: /introduction/cn/\ngroup: base\nlanguage: cn\nauthor: me\ndate: '06-09-2018'\nkeywords: 'index cn'\n---\n\n<!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->\n\nindex\n亲爱的读者，本文档的目的是让您对于 Cardano 平台技术栈第一层即结算层有所了解。如果您理解了结算层是什么，我们建议您先阅读[论文和实现的差异](/cardano/differences/)，然后再阅读[协议和实现的文档](/technical/protocols/csl-application-level/)。\n\n本文档目标读者是 IOHK 的开发人员，第三方软件开发人员，审计和致力于实现卡尔达诺结算层或使用卡尔达诺结算层参考实现的咨询人员。\n\n<!-- CARDANO_SL_README_BEGIN_1 -->\n## 什么是卡尔达诺结算层?\n\nCardano SL（或卡尔达诺运算层）是由 [IOHK](https://iohk.io/team) 联合爱丁堡大学，雅典大学和康涅狄格大学共同设计开发的一种加密货币。卡尔达诺运算层是基于 Aggelos Kiayias，Alexander Russell，Bernardo David 和 Roman Oliynykov 的白皮书 [『乌洛波罗斯：可证明安全的权益证明协议』](https://iohk.io/research/papers/#9BKRHCSI)的 Haskell 实现。\n<!-- end -->\n\n您可以将卡尔达诺结算层视为基于比特币重新设计的针对比特币缺陷的自由修复。 有关卡尔达诺结算层和比特币之间的相似之处和差异的更多信息，请阅读[『卡尔达诺结算层为什么特别?』](http://cardanodocs.com/introduction/cn/#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E8%BF%90%E7%AE%97%E5%B1%82%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%B9%E5%88%AB)。\n\n\n<!-- CARDANO_SL_README_END_1 -->\n\n## 加密货币基础\n\n\n在给出加密货币的定义之前，我们先来谈谈为什么我们在意数字货币，特别是加密货币。\n\n### 我们为什么在意?\n\n#### 速度\n\n与传统（也称为法定）中心银行货币，与日元或美元相反，电子货币不需要一个银行系统来转移价值。这一限制的解除，使用数字货币的速度要快于银行业务，尤其是在全球范围内。使用数字货币从大阪转移10美元到丹佛不再需要数天的时间。无论距离如何，所有交易都能迅速完成。\n\n\n#### 你掌控你自己的钱\n\n所有的商业银行账户所有者在收到支付请求后在合理的时间内只能支付一定的金额。银行体系对任何价值量都有限制，使个人无法迅速撤出或转移大量资金。有加密货币的情况下，持有一种称为**密钥**这一特殊信息的人就可以随意花钱。没有其他实体有权操纵用户拥有的价值。\n\n\n#### 匿名\n\n人们可以根据需要，拥有任意多的加密货币地址，从不同的地址接收，消费资产。经营电子商务商店的商家可以拥有一组收款和退款的地址，以及一个用于他们自身需要的单独的个人『钱包』。通过统一的接口控制所有这些钱包，并且不需要登录到多个支付平台，这使得该过程非常节省时间。\n\n#### 安全\n\n你的钱就像可用于消费的**密钥**一样安全。这意味着将密钥存储在保险箱中的 USB 闪存上相当于让纸币处于安全状态。即使进行了成功的网络攻击，也绝对没有人能够窃取这笔钱。\n\n#### 扩展性\n\n使用一种称为[侧链](https://www.blockstream.com/sidechains.pdf)的方法，以及通用加密货币，如卡尔达诺结算层和比特币，就可以启用特定领域的加密货币，例如以太经典。这样一来，通过特定领域的加密货币开发的任何创新产品都可以让参与者在通用的加密货币中保持价值。这样的应用程序的例子有身份管理，游戏和赌博，以及可验证计算。\n\n\n### 什么是加密货币?\n\n加密货币是一种数字货币形式，使用密码来控制价值。密码学提供了一种生成任何类型信息的真实真实性证据的方法。这就是所谓的*数字签名*。在加密货币中，我们通过签署和发送交易到网络并接收已确认的交易块，生成一个总账（一个提供每个地址有多少钱的信息的数据库）。加密货币通常是分散的，这意味着来自全球各地的许多人通过运行加密货币节点参与总账的生成。因此，必须达成关于总账状况的共识。下一节讨论实现这种共识的两个最重要的方法。\n\n\n## 卡尔达诺结算层为什么特别\n\n<!-- v0.1.0.0 -->\n\n虽然比特币和卡尔达诺结算层之间有相似之处，但这两个加密货币之间也有很多不同之处。最显着的区别是，比特币是工作量证明类型的加密货币，而卡尔达诺结算层使用权益证明的方法达成共识。这鼓励诚信和长期的参与。\n\n\n### 共识算法的目的\n\n\n共识算法被用来产生新的交易区块，使账本更新状态。每当有人发布一个交易区块时，他们（或者说他们的运行加密货币协议的节点）就必须附上他们已经证明的证据。下面讨论两种类型的证明。\n\n\n### 工作量证明和挖矿\n\n工作量证明是加密货币最普遍的共识算法类型。它起源于比特币，加密货币就是这么工作的。为了生成工作证明，计算机必须解决一个挑战。这是难以解决的计算繁重的问题，但解决方案很容易验证。当一台基于网络的工作量证明的计算机找到一个解决方案时，它会将交易发布于同它一起计算的其他计算机。这台计算机会因为产生区块得到交易费和奖励。整个过程被称为*挖矿*。挖矿是非常耗能的，所需的能源数量在不断增加，这可能导致不健康的竞争。\n\n### 权益证明和铸币\n\n权益证明是一种生成区块的新方法。由 [Aggelos Kiayias 教授](https://iohk.io/team/aggelos-kiayias/)领导的 IOHK 科学家们设计了第一个可证明的，称为乌洛波罗斯的权益证明算法。乌洛波罗斯是卡尔达诺结算层的核心。研究小组已经发表了一篇[白皮书](https://iohk.io/research/papers/a-provably-secure-proof-of-stake-blockchain-protocol/) ，这封白皮书对于那些拥有加密货币理论背景的人来说是值得一读的。权益证明的核心思想是，不要浪费电力来解决计算繁重的问题，而是选择一个节点来铸造一个新的区块，其概率与这个节点的硬币数量成正相关。如果一个节点有整数个(&gt; 0)的 [slot](/cardano/proof-of-stake/#stake)，它被称为 slot 所有人。如果一个节点最终被选中来铸造一个区块，那么这个节点被称为 slot 领导者。您可以在[卡尔达诺结算层的股权证明](/cardano/proof-of-stake/)中了解更多关于该流程的信息。\n\n\n<!-- CARDANO_SL_README_BEGIN_2 -->\n## 卡尔达诺结算层之上\n\n\n卡尔达诺结算层被称为『层』是有原因的。这是卡尔达诺平台的第一个组件。最终，它将被扩展到一个控制层，作为一个可信的计算框架来评估一种特殊的证明，以确保一定的计算正确执行。在游戏和赌博中，这样的系统被用于验证随机数生成和游戏结果的真实性。伴随着侧链，它将有可能完成诸如在游戏中公平分配奖金的任务。但是控制层的应用远远超出了游戏和赌博。身份管理，信用系统等将成为卡尔达诺平台的一部分。我们将迭代卡尔达诺[钱包应用程序 Daedalus](https://github.com/input-output-hk/daedalus)，使其变成一个具有自动加密货币交易功能和合法加密货币交易功能的通用加密货币钱包。\n\n\n<!-- CARDANO_SL_README_END_2 -->\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "612717c88d9069ced72a7c61837afc7b",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "介绍",
+        "layout": "default",
+        "path": "/cn/introduction",
+        "permalink": "/introduction/cn/",
+        "group": "base",
+        "language": "cn",
+        "author": "me",
+        "date": "06-09-2018",
+        "keywords": "index cn",
+        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file",
+        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file"
+      },
+      "excerpt": "\n<!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->\n\nindex\n亲爱的读者，本文档的目的是让您对于 Cardano 平台技术栈第一层即结算层有所了解。如果您理解了结算层是什么，我们建议您先阅读[论文和实现的差异](/cardano/differences/)，然后再阅读[协议和实现的文档](/technical/protocols/csl-application-level/)。\n\n本文档目标读者是 IOHK 的开发人员，第三方软件开发人员，审计和致力于实现卡尔达诺结算层或使用卡尔达诺结算层参考实现的咨询人员。\n\n<!-- CARDANO_SL_README_BEGIN_1 -->\n## 什么是卡尔达诺结算层?\n\nCardano SL（或卡尔达诺运算层）是由 [IOHK](https://iohk.io/team) 联合爱丁堡大学，雅典大学和康涅狄格大学共同设计开发的一种加密货币。卡尔达诺运算层是基于 Aggelos Kiayias，Alexander Russell，Bernardo David 和 Roman Oliynykov 的白皮书 [『乌洛波罗斯：可证明安全的权益证明协议』](https://iohk.io/research/papers/#9BKRHCSI)的 Haskell 实现。\n",
+      "rawMarkdownBody": "\n<!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->\n\nindex\n亲爱的读者，本文档的目的是让您对于 Cardano 平台技术栈第一层即结算层有所了解。如果您理解了结算层是什么，我们建议您先阅读[论文和实现的差异](/cardano/differences/)，然后再阅读[协议和实现的文档](/technical/protocols/csl-application-level/)。\n\n本文档目标读者是 IOHK 的开发人员，第三方软件开发人员，审计和致力于实现卡尔达诺结算层或使用卡尔达诺结算层参考实现的咨询人员。\n\n<!-- CARDANO_SL_README_BEGIN_1 -->\n## 什么是卡尔达诺结算层?\n\nCardano SL（或卡尔达诺运算层）是由 [IOHK](https://iohk.io/team) 联合爱丁堡大学，雅典大学和康涅狄格大学共同设计开发的一种加密货币。卡尔达诺运算层是基于 Aggelos Kiayias，Alexander Russell，Bernardo David 和 Roman Oliynykov 的白皮书 [『乌洛波罗斯：可证明安全的权益证明协议』](https://iohk.io/research/papers/#9BKRHCSI)的 Haskell 实现。\n<!-- end -->\n\n您可以将卡尔达诺结算层视为基于比特币重新设计的针对比特币缺陷的自由修复。 有关卡尔达诺结算层和比特币之间的相似之处和差异的更多信息，请阅读[『卡尔达诺结算层为什么特别?』](http://cardanodocs.com/introduction/cn/#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E8%BF%90%E7%AE%97%E5%B1%82%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%B9%E5%88%AB)。\n\n\n<!-- CARDANO_SL_README_END_1 -->\n\n## 加密货币基础\n\n\n在给出加密货币的定义之前，我们先来谈谈为什么我们在意数字货币，特别是加密货币。\n\n### 我们为什么在意?\n\n#### 速度\n\n与传统（也称为法定）中心银行货币，与日元或美元相反，电子货币不需要一个银行系统来转移价值。这一限制的解除，使用数字货币的速度要快于银行业务，尤其是在全球范围内。使用数字货币从大阪转移10美元到丹佛不再需要数天的时间。无论距离如何，所有交易都能迅速完成。\n\n\n#### 你掌控你自己的钱\n\n所有的商业银行账户所有者在收到支付请求后在合理的时间内只能支付一定的金额。银行体系对任何价值量都有限制，使个人无法迅速撤出或转移大量资金。有加密货币的情况下，持有一种称为**密钥**这一特殊信息的人就可以随意花钱。没有其他实体有权操纵用户拥有的价值。\n\n\n#### 匿名\n\n人们可以根据需要，拥有任意多的加密货币地址，从不同的地址接收，消费资产。经营电子商务商店的商家可以拥有一组收款和退款的地址，以及一个用于他们自身需要的单独的个人『钱包』。通过统一的接口控制所有这些钱包，并且不需要登录到多个支付平台，这使得该过程非常节省时间。\n\n#### 安全\n\n你的钱就像可用于消费的**密钥**一样安全。这意味着将密钥存储在保险箱中的 USB 闪存上相当于让纸币处于安全状态。即使进行了成功的网络攻击，也绝对没有人能够窃取这笔钱。\n\n#### 扩展性\n\n使用一种称为[侧链](https://www.blockstream.com/sidechains.pdf)的方法，以及通用加密货币，如卡尔达诺结算层和比特币，就可以启用特定领域的加密货币，例如以太经典。这样一来，通过特定领域的加密货币开发的任何创新产品都可以让参与者在通用的加密货币中保持价值。这样的应用程序的例子有身份管理，游戏和赌博，以及可验证计算。\n\n\n### 什么是加密货币?\n\n加密货币是一种数字货币形式，使用密码来控制价值。密码学提供了一种生成任何类型信息的真实真实性证据的方法。这就是所谓的*数字签名*。在加密货币中，我们通过签署和发送交易到网络并接收已确认的交易块，生成一个总账（一个提供每个地址有多少钱的信息的数据库）。加密货币通常是分散的，这意味着来自全球各地的许多人通过运行加密货币节点参与总账的生成。因此，必须达成关于总账状况的共识。下一节讨论实现这种共识的两个最重要的方法。\n\n\n## 卡尔达诺结算层为什么特别\n\n<!-- v0.1.0.0 -->\n\n虽然比特币和卡尔达诺结算层之间有相似之处，但这两个加密货币之间也有很多不同之处。最显着的区别是，比特币是工作量证明类型的加密货币，而卡尔达诺结算层使用权益证明的方法达成共识。这鼓励诚信和长期的参与。\n\n\n### 共识算法的目的\n\n\n共识算法被用来产生新的交易区块，使账本更新状态。每当有人发布一个交易区块时，他们（或者说他们的运行加密货币协议的节点）就必须附上他们已经证明的证据。下面讨论两种类型的证明。\n\n\n### 工作量证明和挖矿\n\n工作量证明是加密货币最普遍的共识算法类型。它起源于比特币，加密货币就是这么工作的。为了生成工作证明，计算机必须解决一个挑战。这是难以解决的计算繁重的问题，但解决方案很容易验证。当一台基于网络的工作量证明的计算机找到一个解决方案时，它会将交易发布于同它一起计算的其他计算机。这台计算机会因为产生区块得到交易费和奖励。整个过程被称为*挖矿*。挖矿是非常耗能的，所需的能源数量在不断增加，这可能导致不健康的竞争。\n\n### 权益证明和铸币\n\n权益证明是一种生成区块的新方法。由 [Aggelos Kiayias 教授](https://iohk.io/team/aggelos-kiayias/)领导的 IOHK 科学家们设计了第一个可证明的，称为乌洛波罗斯的权益证明算法。乌洛波罗斯是卡尔达诺结算层的核心。研究小组已经发表了一篇[白皮书](https://iohk.io/research/papers/a-provably-secure-proof-of-stake-blockchain-protocol/) ，这封白皮书对于那些拥有加密货币理论背景的人来说是值得一读的。权益证明的核心思想是，不要浪费电力来解决计算繁重的问题，而是选择一个节点来铸造一个新的区块，其概率与这个节点的硬币数量成正相关。如果一个节点有整数个(&gt; 0)的 [slot](/cardano/proof-of-stake/#stake)，它被称为 slot 所有人。如果一个节点最终被选中来铸造一个区块，那么这个节点被称为 slot 领导者。您可以在[卡尔达诺结算层的股权证明](/cardano/proof-of-stake/)中了解更多关于该流程的信息。\n\n\n<!-- CARDANO_SL_README_BEGIN_2 -->\n## 卡尔达诺结算层之上\n\n\n卡尔达诺结算层被称为『层』是有原因的。这是卡尔达诺平台的第一个组件。最终，它将被扩展到一个控制层，作为一个可信的计算框架来评估一种特殊的证明，以确保一定的计算正确执行。在游戏和赌博中，这样的系统被用于验证随机数生成和游戏结果的真实性。伴随着侧链，它将有可能完成诸如在游戏中公平分配奖金的任务。但是控制层的应用远远超出了游戏和赌博。身份管理，信用系统等将成为卡尔达诺平台的一部分。我们将迭代卡尔达诺[钱包应用程序 Daedalus](https://github.com/input-output-hk/daedalus)，使其变成一个具有自动加密货币交易功能和合法加密货币交易功能的通用加密货币钱包。\n\n\n<!-- CARDANO_SL_README_END_2 -->\n",
+      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md"
+    },
+    "SitePage /en/for-contributors/": {
+      "layout": "index",
+      "jsonName": "en-for-contributors.json",
+      "internalComponentName": "ComponentEnForContributors",
+      "path": "/en/for-contributors/",
+      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "componentChunkName": "component---src-templates-blog-post-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "id": "SitePage /en/for-contributors/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "3c026769a29351f95c12e7e823f80522",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
     },
     "SitePage /en/post-1": {
       "layout": "index",
@@ -1721,28 +2271,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "2f03561d094b5d78207a8ec7cc4a157a",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /cn/post-1": {
-      "layout": "index",
-      "jsonName": "cn-post-1.json",
-      "internalComponentName": "ComponentCnPost1",
-      "path": "/cn/post-1",
-      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
-      "componentChunkName": "component---src-templates-blog-post-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
-      "id": "SitePage /cn/post-1",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "2c758c266ce3ef48f8fbf718db636f1a",
+        "contentDigest": "bc4c3bf1d2ab95910733998807a239db",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -1763,7 +2292,70 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b4e70627772fe57549dd102dc75b1056",
+        "contentDigest": "afe16ff5157d56f24c6e5855154210ee",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /cn/post-1": {
+      "layout": "index",
+      "jsonName": "cn-post-1.json",
+      "internalComponentName": "ComponentCnPost1",
+      "path": "/cn/post-1",
+      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "componentChunkName": "component---src-templates-blog-post-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "id": "SitePage /cn/post-1",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "fd1fd3d49c3f6641827838e73d00618e",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /en/glossary/": {
+      "layout": "index",
+      "jsonName": "en-glossary.json",
+      "internalComponentName": "ComponentEnGlossary",
+      "path": "/en/glossary/",
+      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "componentChunkName": "component---src-templates-blog-post-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "id": "SitePage /en/glossary/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "3ba2121698998c487496321025addeaa",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /cn/introduction": {
+      "layout": "index",
+      "jsonName": "cn-introduction.json",
+      "internalComponentName": "ComponentCnIntroduction",
+      "path": "/cn/introduction",
+      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "componentChunkName": "component---src-templates-blog-post-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
+      "id": "SitePage /cn/introduction",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "e6397b221213aaceced5b19d59e934bc",
         "description": "Your site's \"gatsby-node.js\"",
         "owner": "internal-data-bridge"
       }
@@ -1784,7 +2376,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "d6e17fce7a0a0a129169b65a8cf54765",
+        "contentDigest": "349f78d670022b759d2682f485317430",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1805,7 +2397,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b9c2c261e2d9dcbee4232da5ceb5ca07",
+        "contentDigest": "d78aa6e5e842b22a07d0c84bf5665fa8",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1826,7 +2418,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "a937fb7dc27b8e815169521d201d2d80",
+        "contentDigest": "c99123b8f2995f191ef8552329b46978",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1847,7 +2439,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b35e22fe7aefcae431ba70177519fd65",
+        "contentDigest": "bb5745540ddc3b2f84ecefdb62e67b14",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1868,7 +2460,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "2f2942da72001933531e3998965181e1",
+        "contentDigest": "4a5298e6c1bd764c155cc9ae983ed3ef",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1889,7 +2481,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "ccb41f128c23743d7e104d670bf92e34",
+        "contentDigest": "afaa03cef7e61d9f6f64364e723e9576",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1910,7 +2502,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "35ad09df7c0df95288970dc52d443a28",
+        "contentDigest": "5eecb1aa4a01e2e386c95165b181e851",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1931,7 +2523,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "1e0c87a9c30d8982e2524e830e84a968",
+        "contentDigest": "c3d72c8b7d5ead28ace56484528fce18",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1952,7 +2544,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b1f6fe184204dd9cb461327421398cc8",
+        "contentDigest": "24c832105a44abab54e6075de455d6d2",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1973,7 +2565,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "a0da3eb08098d68591e37dd6f8ddc8be",
+        "contentDigest": "f0942eb72b0744bcfd42baf4b75018e5",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -1994,167 +2586,41 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "5fe8583b3009fbdd48efb398b29820f2",
+        "contentDigest": "4a148bf0c69144a7b18f2b18ed465aea",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "6e77789064591705868aa070f7636756",
-        "type": "Directory",
-        "description": "Directory \"src/pages/en/docs/cardano-shizz\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz",
-      "relativePath": "en/docs/cardano-shizz",
-      "extension": "",
-      "size": 64,
-      "prettySize": "64 B",
-      "modifiedTime": "2018-09-10T14:57:13.860Z",
-      "accessTime": "2018-09-10T14:57:13.951Z",
-      "changeTime": "2018-09-10T14:57:13.860Z",
-      "birthTime": "2018-09-10T14:57:13.860Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
-      "base": "cardano-shizz",
-      "ext": "",
-      "name": "cardano-shizz",
-      "relativeDirectory": "en/docs",
-      "dev": 16777220,
-      "mode": 16877,
-      "nlink": 2,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12944465,
-      "blocks": 0,
-      "atimeMs": 1536591433951.407,
-      "mtimeMs": 1536591433859.5286,
-      "ctimeMs": 1536591433859.5286,
-      "birthtimeMs": 1536591433859.5286,
-      "atime": "2018-09-10T14:57:13.951Z",
-      "mtime": "2018-09-10T14:57:13.860Z",
-      "ctime": "2018-09-10T14:57:13.860Z",
-      "birthtime": "2018-09-10T14:57:13.860Z"
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file",
-      "children": [
-        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file >>> MarkdownRemark"
-      ],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "380dcdec3f081be89ec7d8868367350c",
-        "mediaType": "text/markdown",
-        "type": "File",
-        "description": "File \"src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md\"",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "docs",
-      "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md",
-      "relativePath": "en/docs/cardano-shizz/2018-10-09-shizz.en.md",
-      "extension": "md",
-      "size": 637,
-      "prettySize": "637 B",
-      "modifiedTime": "2018-09-10T14:59:13.507Z",
-      "accessTime": "2018-09-10T14:59:13.521Z",
-      "changeTime": "2018-09-10T14:59:13.507Z",
-      "birthTime": "2018-09-10T14:57:21.050Z",
-      "root": "/",
-      "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz",
-      "base": "2018-10-09-shizz.en.md",
-      "ext": ".md",
-      "name": "2018-10-09-shizz.en",
-      "relativeDirectory": "en/docs/cardano-shizz",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4194304,
-      "ino": 12944476,
-      "blocks": 8,
-      "atimeMs": 1536591553520.7944,
-      "mtimeMs": 1536591553507.471,
-      "ctimeMs": 1536591553507.471,
-      "birthtimeMs": 1536591441049.8845,
-      "atime": "2018-09-10T14:59:13.521Z",
-      "mtime": "2018-09-10T14:59:13.507Z",
-      "ctime": "2018-09-10T14:59:13.507Z",
-      "birthtime": "2018-09-10T14:57:21.050Z"
-    },
-    "SitePage /en/cardano-shizz/shizz": {
-      "layout": "index",
-      "jsonName": "en-cardano-shizz-shizz.json",
-      "internalComponentName": "ComponentEnCardanoShizzShizz",
-      "path": "/en/cardano-shizz/shizz",
-      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
-      "componentChunkName": "component---src-templates-blog-post-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/templates/blog-post.js",
-      "id": "SitePage /en/cardano-shizz/shizz",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "f90f390d85973c8bd50709b65eb9703e",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file >>> MarkdownRemark": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file >>> MarkdownRemark",
-      "children": [],
-      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file",
-      "internal": {
-        "content": "---\npath: '/en/cardano-shizz/shizz'\ntitle: 'The Shizz'\ndate: '06-09-2018'\nauthor: 'Tim Berners Lee'\nlanguage: 'en'\n---\n\n##SHIZZLE POST\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
-        "type": "MarkdownRemark",
-        "contentDigest": "2095b3cd49479287eeadeea66d2da1df",
-        "owner": "gatsby-transformer-remark"
-      },
-      "frontmatter": {
-        "title": "The Shizz",
-        "path": "/en/cardano-shizz/shizz",
-        "date": "06-09-2018",
-        "author": "Tim Berners Lee",
-        "language": "en",
-        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file",
-        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file"
-      },
-      "excerpt": "",
-      "rawMarkdownBody": "\n##SHIZZLE POST\n\nCillum enim sint excepteur laborum mollit nulla dolore dolore id pariatur. Ea ullamco ex aute aliquip deserunt. Quis deserunt fugiat adipisicing ea cupidatat. Duis anim nisi officia sit irure. Esse Lorem exercitation ex ut.\n\nTempor duis nisi ipsum deserunt Lorem duis voluptate aliqua deserunt ipsum occaecat consectetur velit ipsum. Minim eu eu culpa deserunt sit quis reprehenderit velit sunt esse non irure quis velit. Incididunt magna ipsum anim cillum excepteur proident excepteur aliquip tempor.",
-      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md"
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "dcb48dbd6f0dedfb3422adcfecd620f8"
+    "PLUGINS_HASH": "b0b0fa3651586d86850f673a12138e3d"
   },
   "componentDataDependencies": {
     "nodes": {
+      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark": [
+        "/en/for-contributors/"
+      ],
       "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark": [
         "/en/post-1"
-      ],
-      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark": [
-        "/cn/post-1"
       ],
       "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file >>> MarkdownRemark": [
         "/en/post-2"
       ],
+      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2019-06-09-post1.cn.md absPath of file >>> MarkdownRemark": [
+        "/cn/post-1"
+      ],
+      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark": [
+        "/en/glossary/"
+      ],
+      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark": [
+        "/cn/introduction"
+      ],
       "Site": [
         "LAYOUT___index"
       ],
-      "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/cardano-shizz/2018-10-09-shizz.en.md absPath of file >>> MarkdownRemark": [
-        "/en/cardano-shizz/shizz"
+      "SearchIndex < Site": [
+        "LAYOUT___index"
       ]
     },
     "connections": {

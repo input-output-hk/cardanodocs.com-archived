@@ -3,8 +3,22 @@
         "componentChunkName": "component---src-templates-blog-post-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-for-contributors.json",
+        "path": "/en/for-contributors/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "en-post-1.json",
         "path": "/en/post-1"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-post-2.json",
+        "path": "/en/post-2"
     },
     {
         "componentChunkName": "component---src-templates-blog-post-js",
@@ -17,8 +31,15 @@
         "componentChunkName": "component---src-templates-blog-post-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-post-2.json",
-        "path": "/en/post-2"
+        "jsonName": "en-glossary.json",
+        "path": "/en/glossary/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-introduction.json",
+        "path": "/cn/introduction"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
@@ -103,12 +124,5 @@
         "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "index.json",
         "path": "/"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-shizz-shizz.json",
-        "path": "/en/cardano-shizz/shizz"
     }
 ]

@@ -19,9 +19,12 @@ exports.components = {
 
 exports.json = {
   "layout-index.json": require("gatsby-module-loader?name=path---!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/layout-index.json"),
+  "en-for-contributors.json": require("gatsby-module-loader?name=path---en-for-contributors!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-for-contributors.json"),
   "en-post-1.json": require("gatsby-module-loader?name=path---en-post-1!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-1.json"),
-  "cn-post-1.json": require("gatsby-module-loader?name=path---cn-post-1!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
   "en-post-2.json": require("gatsby-module-loader?name=path---en-post-2!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-2.json"),
+  "cn-post-1.json": require("gatsby-module-loader?name=path---cn-post-1!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
+  "en-glossary.json": require("gatsby-module-loader?name=path---en-glossary!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-glossary.json"),
+  "cn-introduction.json": require("gatsby-module-loader?name=path---cn-introduction!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-introduction.json"),
   "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("gatsby-module-loader?name=path---cn-404!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn-about.json": require("gatsby-module-loader?name=path---cn-about!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-about.json"),
@@ -33,8 +36,7 @@ exports.json = {
   "en-contact.json": require("gatsby-module-loader?name=path---en-contact!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-contact.json"),
   "en-docs.json": require("gatsby-module-loader?name=path---en-docs!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-docs.json"),
   "en.json": require("gatsby-module-loader?name=path---en!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en.json"),
-  "index.json": require("gatsby-module-loader?name=path---index!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/index.json"),
-  "en-cardano-shizz-shizz.json": require("gatsby-module-loader?name=path---en-cardano-shizz-shizz!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-cardano-shizz-shizz.json")
+  "index.json": require("gatsby-module-loader?name=path---index!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/index.json")
 }
 
 exports.layouts = {
