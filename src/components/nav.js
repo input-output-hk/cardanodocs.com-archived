@@ -3,7 +3,6 @@ import Link from 'gatsby-link';
 
 const linkStyle = {
   color: 'white',
-  fontFamily: 'sans-serif',
   textDecoration: 'none'
 }
 

@@ -4,7 +4,6 @@ import Search from './search'
 
 const linkStyle = {
   color: 'white',
-  fontFamily: 'sans-serif',
   textDecoration: 'none'
 }
 

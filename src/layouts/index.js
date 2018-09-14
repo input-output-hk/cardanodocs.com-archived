@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Index } from 'elasticlunr';
-
 
 import Header from '../components/header'
 import Nav from '../components/nav'
-import Search from '../components/search'
+
 import './index.css'
 
 class Layout extends React.Component {

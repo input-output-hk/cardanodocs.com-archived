@@ -13,7 +13,6 @@ const BlogPage = ({ data }) => (
           {data.allMarkdownRemark.edges.map( post => (
             <Link to={post.node.frontmatter.path} key={post.node.id} style={{
               color: '#333',
-              fontFamily: 'sans-serif'
             }}>
               <h3>{post.node.frontmatter.title}</h3>
               <small>Posted by: {post.node.frontmatter.author} | {post.node.frontmatter.date} | {post.node.frontmatter.language}</small>
