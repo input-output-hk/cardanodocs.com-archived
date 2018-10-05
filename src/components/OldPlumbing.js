@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Search from './search'
+import { language, updateLanguage } from '../assets/utils/language'
+import { getPathParts, updateUrl } from '../assets/utils/urlHelper'
 
 const linkStyle = {
   color: 'white',
@@ -9,7 +11,7 @@ const linkStyle = {
 
 // TODO: Language link should be a component
 
-class Header extends React.Component{
+class OP extends React.Component{
   constructor(props) {
     super(props)
   }
@@ -17,9 +19,8 @@ class Header extends React.Component{
   languageLink(lang) {
     const handleClick = (e) => {
       e.preventDefault();
-      this.props.toggleLanguageButtonState();
       const clickedLang = e.target.attributes.getNamedItem('data-lang').value;
-      this.props.changeLanguage(clickedLang);
+      updateLanguage(clickedLang);
     }
     return (
       <a href="#" onClick={handleClick} id='btn_' style={linkStyle} data-lang={lang}>
@@ -78,4 +79,4 @@ class Header extends React.Component{
   }
 }
 
-export default Header
+export default OP

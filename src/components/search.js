@@ -13,7 +13,6 @@ export default class Search extends Component {
     }
 
     render() {
-      console.log('data',this.props)
         return (
             <div
             style={{

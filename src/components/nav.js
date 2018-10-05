@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { language, updateLanguage } from '../assets/utils/language'
 
 const linkStyle = {
   color: 'white',
@@ -10,8 +11,25 @@ class Navigation extends React.Component {
   constructor(props) {
     super(props)
   }
+
+  navLink(lang, dest) {
+    function handleClick(e) {
+      e.preventDefault()
+      if (language === lang) {
+        window.location = `/${language}/${dest}`
+      } else {
+        window.location = `/${lang}/${dest}`
+      }
+      
+    }
+    return (
+      <a href={`#`} onClick={handleClick} id='btn_' style={linkStyle}>
+        {language === lang ? `${language} ${dest}` : `${lang} ${dest}`}
+      </a>
+    )
+  }
+
   render() {
-    const {language} = this.props.language;
     return (
       <div style={{
         background: 'dodgerBlue',
@@ -26,11 +44,10 @@ class Navigation extends React.Component {
           maxWidth: 960,
           margin: '0 auto'
         }}>
-          <li><Link to='/' style={linkStyle} >Home</Link></li>
-          <li><Link to={ language ? `${language}/about` : `/en/about`} style={linkStyle} >About</Link></li>
-          <li><Link to='/en/docs' style={linkStyle} >Docs EN</Link></li>
-          <li><Link to='/cn/docs' style={linkStyle} >Docs CN</Link></li>
-          <li><Link to={ language ? `${language}/contact` : `/en/contact`} style={linkStyle} >Contact</Link></li>
+          <li>{this.navLink(language, 'home')}</li>
+          <li>{this.navLink('en', 'docs')}</li>
+          <li>{this.navLink('cn', 'docs')}</li>
+          <li>{this.navLink(language, 'contact')}</li>
         </ul>
       </div>
     )

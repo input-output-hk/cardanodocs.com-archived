@@ -46,7 +46,6 @@ const Triangle = styled.div`
 
 const TriangleSeparator = (props) => (
   <Wrapper>
-    {console.log('colors', colors)}
     <Triangle />
     <Line />
   </Wrapper>

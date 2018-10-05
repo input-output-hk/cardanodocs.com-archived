@@ -26,6 +26,7 @@ exports.json = {
   "en-post-2.json": require("gatsby-module-loader?name=path---en-post-2!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-2.json"),
   "cn-introduction.json": require("gatsby-module-loader?name=path---cn-introduction!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-introduction.json"),
   "cn-post-1.json": require("gatsby-module-loader?name=path---cn-post-1!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
+  "cn-welcome-text.json": require("gatsby-module-loader?name=path---cn-welcome-text!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-welcome-text.json"),
   "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("gatsby-module-loader?name=path---cn-404!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn-about.json": require("gatsby-module-loader?name=path---cn-about!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-about.json"),
