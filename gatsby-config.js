@@ -1,17 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Cardano Docs',
+    site_title: 'Cardano Docs',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-page-transitions',
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
-    },
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -30,7 +26,7 @@ module.exports = {
       options: {
           // Fields to index
           fields: [
-              'title',
+              'doc_title',
               'keywords',
               'excerpt'
           ],
@@ -38,7 +34,7 @@ module.exports = {
           resolvers: {
               // For any node of type MarkdownRemark, list how to resolve the fields' values
               MarkdownRemark: {
-                  title: node => node.frontmatter.title,
+                  title: node => node.frontmatter.doc_title,
                   keywords: node => node.frontmatter.keywords,
                   excerpt: node => node.excerpt
               },

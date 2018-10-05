@@ -15,7 +15,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             id
             frontmatter {
               path
-              title
+              doc_title
               author
               date
               language

@@ -1,12 +1,13 @@
 ---
 layout: default
-title: For Contributors
+doc_title: For Contributors
 group: base
 permalink: /for-contributors/
 path: '/en/for-contributors/'
 children: for-contributors
 language: en
 keywords: 'contributors bar'
+label: docs
 ---
 
 # Redirecting bar...

@@ -19,7 +19,7 @@ const BlogPost = ({data}) => {
       <div>
         <Link to={`/${getLanguage()}/docs`}>{`< `}Go back</Link>
         <hr/>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{post.frontmatter.doc_title}</h1>
         <h4>By {post.frontmatter.author}</h4>
         <div dangerouslySetInnerHTML={{__html: post.html}}/>
       </div>
@@ -33,9 +33,10 @@ export const postQuery = graphql`
       html
       frontmatter {
         path
-        title
+        doc_title
         author
         date
+        label
       }
     }
   }

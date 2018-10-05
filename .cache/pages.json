@@ -3,8 +3,15 @@
         "componentChunkName": "component---src-templates-blog-post-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-post-1.json",
-        "path": "/cn/post-1"
+        "jsonName": "en-welcome-text.json",
+        "path": "/en/welcome-text/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-post-1.json",
+        "path": "/en/post-1"
     },
     {
         "componentChunkName": "component---src-templates-blog-post-js",
@@ -17,8 +24,8 @@
         "componentChunkName": "component---src-templates-blog-post-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-post-1.json",
-        "path": "/en/post-1"
+        "jsonName": "en-glossary.json",
+        "path": "/en/glossary/"
     },
     {
         "componentChunkName": "component---src-templates-blog-post-js",
@@ -38,8 +45,8 @@
         "componentChunkName": "component---src-templates-blog-post-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-glossary.json",
-        "path": "/en/glossary/"
+        "jsonName": "cn-post-1.json",
+        "path": "/cn/post-1"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",

@@ -2,8 +2,8 @@ var plugins = [{
       plugin: require('/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-plugin-typography/gatsby-ssr'),
-      options: {"plugins":[],"pathToConfigModule":"src/utils/typography.js"},
+      plugin: require('/Users/robinclark/iohk-sites/cardanodocs.com/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

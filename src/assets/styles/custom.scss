@@ -1,0 +1,20 @@
+@import './colors.scss';
+
+.gource-section {
+  position:absolute;
+  top:0;
+  height:22rem;
+  width:100%;
+  background-image: url('../images/gource-bg@3x.png');
+  background-size: 40rem;
+  @media(min-width:768px) {
+    background-size:60rem;
+  }
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity:0.5;
+  z-index: -1;
+}
+.overlay-bg {
+  background-color:$overlay-color;
+}

@@ -1,11 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+//import { ThemeProvider } from 'styled-components'
+
+//const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!./vars.scss')
+
+import 'typeface-montserrat'
 
 import Header from '../components/header'
+import OldPlumbing from '../components/OldPlumbing'
 import Nav from '../components/nav'
 
-import './index.css'
+import '../assets/styles/bootstrap-imports.scss'
+import '../assets/styles/custom.scss'
 
 class Layout extends React.Component {
   constructor(props) {
@@ -68,19 +75,14 @@ class Layout extends React.Component {
     return (
       <div>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={data.site.siteMetadata.site_title}
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header 
-          data ={data}
-          siteTitle={data.site.siteMetadata.title} 
-          changeLanguage={this.changeLanguage.bind(this)}
-          toggleLanguageButtonState={this.toggleLanguageButtonState.bind(this)}
-        />
-        <Nav language={this.state.language}/>
+        <div className="gource-section"></div>
+        <Header intro={data.allMarkdownRemark}/>
         <div
           style={{
             margin: '0 auto',
@@ -91,6 +93,13 @@ class Layout extends React.Component {
         >
           {children()}
         </div>
+        <OldPlumbing 
+          data ={data}
+          siteTitle={data.site.siteMetadata.site_title} 
+          changeLanguage={this.changeLanguage.bind(this)}
+          toggleLanguageButtonState={this.toggleLanguageButtonState.bind(this)}
+        />
+        <Nav language={this.state.language}/>
       </div>
     )
   }
@@ -104,13 +113,31 @@ export default Layout
 
 // Graphql query used to retrieve the serialized search index and siteTitle
 export const pageQuery = graphql`
-  query SearchIndexExampleQueryAndSiteTitleQuery {
+  query SearchIndexExampleQueryAndSiteTitlePooQuery {
     site {
       siteMetadata {
-        title
+        site_title
       }
     }
     siteSearchIndex {
       index
+    }
+    allMarkdownRemark{
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            doc_title
+            author
+            path
+            date
+            layout
+            permalink
+            label
+            keywords
+          }
+        }
+      }
     }
   }`;
