@@ -44,6 +44,7 @@ export const pageQuery = graphql`
             date
             language
             label
+            keywords
           }
           excerpt
         }

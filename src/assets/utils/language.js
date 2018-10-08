@@ -11,7 +11,6 @@ function getLanguageFromURL () {
 export const language = getLanguageFromURL()
 
 export function updateLanguage (newLanguage) {
-  console.log('uL', newLanguage)
   if (newLanguage !== language) {
     const URLParts = getPathParts()
     URLParts.splice(0, 1, newLanguage)

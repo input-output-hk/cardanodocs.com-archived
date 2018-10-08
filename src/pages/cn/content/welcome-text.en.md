@@ -2,7 +2,7 @@
 doc_title: Welcome
 permalink: /welcome-text/
 path: '/cn/welcome-text/'
-language: cn
+language: 'cn'
 keywords: 'welcome'
 label: content
 ---

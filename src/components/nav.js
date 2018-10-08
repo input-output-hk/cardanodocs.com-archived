@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { language, updateLanguage } from '../assets/utils/language'
+import { language } from '../assets/utils/language'
 
 const linkStyle = {
   color: 'white',
@@ -20,7 +20,6 @@ class Navigation extends React.Component {
       } else {
         window.location = `/${lang}/${dest}`
       }
-      
     }
     return (
       <a href={`#`} onClick={handleClick} id='btn_' style={linkStyle}>

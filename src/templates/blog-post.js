@@ -37,6 +37,8 @@ export const postQuery = graphql`
         author
         date
         label
+        language
+        keywords
       }
     }
   }

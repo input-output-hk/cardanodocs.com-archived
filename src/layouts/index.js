@@ -88,6 +88,7 @@ export const pageQuery = graphql`
             permalink
             label
             keywords
+            language
           }
         }
       }

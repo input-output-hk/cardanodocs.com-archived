@@ -45,6 +45,7 @@ query BlogIndexQueryEN {
           date
           language
           label
+          keywords
         }
         excerpt
       }
