@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Search from './search'
-import { language, updateLanguage } from '../assets/utils/language'
-import { getPathParts, updateUrl } from '../assets/utils/urlHelper'
+import { updateLanguage } from '../assets/utils/language'
 
 const linkStyle = {
   color: 'white',
