@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
+
 import { updateLanguage } from '../assets/utils/language'
 
-
-import Logo from './main-cardano-logo'
 import BlockWelcome from './BlockWelcome'
+import Logo from './main-cardano-logo'
 
 const linkStyle = {
   color: 'white',

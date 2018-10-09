@@ -12,6 +12,7 @@ label: docs
 
 # Redirecting bar...
 <!-- end -->
-<script>
+<!-- <script>
     window.location.replace("https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md");
-</script>
+</script> -->
+# STOOPID!!

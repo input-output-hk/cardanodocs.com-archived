@@ -2,6 +2,7 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
+  "component---cache-dev-404-page-js": require("gatsby-module-loader?name=component---cache-dev-404-page-js!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js"),
   "component---src-pages-cn-404-js": require("gatsby-module-loader?name=component---src-pages-cn-404-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js"),
   "component---src-pages-cn-index-js": require("gatsby-module-loader?name=component---src-pages-cn-index-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js"),
   "component---src-pages-en-404-js": require("gatsby-module-loader?name=component---src-pages-en-404-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js"),
@@ -11,6 +12,7 @@ exports.components = {
 
 exports.json = {
   "layout-index.json": require("gatsby-module-loader?name=path---!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/layout-index.json"),
+  "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("gatsby-module-loader?name=path---cn-404!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn.json": require("gatsby-module-loader?name=path---cn!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn.json"),
   "en-404.json": require("gatsby-module-loader?name=path---en-404!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-404.json"),

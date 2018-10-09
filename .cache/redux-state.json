@@ -1,13 +1,23 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "layout": "index",
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
+      "component": "/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
+      "pluginCreatorId": "Plugin dev-404-page",
+      "componentPath": "/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "a0056526ffa95bda5e6e3e49f420c3a5",
+        "description": "Plugin dev-404-page",
         "owner": "internal-data-bridge"
       }
     },
@@ -1092,14 +1102,16 @@
       "siteMetadata": {
         "site_title": "Cardano Docs"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-10-09T16:15:07.682Z",
+      "buildTime": "2018-10-09T17:05:35.035Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "36fa3c87739548af710474cfb14d0799",
+        "contentDigest": "0669868dd08d650d549b25313ec79973",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1109,7 +1121,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "593e406ace886008b322c9ba4c6bd54d",
+        "contentDigest": "9f628bc8d4ffc2ec9bd4861ec9762ffa",
         "type": "Directory",
         "description": "Directory \"src/pages\"",
         "owner": "gatsby-source-filesystem"
@@ -1121,7 +1133,7 @@
       "size": 192,
       "prettySize": "192 B",
       "modifiedTime": "2018-10-09T15:59:08.961Z",
-      "accessTime": "2018-10-09T16:15:09.818Z",
+      "accessTime": "2018-10-09T17:05:39.811Z",
       "changeTime": "2018-10-09T15:59:08.961Z",
       "birthTime": "2018-09-06T16:31:48.369Z",
       "root": "/",
@@ -1139,11 +1151,11 @@
       "blksize": 4194304,
       "ino": 13264855,
       "blocks": 0,
-      "atimeMs": 1539101709818.237,
+      "atimeMs": 1539104739810.9104,
       "mtimeMs": 1539100748961.4622,
       "ctimeMs": 1539100748961.4622,
       "birthtimeMs": 1536251508369.3958,
-      "atime": "2018-10-09T16:15:09.818Z",
+      "atime": "2018-10-09T17:05:39.811Z",
       "mtime": "2018-10-09T15:59:08.961Z",
       "ctime": "2018-10-09T15:59:08.961Z",
       "birthtime": "2018-09-06T16:31:48.369Z"
@@ -1153,7 +1165,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "f2d475d3216ffb802fd9dcdd13809853",
+        "contentDigest": "8cd85302d71ce8116a237b526fb77641",
         "type": "Directory",
         "description": "Directory \"src/pages/cn\"",
         "owner": "gatsby-source-filesystem"
@@ -1165,7 +1177,7 @@
       "size": 192,
       "prettySize": "192 B",
       "modifiedTime": "2018-10-09T11:26:07.230Z",
-      "accessTime": "2018-10-09T16:15:09.820Z",
+      "accessTime": "2018-10-09T17:05:39.813Z",
       "changeTime": "2018-10-09T11:26:07.230Z",
       "birthTime": "2018-09-06T17:41:54.752Z",
       "root": "/",
@@ -1183,11 +1195,11 @@
       "blksize": 4194304,
       "ino": 13264857,
       "blocks": 0,
-      "atimeMs": 1539101709820.3105,
+      "atimeMs": 1539104739812.9434,
       "mtimeMs": 1539084367230.3057,
       "ctimeMs": 1539084367230.3057,
       "birthtimeMs": 1536255714752.3416,
-      "atime": "2018-10-09T16:15:09.820Z",
+      "atime": "2018-10-09T17:05:39.813Z",
       "mtime": "2018-10-09T11:26:07.230Z",
       "ctime": "2018-10-09T11:26:07.230Z",
       "birthtime": "2018-09-06T17:41:54.752Z"
@@ -1197,7 +1209,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "d7ae4252fe35bb4f8c0402176be8ccff",
+        "contentDigest": "8da91783b94c7494be9dae512387d71c",
         "type": "Directory",
         "description": "Directory \"src/pages/en\"",
         "owner": "gatsby-source-filesystem"
@@ -1209,7 +1221,7 @@
       "size": 192,
       "prettySize": "192 B",
       "modifiedTime": "2018-10-09T11:26:01.637Z",
-      "accessTime": "2018-10-09T16:15:09.820Z",
+      "accessTime": "2018-10-09T17:05:39.813Z",
       "changeTime": "2018-10-09T11:26:01.637Z",
       "birthTime": "2018-09-06T17:41:44.104Z",
       "root": "/",
@@ -1227,11 +1239,11 @@
       "blksize": 4194304,
       "ino": 13264868,
       "blocks": 0,
-      "atimeMs": 1539101709820.364,
+      "atimeMs": 1539104739812.949,
       "mtimeMs": 1539084361636.6973,
       "ctimeMs": 1539084361636.6973,
       "birthtimeMs": 1536255704104.3481,
-      "atime": "2018-10-09T16:15:09.820Z",
+      "atime": "2018-10-09T17:05:39.813Z",
       "mtime": "2018-10-09T11:26:01.637Z",
       "ctime": "2018-10-09T11:26:01.637Z",
       "birthtime": "2018-09-06T17:41:44.104Z"
@@ -1241,7 +1253,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "c8271dbfecc4357f0261a80022386d98",
+        "contentDigest": "d11db7785f40a48dddd591c782135a33",
         "type": "Directory",
         "description": "Directory \"src/pages/cn/content\"",
         "owner": "gatsby-source-filesystem"
@@ -1253,7 +1265,7 @@
       "size": 96,
       "prettySize": "96 B",
       "modifiedTime": "2018-10-05T11:14:42.142Z",
-      "accessTime": "2018-10-09T16:15:09.822Z",
+      "accessTime": "2018-10-09T17:05:39.814Z",
       "changeTime": "2018-10-05T11:14:42.142Z",
       "birthTime": "2018-10-05T11:14:42.142Z",
       "root": "/",
@@ -1271,11 +1283,11 @@
       "blksize": 4194304,
       "ino": 15806740,
       "blocks": 0,
-      "atimeMs": 1539101709821.984,
+      "atimeMs": 1539104739814.2397,
       "mtimeMs": 1538738082142.4585,
       "ctimeMs": 1538738082142.4585,
       "birthtimeMs": 1538738082141.69,
-      "atime": "2018-10-09T16:15:09.822Z",
+      "atime": "2018-10-09T17:05:39.814Z",
       "mtime": "2018-10-05T11:14:42.142Z",
       "ctime": "2018-10-05T11:14:42.142Z",
       "birthtime": "2018-10-05T11:14:42.142Z"
@@ -1285,7 +1297,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "b85642ca2d5ff39b3aa18fa4e5d45c33",
+        "contentDigest": "cafceae237660d8aa37c1a083d0e51b5",
         "type": "Directory",
         "description": "Directory \"src/pages/cn/docs\"",
         "owner": "gatsby-source-filesystem"
@@ -1297,7 +1309,7 @@
       "size": 160,
       "prettySize": "160 B",
       "modifiedTime": "2018-10-05T09:57:50.517Z",
-      "accessTime": "2018-10-09T16:15:09.822Z",
+      "accessTime": "2018-10-09T17:05:39.814Z",
       "changeTime": "2018-10-05T09:57:50.517Z",
       "birthTime": "2018-09-07T13:22:25.417Z",
       "root": "/",
@@ -1315,11 +1327,11 @@
       "blksize": 4194304,
       "ino": 13264862,
       "blocks": 0,
-      "atimeMs": 1539101709821.9976,
+      "atimeMs": 1539104739814.2905,
       "mtimeMs": 1538733470517.4246,
       "ctimeMs": 1538733470517.4246,
       "birthtimeMs": 1536326545416.8994,
-      "atime": "2018-10-09T16:15:09.822Z",
+      "atime": "2018-10-09T17:05:39.814Z",
       "mtime": "2018-10-05T09:57:50.517Z",
       "ctime": "2018-10-05T09:57:50.517Z",
       "birthtime": "2018-09-07T13:22:25.417Z"
@@ -1329,7 +1341,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "bc8826fe7859c37325866c28af1c1724",
+        "contentDigest": "3a795a20bfd063fcf90a5a472faecea8",
         "type": "Directory",
         "description": "Directory \"src/pages/en/content\"",
         "owner": "gatsby-source-filesystem"
@@ -1341,7 +1353,7 @@
       "size": 96,
       "prettySize": "96 B",
       "modifiedTime": "2018-10-05T09:57:50.519Z",
-      "accessTime": "2018-10-09T16:15:09.822Z",
+      "accessTime": "2018-10-09T17:05:39.814Z",
       "changeTime": "2018-10-05T09:57:50.519Z",
       "birthTime": "2018-10-05T09:57:50.519Z",
       "root": "/",
@@ -1359,11 +1371,11 @@
       "blksize": 4194304,
       "ino": 15583998,
       "blocks": 0,
-      "atimeMs": 1539101709822.0222,
+      "atimeMs": 1539104739814.347,
       "mtimeMs": 1538733470518.8633,
       "ctimeMs": 1538733470518.8633,
       "birthtimeMs": 1538733470518.7144,
-      "atime": "2018-10-09T16:15:09.822Z",
+      "atime": "2018-10-09T17:05:39.814Z",
       "mtime": "2018-10-05T09:57:50.519Z",
       "ctime": "2018-10-05T09:57:50.519Z",
       "birthtime": "2018-10-05T09:57:50.519Z"
@@ -1373,7 +1385,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "1f63e4c225c4519675b6c831c23482d5",
+        "contentDigest": "505d02b2adf61853f4ec1a29c1b90b0b",
         "type": "Directory",
         "description": "Directory \"src/pages/en/docs\"",
         "owner": "gatsby-source-filesystem"
@@ -1385,7 +1397,7 @@
       "size": 224,
       "prettySize": "224 B",
       "modifiedTime": "2018-10-05T09:57:50.527Z",
-      "accessTime": "2018-10-09T16:15:09.822Z",
+      "accessTime": "2018-10-09T17:05:39.814Z",
       "changeTime": "2018-10-05T09:57:50.527Z",
       "birthTime": "2018-09-07T13:22:39.911Z",
       "root": "/",
@@ -1403,11 +1415,11 @@
       "blksize": 4194304,
       "ino": 13264873,
       "blocks": 0,
-      "atimeMs": 1539101709822.1062,
+      "atimeMs": 1539104739814.3628,
       "mtimeMs": 1538733470526.6543,
       "ctimeMs": 1538733470526.6543,
       "birthtimeMs": 1536326559910.9746,
-      "atime": "2018-10-09T16:15:09.822Z",
+      "atime": "2018-10-09T17:05:39.814Z",
       "mtime": "2018-10-05T09:57:50.527Z",
       "ctime": "2018-10-05T09:57:50.527Z",
       "birthtime": "2018-09-07T13:22:39.911Z"
@@ -1417,7 +1429,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "173c63e999af976de9c2af5adef6d328",
+        "contentDigest": "80efe206042cf1b46c58a83a028898fb",
         "mediaType": "application/javascript",
         "type": "File",
         "description": "File \"src/pages/index.js\"",
@@ -1427,11 +1439,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/index.js",
       "relativePath": "index.js",
       "extension": "js",
-      "size": 786,
-      "prettySize": "786 B",
-      "modifiedTime": "2018-10-03T15:32:56.342Z",
-      "accessTime": "2018-10-09T13:12:34.503Z",
-      "changeTime": "2018-10-03T15:32:56.342Z",
+      "size": 2423,
+      "prettySize": "2.42 kB",
+      "modifiedTime": "2018-10-09T17:22:16.681Z",
+      "accessTime": "2018-10-09T17:22:16.681Z",
+      "changeTime": "2018-10-09T17:22:16.681Z",
       "birthTime": "2018-09-07T13:26:40.488Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages",
@@ -1448,13 +1460,13 @@
       "blksize": 4194304,
       "ino": 13264867,
       "blocks": 8,
-      "atimeMs": 1539090754502.756,
-      "mtimeMs": 1538580776341.9192,
-      "ctimeMs": 1538580776341.9192,
+      "atimeMs": 1539105736681.0903,
+      "mtimeMs": 1539105736681.4817,
+      "ctimeMs": 1539105736681.4817,
       "birthtimeMs": 1536326800487.6711,
-      "atime": "2018-10-09T13:12:34.503Z",
-      "mtime": "2018-10-03T15:32:56.342Z",
-      "ctime": "2018-10-03T15:32:56.342Z",
+      "atime": "2018-10-09T17:22:16.681Z",
+      "mtime": "2018-10-09T17:22:16.681Z",
+      "ctime": "2018-10-09T17:22:16.681Z",
       "birthtime": "2018-09-07T13:26:40.488Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js absPath of file": {
@@ -1519,9 +1531,9 @@
       "extension": "js",
       "size": 1457,
       "prettySize": "1.46 kB",
-      "modifiedTime": "2018-10-09T11:26:07.230Z",
-      "accessTime": "2018-10-09T13:12:34.503Z",
-      "changeTime": "2018-10-09T11:26:07.231Z",
+      "modifiedTime": "2018-10-09T17:17:56.758Z",
+      "accessTime": "2018-10-09T17:17:56.769Z",
+      "changeTime": "2018-10-09T17:17:56.758Z",
       "birthTime": "2018-10-08T15:56:00.462Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn",
@@ -1538,13 +1550,13 @@
       "blksize": 4194304,
       "ino": 15869244,
       "blocks": 8,
-      "atimeMs": 1539090754502.7007,
-      "mtimeMs": 1539084367230,
-      "ctimeMs": 1539084367230.694,
+      "atimeMs": 1539105476769.2988,
+      "mtimeMs": 1539105476757.9785,
+      "ctimeMs": 1539105476757.9785,
       "birthtimeMs": 1539014160461.8416,
-      "atime": "2018-10-09T13:12:34.503Z",
-      "mtime": "2018-10-09T11:26:07.230Z",
-      "ctime": "2018-10-09T11:26:07.231Z",
+      "atime": "2018-10-09T17:17:56.769Z",
+      "mtime": "2018-10-09T17:17:56.758Z",
+      "ctime": "2018-10-09T17:17:56.758Z",
       "birthtime": "2018-10-08T15:56:00.462Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js absPath of file": {
@@ -1609,9 +1621,9 @@
       "extension": "js",
       "size": 1679,
       "prettySize": "1.68 kB",
-      "modifiedTime": "2018-10-09T16:12:10.567Z",
-      "accessTime": "2018-10-09T16:12:10.581Z",
-      "changeTime": "2018-10-09T16:12:10.567Z",
+      "modifiedTime": "2018-10-09T17:18:07.978Z",
+      "accessTime": "2018-10-09T17:18:07.990Z",
+      "changeTime": "2018-10-09T17:18:07.978Z",
       "birthTime": "2018-10-08T15:56:00.469Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en",
@@ -1628,13 +1640,13 @@
       "blksize": 4194304,
       "ino": 15869249,
       "blocks": 8,
-      "atimeMs": 1539101530581.1514,
-      "mtimeMs": 1539101530567.2742,
-      "ctimeMs": 1539101530567.2742,
+      "atimeMs": 1539105487990.474,
+      "mtimeMs": 1539105487977.691,
+      "ctimeMs": 1539105487977.691,
       "birthtimeMs": 1539014160468.602,
-      "atime": "2018-10-09T16:12:10.581Z",
-      "mtime": "2018-10-09T16:12:10.567Z",
-      "ctime": "2018-10-09T16:12:10.567Z",
+      "atime": "2018-10-09T17:18:07.990Z",
+      "mtime": "2018-10-09T17:18:07.978Z",
+      "ctime": "2018-10-09T17:18:07.978Z",
       "birthtime": "2018-10-08T15:56:00.469Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/.DS_Store absPath of file": {
@@ -1875,7 +1887,7 @@
       ],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "68622950e409429f9a7f0a0ecd05720e",
+        "contentDigest": "18ef67134e14891ef095778c60918b69",
         "mediaType": "text/markdown",
         "type": "File",
         "description": "File \"src/pages/en/docs/2017-01-13-for-contributors.en.md\"",
@@ -1885,11 +1897,11 @@
       "absolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md",
       "relativePath": "en/docs/2017-01-13-for-contributors.en.md",
       "extension": "md",
-      "size": 366,
-      "prettySize": "366 B",
-      "modifiedTime": "2018-10-05T09:57:50.522Z",
-      "accessTime": "2018-10-09T12:05:50.103Z",
-      "changeTime": "2018-10-05T09:57:50.522Z",
+      "size": 387,
+      "prettySize": "387 B",
+      "modifiedTime": "2018-10-09T16:26:08.875Z",
+      "accessTime": "2018-10-09T16:26:10.216Z",
+      "changeTime": "2018-10-09T16:26:08.875Z",
       "birthTime": "2018-10-05T09:57:50.522Z",
       "root": "/",
       "dir": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs",
@@ -1906,13 +1918,13 @@
       "blksize": 4194304,
       "ino": 15584001,
       "blocks": 8,
-      "atimeMs": 1539086750103.4434,
-      "mtimeMs": 1538733470522.2063,
-      "ctimeMs": 1538733470522.2063,
+      "atimeMs": 1539102370215.512,
+      "mtimeMs": 1539102368875.1577,
+      "ctimeMs": 1539102368875.1577,
       "birthtimeMs": 1538733470521.9382,
-      "atime": "2018-10-09T12:05:50.103Z",
-      "mtime": "2018-10-05T09:57:50.522Z",
-      "ctime": "2018-10-05T09:57:50.522Z",
+      "atime": "2018-10-09T16:26:10.216Z",
+      "mtime": "2018-10-09T16:26:08.875Z",
+      "ctime": "2018-10-09T16:26:08.875Z",
       "birthtime": "2018-10-05T09:57:50.522Z"
     },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file": {
@@ -2224,34 +2236,6 @@
       "rawMarkdownBody": "\nDear reader, the purpose of this documentation is to provide you with understanding of the first layer of Cardano Platform stack, the Settlement Layer. If you have an understanding of what Settlement Layer is, we suggest you first read [Differences Between the Paper and the Implementation](/cardano/differences/), and then move on to documentation on [protocols and implementation](/technical/protocols/csl-application-level/).\n\nThis documentation targets IOHK developers, third party software developers, auditors, and consultants who collaborate on implementing Cardano Settlement Layer or use Cardano Settlement Layer reference implementation.\n",
       "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/content/welcome-text.en.md"
     },
-    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark": {
-      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark",
-      "children": [],
-      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
-      "internal": {
-        "content": "---\nlayout: default\ndoc_title: For Contributors\ngroup: base\npermalink: /for-contributors/\npath: '/en/for-contributors/'\nchildren: for-contributors\nlanguage: en\nkeywords: 'contributors bar'\nlabel: docs\n---\n\n# Redirecting bar...\n<!-- end -->\n<script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script>\n",
-        "type": "MarkdownRemark",
-        "contentDigest": "4e3a6fb1a106a763c2614e0bfb8913cf",
-        "owner": "gatsby-transformer-remark"
-      },
-      "frontmatter": {
-        "title": "",
-        "layout": "default",
-        "doc_title": "For Contributors",
-        "group": "base",
-        "permalink": "/for-contributors/",
-        "path": "/en/for-contributors/",
-        "children": "for-contributors",
-        "language": "en",
-        "keywords": "contributors bar",
-        "label": "docs",
-        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
-        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file"
-      },
-      "excerpt": "\n# Redirecting bar...\n",
-      "rawMarkdownBody": "\n# Redirecting bar...\n<!-- end -->\n<script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script>\n",
-      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md"
-    },
     "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark",
       "children": [],
@@ -2343,12 +2327,13 @@
         "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2018-06-09-post1.en.md absPath of file >>> MarkdownRemark",
         "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2019-06-09-post2.en.md absPath of file >>> MarkdownRemark",
         "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-19-glossary.en.md absPath of file >>> MarkdownRemark",
-        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark"
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark",
+        "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark"
       ],
       "internal": {
         "type": "SiteSearchIndex",
-        "content": "\"/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md absPath of file >>> MarkdownRemark\"",
-        "contentDigest": "63be7048587d07582153a30e627a2888",
+        "content": "\"/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark\"",
+        "contentDigest": "994337888b6ec8572482e0c1c3c73522",
         "owner": "@andrew-codes/gatsby-plugin-elasticlunr-search"
       }
     },
@@ -2381,6 +2366,34 @@
       "rawMarkdownBody": "\n<!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->\n\nindex\n亲爱的读者，本文档的目的是让您对于 Cardano 平台技术栈第一层即结算层有所了解。如果您理解了结算层是什么，我们建议您先阅读[论文和实现的差异](/cardano/differences/)，然后再阅读[协议和实现的文档](/technical/protocols/csl-application-level/)。\n\n本文档目标读者是 IOHK 的开发人员，第三方软件开发人员，审计和致力于实现卡尔达诺结算层或使用卡尔达诺结算层参考实现的咨询人员。\n\n<!-- CARDANO_SL_README_BEGIN_1 -->\n## 什么是卡尔达诺结算层?\n\nCardano SL（或卡尔达诺运算层）是由 [IOHK](https://iohk.io/team) 联合爱丁堡大学，雅典大学和康涅狄格大学共同设计开发的一种加密货币。卡尔达诺运算层是基于 Aggelos Kiayias，Alexander Russell，Bernardo David 和 Roman Oliynykov 的白皮书 [『乌洛波罗斯：可证明安全的权益证明协议』](https://iohk.io/research/papers/#9BKRHCSI)的 Haskell 实现。\n<!-- end -->\n\n您可以将卡尔达诺结算层视为基于比特币重新设计的针对比特币缺陷的自由修复。 有关卡尔达诺结算层和比特币之间的相似之处和差异的更多信息，请阅读[『卡尔达诺结算层为什么特别?』](http://cardanodocs.com/introduction/cn/#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E8%BF%90%E7%AE%97%E5%B1%82%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%B9%E5%88%AB)。\n\n\n<!-- CARDANO_SL_README_END_1 -->\n\n## 加密货币基础\n\n\n在给出加密货币的定义之前，我们先来谈谈为什么我们在意数字货币，特别是加密货币。\n\n### 我们为什么在意?\n\n#### 速度\n\n与传统（也称为法定）中心银行货币，与日元或美元相反，电子货币不需要一个银行系统来转移价值。这一限制的解除，使用数字货币的速度要快于银行业务，尤其是在全球范围内。使用数字货币从大阪转移10美元到丹佛不再需要数天的时间。无论距离如何，所有交易都能迅速完成。\n\n\n#### 你掌控你自己的钱\n\n所有的商业银行账户所有者在收到支付请求后在合理的时间内只能支付一定的金额。银行体系对任何价值量都有限制，使个人无法迅速撤出或转移大量资金。有加密货币的情况下，持有一种称为**密钥**这一特殊信息的人就可以随意花钱。没有其他实体有权操纵用户拥有的价值。\n\n\n#### 匿名\n\n人们可以根据需要，拥有任意多的加密货币地址，从不同的地址接收，消费资产。经营电子商务商店的商家可以拥有一组收款和退款的地址，以及一个用于他们自身需要的单独的个人『钱包』。通过统一的接口控制所有这些钱包，并且不需要登录到多个支付平台，这使得该过程非常节省时间。\n\n#### 安全\n\n你的钱就像可用于消费的**密钥**一样安全。这意味着将密钥存储在保险箱中的 USB 闪存上相当于让纸币处于安全状态。即使进行了成功的网络攻击，也绝对没有人能够窃取这笔钱。\n\n#### 扩展性\n\n使用一种称为[侧链](https://www.blockstream.com/sidechains.pdf)的方法，以及通用加密货币，如卡尔达诺结算层和比特币，就可以启用特定领域的加密货币，例如以太经典。这样一来，通过特定领域的加密货币开发的任何创新产品都可以让参与者在通用的加密货币中保持价值。这样的应用程序的例子有身份管理，游戏和赌博，以及可验证计算。\n\n\n### 什么是加密货币?\n\n加密货币是一种数字货币形式，使用密码来控制价值。密码学提供了一种生成任何类型信息的真实真实性证据的方法。这就是所谓的*数字签名*。在加密货币中，我们通过签署和发送交易到网络并接收已确认的交易块，生成一个总账（一个提供每个地址有多少钱的信息的数据库）。加密货币通常是分散的，这意味着来自全球各地的许多人通过运行加密货币节点参与总账的生成。因此，必须达成关于总账状况的共识。下一节讨论实现这种共识的两个最重要的方法。\n\n\n## 卡尔达诺结算层为什么特别\n\n<!-- v0.1.0.0 -->\n\n虽然比特币和卡尔达诺结算层之间有相似之处，但这两个加密货币之间也有很多不同之处。最显着的区别是，比特币是工作量证明类型的加密货币，而卡尔达诺结算层使用权益证明的方法达成共识。这鼓励诚信和长期的参与。\n\n\n### 共识算法的目的\n\n\n共识算法被用来产生新的交易区块，使账本更新状态。每当有人发布一个交易区块时，他们（或者说他们的运行加密货币协议的节点）就必须附上他们已经证明的证据。下面讨论两种类型的证明。\n\n\n### 工作量证明和挖矿\n\n工作量证明是加密货币最普遍的共识算法类型。它起源于比特币，加密货币就是这么工作的。为了生成工作证明，计算机必须解决一个挑战。这是难以解决的计算繁重的问题，但解决方案很容易验证。当一台基于网络的工作量证明的计算机找到一个解决方案时，它会将交易发布于同它一起计算的其他计算机。这台计算机会因为产生区块得到交易费和奖励。整个过程被称为*挖矿*。挖矿是非常耗能的，所需的能源数量在不断增加，这可能导致不健康的竞争。\n\n### 权益证明和铸币\n\n权益证明是一种生成区块的新方法。由 [Aggelos Kiayias 教授](https://iohk.io/team/aggelos-kiayias/)领导的 IOHK 科学家们设计了第一个可证明的，称为乌洛波罗斯的权益证明算法。乌洛波罗斯是卡尔达诺结算层的核心。研究小组已经发表了一篇[白皮书](https://iohk.io/research/papers/a-provably-secure-proof-of-stake-blockchain-protocol/) ，这封白皮书对于那些拥有加密货币理论背景的人来说是值得一读的。权益证明的核心思想是，不要浪费电力来解决计算繁重的问题，而是选择一个节点来铸造一个新的区块，其概率与这个节点的硬币数量成正相关。如果一个节点有整数个(&gt; 0)的 [slot](/cardano/proof-of-stake/#stake)，它被称为 slot 所有人。如果一个节点最终被选中来铸造一个区块，那么这个节点被称为 slot 领导者。您可以在[卡尔达诺结算层的股权证明](/cardano/proof-of-stake/)中了解更多关于该流程的信息。\n\n\n<!-- CARDANO_SL_README_BEGIN_2 -->\n## 卡尔达诺结算层之上\n\n\n卡尔达诺结算层被称为『层』是有原因的。这是卡尔达诺平台的第一个组件。最终，它将被扩展到一个控制层，作为一个可信的计算框架来评估一种特殊的证明，以确保一定的计算正确执行。在游戏和赌博中，这样的系统被用于验证随机数生成和游戏结果的真实性。伴随着侧链，它将有可能完成诸如在游戏中公平分配奖金的任务。但是控制层的应用远远超出了游戏和赌博。身份管理，信用系统等将成为卡尔达诺平台的一部分。我们将迭代卡尔达诺[钱包应用程序 Daedalus](https://github.com/input-output-hk/daedalus)，使其变成一个具有自动加密货币交易功能和合法加密货币交易功能的通用加密货币钱包。\n\n\n<!-- CARDANO_SL_README_END_2 -->\n",
       "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/docs/2017-01-01-index.cn.md"
     },
+    "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
+      "internal": {
+        "content": "---\nlayout: default\ndoc_title: For Contributors\ngroup: base\npermalink: /for-contributors/\npath: '/en/for-contributors/'\nchildren: for-contributors\nlanguage: en\nkeywords: 'contributors bar'\nlabel: docs\n---\n\n# Redirecting bar...\n<!-- end -->\n<!-- <script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script> -->\n# STOOPID!!\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "c793395a70bb47952fe8f7725f9bff0d",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "",
+        "layout": "default",
+        "doc_title": "For Contributors",
+        "group": "base",
+        "permalink": "/for-contributors/",
+        "path": "/en/for-contributors/",
+        "children": "for-contributors",
+        "language": "en",
+        "keywords": "contributors bar",
+        "label": "docs",
+        "_PARENT": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file",
+        "parent": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md absPath of file"
+      },
+      "excerpt": "\n# Redirecting bar...\n",
+      "rawMarkdownBody": "\n# Redirecting bar...\n<!-- end -->\n<!-- <script>\n    window.location.replace(\"https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md\");\n</script> -->\n# STOOPID!!\n",
+      "fileAbsolutePath": "/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/docs/2017-01-13-for-contributors.en.md"
+    },
     "SitePage /cn/404/": {
       "layout": "index",
       "jsonName": "cn-404.json",
@@ -2397,7 +2410,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "a0df072ae08a4d04a7496a1f715c1315",
+        "contentDigest": "2d60058295456dfd706f8846b119b556",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -2418,7 +2431,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f5574ec406e85adab00210fff7601b56",
+        "contentDigest": "3e4809107c31643851d3f577ed23805e",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -2439,7 +2452,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "3279e710e089d595e772e4484ca0e2de",
+        "contentDigest": "8e46c4145d767699c01b6e0fb211495e",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -2460,7 +2473,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "d4452d17990d7a87e61cb1fb06ae2b18",
+        "contentDigest": "f75cf2345b9d4ba7bd2e152c3ba23451",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -2481,7 +2494,7 @@
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "6cd588415014b39f2fee4dacc1aacf61",
+        "contentDigest": "1002c4c5807464c1640a8e17183b94a8",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }

@@ -7,6 +7,7 @@ exports.layouts = {
 }
 
 exports.components = {
+  "component---cache-dev-404-page-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js")),
   "component---src-pages-cn-404-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js")),
   "component---src-pages-cn-index-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js")),
   "component---src-pages-en-404-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js")),
@@ -16,6 +17,7 @@ exports.components = {
 
 exports.json = {
   "layout-index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/layout-index.json"),
+  "dev-404-page.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn.json"),
   "en-404.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-404.json"),
