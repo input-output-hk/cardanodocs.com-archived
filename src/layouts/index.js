@@ -34,6 +34,7 @@ class Layout extends React.Component {
         />
         <div className="gource-section"></div>
         <Header
+          data={data}
           siteTitle={data.site.siteMetadata.site_title}
           intro={data.allMarkdownRemark}
         />

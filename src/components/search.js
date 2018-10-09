@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
 import {Index} from 'elasticlunr';
 import Markdown from 'markdown-to-jsx';
+import styled from 'styled-components'
+import colors from '../assets/styles/colors'
+
+const SearchInput = styled.input`
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid ${colors.$teal};
+  color: ${colors.$white};
+  outline:none;
+`
 
 // Search component
 export default class Search extends Component {
@@ -14,35 +26,22 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div
-            style={{
-              position: 'relative'
-            }}
-            >
-                <input type="text" value={this.state.query} onChange={this.search}/>
-                <ul 
-                  style={{
-                    position: 'absolute',
-                    top: '2em',
-                    left: '-1.4em',
-                    listStyleType: 'none',
-                    background: '#e5e5e5',
-                    width: 500,                              
-                    opacity: 0.8,
-                    border: `${this.state.results.length > 0 ? '1px solid darkgrey' : 'none'}`
-                  }}
-                >
-                    {this.state.results.map(page => (
-                        <li key={page.id}
-                        >
-                            <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
-                            <Markdown options={{ forceInline: true }}>
-                              {page.excerpt}
-                            </Markdown>
-                        </li>
-                    ))}
-                </ul>
+          <div className="d-flex justify-content-around row">
+            <div className='col-sm-12 mt-5'>
+              <SearchInput type="text" value={this.state.query ? this.state.query : `Search term...`} onChange={this.search}/>
+              <ul>
+                  {this.state.results.map(page => (
+                      <li key={page.id}
+                      >
+                          <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
+                          <Markdown options={{ forceInline: true }}>
+                            {page.excerpt}
+                          </Markdown>
+                      </li>
+                  ))}
+              </ul>
             </div>
+          </div>
         );
     }
 

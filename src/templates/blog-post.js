@@ -13,6 +13,7 @@ const getLanguage = () => {
 }
 
 const BlogPost = ({data}) => {
+  console.log(data)
   const post = data.markdownRemark;
   return (
     <PageTransition>

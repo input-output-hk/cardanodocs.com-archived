@@ -8,8 +8,6 @@ const linkStyle = {
   textDecoration: 'none'
 }
 
-// TODO: Language link should be a component
-
 class OP extends React.Component{
   constructor(props) {
     super(props)

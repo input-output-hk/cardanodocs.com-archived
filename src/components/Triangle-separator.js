@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../assets/styles/colors'
-import '../assets/styles/colors.scss'
-
 
 const Wrapper = styled.div`
   width: 100%;

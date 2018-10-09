@@ -1,61 +1,5 @@
 [
     {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-post-1.json",
-        "path": "/en/post-1"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-for-contributors.json",
-        "path": "/en/for-contributors/"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-glossary.json",
-        "path": "/en/glossary/"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-post-2.json",
-        "path": "/en/post-2"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-introduction.json",
-        "path": "/cn/introduction"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-post-1.json",
-        "path": "/cn/post-1"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-welcome-text.json",
-        "path": "/cn/welcome-text/"
-    },
-    {
-        "componentChunkName": "component---src-templates-blog-post-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-welcome-text.json",
-        "path": "/en/welcome-text/"
-    },
-    {
         "componentChunkName": "component---cache-dev-404-page-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
@@ -70,27 +14,6 @@
         "path": "/cn/404/"
     },
     {
-        "componentChunkName": "component---src-pages-cn-about-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-about.json",
-        "path": "/cn/about/"
-    },
-    {
-        "componentChunkName": "component---src-pages-cn-contact-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-contact.json",
-        "path": "/cn/contact/"
-    },
-    {
-        "componentChunkName": "component---src-pages-cn-docs-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-docs.json",
-        "path": "/cn/docs/"
-    },
-    {
         "componentChunkName": "component---src-pages-cn-index-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
@@ -98,32 +21,18 @@
         "path": "/cn/"
     },
     {
+        "componentChunkName": "component---src-pages-doc-post-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "doc-post.json",
+        "path": "/DocPost/"
+    },
+    {
         "componentChunkName": "component---src-pages-en-404-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "en-404.json",
         "path": "/en/404/"
-    },
-    {
-        "componentChunkName": "component---src-pages-en-about-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-about.json",
-        "path": "/en/about/"
-    },
-    {
-        "componentChunkName": "component---src-pages-en-contact-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-contact.json",
-        "path": "/en/contact/"
-    },
-    {
-        "componentChunkName": "component---src-pages-en-docs-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-docs.json",
-        "path": "/en/docs/"
     },
     {
         "componentChunkName": "component---src-pages-en-index-js",
