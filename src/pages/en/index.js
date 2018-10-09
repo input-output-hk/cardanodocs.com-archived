@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import DocPost from '../DocPost'
+import DocPost from '../../components/DocPost'
 
 import PageTransition from 'gatsby-plugin-page-transitions'
 
@@ -46,6 +46,8 @@ query BlogIndexQueryEN {
     edges {
       node {
         id
+        excerpt
+        html
         frontmatter {
           path
           doc_title
@@ -55,7 +57,6 @@ query BlogIndexQueryEN {
           label
           keywords
         }
-        excerpt
       }
     }
   }

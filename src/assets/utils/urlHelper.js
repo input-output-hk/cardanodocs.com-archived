@@ -1,8 +1,12 @@
 export function getPathParts () {
-  return window.location.pathname.replace(/^\//, '').split('/')
+  if(typeof window !== 'undefined'){
+    return window.location.pathname.replace(/^\//, '').split('/')
+  }
+  return [null]
 }
 
 export function updateUrl (newUrl) {
-  console.log(newUrl)
-  window.location = newUrl
+  if(typeof window !== 'undefined') {
+    window.location = newUrl
+  }
 }
