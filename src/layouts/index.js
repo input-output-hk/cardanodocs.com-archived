@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
+import Footer from '../components/footer';
 
 import '../assets/styles/bootstrap-imports.scss'
 import '../assets/styles/custom.scss'
@@ -18,7 +19,7 @@ class Layout extends React.Component {
   render() {
     const {children, data} = this.props;
     return (
-      <div>
+      <div >
         <Helmet
           title={data.site.siteMetadata.site_title}
           meta={[
@@ -42,6 +43,7 @@ class Layout extends React.Component {
         >
           {children()}
         </div>
+        <Footer/>
       </div>
     )
   }

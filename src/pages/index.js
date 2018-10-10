@@ -1,5 +1,16 @@
 import React from 'react'
-//import Spinner from '../components/Spinner'
+import styled from 'styled-components'
+import Spinner from '../components/Spinner'
+
+const LoadingWrap = styled.div`
+  position:absolute;
+  z-index:999;
+  top:0;
+  left:0;
+  height:120vh;
+  width:101vw;
+  background-color:#121326;
+`
 
 let lang = 'en'
 
@@ -16,8 +27,11 @@ const setDefaultLanguage = (lang) => {
 const IndexPage = () => {
   setDefaultLanguage(lang)
   return (
-      //<Spinner />
-      <div><h1>FOO</h1></div>
+    <LoadingWrap className='d-flex align-items-center justify-content-center'>
+      <div style={{zIndex: 9999, position: 'relative', top: '-25em'}}>
+        <Spinner />
+      </div> 
+    </LoadingWrap>  
   )
 }
 

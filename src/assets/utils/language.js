@@ -5,7 +5,7 @@ function getLanguageFromURL () {
   const defaultLanguage = 'en'
   const URLLanguage = getPathParts()[0]
   if (supportedLanguages.includes(URLLanguage)) return URLLanguage
-  if(typeof window !== 'undefined') updateUrl(`/${defaultLanguage}${window.location.path}`)
+  if (typeof window !== 'undefined') updateUrl(`/${defaultLanguage}${window.location.pathname}`)
 }
 
 export const language = getLanguageFromURL()

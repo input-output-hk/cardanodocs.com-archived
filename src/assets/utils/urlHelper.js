@@ -7,6 +7,11 @@ export function getPathParts () {
 
 export function updateUrl (newUrl) {
   if(typeof window !== 'undefined') {
-    window.location = newUrl
+    const body = document.getElementsByTagName('body')[0]
+    const vizToggle = () => body.classList.toggle('viz')
+    vizToggle()
+    setTimeout(() => {
+      window.location = newUrl 
+    }, 500, vizToggle)
   }
 }

@@ -4,8 +4,6 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 
 import { language } from '../assets/utils/language'
 
-
-
 const Document = ({data}) => {
   let postData
   if(data.markdownRemark) postData = data.markdownRemark

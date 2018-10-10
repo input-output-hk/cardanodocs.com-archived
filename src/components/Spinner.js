@@ -89,7 +89,7 @@ const Spin = styled.div`
 `
 
 const Spinner = () => (
-  <Spin className='row d-flex justify-content-around mt-5'>
+  <Spin className='row'>
     <div className="col-sm-4">
       <div className="lds-roller">
         <div></div>
@@ -104,3 +104,5 @@ const Spinner = () => (
     </div>
   </Spin>
 )
+
+export default Spinner
