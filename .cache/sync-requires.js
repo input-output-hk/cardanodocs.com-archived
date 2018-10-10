@@ -7,7 +7,7 @@ exports.layouts = {
 }
 
 exports.components = {
-  "component---cache-dev-404-page-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js")),
+  "component---src-pages-document-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/Document.js")),
   "component---src-pages-cn-404-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js")),
   "component---src-pages-cn-index-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js")),
   "component---src-pages-en-404-js": preferDefault(require("/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js")),
@@ -17,9 +17,21 @@ exports.components = {
 
 exports.json = {
   "layout-index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/layout-index.json"),
-  "dev-404-page.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
+  "cn-welcome-text.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-welcome-text.json"),
+  "en-for-contributors.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-for-contributors.json"),
+  "en-post-1.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-1.json"),
+  "en-intro-text.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-intro-text.json"),
+  "cn-for-contributors.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-for-contributors.json"),
+  "cn-glossary.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-glossary.json"),
+  "cn-post-1.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-1.json"),
+  "cn-post-2.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-post-2.json"),
+  "cn-intro-text.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-intro-text.json"),
+  "en-post-2.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-post-2.json"),
+  "en-glossary.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-glossary.json"),
+  "en-welcome-text.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-welcome-text.json"),
   "cn-404.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn.json"),
+  "document.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/document.json"),
   "en-404.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-404.json"),
   "en.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en.json"),
   "index.json": require("/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/index.json")

@@ -7,7 +7,6 @@ keywords: 'welcome'
 label: content
 ---
 
-## 你好
-你好, the purpose of this documentation is to provide you with understanding of the first layer of Cardano Platform stack, the Settlement Layer. If you have an understanding of what Settlement Layer is, we suggest you first read [Differences Between the Paper and the Implementation](/cardano/differences/), and then move on to documentation on [protocols and implementation](/technical/protocols/csl-application-level/).
+亲爱的读者，本文档的目的是让您对于 Cardano 平台技术栈第一层即结算层有所了解。如果您理解了结算层是什么，我们建议您先阅读论文和实现的差异，然后再阅读协议和实现的文档。
 
-This documentation targets IOHK developers, third party software developers, auditors, and consultants who collaborate on implementing Cardano Settlement Layer or use Cardano Settlement Layer reference implementation.
+本文档目标读者是 IOHK 的开发人员，第三方软件开发人员，审计和致力于实现卡尔达诺结算层或使用卡尔达诺结算层参考实现的咨询人员。

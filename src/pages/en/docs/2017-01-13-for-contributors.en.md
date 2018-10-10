@@ -3,9 +3,9 @@ layout: default
 doc_title: For Contributors
 group: base
 permalink: /for-contributors/
-path: '/en/for-contributors/'
+path: '/cn/for-contributors/'
 children: for-contributors
-language: en
+language: cn
 keywords: 'contributors bar'
 label: docs
 ---

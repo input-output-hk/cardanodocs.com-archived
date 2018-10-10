@@ -12,15 +12,14 @@ class BlockWelcome extends React.Component {
 
   render () {
     const props = this.props
-    console.log(props)
     return (
       <div className='d-flex justify-content-around row'>
-        {language === 'en' &&
+        {/* {language === 'en' &&
           <h1>EN</h1>
         }
         {language === 'cn' &&
           <h1>CN</h1>
-        }
+        } */}
         <TriangleSeparator />
         <div className="welcome text-center pt-5 pr-5 pb-5 pl-5 mt-0 mr-md-5 mb-5 ml-md-5 col-sm-14  overlay-bg">
           {

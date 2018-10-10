@@ -20,7 +20,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
+    "build": "npm run patch && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,9 +34,6 @@
     "gatsby-plugin-typography": "^1.7.19",
     "node-sass": "^4.9.3",
     "prettier": "^1.13.7",
-    "sass-extract": "^2.1.0",
-    "sass-extract-js": "^0.4.0",
-    "sass-extract-loader": "^1.1.0",
     "styled-components": "^2.2.3",
     "typeface-montserrat": "^0.0.54"
   },

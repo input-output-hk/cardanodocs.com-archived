@@ -1,10 +1,87 @@
 [
     {
-        "componentChunkName": "component---cache-dev-404-page-js",
+        "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "dev-404-page.json",
-        "path": "/dev-404-page/"
+        "jsonName": "cn-welcome-text.json",
+        "path": "/cn/welcome-text/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-for-contributors.json",
+        "path": "/en/for-contributors/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-post-1.json",
+        "path": "/en/post-1"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-intro-text.json",
+        "path": "/en/intro-text/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-for-contributors.json",
+        "path": "/cn/for-contributors/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-glossary.json",
+        "path": "/cn/glossary/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-post-1.json",
+        "path": "/cn/post-1"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-post-2.json",
+        "path": "/cn/post-2"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-intro-text.json",
+        "path": "/cn/intro-text/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-post-2.json",
+        "path": "/en/post-2"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-glossary.json",
+        "path": "/en/glossary/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-welcome-text.json",
+        "path": "/en/welcome-text/"
     },
     {
         "componentChunkName": "component---src-pages-cn-404-js",
@@ -19,6 +96,13 @@
         "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "cn.json",
         "path": "/cn/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "document.json",
+        "path": "/Document/"
     },
     {
         "componentChunkName": "component---src-pages-en-404-js",

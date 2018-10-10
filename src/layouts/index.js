@@ -1,14 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { language, updateLanguage } from '../assets/utils/language'
-import { getPathParts, updateUrl } from '../assets/utils/urlHelper'
 
 import 'typeface-montserrat'
 
 import Header from '../components/header'
-import OldPlumbing from '../components/OldPlumbing'
-import Nav from '../components/nav'
 
 import '../assets/styles/bootstrap-imports.scss'
 import '../assets/styles/custom.scss'
@@ -18,8 +14,6 @@ class Layout extends React.Component {
     super(props)
     
   }
-
-  
 
   render() {
     const {children, data} = this.props;
@@ -48,11 +42,6 @@ class Layout extends React.Component {
         >
           {children()}
         </div>
-        <OldPlumbing 
-          data={data}
-          siteTitle={data.site.siteMetadata.site_title} 
-        />
-        <Nav />
       </div>
     )
   }
@@ -64,9 +53,9 @@ Layout.propTypes = {
 
 export default Layout
 
-// Graphql query used to retrieve the serialized search index and siteTitle
+// Graphql query used to retrieve the serialized search index and meta siteTitle
 export const pageQuery = graphql`
-  query SearchIndexExampleQueryAndSiteTitlePooQuery {
+  query SearchIndexSiteTitleQuery {
     site {
       siteMetadata {
         site_title
@@ -94,4 +83,5 @@ export const pageQuery = graphql`
         }
       }
     }
-  }`;
+  }
+  `

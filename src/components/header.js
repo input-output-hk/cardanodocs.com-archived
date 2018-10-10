@@ -42,7 +42,7 @@ class  Header extends React.Component{
             </ul>
           </div>
           <div className="container text-center">
-            <Link to="/" >
+            <Link to="/" style={{display:'block', position:'relative', zIndex: 99, margin: '0 auto', width: '120px'}}>
               <Logo />
             </Link>
             <h2 className="text-uppercase">Cardano <span className='thin-heading'>Documentation</span></h2>
