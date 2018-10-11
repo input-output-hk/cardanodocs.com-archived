@@ -3,6 +3,7 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---src-pages-document-js": require("gatsby-module-loader?name=component---src-pages-document-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/Document.js"),
+  "component---cache-dev-404-page-js": require("gatsby-module-loader?name=component---cache-dev-404-page-js!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/dev-404-page.js"),
   "component---src-pages-cn-404-js": require("gatsby-module-loader?name=component---src-pages-cn-404-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/404.js"),
   "component---src-pages-cn-index-js": require("gatsby-module-loader?name=component---src-pages-cn-index-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/cn/index.js"),
   "component---src-pages-en-404-js": require("gatsby-module-loader?name=component---src-pages-en-404-js!/Users/robinclark/iohk-sites/cardanodocs.com/src/pages/en/404.js"),
@@ -24,6 +25,7 @@ exports.json = {
   "en-welcome-text.json": require("gatsby-module-loader?name=path---en-welcome-text!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-welcome-text.json"),
   "en-intro-text.json": require("gatsby-module-loader?name=path---en-intro-text!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/en-intro-text.json"),
   "cn-for-contributors.json": require("gatsby-module-loader?name=path---cn-for-contributors!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-for-contributors.json"),
+  "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/dev-404-page.json"),
   "cn-404.json": require("gatsby-module-loader?name=path---cn-404!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn-404.json"),
   "cn.json": require("gatsby-module-loader?name=path---cn!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/cn.json"),
   "document.json": require("gatsby-module-loader?name=path---document!/Users/robinclark/iohk-sites/cardanodocs.com/.cache/json/document.json"),

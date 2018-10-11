@@ -6,6 +6,9 @@ import { updateLanguage } from '../assets/utils/language'
 import BlockWelcome from './BlockWelcome'
 import Logo from './main-cardano-logo'
 
+import usflag from '../assets/images/us.svg'
+import cnflag from '../assets/images/cn.svg'
+
 const linkStyle = {
   color: 'white',
   textDecoration: 'none'
@@ -24,7 +27,9 @@ class  Header extends React.Component{
     }
     return (
       <a href="#" onClick={handleClick} id='btn_' style={linkStyle} data-lang={lang}>
-        {lang === 'en' ? 'English' : 'Chinese'}
+        <img src={lang === 'en' ? usflag : cnflag} alt="flag icon" style={{maxWidth:'20px'}} data-lang={lang}/>
+        &nbsp;
+        {lang === 'en' ? 'English' : '中文'}
       </a>
     )
   }
@@ -36,9 +41,13 @@ class  Header extends React.Component{
         <section className="hero container">
           <div className='d-flex justify-content-around row lang-select'>
             <ul className='col-24 text-right list-unstyled'>
-              <li className='d-inline'>{this.languageLink(`en`)}</li>
+              <li className='d-inline'>
+                {this.languageLink(`en`)}
+              </li>
               <li className='d-inline' style={linkStyle}>&nbsp; | &nbsp;</li>
-              <li className='d-inline'>{this.languageLink(`cn`)}</li>
+              <li className='d-inline'>
+                {this.languageLink(`cn`)}
+              </li>
             </ul>
           </div>
           <div className="container text-center">
