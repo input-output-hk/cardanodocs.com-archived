@@ -11,20 +11,17 @@ const Document = ({data}) => {
   return (
     <PageTransition>
       <div className="row">
-        <div className="col-sm-8">
-          <ul className='list-group list-group-flush'>
+        <div className="col-sm-6 cd-sidebar">
+          <ul className='list-group list-unstyled'>
             {postList.edges.map( post => {
                 if(post.node.frontmatter.language === language) {
                   return (
                     post.node.frontmatter.label === 'docs' &&
-                    <li className='list-group-item' key={post.node.id} style={{ 
+                    <li className='mob-text-center' key={post.node.id} style={{ 
                       listStyleType: 'none'
                     }}>
                       <Link to={post.node.frontmatter.path} key={post.node.id}>
-                        <h3>{post.node.frontmatter.doc_title}</h3>
-                        <small>Posted by: {post.node.frontmatter.author} | {post.node.frontmatter.date} | {post.node.frontmatter.language}</small>
-                        <strong>Read more ...</strong>
-                        <hr/>
+                        <h4>{post.node.frontmatter.doc_title}</h4>
                       </Link>
                     </li>
                   )
@@ -35,7 +32,7 @@ const Document = ({data}) => {
         </div>
         {
           postData &&
-            <div className='col-sm-16'>
+            <div className='col-sm-18'>
               <h1>{postData.frontmatter.doc_title}</h1>
               <h4>By {postData.frontmatter.author}</h4>
               <div dangerouslySetInnerHTML={{__html: postData.html}}/>

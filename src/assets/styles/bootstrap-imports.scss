@@ -42,4 +42,14 @@
 //  @import "./node_modules/bootstrap-scss/carousel";
  @import "./node_modules/bootstrap-scss/utilities";
  @import "./node_modules/bootstrap-scss/print";
- 
+
+
+
+
+@media (min-width:768px) and (max-width:990px) {
+  .footer-strip {
+    h2 {
+      font-size: 0.85rem;
+    }
+  }
+}

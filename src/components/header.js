@@ -33,9 +33,9 @@ class  Header extends React.Component{
     const props = this.props
     return (
       <div>
-        <section className="hero">
+        <section className="hero container">
           <div className='d-flex justify-content-around row lang-select'>
-            <ul className='col-sm-14 text-right list-unstyled'>
+            <ul className='col-24 text-right list-unstyled'>
               <li className='d-inline'>{this.languageLink(`en`)}</li>
               <li className='d-inline' style={linkStyle}>&nbsp; | &nbsp;</li>
               <li className='d-inline'>{this.languageLink(`cn`)}</li>

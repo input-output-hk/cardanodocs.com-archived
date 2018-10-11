@@ -28,7 +28,7 @@ const IndexPage = () => {
   setDefaultLanguage(lang)
   return (
     <LoadingWrap className='d-flex align-items-center justify-content-center'>
-      <div style={{zIndex: 9999, position: 'relative', top: '-25em'}}>
+      <div style={{zIndex: 9999, position: 'relative', top: '-20em'}}>
         <Spinner />
       </div> 
     </LoadingWrap>  

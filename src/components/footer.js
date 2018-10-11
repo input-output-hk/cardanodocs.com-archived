@@ -6,7 +6,7 @@ import iohk from '../assets/images/iohk.svg'
 
   const iconStyle = {
     fontSize: '1.5rem',
-    margin: '10px',
+    margin: '5px',
     color: 'rgba(255, 255, 255, 0.65)',
   }
     const iconStyleTeal = {
@@ -18,28 +18,26 @@ import iohk from '../assets/images/iohk.svg'
 
 const Footer = () => (
 
-  <section className="footer mt-5 small">
+  <section className="footer mt-5 small opa-70">
     <div className="container">
-      <div className="row footer-strip">
-        <div className="col-24">
-          <div className="float-left pt-2 mob-text-center col-md-10">
-            <h2 className="d-inline">Cardano Rust Project 2018</h2>
-            <a href="https://github.com/input-output-hk/rust-cardano" target="_blank"><FaGithub style={iconStyleTeal} /></a>
+      <div className="row footer-strip h-100">
+          <div className="mob-text-center col-md-10">
+            <h2 className="d-inline align-middle">Cardano Rust Project 2018</h2>
+            <a className='align-middle' href="https://github.com/input-output-hk/rust-cardano" target="_blank"><FaGithub style={iconStyleTeal} /></a>
           </div>
-          <div className="float-right col-md-14">
+          <div className="col-md-14">
             <div className="row">
               <div className="col-md-15 mob-text-center text-right">
-                <img className="d-inline mr-2" src={iohk} style={{height:'40px'}}/>
-                <h2 className="d-inline">IOHK-Supported Project</h2>
+                <img className="d-inline mr-2 align-middle" src={iohk} style={{height:'40px'}}/>
+                <h2 className="d-inline align-middle">IOHK-Supported Project</h2>
               </div>
               <div className="col-md-9 mob-text-center text-right">
-                <a href="https://twitter.com/InputOutputHK" target="_blank"><FaTwitter style={iconStyle} /></a>
-                <a href="mailto:info@cardano.org"><FaEnvelope style={iconStyle} /></a>
-                <a href="https://github.com/input-output-hk/rust-cardano" target="_blank"><FaGithub style={iconStyle} /></a>
+                <a className='align-middle' href="https://twitter.com/InputOutputHK" target="_blank"><FaTwitter style={iconStyle} /></a>
+                <a className='align-middle' href="mailto:info@cardano.org"><FaEnvelope style={iconStyle} /></a>
+                <a className='align-middle' href="https://github.com/input-output-hk/rust-cardano" target="_blank"><FaGithub style={iconStyle} /></a>
               </div>
             </div>
           </div>
-        </div>
       </div>
     	<div className="row border-top  border-light mt-2 pt-4">
 

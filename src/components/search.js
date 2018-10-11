@@ -12,6 +12,8 @@ const SearchInput = styled.input`
   border-bottom: 1px solid ${colors.$teal};
   color: ${colors.$white};
   outline:none;
+  font-size: 1rem;
+  margin-bottom: 2rem;
 `
 
 // Search component
@@ -24,25 +26,34 @@ export default class Search extends Component {
         };
     }
 
+
     render() {
-        return (
-          <div className="d-flex justify-content-around row">
-            <div className='col-sm-12 mt-5'>
-              <SearchInput type="text" value={this.state.query ? this.state.query : `Search term...`} onChange={this.search}/>
-              <ul>
-                  {this.state.results.map(page => (
-                      <li key={page.id}
-                      >
-                          <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
-                          <Markdown options={{ forceInline: true }}>
-                            {page.excerpt}
-                          </Markdown>
-                      </li>
-                  ))}
-              </ul>
-            </div>
+
+      const placeholderText =  (e) => {
+        if(!this.state.query) {
+          e.target.value = ''
+        }
+      }
+
+      return (
+        <div className="d-flex justify-content-around row">
+          <div className='col-sm-12 mt-5'>
+            <SearchInput type="text" value={this.state.query ? this.state.query : `Search term...`} onClick={placeholderText} onChange={this.search}/>
+            <ul className='list-unstyled'>
+                {this.state.results.map(page => (
+                    <li key={page.id}
+                    >
+                        <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
+                        <Markdown options={{ forceInline: true }}>
+                          {page.excerpt}
+                        </Markdown>
+                        <hr/>
+                    </li>
+                ))}
+            </ul>
           </div>
-        );
+        </div>
+      )
     }
 
     getIndex = () => {

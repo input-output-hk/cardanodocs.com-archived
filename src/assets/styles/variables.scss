@@ -1,4 +1,13 @@
 @import './colors.scss';
+
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 1.5;
+$h2-font-size: $font-size-base * 1.25;
+$h3-font-size: $font-size-base * 1.1;
+$h4-font-size: $font-size-base * 1;
+$h5-font-size: $font-size-base * 0.9;
+$h6-font-size: $font-size-base * 0.8;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 990px);
 $body-bg: $dark;
 $body-color: $white;
 $link-color: $primary;
@@ -55,6 +64,7 @@ $progress-height: 0.625rem;
 $progress-font-size: 0.625rem;
 $progress-bg: $gray-700;
 $list-group-bg: transparent;
+$list-group-border-width: 0;
 $list-group-border-color: $gray-700;
 $breadcrumb-bg: $gray-700;
 $close-color: $primary;

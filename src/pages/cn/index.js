@@ -9,11 +9,11 @@ const IndexDocPage = ({ data }) => {
   return (
     <PageTransition>
       <div className="row">
-        <div className="col-sm-8">
-          <ul className='list-group list-group-flush'>
+        <div className="col-sm-6 cd-sidebar">
+          <ul className='list-group list-unstyled'>
             {postList.edges.map( post => (
               post.node.frontmatter.label === 'docs' &&
-              <li className='list-group-item' key={post.node.id} style={{ 
+              <li className='mob-text-center' key={post.node.id} style={{ 
                 listStyleType: 'none'
               }}>
                 <Link to={post.node.frontmatter.path} key={post.node.id}>
@@ -24,7 +24,7 @@ const IndexDocPage = ({ data }) => {
             )}
           </ul>
         </div>
-        <div className="col-sm-16">
+        <div className="col-sm-18">
           {
             data.allMarkdownRemark.edges.map( el => {
               let data = el.node.frontmatter
