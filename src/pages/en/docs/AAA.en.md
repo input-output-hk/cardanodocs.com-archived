@@ -1,9 +1,9 @@
 ---
-path: '/cn/post-1'
+path: '/en/post-1'
 doc_title: 'Post 1'
 date: '06-09-2018'
 author: 'Charles Hoskinson'
-language: 'cn'
+language: 'en'
 keywords: 'post1 one'
 label: docs
 ---

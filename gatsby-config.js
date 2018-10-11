@@ -28,7 +28,8 @@ module.exports = {
           fields: [
               'doc_title',
               'keywords',
-              'excerpt'
+              'excerpt',
+              'html'
           ],
           // How to resolve each field's value for a supported node type
           resolvers: {
@@ -36,7 +37,8 @@ module.exports = {
               MarkdownRemark: {
                   title: node => node.frontmatter.doc_title,
                   keywords: node => node.frontmatter.keywords,
-                  excerpt: node => node.excerpt
+                  excerpt: node => node.excerpt,
+                  html: node => node.html
               },
           },
       },

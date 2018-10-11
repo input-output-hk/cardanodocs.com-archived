@@ -1,5 +1,5 @@
 ---
-doc_title: Welcome
+doc_doc_title: Welcome
 permalink: /welcome-text/
 path: '/cn/welcome-text/'
 language: 'cn'

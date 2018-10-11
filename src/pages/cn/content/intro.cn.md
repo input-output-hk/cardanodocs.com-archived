@@ -1,5 +1,5 @@
 ---
-doc_title: Intro
+doc_doc_title: Intro
 permalink: /intro-text/
 path: '/en/intro-text/'
 language: 'en'
