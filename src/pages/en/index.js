@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import PageTransition from 'gatsby-plugin-page-transitions'
-import colors from '../../assets/styles/colors.js';
+import colors from '../../assets/styles/colors.js'
 
 import { language } from '../../assets/utils/language'
 
