@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import PageTransition from 'gatsby-plugin-page-transitions'
+import SideBarNav from '../../components/SideBarNav'
 
 import { language } from '../../assets/utils/language'
 
@@ -10,27 +10,15 @@ const IndexDocPage = ({ data }) => {
     <PageTransition>
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
-          <ul className='list-group list-unstyled'>
-            {postList.edges.map( post => (
-              post.node.frontmatter.label === 'docs' &&
-              <li className='mob-text-center' key={post.node.id} style={{ 
-                listStyleType: 'none'
-              }}>
-                <Link to={post.node.frontmatter.path} key={post.node.id}>
-                  <h4>{post.node.frontmatter.doc_title}</h4>
-                </Link>
-              </li>
-              )
-            )}
-          </ul>
+          <SideBarNav postList={postList}/>
         </div>
         <div className="col-sm-18">
           {
-            data.allMarkdownRemark.edges.map( el => {
+            data.allMarkdownRemark.edges.map( (el, i) => {
               let data = el.node.frontmatter
               if (data.keywords === 'intro') {
                 if (data.language === language) {
-                  return <div key={el.node.id} dangerouslySetInnerHTML={{__html: el.node.html}} />
+                  return <div key={i} dangerouslySetInnerHTML={{__html: el.node.html}} />
                 }
               }
             })

@@ -1,8 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import SideBarNav from '../components/SideBarNav'
 import PageTransition from 'gatsby-plugin-page-transitions'
-
-import { language } from '../assets/utils/language'
 
 const Document = ({data}) => {
   let postData
@@ -12,23 +10,7 @@ const Document = ({data}) => {
     <PageTransition>
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
-          <ul className='list-group list-unstyled'>
-            {postList.edges.map( post => {
-                if(post.node.frontmatter.language === language) {
-                  return (
-                    post.node.frontmatter.label === 'docs' &&
-                    <li className='mob-text-center' key={post.node.id} style={{ 
-                      listStyleType: 'none'
-                    }}>
-                      <Link to={post.node.frontmatter.path} key={post.node.id}>
-                        <h4>{post.node.frontmatter.doc_title}</h4>
-                      </Link>
-                    </li>
-                  )
-                }
-              }
-            )}
-          </ul>
+          <SideBarNav postList={postList}/>
         </div>
         {
           postData &&
@@ -57,7 +39,7 @@ export const postQuery = graphql`
         keywords
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark{
       edges {
         node {
           id
@@ -71,6 +53,7 @@ export const postQuery = graphql`
             language
             label
             keywords
+            group
           }
         }
       }
