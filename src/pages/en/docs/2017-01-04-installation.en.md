@@ -1,9 +1,9 @@
 ---
+date: '2017-01-01'
 doc_title: Installation
 permalink: /en/installation/
 path: /en/installation/
 group: base
-children: dsa
 language: en
 label: docs
 ---

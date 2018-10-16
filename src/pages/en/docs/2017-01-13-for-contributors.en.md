@@ -1,4 +1,5 @@
 ---
+date: '2017-01-01'
 doc_title: For Contributors
 group: base
 permalink: /en/for-contributors/

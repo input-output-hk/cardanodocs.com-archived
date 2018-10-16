@@ -39,7 +39,9 @@ export const postQuery = graphql`
         keywords
       }
     }
-    allMarkdownRemark{
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ){
       edges {
         node {
           id
