@@ -1,6 +1,6 @@
 ---
 doc_title: Balance and Stake
-path: /en/cardano/balance-and-stake/
+path: /en/en/cardano/balance-and-stake/
 group: cardano
 language: en
 label: docs

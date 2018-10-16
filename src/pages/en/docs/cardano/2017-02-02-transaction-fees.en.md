@@ -1,6 +1,6 @@
 ---
 doc_title: Transaction Fees
-path: /en/cardano/transaction-fees/
+path: /en/en/cardano/transaction-fees/
 group: cardano
 language: en
 label: docs

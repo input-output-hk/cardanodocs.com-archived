@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title:  Cardano SL CLI Options
-path: /technical/cli-options/
+path: /en/technical/cli-options/
 group: technical
 language: en
 label: docs

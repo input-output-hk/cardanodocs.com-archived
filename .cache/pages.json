@@ -45,64 +45,8 @@
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-addresses.json",
-        "path": "/en/cardano/addresses/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "cn-for-contributors.json",
         "path": "/cn/for-contributors/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-balance-and-stake.json",
-        "path": "/en/cardano/balance-and-stake/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-topology.json",
-        "path": "/en/cardano/topology/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-monetary-policy.json",
-        "path": "/en/cardano/monetary-policy/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-transaction-fees.json",
-        "path": "/en/cardano/transaction-fees/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-proof-of-stake.json",
-        "path": "/en/cardano/proof-of-stake/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-transactions.json",
-        "path": "/en/cardano/transactions/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-explorer.json",
-        "path": "/en/cardano/explorer/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
@@ -115,20 +59,6 @@
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-update-mechanism.json",
-        "path": "/en/cardano/update-mechanism/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-transaction-assurance.json",
-        "path": "/en/cardano/transaction-assurance/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "en-intro-text.json",
         "path": "/en/intro-text/"
     },
@@ -136,225 +66,302 @@
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-cardano-differences.json",
-        "path": "/en/cardano/differences/"
+        "jsonName": "en-en-installation.json",
+        "path": "/en/en/installation/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-introduction.json",
-        "path": "/en/introduction/"
+        "jsonName": "en-en-for-contributors.json",
+        "path": "/en/en/for-contributors/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-installation.json",
-        "path": "/en/installation/"
+        "jsonName": "en-en-glossary.json",
+        "path": "/en/en/glossary/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-technical.json",
-        "path": "/en/technical/"
+        "jsonName": "en-for-contributors-building-from-source.json",
+        "path": "/en/for-contributors/building-from-source/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-for-contributors.json",
-        "path": "/en/for-contributors/"
+        "jsonName": "en-for-contributors-haddock.json",
+        "path": "/en/for-contributors/haddock/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-glossary.json",
-        "path": "/en/glossary/"
+        "jsonName": "en-en-cardano-differences.json",
+        "path": "/en/en/cardano/differences/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-timeline-testnet.json",
-        "path": "/en/timeline/testnet/"
+        "jsonName": "en-en-cardano-addresses.json",
+        "path": "/en/en/cardano/addresses/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-timeline-bootstrap.json",
-        "path": "/en/timeline/bootstrap/"
+        "jsonName": "en-en-cardano-balance-and-stake.json",
+        "path": "/en/en/cardano/balance-and-stake/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "timeline-reward.json",
-        "path": "/timeline/reward/"
+        "jsonName": "en-en-cardano-topology.json",
+        "path": "/en/en/cardano/topology/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-leader-selection.json",
-        "path": "/technical/leader-selection/"
+        "jsonName": "en-en-cardano-monetary-policy.json",
+        "path": "/en/en/cardano/monetary-policy/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-formal-specification-for-a-cardano-wallet.json",
-        "path": "/technical/formal-specification-for-a-cardano-wallet/"
+        "jsonName": "en-en-cardano-transaction-fees.json",
+        "path": "/en/en/cardano/transaction-fees/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-hd-wallets.json",
-        "path": "/technical/hd-wallets/"
+        "jsonName": "en-en-cardano-explorer.json",
+        "path": "/en/en/cardano/explorer/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-wallet-frontend.json",
-        "path": "/technical/wallet-frontend/"
+        "jsonName": "en-technical-launcher.json",
+        "path": "/en/technical/launcher/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-launcher.json",
-        "path": "/technical/launcher/"
+        "jsonName": "en-technical-explorer.json",
+        "path": "/en/technical/explorer/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-explorer.json",
-        "path": "/technical/explorer/"
+        "jsonName": "en-technical-leader-selection.json",
+        "path": "/en/technical/leader-selection/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-wallet-backend.json",
-        "path": "/technical/wallet-backend/"
+        "jsonName": "en-technical-hd-wallets.json",
+        "path": "/en/technical/hd-wallets/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-pvss.json",
-        "path": "/technical/pvss/"
+        "jsonName": "en-technical-wallet-backend.json",
+        "path": "/en/technical/wallet-backend/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-updater.json",
-        "path": "/technical/updater/"
+        "jsonName": "en-technical-formal-specification-for-a-cardano-wallet.json",
+        "path": "/en/technical/formal-specification-for-a-cardano-wallet/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-blocks.json",
-        "path": "/technical/blocks/"
+        "jsonName": "en-technical-wallet-frontend.json",
+        "path": "/en/technical/wallet-frontend/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-delegation.json",
-        "path": "/technical/delegation/"
+        "jsonName": "en-en-timeline-bootstrap.json",
+        "path": "/en/en/timeline/bootstrap/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-plutus-examples.json",
-        "path": "/technical/plutus/examples/"
+        "jsonName": "en-en-timeline-testnet.json",
+        "path": "/en/en/timeline/testnet/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-plutus-introduction.json",
-        "path": "/technical/plutus/introduction/"
+        "jsonName": "en-timeline-reward.json",
+        "path": "/en/timeline/reward/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-plutus-types.json",
-        "path": "/technical/plutus/types/"
+        "jsonName": "en-technical-plutus-introduction.json",
+        "path": "/en/technical/plutus/introduction/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-protocols-time-warp-nt.json",
-        "path": "/technical/protocols/time-warp-nt/"
+        "jsonName": "en-technical-plutus-types.json",
+        "path": "/en/technical/plutus/types/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-protocols-network-transport.json",
-        "path": "/technical/protocols/network-transport/"
+        "jsonName": "en-technical-plutus-examples.json",
+        "path": "/en/technical/plutus/examples/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-protocols-p-2-p.json",
-        "path": "/technical/protocols/p2p/"
+        "jsonName": "en-technical-wallet-api.json",
+        "path": "/en/technical/wallet/api/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-protocols-csl-application-level.json",
-        "path": "/technical/protocols/csl-application-level/"
+        "jsonName": "en-en-introduction.json",
+        "path": "/en/en/introduction/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-cli-options.json",
-        "path": "/technical/cli-options/"
+        "jsonName": "en-en-technical.json",
+        "path": "/en/en/technical/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-protocols-binary-protocols.json",
-        "path": "/technical/protocols/binary-protocols/"
+        "jsonName": "en-en-cardano-proof-of-stake.json",
+        "path": "/en/en/cardano/proof-of-stake/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "technical-wallet-api.json",
-        "path": "/technical/wallet/api/"
+        "jsonName": "en-en-cardano-transactions.json",
+        "path": "/en/en/cardano/transactions/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "for-contributors-haddock.json",
-        "path": "/for-contributors/haddock/"
+        "jsonName": "en-en-cardano-update-mechanism.json",
+        "path": "/en/en/cardano/update-mechanism/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "for-contributors-building-from-source.json",
-        "path": "/for-contributors/building-from-source/"
+        "jsonName": "en-en-cardano-transaction-assurance.json",
+        "path": "/en/en/cardano/transaction-assurance/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-updater.json",
+        "path": "/en/technical/updater/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-blocks.json",
+        "path": "/en/technical/blocks/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-pvss.json",
+        "path": "/en/technical/pvss/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-delegation.json",
+        "path": "/en/technical/delegation/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-protocols-time-warp-nt.json",
+        "path": "/en/technical/protocols/time-warp-nt/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-protocols-csl-application-level.json",
+        "path": "/en/technical/protocols/csl-application-level/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-protocols-p-2-p.json",
+        "path": "/en/technical/protocols/p2p/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-protocols-network-transport.json",
+        "path": "/en/technical/protocols/network-transport/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-cli-options.json",
+        "path": "/en/technical/cli-options/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical-protocols-binary-protocols.json",
+        "path": "/en/technical/protocols/binary-protocols/"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "dev-404-page.json",
+        "path": "/dev-404-page/"
     },
     {
         "componentChunkName": "component---src-pages-cn-404-js",

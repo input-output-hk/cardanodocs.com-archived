@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Cardano SL Wallet Frontend
-path: /technical/wallet-frontend/
+path: /en/technical/wallet-frontend/
 group: technical
 language: en
 label: docs

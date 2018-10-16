@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Introduction
-path: /technical/plutus/introduction/
+path: /en/technical/plutus/introduction/
 group: technical-plutus
 language: en
 label: docs

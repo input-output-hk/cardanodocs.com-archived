@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: HD wallets
-path: /technical/hd-wallets/
+path: /en/technical/hd-wallets/
 group: technical
 language: en
 label: docs

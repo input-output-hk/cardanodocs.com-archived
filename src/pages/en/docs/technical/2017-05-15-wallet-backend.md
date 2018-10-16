@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Cardano SL Wallet Backend
-path: /technical/wallet-backend/
+path: /en/technical/wallet-backend/
 group: technical
 language: en
 label: docs

@@ -1,6 +1,6 @@
 ---
 doc_title: Transactions
-path: /en/cardano/transactions/
+path: /en/en/cardano/transactions/
 group: cardano
 language: en
 label: docs

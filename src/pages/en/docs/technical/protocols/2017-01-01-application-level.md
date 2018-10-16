@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: CSL Application-Level Messaging
-path: /technical/protocols/csl-application-level/
+path: /en/technical/protocols/csl-application-level/
 group: technical-protocols
 language: en
 label: docs

@@ -1,6 +1,6 @@
 ---
 doc_title: Transaction Assurance Level
-path: /en/cardano/transaction-assurance/
+path: /en/en/cardano/transaction-assurance/
 group: cardano
 language: en
 label: docs

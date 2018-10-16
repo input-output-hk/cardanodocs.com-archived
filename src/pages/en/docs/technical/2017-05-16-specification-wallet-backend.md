@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Formal specification for a Cardano wallet
-path: /technical/formal-specification-for-a-cardano-wallet/
+path: /en/technical/formal-specification-for-a-cardano-wallet/
 group: technical
 language: en
 label: docs

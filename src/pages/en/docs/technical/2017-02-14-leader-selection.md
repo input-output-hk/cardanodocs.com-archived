@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Leader Selection in Cardano SL
-path: /technical/leader-selection/
+path: /en/technical/leader-selection/
 group: technical
 language: en
 label: docs

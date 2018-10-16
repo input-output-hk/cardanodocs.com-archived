@@ -1,6 +1,6 @@
 ---
 doc_title: Differences Between Paper and the Implementation
-path: /en/cardano/differences/
+path: /en/en/cardano/differences/
 group: cardano
 visible: true
 language: en

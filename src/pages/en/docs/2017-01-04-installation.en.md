@@ -2,7 +2,7 @@
 date: '2017-01-01'
 doc_title: Installation
 permalink: /en/installation/
-path: /en/installation/
+path: /en/en/installation/
 group: base
 language: en
 label: docs

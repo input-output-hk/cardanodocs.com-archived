@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Time-Warp-NT Layer
-path: /technical/protocols/time-warp-nt/
+path: /en/technical/protocols/time-warp-nt/
 group: technical-protocols
 language: en
 label: docs

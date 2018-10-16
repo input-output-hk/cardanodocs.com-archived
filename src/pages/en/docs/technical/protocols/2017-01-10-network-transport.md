@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Network Transport Layer
-path: /technical/protocols/network-transport/
+path: /en/technical/protocols/network-transport/
 group: technical-protocols
 language: en
 label: docs
