@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import {Index} from 'elasticlunr';
-import Markdown from 'markdown-to-jsx';
+import React, {Component} from 'react'
+import {Index} from 'elasticlunr'
+import Markdown from 'markdown-to-jsx'
 import styled from 'styled-components'
 import colors from '../assets/styles/colors'
+import {language} from '../assets/utils/language'
 
 const SearchInput = styled.input`
   width: 100%;
@@ -19,13 +20,14 @@ const SearchInput = styled.input`
 // Search component
 export default class Search extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             query: ``,
             results: [],
         };
     }
 
+    
 
     render() {
 
@@ -35,10 +37,14 @@ export default class Search extends Component {
         }
       }
 
+      const searchTextLang = () => {
+        return (language === 'en' ? `Search term...` : `搜索词`)
+      }
+
       return (
         <div className="d-flex justify-content-around row">
           <div className='col-sm-12 mt-5'>
-            <SearchInput type="text" value={this.state.query ? this.state.query : `Search term...`} onClick={placeholderText} onChange={this.search}/>
+            <SearchInput type="text" value={this.state.query ? this.state.query : searchTextLang()} onClick={placeholderText} onChange={this.search}/>
             <ul className='list-unstyled'>
                 {this.state.results.map(page => (
                     <li key={page.id}
