@@ -24,34 +24,6 @@
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-glossary.json",
-        "path": "/cn/glossary/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-post-1.json",
-        "path": "/cn/post-1"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-post-2.json",
-        "path": "/cn/post-2"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "cn-for-contributors.json",
-        "path": "/cn/for-contributors/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "cn-intro-text.json",
         "path": "/cn/intro-text/"
     },
@@ -61,27 +33,6 @@
         "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "en-intro-text.json",
         "path": "/en/intro-text/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-en-installation.json",
-        "path": "/en/en/installation/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-en-for-contributors.json",
-        "path": "/en/en/for-contributors/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-en-glossary.json",
-        "path": "/en/en/glossary/"
     },
     {
         "componentChunkName": "component---src-pages-document-js",
@@ -248,20 +199,6 @@
         "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-en-introduction.json",
-        "path": "/en/en/introduction/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "en-en-technical.json",
-        "path": "/en/en/technical/"
-    },
-    {
-        "componentChunkName": "component---src-pages-document-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "en-en-cardano-proof-of-stake.json",
         "path": "/en/en/cardano/proof-of-stake/"
     },
@@ -357,11 +294,74 @@
         "path": "/en/technical/protocols/binary-protocols/"
     },
     {
-        "componentChunkName": "component---cache-dev-404-page-js",
+        "componentChunkName": "component---src-pages-document-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "dev-404-page.json",
-        "path": "/dev-404-page/"
+        "jsonName": "cn-introduction.json",
+        "path": "/cn/introduction/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-installation.json",
+        "path": "/cn/installation"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-technical.json",
+        "path": "/cn/technical"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-for-contributors.json",
+        "path": "/cn/for-contributors/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "cn-glossary.json",
+        "path": "/cn/glossary"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-introduction.json",
+        "path": "/en/introduction/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-installation.json",
+        "path": "/en/installation/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-technical.json",
+        "path": "/en/technical/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-for-contributors.json",
+        "path": "/en/for-contributors/"
+    },
+    {
+        "componentChunkName": "component---src-pages-document-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "en-glossary.json",
+        "path": "/en/glossary/"
     },
     {
         "componentChunkName": "component---src-pages-cn-404-js",

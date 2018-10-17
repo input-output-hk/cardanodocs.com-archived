@@ -1,18 +1,15 @@
 ---
-layout: default
-doc_title: For Contributors
+date: '2017-01-01'
+doc_title: 对于贡献者
 group: base
-permalink: /for-contributors/
-path: '/cn/for-contributors/'
-children: for-contributors
+path: /cn/for-contributors/
+children: cn-for-contributors
 language: cn
-keywords: 'contributors bar'
 label: docs
 ---
 
-# Redirecting bar...
-<!-- end -->
-<!-- <script>
-    window.location.replace("https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md");
-</script> -->
-# STOOPID!!
+# Redirecting...
+
+<script>
+    //window.location.replace("https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md");
+</script>

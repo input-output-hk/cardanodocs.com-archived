@@ -4,6 +4,7 @@ import {language} from '../assets/utils/language'
 import colors from '../assets/styles/colors'
 
 const SideBarNav = ({postList}) => {
+  console.log('here', language)
   return (
     <ul className='list-group list-unstyled'>
       <li>

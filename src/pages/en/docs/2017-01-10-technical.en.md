@@ -3,7 +3,7 @@ date: '2017-01-01'
 doc_title: Technical details
 group: base
 permalink: /en/technical/
-path: /en/en/technical/
+path: /en/technical/
 children: technical
 language: en
 lebel: docs

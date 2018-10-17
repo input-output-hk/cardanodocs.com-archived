@@ -69,7 +69,6 @@ export const pageQuery = graphql`
             author
             path
             date
-            layout
             permalink
             label
             keywords
