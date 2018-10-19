@@ -10,7 +10,7 @@ const SideBarNavWrap = ({postList}) => {
   return (
     <div>
       <SideBarNavCollapse postList={postList} section={language === 'en' ? `Introduction` : `介绍`} group='base' active/>
-      {/* <SideBarNavCollapse postList={postList} section={language === 'en' ? `Cardano` : `卡尔达诺概述`} group='cardano'/> */}
+      <SideBarNavCollapse postList={postList} section={language === 'en' ? `Cardano` : `卡尔达诺概述`} group='cardano'/>
       
       {/* <ul className='list-group list-unstyled'>
         <li>

@@ -70,3 +70,38 @@ hr {
     }
   }
 }
+
+// .nav-collapse {
+//   transition: max-height 0.3s ease-out;
+//   overflow: hidden;
+//   max-height:0;
+// }
+
+// .nav-collapse.open {
+//   max-height: 300px;
+// }
+
+// label {
+//   cursor: pointer;
+//   padding: 0 0 0 0;
+//   margin: 0;
+//   position: relative;
+//   &:after {
+//     transition: all 0.25s ease-out;
+//     content: '';
+//     background: url('../images/chevron.svg') no-repeat 100% 25%;
+//     position: absolute;
+//     top: 0.2rem;
+//     right: -15px;
+//     height: 15px;
+//     width: 15px;
+//   }
+// }
+// input {
+//   display:none;
+// }
+// input:checked + label {
+//   &:after {
+//     transform: rotate(90deg);
+//   }
+// }
