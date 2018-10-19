@@ -9,6 +9,9 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-no-sourcemaps`
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         excerpt_separator: `<!-- end -->`

@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBarNav from '../components/SideBarNav'
+import SideBarNavWrap from '../components/SideBarNavWrap'
 import PageTransition from 'gatsby-plugin-page-transitions'
 
 const Document = ({data}) => {
@@ -10,7 +10,7 @@ const Document = ({data}) => {
     <PageTransition>
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
-          <SideBarNav postList={postList}/>
+          <SideBarNavWrap postList={postList}/>
         </div>
         {
           postData &&

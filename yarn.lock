@@ -3330,6 +3330,10 @@ gatsby-plugin-catch-links@^1.0.24:
     babel-runtime "^6.26.0"
     escape-string-regexp "^1.0.5"
 
+gatsby-plugin-no-sourcemaps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-no-sourcemaps/-/gatsby-plugin-no-sourcemaps-2.0.1.tgz#a0306f8a7b77d2c7460692294a352c4f44412ca6"
+
 gatsby-plugin-page-creator@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-1.0.1.tgz#6bad33a7f46cb5b87dbdaacc3c1bbd81ac63bc20"

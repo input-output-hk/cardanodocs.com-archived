@@ -1,6 +1,6 @@
 import React from 'react'
 import PageTransition from 'gatsby-plugin-page-transitions'
-import SideBarNav from '../../components/SideBarNav'
+import SideBarNavWrap from '../../components/SideBarNavWrap'
 
 import { language } from '../../assets/utils/language'
 
@@ -10,7 +10,7 @@ const IndexDocPage = ({ data }) => {
     <PageTransition>
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
-          <SideBarNav postList={postList}/>
+          <SideBarNavWrap postList={postList}/>
         </div>
         <div className="col-sm-18">
           {

@@ -29,6 +29,7 @@
   "devDependencies": {
     "@andrew-codes/gatsby-plugin-elasticlunr-search": "^1.0.4",
     "bootstrap-scss": "4.1.3",
+    "gatsby-plugin-no-sourcemaps": "^2.0.1",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-styled-components": "^2.0.2",
     "gatsby-plugin-typography": "^1.7.19",
