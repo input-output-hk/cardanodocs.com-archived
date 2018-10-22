@@ -55,21 +55,6 @@ hr {
   background-color:$overlay-color;
 }
 
-.cd-sidebar {
-  .list-unstyled{
-    li {
-      a {
-        color:$white;
-        &:hover {
-          color:$primary;
-        }
-      }
-      h6 {
-        margin-left:1rem;
-      }
-    }
-  }
-}
 
 // .nav-collapse {
 //   transition: max-height 0.3s ease-out;
