@@ -15,7 +15,7 @@ const Line = styled.div`
   width: 120px;
   height:  1px;
   margin: 0 auto;
-  background-color: ${colors.$teal};
+  background-color: ${colors.$purple};
   opacity: 0.5;
 `;
 
@@ -27,7 +27,7 @@ const Triangle = styled.div`
     height: 0;
     border-style: solid;
     border-width: 26.0px 15px 0 15px;
-    border-color: ${colors.$teal} transparent transparent transparent;
+    border-color: ${colors.$purple} transparent transparent transparent;
   }
   &:after {
     content: '';

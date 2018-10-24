@@ -36,12 +36,82 @@ hr {
   top: 10em;
 }
 
-.gource-section {
+
+.overlay-bg {
+  background-color:$overlay-color;
+}
+
+.cd-sidebar {
+  padding-right:0;
+}
+
+.doc-content {
+  border-left: 1px solid rgba(112, 156, 240, 0.2);
+  ul {
+    li {
+      list-style-type:none;
+      &:before {
+        content: "\2022"; 
+        color: $purple; 
+        font-weight: bold; 
+        font-size: 1.25rem;
+        display: inline-block; 
+        width: 1.25rem; 
+        margin-left: -1.25rem;
+      }
+      h5 {
+        display:inline-block;
+      }
+    }
+  }
+}
+
+
+#medusa-root{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height:  100%;
+  overflow: hidden;
+}
+.showing-UI.App.bsnoclash {
+  top:0;
+  opacity:1;
+  #medusa-stage{margin-left: 0;margin-right: 0;width:100%;height:100%}
+}
+.App.bsnoclash {
+  position: absolute;
+  z-index: 0;
+  opacity:0.5;
+  width: 100%;
+  height:600px;
+  top: -350px;
+}
+
+.medusa-launch-btn{
+  position: absolute;
+  left:60%;
+  top:240px;
+  margin:0 0 0 300px;
+  outline: none;
+  z-index: 999999;
+}
+
+@media (max-width: 767px) {
+  .medusa-launch-btn {
+    left: 0.5rem;
+    top:0.5rem;
+    margin:0;
+  }
+}
+
+.medusa-section {
   position:absolute;
   top:0;
   height:22rem;
   width:100%;
-  background-image: url('../images/gource-bg@3x.png');
+  background-image: url('../images/medusa-bg@3x.png');
   background-size: 40rem;
   @media(min-width:768px) {
     background-size:60rem;
@@ -49,44 +119,4 @@ hr {
   background-repeat: no-repeat;
   background-position: center;
   opacity:0.5;
-  z-index: 0;
 }
-.overlay-bg {
-  background-color:$overlay-color;
-}
-
-
-// .nav-collapse {
-//   transition: max-height 0.3s ease-out;
-//   overflow: hidden;
-//   max-height:0;
-// }
-
-// .nav-collapse.open {
-//   max-height: 300px;
-// }
-
-// label {
-//   cursor: pointer;
-//   padding: 0 0 0 0;
-//   margin: 0;
-//   position: relative;
-//   &:after {
-//     transition: all 0.25s ease-out;
-//     content: '';
-//     background: url('../images/chevron.svg') no-repeat 100% 25%;
-//     position: absolute;
-//     top: 0.2rem;
-//     right: -15px;
-//     height: 15px;
-//     width: 15px;
-//   }
-// }
-// input {
-//   display:none;
-// }
-// input:checked + label {
-//   &:after {
-//     transform: rotate(90deg);
-//   }
-// }

@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import BS from '../../static/bs.min.exec.js'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
-import Footer from '../components/footer';
+import Footer from '../components/footer'
+import Medusa from '../components/medusa'
 
 import '../assets/styles/bootstrap-imports.scss'
 import '../assets/styles/custom.scss'
@@ -14,6 +16,11 @@ class Layout extends React.Component {
   constructor(props) {
     super(props)
     
+  }
+
+  componentDidMount = () => {
+    // Use Bootstrap JS
+    BS()
   }
 
   render() {
@@ -27,7 +34,8 @@ class Layout extends React.Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <div className="gource-section"></div>
+        {/* <Medusa /> */}
+        <div className="medusa-section"></div>
         <Header
           data={data}
           siteTitle={data.site.siteMetadata.site_title}

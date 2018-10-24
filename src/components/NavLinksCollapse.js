@@ -2,7 +2,6 @@ import React from 'react'
 import SideBarListItem from './SideBarListItem'
 
 import {language} from '../assets/utils/language'
-import styled from 'styled-components'
 
 let NavHeight = '';
 
@@ -23,7 +22,6 @@ class NavLinksCollapse extends React.Component{
   render () {
     const props = this.props
     const postList = props.postList
-    console.log(this.myNav)
     
     return (
       <div className={`nav-collapse ${(props.toggle || props.linksToggle) ? '' : 'closed'}`} ref={(myNavWrap) => this.myNavWrap = myNavWrap}>
@@ -38,10 +36,5 @@ class NavLinksCollapse extends React.Component{
     )
   }
 }
-
-// .nav-collapse.open {
-//   max-height: ${NavHeight}px;
-// }
-
 
 export default NavLinksCollapse

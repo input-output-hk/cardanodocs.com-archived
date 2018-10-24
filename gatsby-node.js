@@ -1,3 +1,19 @@
+// Setup script-loder to pull in bootstrap js
+exports.onCreateWebpackConfig = ({
+  rules
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.exec\.js$/,
+          use: [ 'script-loader' ]
+        }
+      ]
+    }
+  })
+}
+
 const path = require('path');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {

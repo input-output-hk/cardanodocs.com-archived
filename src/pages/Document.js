@@ -14,9 +14,7 @@ const Document = ({data}) => {
         </div>
         {
           postData &&
-            <div className='col-sm-18'>
-              <h1>{postData.frontmatter.doc_title}</h1>
-              <h4>By {postData.frontmatter.author}</h4>
+            <div className='col-sm-18 doc-content'>
               <div dangerouslySetInnerHTML={{__html: postData.html}}/>
             </div>
         }

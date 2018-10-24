@@ -2,7 +2,7 @@ import React from 'react'
 import NavLinksCollapse from './NavLinksCollapse'
 import colors from '../assets/styles/colors'
 import styled from 'styled-components'
-import FaChevronRight from '../assets/images/chevron.svg'
+import ChevronRight from '../assets/images/chevron-2.svg'
 
 const NavCollapse = styled.div`
     .nav-collapse {
@@ -20,7 +20,7 @@ const NavCollapse = styled.div`
       &:after {
         transition: all 0.25s ease-out;
         content: '';
-        background: url(${FaChevronRight}) no-repeat 100% 25%;
+        background: url(${ChevronRight}) no-repeat 100% 25%;
         position: absolute;
         top: 0.2rem;
         right: -15px;
@@ -57,7 +57,7 @@ class SideBarNavCollapse extends React.Component {
     return (
       <div>
         <NavCollapse className="collapse-nav-component">
-          <h4 style={{color: colors.$primary}} onClick={this.handleCheck} className={(this.state.toggle || this.state.linksToggle) ? 'open' : 'closed'}>
+          <h4 onClick={this.handleCheck} className={(this.state.toggle || this.state.linksToggle) ? 'open' : 'closed'}>
             {props.section}
           </h4>
           <NavLinksCollapse toggle={this.state.toggle} linksToggle={this.state.linksToggle} postList={props.postList} group={props.group}/> 

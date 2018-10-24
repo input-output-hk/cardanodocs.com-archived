@@ -12,7 +12,7 @@ const IndexDocPage = ({ data }) => {
         <div className="col-sm-6 cd-sidebar">
           <SideBarNavWrap postList={postList}/>
         </div>
-        <div className="col-sm-18">
+        <div className="col-sm-18 doc-content">
           {
             data.allMarkdownRemark.edges.map( (el, i) => {
               let data = el.node.frontmatter

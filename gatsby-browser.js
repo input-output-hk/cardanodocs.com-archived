@@ -1,7 +1,19 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+const injectGourceScript = () => {
+  if (typeof window !== 'undefined'){
+    function addJS(jsCode) {
+      var s = document.createElement(`script`)
+      s.type = `text/javascript`
+      s.src = `/medusa.main.js`
+      document.getElementsByTagName(`head`)[0].appendChild(s)
+    }
+    addJS()
+  }
+}
 
- // You can delete this file if you're not using it
+let injectedGourceScript = false
+exports.onRouteUpdate = function({ location }) {
+  if (!injectedGourceScript) {
+    injectGourceScript()
+    injectedGourceScript = true
+  }
+}
