@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Building Cardano SL From Source Code
-path: /en/for-contributors/building-from-source/
+path: /en/for-contributors/building-cardano-sl-from-source-code/
 group: for-contributors
 language: en
 label: docs

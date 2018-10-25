@@ -1,6 +1,6 @@
 ---
 doc_title: Addresses
-path: /en/en/cardano/addresses/
+path: /en/cardano/addresses/
 group: cardano
 language: en
 label: docs

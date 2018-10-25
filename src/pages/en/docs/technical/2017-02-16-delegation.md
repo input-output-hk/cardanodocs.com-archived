@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Stake Delegation in Cardano SL
-path: /en/technical/delegation/
+path: /en/technical/stake-delegation-in-cardano-sl/
 group: technical
 language: en
 label: docs

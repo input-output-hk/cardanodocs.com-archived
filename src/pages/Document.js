@@ -7,7 +7,7 @@ const Document = ({data}) => {
   if(data.markdownRemark) postData = data.markdownRemark
   const postList = data.allMarkdownRemark
   return (
-    <PageTransition>
+    
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
           <SideBarNavWrap postList={postList}/>
@@ -19,7 +19,7 @@ const Document = ({data}) => {
             </div>
         }
       </div>
-    </PageTransition>
+    
   )
 }
 

@@ -1,6 +1,6 @@
 ---
 doc_title: Monetary Policy
-path: /en/en/cardano/monetary-policy/
+path: /en/cardano/monetary-policy/
 group: cardano
 language: en
 label: docs

@@ -1,7 +1,7 @@
 ---
 date: '2017-01-01'
 doc_title: Bootstrap Era
-path: /en/en/timeline/bootstrap/
+path: /en/timeline/bootstrap-era/
 group: timeline
 language: en
 label: docs

@@ -1,6 +1,6 @@
 ---
 doc_title: Ouroboros Proof of Stake Algorithm
-path: /en/en/cardano/proof-of-stake/
+path: /en/cardano/ouroboros-proof-of-stake-algorithm/
 group: cardano
 visible: true
 language: en

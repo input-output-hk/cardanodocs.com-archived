@@ -7,7 +7,7 @@ import { language } from '../../assets/utils/language'
 const IndexDocPage = ({ data }) => {
   const postList = data.allMarkdownRemark
   return (
-    <PageTransition>
+    
       <div className="row">
         <div className="col-sm-6 cd-sidebar">
           <SideBarNavWrap postList={postList}/>
@@ -25,7 +25,7 @@ const IndexDocPage = ({ data }) => {
           }
         </div>
       </div>
-    </PageTransition>
+    
   )
 }
 
