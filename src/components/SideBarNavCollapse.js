@@ -8,7 +8,7 @@ import colors from '../assets/styles/colors'
 import ChevronRight from '../assets/images/chevron-2.svg'
 
 let NavHeight = '';
-let begin = '';
+//let navOpen = false;
 
 const NavCollapse = styled.div`
   .nav-collapse {
@@ -23,7 +23,6 @@ const NavCollapse = styled.div`
     max-height: auto;
   }
   h4 {
-    display: inline-block;
     cursor: pointer;
     margin: 0 0 0.25rem 0;
     position: relative;
@@ -66,7 +65,7 @@ class SideBarNavCollapse extends React.Component {
     super (props)
     this.state = {
       toggleOpen: true,
-      toggleNavOpen: true
+      // toggleNavOpen: true
     } 
     this.handleDropdown = this.handleDropdown.bind(this)
     this.handleLinkChange = this.handleLinkChange.bind(this)
@@ -84,9 +83,10 @@ class SideBarNavCollapse extends React.Component {
   }
 
   handleLinkChange () {
-    this.setState(prevState => ({
-      toggleNavOpen: !prevState.toggleNavOpen
-    }))
+    // this.setState(prevState => ({
+    //   toggleNavOpen: !prevState.toggleNavOpen
+    // }))
+    //navOpen = !navOpen;
   }
 
   setHeight (height) {
@@ -119,7 +119,7 @@ class SideBarNavCollapse extends React.Component {
 
   navigate (e, path) {
     e.preventDefault()
-    this.handleLinkChange()
+    //this.handleLinkChange()
     navigateTo(path)
   }
 
@@ -137,11 +137,10 @@ class SideBarNavCollapse extends React.Component {
   render () {
     const props = this.props
     const postList = props.postList
-    
     return (
       <div>
         <NavCollapse className={`collapse-nav-component`}>
-          <h4 onClick={this.handleDropdown} className={`navLink ${this.state.toggleOpen ? 'open' : 'closed'}`}>
+          <h4 onClick={this.handleDropdown} className={`mob-text-center navLink ${this.state.toggleOpen ? 'open' : 'closed'}`}>
             {props.section}
           </h4>
           <div className={`nav-collapse open`} ref={(myNavWrap) => this.myNavWrap = myNavWrap}>

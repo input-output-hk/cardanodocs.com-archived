@@ -34,6 +34,9 @@ hr {
 .lang-select {
   position:relative;
   top: 10em;
+  @media(max-width: 767px) {
+    top:2em;
+  }
 }
 
 

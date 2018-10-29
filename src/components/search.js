@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
 import {Index} from 'elasticlunr'
 import Markdown from 'markdown-to-jsx'
+import Mark from '../../static/mark'
 import styled from 'styled-components'
 import colors from '../assets/styles/colors'
 import {language} from '../assets/utils/language'
+
+
 
 const SearchInput = styled.input`
   width: 100%;
@@ -27,9 +30,21 @@ export default class Search extends Component {
         };
     }
 
-    
+    performMark (input, instance) {
+      console.log(input)
+      console.log(instance)
+      const keyword = input.value;
+      instance.unmark({
+        done: () => {
+          instance.mark(keyword, null);
+        }
+      });
+    }
 
     render() {
+      const markInstance = new Mark(document.querySelector(".context"))
+      const keywordInput = document.querySelector("input[name='keyword']")
+      this.performMark(keywordInput, markInstance)
 
       const placeholderText =  (e) => {
         if(!this.state.query) {
@@ -44,19 +59,20 @@ export default class Search extends Component {
       return (
         <div className="d-flex justify-content-around row">
           <div className='col-sm-12 mt-5'>
-            <SearchInput type="text" value={this.state.query ? this.state.query : searchTextLang()} onClick={placeholderText} onChange={this.search}/>
+            <SearchInput type="text" value={this.state.query ? this.state.query : searchTextLang()} onClick={placeholderText} onChange={this.search} name='keyword'/>
+          </div>
+          <div className="col-sm-24">
             <ul className='list-unstyled'>
-                {this.state.results.map(page => (
-                    <li key={page.id}
-                    >
-                        <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
-                        <Markdown options={{ forceInline: true }}>
-                          {page.excerpt}
-                        </Markdown>
-                        <hr/>
-                    </li>
-                ))}
-            </ul>
+                  {this.state.results.map(page => (
+                      <li key={page.id} className='context'>
+                          <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
+                          <Markdown options={{ forceInline: true }}>
+                            {page.excerpt}
+                          </Markdown>
+                          <hr/>
+                      </li>
+                  ))}
+              </ul>
           </div>
         </div>
       )
@@ -68,8 +84,8 @@ export default class Search extends Component {
       return this.index;
     }
 
-    search = (evt) => {
-        const query = evt.target.value;
+    search = (e) => {
+        const query = e.target.value;
         this.index = this.getIndex();
         this.setState({
             query,

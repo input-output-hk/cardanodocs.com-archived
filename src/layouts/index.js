@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
-import BS from '../../static/bs.min.exec.js'
+import $ from 'jquery'
+//import BS from '../../static/bs.min.exec.js'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
@@ -20,7 +20,7 @@ class Layout extends React.Component {
 
   componentDidMount = () => {
     // Use Bootstrap JS
-    BS()
+    //BS()
   }
 
   render() {
