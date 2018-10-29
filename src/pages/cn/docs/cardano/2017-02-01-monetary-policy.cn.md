@@ -10,7 +10,7 @@ label: docs
 
 # 卡尔达诺货币政策
 
-<div style="border-radius:5px;padding:5px 10px;background: #cdeffc;" markdown="1">
+<div  markdown="1">
 
 ### ADA 币在卡尔达诺协议发布时发行
 
@@ -31,7 +31,7 @@ Ada 币以 45,000,000,000 或者说 450 亿封顶。
 
 
 ## 财政和费用
-<div style="border-radius:5px;padding:5px 10px;background: #cdeffc;" markdown="1">
+<div  markdown="1">
 这一章将概述财政政策和相关费用。
 
 ### 启动阶段 (发行)

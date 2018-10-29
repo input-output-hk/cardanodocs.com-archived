@@ -1,418 +1,418 @@
 {
   "assetsByChunkName": {
-    "path---en-for-contributors-building-from-source": [
-      "path---en-for-contributors-building-from-source-14daa690a5f0b9ce9bc9.js",
-      "path---en-for-contributors-building-from-source-14daa690a5f0b9ce9bc9.js.map"
-    ],
     "component---src-pages-en-index-js": [
-      "component---src-pages-en-index-js-8971aed97f8b5025c119.js",
-      "component---src-pages-en-index-js-8971aed97f8b5025c119.js.map"
+      "component---src-pages-en-index-js-805d0b23956182baf731.js",
+      "component---src-pages-en-index-js-805d0b23956182baf731.js.map"
     ],
     "path---cn-cardano-addresses": [
-      "path---cn-cardano-addresses-bc48b4c4f57ebf14e16e.js",
-      "path---cn-cardano-addresses-bc48b4c4f57ebf14e16e.js.map"
+      "path---cn-cardano-addresses-3fe5b32e492f0a83bcf5.js",
+      "path---cn-cardano-addresses-3fe5b32e492f0a83bcf5.js.map"
     ],
     "path---cn-timeline-bootstrap": [
-      "path---cn-timeline-bootstrap-6ec6d5201d3c8d7a54dc.js",
-      "path---cn-timeline-bootstrap-6ec6d5201d3c8d7a54dc.js.map"
+      "path---cn-timeline-bootstrap-0f51ef627b6fecf28b79.js",
+      "path---cn-timeline-bootstrap-0f51ef627b6fecf28b79.js.map"
     ],
     "path---en-technical-formal-specification-for-a-cardano-wallet": [
-      "path---en-technical-formal-specification-for-a-cardano-wallet-032f44bda0eed447e534.js",
-      "path---en-technical-formal-specification-for-a-cardano-wallet-032f44bda0eed447e534.js.map"
+      "path---en-technical-formal-specification-for-a-cardano-wallet-0fcd6b82756cb703d181.js",
+      "path---en-technical-formal-specification-for-a-cardano-wallet-0fcd6b82756cb703d181.js.map"
     ],
     "path---cn-technical-hd-wallets": [
-      "path---cn-technical-hd-wallets-31f042831c2bfa9d407d.js",
-      "path---cn-technical-hd-wallets-31f042831c2bfa9d407d.js.map"
+      "path---cn-technical-hd-wallets-c4416c01c344d4aa9c57.js",
+      "path---cn-technical-hd-wallets-c4416c01c344d4aa9c57.js.map"
     ],
     "path---cn-technical-protocols-binary-protocols": [
-      "path---cn-technical-protocols-binary-protocols-359d7e5d3441f4760f5b.js",
-      "path---cn-technical-protocols-binary-protocols-359d7e5d3441f4760f5b.js.map"
+      "path---cn-technical-protocols-binary-protocols-14649c408ea46c3c3f43.js",
+      "path---cn-technical-protocols-binary-protocols-14649c408ea46c3c3f43.js.map"
+    ],
+    "path---en-cardano-transaction-assurance-level": [
+      "path---en-cardano-transaction-assurance-level-4b181a6fb19582e945f6.js",
+      "path---en-cardano-transaction-assurance-level-4b181a6fb19582e945f6.js.map"
     ],
     "path---cn-timeline-reward": [
-      "path---cn-timeline-reward-e98a9491e6374f9ce616.js",
-      "path---cn-timeline-reward-e98a9491e6374f9ce616.js.map"
+      "path---cn-timeline-reward-76249d5bb8e02d23a574.js",
+      "path---cn-timeline-reward-76249d5bb8e02d23a574.js.map"
+    ],
+    "path---en-for-contributors-building-cardano-sl-from-source-code": [
+      "path---en-for-contributors-building-cardano-sl-from-source-code-7216c63c69f199f1329e.js",
+      "path---en-for-contributors-building-cardano-sl-from-source-code-7216c63c69f199f1329e.js.map"
+    ],
+    "path---en-technical-cardano-sl-launcher": [
+      "path---en-technical-cardano-sl-launcher-e2c27f524622e568bb1c.js",
+      "path---en-technical-cardano-sl-launcher-e2c27f524622e568bb1c.js.map"
     ],
     "path---cn": [
-      "path---cn-9becd1f51fbd357e458c.js",
-      "path---cn-9becd1f51fbd357e458c.js.map"
+      "path---cn-9b27c68856cc04105e81.js",
+      "path---cn-9b27c68856cc04105e81.js.map"
     ],
     "path---en-technical-protocols-csl-application-level": [
-      "path---en-technical-protocols-csl-application-level-f36b25667339c50c1c4a.js",
-      "path---en-technical-protocols-csl-application-level-f36b25667339c50c1c4a.js.map"
+      "path---en-technical-protocols-csl-application-level-20d06f4a944fa0126dfd.js",
+      "path---en-technical-protocols-csl-application-level-20d06f4a944fa0126dfd.js.map"
     ],
     "path---en-technical-plutus-types": [
-      "path---en-technical-plutus-types-3ecefb988d21b15bdee0.js",
-      "path---en-technical-plutus-types-3ecefb988d21b15bdee0.js.map"
+      "path---en-technical-plutus-types-da2f59722560bd874bbe.js",
+      "path---en-technical-plutus-types-da2f59722560bd874bbe.js.map"
     ],
     "path---en-technical-protocols-time-warp-nt": [
-      "path---en-technical-protocols-time-warp-nt-bd63c987610f659f386e.js",
-      "path---en-technical-protocols-time-warp-nt-bd63c987610f659f386e.js.map"
+      "path---en-technical-protocols-time-warp-nt-20bf23045937dc5d2572.js",
+      "path---en-technical-protocols-time-warp-nt-20bf23045937dc5d2572.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-bd4008bd64e4492475fd.js",
-      "component---src-pages-index-js-bd4008bd64e4492475fd.js.map"
-    ],
-    "path---en-en-timeline-bootstrap": [
-      "path---en-en-timeline-bootstrap-886914272752f4039709.js",
-      "path---en-en-timeline-bootstrap-886914272752f4039709.js.map"
+      "component---src-pages-index-js-c7abab6bb093e9baf795.js",
+      "component---src-pages-index-js-c7abab6bb093e9baf795.js.map"
     ],
     "path---document": [
-      "path---document-948b109465d992dd362c.js",
-      "path---document-948b109465d992dd362c.js.map"
+      "path---document-1e045bc9c155ee9cd390.js",
+      "path---document-1e045bc9c155ee9cd390.js.map"
     ],
     "path---cn-introduction": [
-      "path---cn-introduction-81c886700183623c0fbe.js",
-      "path---cn-introduction-81c886700183623c0fbe.js.map"
+      "path---cn-introduction-f8d02440fd54bbcd7a29.js",
+      "path---cn-introduction-f8d02440fd54bbcd7a29.js.map"
     ],
     "path---cn-installation": [
-      "path---cn-installation-bd50c755a7e30d16d89b.js",
-      "path---cn-installation-bd50c755a7e30d16d89b.js.map"
-    ],
-    "path---en-technical-wallet-backend": [
-      "path---en-technical-wallet-backend-1a5a7e6cce91f03a7f80.js",
-      "path---en-technical-wallet-backend-1a5a7e6cce91f03a7f80.js.map"
-    ],
-    "path---en-en-cardano-transaction-assurance": [
-      "path---en-en-cardano-transaction-assurance-cb7f4d1b3af2a51e3927.js",
-      "path---en-en-cardano-transaction-assurance-cb7f4d1b3af2a51e3927.js.map"
+      "path---cn-installation-46fecc7a0515b729c1e7.js",
+      "path---cn-installation-46fecc7a0515b729c1e7.js.map"
     ],
     "path---en-installation": [
-      "path---en-installation-430375c26b8c0db54662.js",
-      "path---en-installation-430375c26b8c0db54662.js.map"
+      "path---en-installation-27821ddbd2002ca75b32.js",
+      "path---en-installation-27821ddbd2002ca75b32.js.map"
     ],
     "path---cn-technical-updater": [
-      "path---cn-technical-updater-1cc161acda9f67c4767b.js",
-      "path---cn-technical-updater-1cc161acda9f67c4767b.js.map"
+      "path---cn-technical-updater-4ad12eb7503c3b88a0ee.js",
+      "path---cn-technical-updater-4ad12eb7503c3b88a0ee.js.map"
     ],
     "path---cn-cardano-transactions": [
-      "path---cn-cardano-transactions-0e84453581e701d3727a.js",
-      "path---cn-cardano-transactions-0e84453581e701d3727a.js.map"
+      "path---cn-cardano-transactions-7c33770913c2c20fffad.js",
+      "path---cn-cardano-transactions-7c33770913c2c20fffad.js.map"
     ],
     "path---": [
-      "path----a9eadaf175e4af9ed770.js",
-      "path----a9eadaf175e4af9ed770.js.map"
+      "path----bd6a05ea1f4fc939d306.js",
+      "path----bd6a05ea1f4fc939d306.js.map"
     ],
-    "path---en-en-cardano-addresses": [
-      "path---en-en-cardano-addresses-8ccab774f5395928f20b.js",
-      "path---en-en-cardano-addresses-8ccab774f5395928f20b.js.map"
+    "path---en-cardano-monetary-policy": [
+      "path---en-cardano-monetary-policy-747cb5324972eba565f4.js",
+      "path---en-cardano-monetary-policy-747cb5324972eba565f4.js.map"
     ],
     "path---cn-technical-plutus-introduction": [
-      "path---cn-technical-plutus-introduction-94c15f6030ad91b7e3cd.js",
-      "path---cn-technical-plutus-introduction-94c15f6030ad91b7e3cd.js.map"
+      "path---cn-technical-plutus-introduction-a5adb1c6dd295ffd1212.js",
+      "path---cn-technical-plutus-introduction-a5adb1c6dd295ffd1212.js.map"
     ],
     "path---en-welcome-text": [
-      "path---en-welcome-text-3c8bd17786f4bc206d11.js",
-      "path---en-welcome-text-3c8bd17786f4bc206d11.js.map"
+      "path---en-welcome-text-784fa2afeb437d6a7e56.js",
+      "path---en-welcome-text-784fa2afeb437d6a7e56.js.map"
     ],
     "path---cn-cardano-monetary-policy": [
-      "path---cn-cardano-monetary-policy-978e3d1a1c5d773bd68a.js",
-      "path---cn-cardano-monetary-policy-978e3d1a1c5d773bd68a.js.map"
+      "path---cn-cardano-monetary-policy-dec998ae2a567758cdae.js",
+      "path---cn-cardano-monetary-policy-dec998ae2a567758cdae.js.map"
     ],
     "component---src-pages-cn-index-js": [
-      "component---src-pages-cn-index-js-8971aed97f8b5025c119.js",
-      "component---src-pages-cn-index-js-8971aed97f8b5025c119.js.map"
+      "component---src-pages-cn-index-js-805d0b23956182baf731.js",
+      "component---src-pages-cn-index-js-805d0b23956182baf731.js.map"
     ],
     "path---cn-intro-text": [
-      "path---cn-intro-text-68edc076efde08635b96.js",
-      "path---cn-intro-text-68edc076efde08635b96.js.map"
+      "path---cn-intro-text-f7e8b47fb328847a51cf.js",
+      "path---cn-intro-text-f7e8b47fb328847a51cf.js.map"
     ],
     "path---cn-technical-wallet-backend": [
-      "path---cn-technical-wallet-backend-ad490b8d7b1ef12d69ce.js",
-      "path---cn-technical-wallet-backend-ad490b8d7b1ef12d69ce.js.map"
+      "path---cn-technical-wallet-backend-660c7d74cb99f4e99892.js",
+      "path---cn-technical-wallet-backend-660c7d74cb99f4e99892.js.map"
     ],
-    "path---en-technical-wallet-frontend": [
-      "path---en-technical-wallet-frontend-f5b19abac27c9680cdf8.js",
-      "path---en-technical-wallet-frontend-f5b19abac27c9680cdf8.js.map"
-    ],
-    "path---en-timeline-reward": [
-      "path---en-timeline-reward-c58bdf88da2b17f6e480.js",
-      "path---en-timeline-reward-c58bdf88da2b17f6e480.js.map"
-    ],
-    "path---en-en-cardano-proof-of-stake": [
-      "path---en-en-cardano-proof-of-stake-8de47e3beb823dc319dd.js",
-      "path---en-en-cardano-proof-of-stake-8de47e3beb823dc319dd.js.map"
+    "path---en-cardano-ouroboros-proof-of-stake-algorithm": [
+      "path---en-cardano-ouroboros-proof-of-stake-algorithm-cc09cc04e053bc7c7d00.js",
+      "path---en-cardano-ouroboros-proof-of-stake-algorithm-cc09cc04e053bc7c7d00.js.map"
     ],
     "component---src-pages-document-js": [
-      "component---src-pages-document-js-0fa1b51cb681745f06a4.js",
-      "component---src-pages-document-js-0fa1b51cb681745f06a4.js.map"
+      "component---src-pages-document-js-b01bf8b3e11e4bb55240.js",
+      "component---src-pages-document-js-b01bf8b3e11e4bb55240.js.map"
     ],
     "path---en-post-1": [
-      "path---en-post-1-3e168f59dd5f2dce0668.js",
-      "path---en-post-1-3e168f59dd5f2dce0668.js.map"
+      "path---en-post-1-cb5122270e705e8769b4.js",
+      "path---en-post-1-cb5122270e705e8769b4.js.map"
     ],
-    "path---en-en-cardano-differences": [
-      "path---en-en-cardano-differences-b3657c93b11bb5639090.js",
-      "path---en-en-cardano-differences-b3657c93b11bb5639090.js.map"
+    "path---en-technical-cardano-sl-wallet-backend": [
+      "path---en-technical-cardano-sl-wallet-backend-c80c20fc1d2034aa4888.js",
+      "path---en-technical-cardano-sl-wallet-backend-c80c20fc1d2034aa4888.js.map"
     ],
     "path---cn-technical-leader-selection": [
-      "path---cn-technical-leader-selection-b6b7a80910bdd7d8b1af.js",
-      "path---cn-technical-leader-selection-b6b7a80910bdd7d8b1af.js.map"
-    ],
-    "path---en-en-cardano-balance-and-stake": [
-      "path---en-en-cardano-balance-and-stake-66b8ff316de59a9ea10d.js",
-      "path---en-en-cardano-balance-and-stake-66b8ff316de59a9ea10d.js.map"
+      "path---cn-technical-leader-selection-fc447fc0ee13f98e8b5d.js",
+      "path---cn-technical-leader-selection-fc447fc0ee13f98e8b5d.js.map"
     ],
     "path---cn-technical-pvss": [
-      "path---cn-technical-pvss-064e25ec2cb37890f62c.js",
-      "path---cn-technical-pvss-064e25ec2cb37890f62c.js.map"
-    ],
-    "path---en-en-cardano-monetary-policy": [
-      "path---en-en-cardano-monetary-policy-9e6f5e940bbb501f1497.js",
-      "path---en-en-cardano-monetary-policy-9e6f5e940bbb501f1497.js.map"
+      "path---cn-technical-pvss-b019c98b352c2e35391c.js",
+      "path---cn-technical-pvss-b019c98b352c2e35391c.js.map"
     ],
     "path---en-technical-hd-wallets": [
-      "path---en-technical-hd-wallets-80ff7a4c5290656516e5.js",
-      "path---en-technical-hd-wallets-80ff7a4c5290656516e5.js.map"
+      "path---en-technical-hd-wallets-5eab0b39a201c4e48a18.js",
+      "path---en-technical-hd-wallets-5eab0b39a201c4e48a18.js.map"
     ],
     "path---cn-technical-protocols-time-warp-nt": [
-      "path---cn-technical-protocols-time-warp-nt-63ff2b064c5e53288929.js",
-      "path---cn-technical-protocols-time-warp-nt-63ff2b064c5e53288929.js.map"
+      "path---cn-technical-protocols-time-warp-nt-4722a07b2e837d52ec08.js",
+      "path---cn-technical-protocols-time-warp-nt-4722a07b2e837d52ec08.js.map"
+    ],
+    "path---en-technical-cardano-sl-explorer": [
+      "path---en-technical-cardano-sl-explorer-7ff8e6249673865314d4.js",
+      "path---en-technical-cardano-sl-explorer-7ff8e6249673865314d4.js.map"
     ],
     "path---en-introduction": [
-      "path---en-introduction-102951f48f4c246e6d99.js",
-      "path---en-introduction-102951f48f4c246e6d99.js.map"
+      "path---en-introduction-7450e9f650cde4e6997e.js",
+      "path---en-introduction-7450e9f650cde4e6997e.js.map"
     ],
-    "path---en-technical-launcher": [
-      "path---en-technical-launcher-fae467cca91d365050be.js",
-      "path---en-technical-launcher-fae467cca91d365050be.js.map"
+    "path---en-technical-leader-selection-in-cardano-sl": [
+      "path---en-technical-leader-selection-in-cardano-sl-bffb63a9e3aa536fdfb0.js",
+      "path---en-technical-leader-selection-in-cardano-sl-bffb63a9e3aa536fdfb0.js.map"
     ],
     "path---cn-technical": [
-      "path---cn-technical-c7f3e696d5c3a28c8397.js",
-      "path---cn-technical-c7f3e696d5c3a28c8397.js.map"
+      "path---cn-technical-b4ad11656866d7c90fda.js",
+      "path---cn-technical-b4ad11656866d7c90fda.js.map"
     ],
     "path---en-technical-protocols-network-transport": [
-      "path---en-technical-protocols-network-transport-3c0259afc1c7e0f4e141.js",
-      "path---en-technical-protocols-network-transport-3c0259afc1c7e0f4e141.js.map"
+      "path---en-technical-protocols-network-transport-e530a080b5e0b5655f6c.js",
+      "path---en-technical-protocols-network-transport-e530a080b5e0b5655f6c.js.map"
+    ],
+    "path---en-technical-cardano-sl-pvss": [
+      "path---en-technical-cardano-sl-pvss-285d20997e54984e18b4.js",
+      "path---en-technical-cardano-sl-pvss-285d20997e54984e18b4.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-becf4906ac4907a2ea96.js",
-      "component---src-layouts-index-js-becf4906ac4907a2ea96.js.map"
+      "component---src-layouts-index-js-d7d7de2413a050abf468.js",
+      "component---src-layouts-index-js-d7d7de2413a050abf468.js.map"
     ],
     "path---cn-cardano-topology": [
-      "path---cn-cardano-topology-6e5c611df29c2feaa9c3.js",
-      "path---cn-cardano-topology-6e5c611df29c2feaa9c3.js.map"
+      "path---cn-cardano-topology-8ebb5fcc4d55df55c4ab.js",
+      "path---cn-cardano-topology-8ebb5fcc4d55df55c4ab.js.map"
     ],
-    "path---en-en-timeline-testnet": [
-      "path---en-en-timeline-testnet-822762e0441d495d0482.js",
-      "path---en-en-timeline-testnet-822762e0441d495d0482.js.map"
+    "path---en-cardano-transactions": [
+      "path---en-cardano-transactions-51a5b7e84364bb409be7.js",
+      "path---en-cardano-transactions-51a5b7e84364bb409be7.js.map"
     ],
     "path---cn-technical-wallet-frontend": [
-      "path---cn-technical-wallet-frontend-514fc705d30b77b68759.js",
-      "path---cn-technical-wallet-frontend-514fc705d30b77b68759.js.map"
+      "path---cn-technical-wallet-frontend-7dc76baa7fd2da082098.js",
+      "path---cn-technical-wallet-frontend-7dc76baa7fd2da082098.js.map"
     ],
     "path---en-404": [
       "path---en-404-a0e39f21c11f6a62c5ab.js",
       "path---en-404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---en-technical-plutus-introduction": [
-      "path---en-technical-plutus-introduction-15aefc37c513c0971d00.js",
-      "path---en-technical-plutus-introduction-15aefc37c513c0971d00.js.map"
+      "path---en-technical-plutus-introduction-38d446d2d5c66783379c.js",
+      "path---en-technical-plutus-introduction-38d446d2d5c66783379c.js.map"
     ],
     "path---cn-for-contributors-building-from-source": [
-      "path---cn-for-contributors-building-from-source-d059cb684268a841eea8.js",
-      "path---cn-for-contributors-building-from-source-d059cb684268a841eea8.js.map"
+      "path---cn-for-contributors-building-from-source-7d1877e18f7aae7aaebb.js",
+      "path---cn-for-contributors-building-from-source-7d1877e18f7aae7aaebb.js.map"
+    ],
+    "path---en-cardano-topology": [
+      "path---en-cardano-topology-c8320fe0f3ac043a1d5a.js",
+      "path---en-cardano-topology-c8320fe0f3ac043a1d5a.js.map"
     ],
     "path---cn-welcome-text": [
-      "path---cn-welcome-text-be66f0d8dfb615224240.js",
-      "path---cn-welcome-text-be66f0d8dfb615224240.js.map"
+      "path---cn-welcome-text-1c231b24643d18e9565a.js",
+      "path---cn-welcome-text-1c231b24643d18e9565a.js.map"
     ],
-    "path---en-en-cardano-update-mechanism": [
-      "path---en-en-cardano-update-mechanism-ad24c7beb559086ba449.js",
-      "path---en-en-cardano-update-mechanism-ad24c7beb559086ba449.js.map"
+    "path---en-technical-cardano-sl-cli-options": [
+      "path---en-technical-cardano-sl-cli-options-660f8a0f70438c2fd1da.js",
+      "path---en-technical-cardano-sl-cli-options-660f8a0f70438c2fd1da.js.map"
     ],
     "component---src-pages-cn-404-js": [
-      "component---src-pages-cn-404-js-f174611dccd364e7cb12.js",
-      "component---src-pages-cn-404-js-f174611dccd364e7cb12.js.map"
+      "component---src-pages-cn-404-js-99d5ecf26705bfdd44b5.js",
+      "component---src-pages-cn-404-js-99d5ecf26705bfdd44b5.js.map"
+    ],
+    "path---en-technical-blocks-in-cardano-sl": [
+      "path---en-technical-blocks-in-cardano-sl-f73bca872e281f759b69.js",
+      "path---en-technical-blocks-in-cardano-sl-f73bca872e281f759b69.js.map"
     ],
     "path---cn-for-contributors": [
-      "path---cn-for-contributors-c00e8cc8615fca617c6a.js",
-      "path---cn-for-contributors-c00e8cc8615fca617c6a.js.map"
+      "path---cn-for-contributors-4432b009044191a3398e.js",
+      "path---cn-for-contributors-4432b009044191a3398e.js.map"
+    ],
+    "path---en-cardano-addresses": [
+      "path---en-cardano-addresses-b3f70d33b70619373f1d.js",
+      "path---en-cardano-addresses-b3f70d33b70619373f1d.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---en-en-cardano-explorer": [
-      "path---en-en-cardano-explorer-f7f50fe6d4b5f4dc434c.js",
-      "path---en-en-cardano-explorer-f7f50fe6d4b5f4dc434c.js.map"
+    "path---en-timeline-reward-era": [
+      "path---en-timeline-reward-era-50c4fa14e138652d8c18.js",
+      "path---en-timeline-reward-era-50c4fa14e138652d8c18.js.map"
     ],
     "path---en-technical-protocols-p-2-p": [
-      "path---en-technical-protocols-p-2-p-91319d5f6f6e909b700e.js",
-      "path---en-technical-protocols-p-2-p-91319d5f6f6e909b700e.js.map"
+      "path---en-technical-protocols-p-2-p-12d70a66cf53f4e0da52.js",
+      "path---en-technical-protocols-p-2-p-12d70a66cf53f4e0da52.js.map"
+    ],
+    "path---en-timeline-bootstrap-era": [
+      "path---en-timeline-bootstrap-era-cd8363a1e1f34242e57f.js",
+      "path---en-timeline-bootstrap-era-cd8363a1e1f34242e57f.js.map"
     ],
     "path---cn-404": [
       "path---cn-404-a0e39f21c11f6a62c5ab.js",
       "path---cn-404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---cn-cardano-transaction-assurance": [
-      "path---cn-cardano-transaction-assurance-fa9fb39b5e4c9d68345c.js",
-      "path---cn-cardano-transaction-assurance-fa9fb39b5e4c9d68345c.js.map"
+      "path---cn-cardano-transaction-assurance-4c9ad3a95347fd5c60f8.js",
+      "path---cn-cardano-transaction-assurance-4c9ad3a95347fd5c60f8.js.map"
     ],
     "path---en-technical": [
-      "path---en-technical-7eb322c01189c81ea02d.js",
-      "path---en-technical-7eb322c01189c81ea02d.js.map"
+      "path---en-technical-44c34e5ae33009911a97.js",
+      "path---en-technical-44c34e5ae33009911a97.js.map"
+    ],
+    "path---en-timeline-testnet-era": [
+      "path---en-timeline-testnet-era-48b0c9333e6968a3ab8b.js",
+      "path---en-timeline-testnet-era-48b0c9333e6968a3ab8b.js.map"
     ],
     "path---en-technical-plutus-examples": [
-      "path---en-technical-plutus-examples-ea63498100a8058e67e2.js",
-      "path---en-technical-plutus-examples-ea63498100a8058e67e2.js.map"
+      "path---en-technical-plutus-examples-14c735ba0e960393e387.js",
+      "path---en-technical-plutus-examples-14c735ba0e960393e387.js.map"
     ],
     "path---cn-technical-protocols-p-2-p": [
-      "path---cn-technical-protocols-p-2-p-9fb2c34f3cadb79fa15d.js",
-      "path---cn-technical-protocols-p-2-p-9fb2c34f3cadb79fa15d.js.map"
+      "path---cn-technical-protocols-p-2-p-b3141013425a3396ad92.js",
+      "path---cn-technical-protocols-p-2-p-b3141013425a3396ad92.js.map"
     ],
     "path---cn-technical-blocks": [
-      "path---cn-technical-blocks-d879fb63b9158eb3d059.js",
-      "path---cn-technical-blocks-d879fb63b9158eb3d059.js.map"
+      "path---cn-technical-blocks-2329f4cffb840897974d.js",
+      "path---cn-technical-blocks-2329f4cffb840897974d.js.map"
     ],
     "commons": [
-      "commons-94f3498ba02aa2e0440a.js",
-      "commons-94f3498ba02aa2e0440a.js.map"
+      "commons-53d944c8103ffd540609.js",
+      "commons-53d944c8103ffd540609.js.map"
     ],
     "component---src-pages-en-404-js": [
-      "component---src-pages-en-404-js-f174611dccd364e7cb12.js",
-      "component---src-pages-en-404-js-f174611dccd364e7cb12.js.map"
+      "component---src-pages-en-404-js-99d5ecf26705bfdd44b5.js",
+      "component---src-pages-en-404-js-99d5ecf26705bfdd44b5.js.map"
     ],
     "path---cn-timeline-testnet": [
-      "path---cn-timeline-testnet-56709488ebe550b5e154.js",
-      "path---cn-timeline-testnet-56709488ebe550b5e154.js.map"
+      "path---cn-timeline-testnet-6aa2454a8e2b1035af1b.js",
+      "path---cn-timeline-testnet-6aa2454a8e2b1035af1b.js.map"
     ],
     "path---cn-technical-launcher": [
-      "path---cn-technical-launcher-a13887bb68787b55267f.js",
-      "path---cn-technical-launcher-a13887bb68787b55267f.js.map"
+      "path---cn-technical-launcher-018d52157498c3b5e574.js",
+      "path---cn-technical-launcher-018d52157498c3b5e574.js.map"
     ],
     "path---en-technical-wallet-api": [
-      "path---en-technical-wallet-api-8c47805937d6124d8343.js",
-      "path---en-technical-wallet-api-8c47805937d6124d8343.js.map"
+      "path---en-technical-wallet-api-7e7c07a917f3fdefa728.js",
+      "path---en-technical-wallet-api-7e7c07a917f3fdefa728.js.map"
+    ],
+    "path---en-cardano-transaction-fees": [
+      "path---en-cardano-transaction-fees-3d1a33d87648be20a3cd.js",
+      "path---en-cardano-transaction-fees-3d1a33d87648be20a3cd.js.map"
     ],
     "path---cn-cardano-balance-and-stake": [
-      "path---cn-cardano-balance-and-stake-94f65a46772e4bf9220f.js",
-      "path---cn-cardano-balance-and-stake-94f65a46772e4bf9220f.js.map"
+      "path---cn-cardano-balance-and-stake-a7292fd84b24306cf27c.js",
+      "path---cn-cardano-balance-and-stake-a7292fd84b24306cf27c.js.map"
     ],
     "path---cn-technical-delegation": [
-      "path---cn-technical-delegation-b139ea7f78141e6e7eb1.js",
-      "path---cn-technical-delegation-b139ea7f78141e6e7eb1.js.map"
+      "path---cn-technical-delegation-ec94e0dccceba094f62a.js",
+      "path---cn-technical-delegation-ec94e0dccceba094f62a.js.map"
     ],
-    "path---en-for-contributors-haddock": [
-      "path---en-for-contributors-haddock-3981be5410b1b9aef10e.js",
-      "path---en-for-contributors-haddock-3981be5410b1b9aef10e.js.map"
+    "path---en-cardano-update-mechanism": [
+      "path---en-cardano-update-mechanism-40dd9965daad825b1bed.js",
+      "path---en-cardano-update-mechanism-40dd9965daad825b1bed.js.map"
     ],
     "path---cn-technical-plutus-types": [
-      "path---cn-technical-plutus-types-0283f49a9215e0861bb6.js",
-      "path---cn-technical-plutus-types-0283f49a9215e0861bb6.js.map"
+      "path---cn-technical-plutus-types-f90b828b9eef60814129.js",
+      "path---cn-technical-plutus-types-f90b828b9eef60814129.js.map"
     ],
     "path---en-technical-protocols-binary-protocols": [
-      "path---en-technical-protocols-binary-protocols-24555779520ea2082dea.js",
-      "path---en-technical-protocols-binary-protocols-24555779520ea2082dea.js.map"
-    ],
-    "path---en-technical-cli-options": [
-      "path---en-technical-cli-options-23f5183d856f65c8da22.js",
-      "path---en-technical-cli-options-23f5183d856f65c8da22.js.map"
+      "path---en-technical-protocols-binary-protocols-f515b497a85306e439b1.js",
+      "path---en-technical-protocols-binary-protocols-f515b497a85306e439b1.js.map"
     ],
     "path---cn-cardano-transaction-fees": [
-      "path---cn-cardano-transaction-fees-8dbdaf5d56f4ef93871e.js",
-      "path---cn-cardano-transaction-fees-8dbdaf5d56f4ef93871e.js.map"
+      "path---cn-cardano-transaction-fees-b8ba9d9df3d2a9a47ecd.js",
+      "path---cn-cardano-transaction-fees-b8ba9d9df3d2a9a47ecd.js.map"
     ],
     "path---cn-cardano-proof-of-stake": [
-      "path---cn-cardano-proof-of-stake-30064fe7879fd9e018a2.js",
-      "path---cn-cardano-proof-of-stake-30064fe7879fd9e018a2.js.map"
+      "path---cn-cardano-proof-of-stake-19ce73f09d19cbe8b524.js",
+      "path---cn-cardano-proof-of-stake-19ce73f09d19cbe8b524.js.map"
     ],
     "path---cn-technical-cli-options": [
-      "path---cn-technical-cli-options-bf722f918d3af1f38c30.js",
-      "path---cn-technical-cli-options-bf722f918d3af1f38c30.js.map"
+      "path---cn-technical-cli-options-9ed8807026834c031456.js",
+      "path---cn-technical-cli-options-9ed8807026834c031456.js.map"
+    ],
+    "path---en-for-contributors-haddock-documentation": [
+      "path---en-for-contributors-haddock-documentation-4bbdaa1500010431842a.js",
+      "path---en-for-contributors-haddock-documentation-4bbdaa1500010431842a.js.map"
     ],
     "path---en-glossary": [
-      "path---en-glossary-b1fc433786f25474e773.js",
-      "path---en-glossary-b1fc433786f25474e773.js.map"
+      "path---en-glossary-2e26faec7520bf5adbe4.js",
+      "path---en-glossary-2e26faec7520bf5adbe4.js.map"
     ],
     "app": [
-      "app-21b3b9dea528f0a34e8b.js",
+      "app-4eb2e02c961f539e3aaa.js",
       "build-js-styles.css",
-      "app-21b3b9dea528f0a34e8b.js.map",
+      "app-4eb2e02c961f539e3aaa.js.map",
       "build-js-styles.css.map"
     ],
-    "path---en-technical-delegation": [
-      "path---en-technical-delegation-0578507cbed5897a663d.js",
-      "path---en-technical-delegation-0578507cbed5897a663d.js.map"
-    ],
     "path---cn-technical-plutus-examples": [
-      "path---cn-technical-plutus-examples-32ce95bf78fb6a04337d.js",
-      "path---cn-technical-plutus-examples-32ce95bf78fb6a04337d.js.map"
-    ],
-    "path---en-technical-blocks": [
-      "path---en-technical-blocks-87333f27636d47eae308.js",
-      "path---en-technical-blocks-87333f27636d47eae308.js.map"
+      "path---cn-technical-plutus-examples-e6c5ce63054c7405910a.js",
+      "path---cn-technical-plutus-examples-e6c5ce63054c7405910a.js.map"
     ],
     "path---cn-glossary": [
-      "path---cn-glossary-3bf0dfdab195e44204ca.js",
-      "path---cn-glossary-3bf0dfdab195e44204ca.js.map"
+      "path---cn-glossary-609752b283d4d3ff1202.js",
+      "path---cn-glossary-609752b283d4d3ff1202.js.map"
+    ],
+    "path---en-cardano-balance-and-stake": [
+      "path---en-cardano-balance-and-stake-61606d418686136cd24e.js",
+      "path---en-cardano-balance-and-stake-61606d418686136cd24e.js.map"
+    ],
+    "path---en-cardano-explorer": [
+      "path---en-cardano-explorer-1b29ad9a990c654c27d5.js",
+      "path---en-cardano-explorer-1b29ad9a990c654c27d5.js.map"
     ],
     "path---cn-cardano-update-mechanism": [
-      "path---cn-cardano-update-mechanism-9db9f9fafab26c1b44a0.js",
-      "path---cn-cardano-update-mechanism-9db9f9fafab26c1b44a0.js.map"
+      "path---cn-cardano-update-mechanism-c7a59ce3cbaf95223c07.js",
+      "path---cn-cardano-update-mechanism-c7a59ce3cbaf95223c07.js.map"
     ],
-    "path---en-en-cardano-topology": [
-      "path---en-en-cardano-topology-eeed2a4d9416a1ac7b51.js",
-      "path---en-en-cardano-topology-eeed2a4d9416a1ac7b51.js.map"
+    "path---en-technical-stake-delegation-in-cardano-sl": [
+      "path---en-technical-stake-delegation-in-cardano-sl-34d7f8853c82554518a4.js",
+      "path---en-technical-stake-delegation-in-cardano-sl-34d7f8853c82554518a4.js.map"
     ],
     "path---cn-technical-protocols-network-transport": [
-      "path---cn-technical-protocols-network-transport-7ba945df7a88880b8e5e.js",
-      "path---cn-technical-protocols-network-transport-7ba945df7a88880b8e5e.js.map"
+      "path---cn-technical-protocols-network-transport-9ffa26fb18daa91e6dfa.js",
+      "path---cn-technical-protocols-network-transport-9ffa26fb18daa91e6dfa.js.map"
     ],
     "path---en": [
-      "path---en-fd1d5de87d946c742ba1.js",
-      "path---en-fd1d5de87d946c742ba1.js.map"
+      "path---en-6b0145a8921721bec84a.js",
+      "path---en-6b0145a8921721bec84a.js.map"
     ],
     "path---cn-cardano-explorer": [
-      "path---cn-cardano-explorer-3cc4f916208e47864dff.js",
-      "path---cn-cardano-explorer-3cc4f916208e47864dff.js.map"
+      "path---cn-cardano-explorer-a6d31858491fb635923f.js",
+      "path---cn-cardano-explorer-a6d31858491fb635923f.js.map"
     ],
-    "path---en-technical-pvss": [
-      "path---en-technical-pvss-25483f95a18ea2e14150.js",
-      "path---en-technical-pvss-25483f95a18ea2e14150.js.map"
+    "path---en-cardano-differences-between-paper-and-the-implementation": [
+      "path---en-cardano-differences-between-paper-and-the-implementation-dbaf7c96957520489f07.js",
+      "path---en-cardano-differences-between-paper-and-the-implementation-dbaf7c96957520489f07.js.map"
     ],
     "path---cn-technical-explorer": [
-      "path---cn-technical-explorer-b448188940dd56d4b437.js",
-      "path---cn-technical-explorer-b448188940dd56d4b437.js.map"
+      "path---cn-technical-explorer-6c1ecea5f2e6d077e640.js",
+      "path---cn-technical-explorer-6c1ecea5f2e6d077e640.js.map"
     ],
     "path---cn-for-contributors-haddock": [
-      "path---cn-for-contributors-haddock-d3a3d580da3ba7b932e9.js",
-      "path---cn-for-contributors-haddock-d3a3d580da3ba7b932e9.js.map"
+      "path---cn-for-contributors-haddock-bb39b7bf96d006b97a97.js",
+      "path---cn-for-contributors-haddock-bb39b7bf96d006b97a97.js.map"
     ],
     "path---en-for-contributors": [
-      "path---en-for-contributors-c8b555e6d143ae61a4f6.js",
-      "path---en-for-contributors-c8b555e6d143ae61a4f6.js.map"
+      "path---en-for-contributors-da040a4a96fefea91392.js",
+      "path---en-for-contributors-da040a4a96fefea91392.js.map"
     ],
     "path---en-intro-text": [
-      "path---en-intro-text-956672a5ec4a1baafb58.js",
-      "path---en-intro-text-956672a5ec4a1baafb58.js.map"
+      "path---en-intro-text-d056424aa81c90dae4ef.js",
+      "path---en-intro-text-d056424aa81c90dae4ef.js.map"
     ],
-    "path---en-technical-updater": [
-      "path---en-technical-updater-363cac20414f506d7907.js",
-      "path---en-technical-updater-363cac20414f506d7907.js.map"
+    "path---en-technical-cardano-sl-updater": [
+      "path---en-technical-cardano-sl-updater-8e4d36a81c27d1ef0a20.js",
+      "path---en-technical-cardano-sl-updater-8e4d36a81c27d1ef0a20.js.map"
     ],
-    "path---en-technical-leader-selection": [
-      "path---en-technical-leader-selection-b1b1100cbc623354ee0f.js",
-      "path---en-technical-leader-selection-b1b1100cbc623354ee0f.js.map"
-    ],
-    "path---en-technical-explorer": [
-      "path---en-technical-explorer-ba976716d2412d7f11e4.js",
-      "path---en-technical-explorer-ba976716d2412d7f11e4.js.map"
-    ],
-    "path---en-en-cardano-transactions": [
-      "path---en-en-cardano-transactions-7468c12c9b53c830b652.js",
-      "path---en-en-cardano-transactions-7468c12c9b53c830b652.js.map"
-    ],
-    "path---en-en-cardano-transaction-fees": [
-      "path---en-en-cardano-transaction-fees-f8d972dfddb295cdf9c8.js",
-      "path---en-en-cardano-transaction-fees-f8d972dfddb295cdf9c8.js.map"
+    "path---en-technical-cardano-sl-wallet-frontend": [
+      "path---en-technical-cardano-sl-wallet-frontend-ce30d1a2f02eef6a77c7.js",
+      "path---en-technical-cardano-sl-wallet-frontend-ce30d1a2f02eef6a77c7.js.map"
     ],
     "path---cn-cardano-differences": [
-      "path---cn-cardano-differences-272c05726da122cf8765.js",
-      "path---cn-cardano-differences-272c05726da122cf8765.js.map"
+      "path---cn-cardano-differences-b98a19f27bdd2519d5a4.js",
+      "path---cn-cardano-differences-b98a19f27bdd2519d5a4.js.map"
     ],
     "path---cn-technical-protocols-csl-application-level": [
-      "path---cn-technical-protocols-csl-application-level-c16ffc5da3a9ae88e1e4.js",
-      "path---cn-technical-protocols-csl-application-level-c16ffc5da3a9ae88e1e4.js.map"
+      "path---cn-technical-protocols-csl-application-level-533f89963798c677aa66.js",
+      "path---cn-technical-protocols-csl-application-level-533f89963798c677aa66.js.map"
     ]
   }
 }

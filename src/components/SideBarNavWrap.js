@@ -23,7 +23,6 @@ class SideBarNavWrap extends React.Component {
   }
 
   navScrollPosition (scrollPos) {
-    console.log(scrollPos)
     if (scrollPos > 700) {
       document.querySelector('.navWrap').classList.add('stickyNav')
     } else {

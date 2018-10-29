@@ -14,6 +14,11 @@ const linkStyle = {
   textDecoration: 'none'
 }
 
+const siteTitleZ = {
+  zIndex: '1',
+  position: 'relative'
+}
+
 class Header extends React.Component{
   constructor(props) {
     super(props)
@@ -54,7 +59,7 @@ class Header extends React.Component{
             <Link to="/" style={{display:'block', position:'relative', zIndex: 99, margin: '0 auto', width: '120px'}}>
               <Logo />
             </Link>
-            <h2 className="text-uppercase">Cardano <span className='thin-heading'>Documentation</span></h2>
+            <h2 className="text-uppercase site-title" style={siteTitleZ}>Cardano <span className='thin-heading'>Documentation</span></h2>
           </div>
         </section>
         <BlockWelcome {...props} />

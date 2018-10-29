@@ -9,7 +9,7 @@ label: docs
 
 # Cardano Monetary Policy
 
-<div style="border-radius:5px;padding:5px 10px;background: #cdeffc;" markdown="1">
+<div  markdown="1">
 This section defines the Cardano monetary policy.
 
 ### THE LAUNCH OF CARDANO AND AVAILABILITY OF ADA
@@ -27,7 +27,7 @@ Note: There will never be more than 45,000,000,000 Ada in circulation.
 
 
 ## TREASURY AND FEES
-<div style="border-radius:5px;padding:5px 10px;background: #cdeffc;" markdown="1">
+<div  markdown="1">
 This section outlines treasury plans and associated fees.
 
 ### BOOTSTRAP ERA (LAUNCH)

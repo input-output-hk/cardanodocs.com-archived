@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import $ from 'jquery'
-//import BS from '../../static/bs.min.exec.js'
+import BS from '../../static/bs.min.exec.js'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
@@ -19,8 +19,8 @@ class Layout extends React.Component {
   }
 
   componentDidMount = () => {
-    // Use Bootstrap JS
-    //BS()
+    // Use Bootstrap JS for medusa
+    BS()
   }
 
   render() {
@@ -34,8 +34,8 @@ class Layout extends React.Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        {/* <Medusa /> */}
-        <div className="medusa-section"></div>
+        <Medusa />
+        {/* <div className="medusa-section"></div> */}
         <Header
           data={data}
           siteTitle={data.site.siteMetadata.site_title}

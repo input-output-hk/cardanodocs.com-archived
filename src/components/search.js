@@ -31,8 +31,6 @@ export default class Search extends Component {
     }
 
     performMark (input, instance) {
-      console.log(input)
-      console.log(instance)
       const keyword = input.value;
       instance.unmark({
         done: () => {
@@ -41,10 +39,13 @@ export default class Search extends Component {
       });
     }
 
-    render() {
+    componentDidUpdate () {
       const markInstance = new Mark(document.querySelector(".context"))
       const keywordInput = document.querySelector("input[name='keyword']")
       this.performMark(keywordInput, markInstance)
+    }
+
+    render() {
 
       const placeholderText =  (e) => {
         if(!this.state.query) {

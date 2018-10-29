@@ -9,8 +9,6 @@ language: en
 label: docs
 ---
 
-# Redirecting...
+## Cardano contributing guide:
+Can be found here [https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md](https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md)
 
-<script>
-    // window.location.replace("https://github.com/input-output-hk/cardano-sl/blob/develop/CONTRIBUTING.md");
-</script>

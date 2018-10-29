@@ -84,7 +84,7 @@ Listeners handle incoming messages and respond to them. Various supplemental
 listeners will not be covered, focusing on the main ones instead.
 
 Listeners mostly use the [Relay
-framework](/technical/protocols/csl-application-level/#invreqdata-and-messagepart),
+framework](/en/technical/protocols/csl-application-level/#invreqdata-and-messagepart),
 which includes three type of messages:
 
 -   `Inventory` message: node publishes message to network when gets a new data.
@@ -222,9 +222,9 @@ Stake Algorithm.
 
 -   Slot leaders: Slot leaders for the current epoch (for each slot of the
     current epoch) are computed by [Follow the
-    Satoshi](/cardano/proof-of-stake/#follow-the-satoshi) (FTS) algorithm in the
+    Satoshi](/en/cardano/proof-of-stake/#follow-the-satoshi) (FTS) algorithm in the
     beginning of current epoch. FTS uses a `shared seed` which is result of
-    [Multi Party Computation](/cardano/proof-of-stake/#multi-party-computation)
+    [Multi Party Computation](/en/cardano/proof-of-stake/#multi-party-computation)
     (MPC) algorithm for previous epoch: in the result of MPC some nodes reveal
     their seeds, `xor` of these seeds is called `shared seed`.
 
@@ -240,7 +240,7 @@ uses rich men for checking that node can publish update proposal and vote.
 There are two ways of computing who the rich men will be: - considering common
 stake - considering delegated stake (Ouroboros provides opportunity to delegate
 own stake to other node, see more in [Delegation
-section](/cardano/differences/#stake-delegation))
+section](/en/cardano/differences/#stake-delegation))
 
 MPC and Update System components need rich men with delegated stake, but
 Delegation component with common stake.
