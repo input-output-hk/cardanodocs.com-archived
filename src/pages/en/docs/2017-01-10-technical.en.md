@@ -1,12 +1,11 @@
 ---
-date: '2017-01-01'
+date: '2017-01-02'
 doc_title: Technical details
 group: base
-permalink: /en/technical-details/
-path: /en/technical/
+path: /en/technical-details/
 children: technical
 language: en
-lebel: docs
+label: docs
 ---
 
 <!-- Reviewed at d0868afac50ba6ffcbd95054e65cbf77fa513082 -->

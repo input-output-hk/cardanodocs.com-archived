@@ -4,6 +4,7 @@ import { navigateTo } from 'gatsby-link'
 import $ from 'jquery'
 import styled from 'styled-components'
 import {language} from '../assets/utils/language'
+import {cleanPath} from '../assets/utils/cleanPath'
 import colors from '../assets/styles/colors'
 import ChevronRight from '../assets/images/chevron-2.svg'
 
@@ -70,7 +71,6 @@ class SideBarNavCollapse extends React.Component {
     this.handleDropdown = this.handleDropdown.bind(this)
     this.handleLinkChange = this.handleLinkChange.bind(this)
     this.activeSideNavStates = this.activeSideNavStates.bind(this)
-    this.cleanPath = this.cleanPath.bind(this)
     this.removeDashes = this.removeDashes.bind(this)
     this.addActiveClass = this.addActiveClass.bind(this)
     this.navigate = this.navigate.bind(this)
@@ -93,10 +93,7 @@ class SideBarNavCollapse extends React.Component {
     return this.myNavWrap.style.maxHeight = `${height}px`
   }
 
-  cleanPath () {
-    let path = location.pathname.split('/');
-    return path.filter( (n) => n != "" );
-  }
+  
   
   removeDashes (el) {
     return el.replace('-', ' ');
@@ -107,8 +104,7 @@ class SideBarNavCollapse extends React.Component {
   }
 
   activeSideNavStates () {
-    const path = location.pathname.split('/');
-    let directory = this.cleanPath(path).pop();
+    let directory = cleanPath(location.pathname)
     return $('.cd-sidebar ul li').each((i, li) => {
       directory = this.removeDashes(directory).toLowerCase();
       if ($(li).text().toLowerCase() === directory) {

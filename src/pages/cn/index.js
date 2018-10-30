@@ -32,7 +32,7 @@ const IndexDocPage = ({ data }) => {
 export const pageQuery = graphql`
 query DocListQueryCN {
   allMarkdownRemark(
-    sort: { order: DESC, fields: [frontmatter___date] }
+    sort: { order: ASC, fields: [frontmatter___date] }
     filter: { frontmatter: { language: { eq: "cn" } } }
   ) {
     edges {

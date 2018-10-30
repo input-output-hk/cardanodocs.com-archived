@@ -67,7 +67,9 @@ export const pageQuery = graphql`
     siteSearchIndex {
       index
     }
-    allMarkdownRemark{
+    allMarkdownRemark(
+      sort: { order: ASC, fields: [frontmatter___date] }
+    ){
       edges {
         node {
           id
