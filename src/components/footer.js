@@ -15,6 +15,7 @@ import iohk from '../assets/images/iohk.svg'
     color: '#1fc1c3',
   }
 
+  const date = new Date().getFullYear()
 
 const Footer = () => (
 
@@ -22,7 +23,7 @@ const Footer = () => (
     <div className="container">
       <div className="row footer-strip h-100">
           <div className="mob-text-center col-md-10">
-            <h2 className="d-inline align-middle">Cardano Documentation 2018</h2>
+            <h2 className="d-inline align-middle">Cardano Documentation {date}</h2>
             <a className='align-middle' href="https://github.com/input-output-hk/cardano-sl" target="_blank"><FaGithub style={iconStyleTeal} /></a>
           </div>
           <div className="col-md-14">

@@ -43,7 +43,7 @@ module.exports = {
                   keywords: node => node.frontmatter.keywords,
                   excerpt: node => node.excerpt,
                   html: node => node.html,
-                  path: path => node.frontmatter.path
+                  path: node => node.frontmatter.path
               },
           },
       },
