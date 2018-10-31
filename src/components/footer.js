@@ -22,8 +22,8 @@ const Footer = () => (
     <div className="container">
       <div className="row footer-strip h-100">
           <div className="mob-text-center col-md-10">
-            <h2 className="d-inline align-middle">Cardano Rust Project 2018</h2>
-            <a className='align-middle' href="https://github.com/input-output-hk/rust-cardano" target="_blank"><FaGithub style={iconStyleTeal} /></a>
+            <h2 className="d-inline align-middle">Cardano Documentation 2018</h2>
+            <a className='align-middle' href="https://github.com/input-output-hk/cardano-sl" target="_blank"><FaGithub style={iconStyleTeal} /></a>
           </div>
           <div className="col-md-14">
             <div className="row">

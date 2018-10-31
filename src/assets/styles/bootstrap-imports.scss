@@ -46,10 +46,12 @@
 
 
 
-@media (min-width:768px) and (max-width:990px) {
+
   .footer-strip {
     h2 {
-      font-size: 0.85rem;
+      font-size: 1rem;
+      @media (min-width:768px) and (max-width:990px) {
+        font-size: 0.85rem;
+      }
     }
   }
-}

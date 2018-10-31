@@ -32,7 +32,8 @@ module.exports = {
               'doc_title',
               'keywords',
               'excerpt',
-              'html'
+              'html',
+              'path'
           ],
           // How to resolve each field's value for a supported node type
           resolvers: {
@@ -41,7 +42,8 @@ module.exports = {
                   title: node => node.frontmatter.doc_title,
                   keywords: node => node.frontmatter.keywords,
                   excerpt: node => node.excerpt,
-                  html: node => node.html
+                  html: node => node.html,
+                  path: path => node.frontmatter.path
               },
           },
       },

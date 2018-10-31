@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import Link from 'gatsby-link'
 import {Index} from 'elasticlunr'
 import Markdown from 'markdown-to-jsx'
 import Mark from '../../static/mark'
 import styled from 'styled-components'
 import colors from '../assets/styles/colors'
 import {language} from '../assets/utils/language'
+import Chevron from '../assets/images/chevron.svg'
 
 
 
@@ -66,7 +68,9 @@ export default class Search extends Component {
             <ul className='list-unstyled'>
                   {this.state.results.map(page => (
                       <li key={page.id} className='context'>
-                          <h4 style={{margin:0}}>{page.title}: <small>{page.keywords}</small></h4>
+                          <Link to={page.path}>
+                            <h4 style={{margin:0}}>{page.title} <small>{page.keywords}</small> <img src={Chevron} alt="angle" style={{maxWidth:'9px'}}/></h4>
+                          </Link>
                           <Markdown options={{ forceInline: true }}>
                             {page.excerpt}
                           </Markdown>
