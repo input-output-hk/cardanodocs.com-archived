@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Cardano Wallet Backend API Documentation</title>
+  <title>Cardano Wallet Backend DEPRECATED API Documentation</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Swagger-generated API Reference Documentation for Cardano Wallet Backend API" />
+  <meta name="description" content="Swagger-generated API Reference Documentation for DEPRECATED Cardano Wallet Backend API" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title" content="Cardano Wallet Backend API Documentation" />
-  <meta property="og:description" content="Swagger-generated API Reference Documentation for Cardano Wallet Backend API" />
+  <meta property="og:title" content="Cardano Wallet Backend DEPRECATED API Documentation" />
+  <meta property="og:description" content="Swagger-generated API Reference Documentation for DEPRECATED Cardano Wallet Backend API" />
   <meta property="og:image" content="https://cardanodocs.com/img/cardano.png" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
   <style> body { margin: 0; padding: 0; } </style>
@@ -18,8 +18,9 @@
   <script>
     const version  = (window.location.search || "?v=latest").slice(3);
     const filename = (!version || version == "latest") ? "1.4.0-swagger.json" : version+"-swagger.json"
-    document.querySelector("redoc").setAttribute("spec-url", "/_data/swagger/v1/"+filename);
+    document.querySelector("redoc").setAttribute("spec-url", "/_data/swagger/v0/"+filename);
   </script>
+  <redoc spec-url="/_data/swagger/v0/latest.json" expand-responses="200,201"></redoc>
   <script src="https://rebilly.github.io/ReDoc/releases/v1.19.0/redoc.min.js" async defer></script>
 </body>
 </html>
