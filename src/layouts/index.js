@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import $ from 'jquery'
-import BS from '../../static/bs.min.exec.js'
+import BS from '../assets/js/bs.min.js'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
@@ -11,6 +11,7 @@ import Medusa from '../components/medusa'
 
 import '../assets/styles/bootstrap-imports.scss'
 import '../assets/styles/custom.scss'
+import { FaMarkdown } from 'react-icons/fa';
 
 class Layout extends React.Component {
   constructor(props) {
