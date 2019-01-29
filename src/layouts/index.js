@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import $ from 'jquery'
-import BS from '../assets/js/bs.min.js'
 import 'typeface-montserrat'
 
 import Header from '../components/header'
@@ -19,10 +18,8 @@ class Layout extends React.Component {
     
   }
 
-  componentDidMount = () => {
-    // Use Bootstrap JS for medusa
-    BS()
-  }
+  // componentDidMount = () => {
+  // }
 
   render() {
     const {children, data} = this.props;

@@ -1,20 +1,24 @@
 import { getPathParts, updateUrl } from './urlHelper'
 
 function getLanguageFromURL () {
-  const supportedLanguages = [ 'en', 'cn' ]
-  const defaultLanguage = 'en'
-  const URLLanguage = getPathParts()[0]
-  if (supportedLanguages.includes(URLLanguage)) return URLLanguage
-  if (typeof window !== 'undefined') updateUrl(`/${defaultLanguage}${window.location.pathname}`)
+  if(typeof window !== 'undefined'){
+    const supportedLanguages = [ 'en', 'cn' ]
+    const defaultLanguage = 'en'
+    const UrlLanguage = getPathParts()[0]
+    if (supportedLanguages.includes(UrlLanguage)) return UrlLanguage
+    return updateUrl(`/${defaultLanguage}${window.location.pathname}`)
+  }
 }
 
 export const language = getLanguageFromURL()
 
 export function updateLanguage (newLanguage) {
-  if (newLanguage !== language) {
-    const URLParts = getPathParts()
-    URLParts.splice(0, 1, newLanguage)
-    updateUrl(`/${URLParts.join('/')}`)
+  if(typeof window !== 'undefined'){
+    if (newLanguage !== language) {
+      const UrlParts = getPathParts()
+      UrlParts.splice(0, 1, newLanguage)
+      updateUrl(`/${UrlParts.join('/')}`)
+    }
   }
 }
 

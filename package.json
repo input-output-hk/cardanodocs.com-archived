@@ -6,7 +6,7 @@
   "dependencies": {
     "detect-browser": "^3.0.1",
     "elasticlunr": "^0.9.5",
-    "gatsby": "^1.9.277",
+    "gatsby": "^1.9.279",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-catch-links": "^1.0.24",
     "gatsby-plugin-page-transitions": "^1.0.7",

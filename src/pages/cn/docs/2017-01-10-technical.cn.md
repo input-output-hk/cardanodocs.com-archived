@@ -2,7 +2,7 @@
 date: '2017-01-01'
 doc_title: 技术细节
 group: base
-path: /cn/technical
+path: /cn/technical-details
 children: cn-technical
 language: cn
 label: docs
