@@ -13,8 +13,7 @@ language: en
 The Ouroboros Proof of Stake (PoS) Algorithm is the most important part of the protocol.
 It defines the way in which nodes reach consensus about the state of [ledger](/glossary/#ledger).
 
-Ouroboros is unique as it is the first blockchain protocol that is based on proof of
-stake and has been scientifically proven as secure.
+Ouroboros is unique as the first proof of stake blockchain protocol based on formal, peer-reviewed academic research.
 
 ## Why Proof of Stake?
 
