@@ -11,11 +11,9 @@ language: ja
 
 ## サポートプラットフォーム
 
-[installers for Windows and macOS](https://daedaluswallet.io/#download),
-which include a main node and [Daedalus wallet](https://github.com/input-output-hk/daedalus)
-サポートプラットフォームはWindows, macOS 及びLinuxです。メインノードとダイダロスウォレット[Daedalus wallet](https://github.com/input-output-hk/daedalus)を含むインストーラ[installers for Windows and macOS](https://daedaluswallet.io/#download)があります。
+サポートプラットフォームはWindows, macOS 及びLinuxです。WindowsとmacOSはメインノードと[ダイダロスウォレット](https://github.com/input-output-hk/daedalus)を含む[インストーラ](https://daedaluswallet.io/#download)があります。
 
-Linuxのインストーラは間もなくリリースされます。現在、LinuxでCardano SLを入手するには2つの選択肢があります。
+Linuxのインストーラは間もなくリリースされます。現在、LinuxでCardano SLを入手するには2つのオプションがあります。
 1. ソースコードからのビルド (推奨). [How to Build Cardano SL and Daedalus from
 Source Code](https://github.com/input-output-hk/cardano-sl/blob/develop/docs/how-to/build-cardano-sl-and-daedalus-from-source-code.md)マニュアルを参照してください。
 
