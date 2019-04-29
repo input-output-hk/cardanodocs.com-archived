@@ -168,3 +168,10 @@ $(function() {
 
 
 var io_months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+$(window).on('load',function(){
+  if(localStorage.getItem('popState') !== 'shown'){
+    $('#myModal').modal('show');
+    localStorage.setItem('popState','shown')
+  }
+});

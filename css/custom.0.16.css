@@ -322,3 +322,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b131f', end
 .navbar-brand {padding: 14px 15px;font-size: 11px;line-height: 20px;font-weight: 500;display: inline-block;margin: auto;float:left;}
 
 .nothing{}
+
+.modal-header, .modal-body, .modal-footer {
+  background: white;
+}
+.modal-footer {
+  margin-top:0;
+}
