@@ -2056,7 +2056,7 @@
             "url": "https://raw.githubusercontent.com/input-output-hk/cardano-sl/develop/lib/LICENSE"
         },
         "title": "Cardano Wallet API",
-        "version": "1.5.0"
+        "version": "1.6.0"
     },
     "paths": {
         "/api/internal/apply-update": {
