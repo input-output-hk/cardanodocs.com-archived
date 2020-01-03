@@ -1246,7 +1246,7 @@
             "example": {
                 "accountIndex": 3973314086,
                 "mnemonic": null,
-                "redemptionCode": "^\ud80d\udc92",
+                "redemptionCode": "AABAA",
                 "spendingPassword": "0000000201010102020001000201020000020102010000020102020100010201",
                 "walletId": "J7rQqaLLHBFPrgJXwpktaMB1B1kQBXAyc2uRSfRPzNVGiv6TdxBzkPNBUWysZZZdhFG9gRy3sQFfX5wfpLbi4XTFGFxTg"
             },
