@@ -199,8 +199,7 @@ class MessagePart a where
 
 这是另一个例子 - [`requestHeaders`](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Block/Network/Logic.hs#L261) 功能。这个函数处理预期的区块头，并在本地跟踪它们。在[这个地方](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Block/Network/Logic.hs#L271)，它向 listener 发送一种类型为 `MsgGetHeaders` 的信息，而[在这](https://github.com/input-output-hk/cardano-sl/blob/83fbebb3eec16c30a96c499301250c5a3756c0c1/src/Pos/Block/Network/Logic.hs#L275)，它从这个 listener 接收一个类型为 `MsgHeaders` 的回答。
 
-[`Pos.Block.Worker`](https://github.com/input-output-hk/cardano-sl/blob/d564b3f5a7e03e086b62c88212870b5ea89f5e8b/src/Pos/Block/Worker.hs) 模块中定义了用于区块处理的其他 worker。我们重用了上述的 `retrievalWorker`（TODO：and define a
-[well-documented](https://github.com/input-output-hk/cardano-sl/blob/a5f7991ff03a1e45114b901bfbbbb1ee3cd4d194/src/Pos/Block/Worker.hs#L82)），并记载了一个记录良好的 `blkOnNewSlot` worker。它代表了一个新 slot 开始时应该完成的操作，这个操作包括以下步骤：
+[`Pos.Block.Worker`](https://github.com/input-output-hk/cardano-sl/blob/d564b3f5a7e03e086b62c88212870b5ea89f5e8b/src/Pos/Block/Worker.hs) 模块中定义了用于区块处理的其他 worker。我们重用了上述的 `retrievalWorker`，并为 `blkOnNewSlot` worker 写了一个[内容丰富的文档](https://github.com/input-output-hk/cardano-sl/blob/a5f7991ff03a1e45114b901bfbbbb1ee3cd4d194/src/Pos/Block/Worker.hs#L82) 。它代表了一个新 slot 开始时应该完成的操作，这个操作包括以下步骤：
 
 1. 如有必要，生成一个[创始区块](https://github.com/input-output-hk/cardano-sl/blob/a5f7991ff03a1e45114b901bfbbbb1ee3cd4d194/src/Pos/Block/Worker.hs#L100)。
 2. 获取当前 epoch 的 leader。
