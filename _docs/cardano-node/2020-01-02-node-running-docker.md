@@ -6,7 +6,9 @@ group: cardano-node
 language: en
 ---
 Read if: You want to use Docker to run a Cardano node
+
 Read first: [Running a Cardano node](../2020-01-04-cardano-node.md)
+
 Read next: [Configuring a Cardano node using a config.yaml file](2020-01-04-node-troubleshooting.md)-->
 
 You can use Docker to quickly set up and run a Cardano node. Multiple Docker images are available, each preconfigured to connect to a specific public Cardano network. There is also a base image available, which runs an unconfigured Cardano node that can be provided with a custom `config.yaml` file. All of the preconfigured Docker images contain this base image with an additional configuration layer.
