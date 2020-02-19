@@ -19,7 +19,7 @@ You need to have Docker configured and installed on your machine. See the [Docke
 ## Steps
 1. Open Docker and use `docker pull` to pull a Cardano node Docker image from [Docker Hub](link to Cardano node Docker Hub). The exact command will vary depending on which image you want to pull.
 
- If you wanted to pull the unconfigured base image, for example, you would use `docker pull cardano-node`. If you wanted to pull an image configured to connect to the Cardano mainnet, you would use `docker pull cardano-node:mainnet`.
+   If you wanted to pull the unconfigured base image, for example, you would use `docker pull cardano-node`. If you wanted to pull an image configured to connect to the Cardano mainnet, you would use `docker pull cardano-node:mainnet`.
 2. Run the Cardano node image using `docker run`, followed by whichever image you just pulled. For example, `docker run cardano-node:mainnet`.
 
 ## Result
