@@ -30,11 +30,12 @@ A delegation certificate is a certificate posted to the blockchain to indicate h
 ## Pledging
 
 ## Saturation
+The point at which the stake pool is deemed to be at maximum capacity for optimum network participation. 
 
 ## Stake
 
 ## Stake pool
-A stake pool is a high uptime node, run by  stake pool operator, to which others can delegate their stake to participate in the network and earn rewards without having to run a node themselves.
+A stake pool is a high uptime node, run by a stake pool operator, to which others can delegate their stake, so they can participate in the network and earn rewards without having to run a node themselves.
 
 ## Stake pool operator
 A stake pool operator is an individual, team, or business that runs a stake pool.
