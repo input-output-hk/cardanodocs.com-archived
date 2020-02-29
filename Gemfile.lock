@@ -149,7 +149,7 @@ GEM
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
     rainbow (3.0.0)
-    rake (11.3.0)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -240,7 +240,7 @@ DEPENDENCIES
   pry
   pry-byebug
   pygments.rb (~> 0.6.0)
-  rake (~> 11.0)
+  rake (~> 12.3)
   rdiscount (~> 2.0)
   rdoc (~> 4.2)
   redcarpet (~> 3.2, >= 3.2.3)
