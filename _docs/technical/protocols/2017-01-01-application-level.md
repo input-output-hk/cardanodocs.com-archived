@@ -274,7 +274,7 @@ it receives an answer from that listener, a message of `MsgHeaders` type.
 
 Additional worker for the block processing is defined in
 [`Pos.Block.Worker`](https://github.com/input-output-hk/cardano-sl/blob/d564b3f5a7e03e086b62c88212870b5ea89f5e8b/src/Pos/Block/Worker.hs)
-module. We reuse [`retrievalWorker`] described above and define a
+module. We reuse [`retrievalWorker`](https://github.com/input-output-hk/cardano-sl/blob/08fa863502baeb399e15f525540050a117430d95/src/Pos/Block/Network/Retrieval.hs#L50) described above and define a
 [well-documented](https://github.com/input-output-hk/cardano-sl/blob/a5f7991ff03a1e45114b901bfbbbb1ee3cd4d194/src/Pos/Block/Worker.hs#L82)
 `blkOnNewSlot` worker. It represents an action which should be done when a new
 slot starts. This action includes the following steps:
